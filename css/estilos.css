@@ -92,11 +92,26 @@
 
 .Profile-link{
     background: orange;
+    border-radius: 3em;
+    color: white;
+    margin-right: .5em;
+    /*padding: .5em 1em;*/
+    padding: .5em .5em;
+    text-decoration: none;       
+}
+
+.Profile-image{
+    border: 1px solid white;
+    border-radius: 25%;
+}
+
+.Profile-link_work{
+    background: #1E1E1E;
     border-radius: 2em;
     color: white;
     margin-right: .5em;
-    padding: .5em 1em;
-    text-decoration: none;
+    padding: .1em 0em;
+    text-decoration: overline;    
 }
 
 /* Work */
