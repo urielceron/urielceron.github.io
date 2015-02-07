@@ -12,7 +12,7 @@
 
 .u-containerDefault{
     width: 800px;
-    margin: 0 auto;
+    margin: 20px auto;
 }
 
 
@@ -228,3 +228,72 @@ aside a.button {
   margin-bottom: 20px;
   font-size: 21px;
 }
+
+div.centermain {
+  padding: 0 10px;
+}
+
+div.main {
+  width: 100%;
+  padding: 0;
+}
+
+/* standard form style table */
+table.adminform {
+  background-color: #f9f9f9;
+  border: solid 1px #d5d5d5;
+  width: 100%;
+  padding: 10px;
+  border-collapse: collapse;
+}
+table.adminform tr.row0 {
+  background-color: #f9f9f9;
+}
+table.adminform tr.row1 {
+  background-color: #eeeeee;
+}
+table.adminform th {
+  font-size: 11px;
+  padding-top: 6px;
+  padding-bottom: 2px;
+  padding-left: 4px;
+  padding-right: 4px;
+  text-align: left;
+  height: 25px;
+  background: url(../images/background.jpg);
+  color: #000;
+  background-repeat: repeat;
+}
+table.adminform td {
+  padding: 3px;
+  text-align: left;
+}
+table.adminform td.editor {
+  font-size: 9px;
+}
+
+#cpanel {  text-align: center;  vertical-align: middle; }
+
+#cpanel div.icon   { margin: 3px; }
+#cpanel div.icon a { 
+  display: block; float: left;
+  height: 280px !important;  
+  width: 239px !important;  
+  vertical-align: middle; 
+  text-decoration : none;
+  border: 1px solid #DDD;
+  padding: 2px 5px 1px 5px;
+}
+
+#cpanel div.icon a:link    {  color : #000033;  }
+#cpanel div.icon a:hover   { 
+  color : #333; 
+  background-color: #f1e8e6;  
+  border: 1px solid #c24733;
+  padding: 3px 4px 0px 6px; 
+}
+#cpanel div.icon a:active  {  color : #000033;  }
+#cpanel div.icon a:visited {  color : #000033;  }
+
+#cpanel div.icon img { margin-top: 13px; }
+#cpanel div.icon span { display: block; padding-top: 3px;}
