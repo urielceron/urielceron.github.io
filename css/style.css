@@ -115,7 +115,7 @@ ul.address li ul.address-text li a:hover {
 /*--//banner-top--*/
 /*--top-nav--*/
 .top-nav {
-  background: #008b8b;
+  background: #0098CD;
 }
 .nav > li {
   display: inline-block;
@@ -133,7 +133,7 @@ ul.nav.navbar li a {
 ul.nav.navbar li a:hover,
 ul.nav.navbar li a.active,
 ul.nav.navbar li a:focus {
-  color: #008b8b;
+  color: #0098CD;
   background: #fff;
   -webkit-transform: scale(0.8);
   -moz-transform: scale(0.8);
@@ -154,27 +154,27 @@ ul.nav.navbar li a:focus {
 h3.title {
   font-size: 4em;
   text-align: center;
-  color: #008b8b;
+  color: #0098CD;
   border-bottom: 4px double rgba(247, 197, 106, 0.35);
   padding-bottom: 0.2em;
   margin-bottom: 1em;
 }
 p {
-  font-size: 1em;
-  color: #999;
+  font-size: 1.3em;
+  color: #363636;
   line-height: 1.8em;
 }
 .about-right {
   padding-left: 5em;
 }
 .about-right ul {
-  border: 3px double #008b8b;
+  border: 3px double #0098CD;
   padding: 1em 2em;
 }
 .about-right h5 {
   font-size: 2em;
   text-align: center;
-  color: #008b8b;
+  color: #0098CD;
 }
 .about-right ul li {
   display: block;
@@ -201,7 +201,7 @@ p {
 }
 .work-info h4 {
   font-size: 1.2em;
-  background: darkcyan;
+  background: #0098CD;
   display: inline-block;
   padding: 0.6em 1.2em;
   color: #fff;
@@ -230,7 +230,7 @@ p {
 .work-info h5 span.glyphicon {
   font-size: 0.9em;
   color: #fff;
-  background: #008b8b;
+  background: #0098CD;
   padding: 1em;
   -webkit-border-radius: 70%;
   -moz-border-radius: 70%;
@@ -589,8 +589,8 @@ h2.resp-accordion {
   font-size: 1.1em;
   margin: 1em 0 0 0;
   -webkit-appearance: none;
-  background: #008b8b;
-  border: 2px solid #008b8b;
+  background: #0098CD;
+  border: 2px solid #0098CD;
   transition: 0.5s all;
   -webkit-transition: 0.5s all;
   transition: 0.5s all;
@@ -599,7 +599,7 @@ h2.resp-accordion {
 }
 .contact-form input[type='submit']:hover {
   background: none;
-  color: #008b8b;
+  color: #0098CD;
 }
 ::-webkit-input-placeholder {
   color: #fff !important;
