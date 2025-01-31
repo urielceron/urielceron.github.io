@@ -2,10 +2,10 @@ const planClase = {
   apertura: {
     titulo: "Introducción a Fenómenos Caóticos y No Caóticos",
     actividades_docente: [
-      { text: 'Demostración del comportamiento de péndulos simple y doble', route: 'demostracion-pendulos' },
-      { text: 'Explicación de conceptos básicos de sistemas caóticos', route: 'conceptos-caos' },
-      { text: 'Formación de equipos y asignación de roles', route: 'formacion-equipos' },
-      { text: 'Guía para el registro de observaciones', route: 'registro-observaciones' }
+      { text: 'Explicación de conceptos básicos de sistemas caóticos', route: 'sistemas-caoticos' },
+      { text: 'Demostración del comportamiento de péndulos simple y doble', route: '' },      
+      { text: 'Formación de equipos y asignación de roles', route: '' },
+      { text: 'Guía para el registro de observaciones', route: 'guia-observaciones' }
     ],
     actividades_alumno: [
       'Observación y registro de diferencias entre péndulos',

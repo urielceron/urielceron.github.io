@@ -17,6 +17,8 @@ import EstadisticaDescriptiva from './pages/matematicas/actividades/progresion1/
 import CalculoVariaciones from './pages/matematicas/actividades/progresion1/CalculoVariaciones';
 import InterpretacionPatrones from './pages/matematicas/actividades/progresion1/InterpretacionPatrones';
 import OrganizacionHallazgos from './pages/matematicas/actividades/progresion1/OrganizacionHallazgos';
+import SistemasCaoticos from './pages/matematicas/actividades/progresion2/SistemasCaoticos';
+import GuiaObservaciones from './pages/matematicas/actividades/progresion2/GuiaObservaciones';
 
 function App() {
   return (
@@ -38,7 +40,9 @@ function App() {
         <Route path="/actividades/estadistica-descriptiva" element={<EstadisticaDescriptiva />} />
         <Route path="/actividades/calculo-variaciones" element={<CalculoVariaciones />} />
         <Route path="/actividades/interpretacion-patrones" element={<InterpretacionPatrones />} />
-        <Route path="/actividades/organizacion-hallazgos" element={<OrganizacionHallazgos />} />        
+        <Route path="/actividades/organizacion-hallazgos" element={<OrganizacionHallazgos />} />
+        <Route path="/actividades/sistemas-caoticos" element={<SistemasCaoticos />} />
+        <Route path="/actividades/guia-observaciones" element={<GuiaObservaciones />} />
       </Routes>
     </Router>
   );
