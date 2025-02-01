@@ -113,7 +113,7 @@ const GuiaObservaciones = () => {
               <div className="space-y-4">
                 {/* Tabla de datos generales sin cambios */}
 
-                <h4 className="font-semibold mt-4">2. Mediciones del Péndulo Simple:</h4>
+                <h4 className="font-semibold mt-4">Mediciones del Péndulo Simple:</h4>
                 <table className="w-full text-left border-collapse">
                   <thead>
                     <tr className="bg-gray-100 dark:bg-gray-700">
@@ -143,7 +143,7 @@ const GuiaObservaciones = () => {
                   </tbody>
                 </table>
 
-                <h4 className="font-semibold mt-4">3. Registro del Péndulo Doble:</h4>
+                <h4 className="font-semibold mt-4">Registro del Péndulo Doble:</h4>
                 <div className="p-4 bg-gray-50 dark:bg-gray-700 rounded-lg">
                   <div className="grid grid-cols-4 gap-4 mb-4 font-semibold">
                     <div>Tiempo (s)</div>
@@ -165,11 +165,13 @@ const GuiaObservaciones = () => {
             </div>
 
             <div>
+
               <h3 className="text-xl font-bold mb-3 text-gray-900 dark:text-white">
                 Ejemplo de Registro
               </h3>
               <div className="space-y-4">
                 <h4 className="font-semibold mt-4">Mediciones del Péndulo Simple:</h4>
+                {/* Tabla con cálculo integrado de la fórmula */}
                 <table className="w-full text-left border-collapse">
                   <thead>
                     <tr className="bg-gray-100 dark:bg-gray-700">
@@ -179,48 +181,104 @@ const GuiaObservaciones = () => {
                       <th className="p-2 border">Periodo 2 (s)</th>
                       <th className="p-2 border">Periodo 3 (s)</th>
                       <th className="p-2 border">Promedio</th>
-                      <th className="p-2 border">Teórico</th>
+                      <th className="p-2 border">Teórico (T=2π√(L/g))</th>
                       <th className="p-2 border">Error %</th>
                     </tr>
                   </thead>
                   <tbody className="text-gray-700 dark:text-gray-300">
-                    {/* Ejemplo con datos de muestra */}
+                    {/* Ejemplo con cálculo detallado */}
                     <tr>
-                      <td className="p-2 border">45</td>
-                      <td className="p-2 border">15°</td>
-                      <td className="p-2 border">1.35</td>
-                      <td className="p-2 border">1.38</td>
-                      <td className="p-2 border">1.33</td>
-                      <td className="p-2 border font-medium">1.35</td>
-                      <td className="p-2 border">1.34</td>
-                      <td className="p-2 border text-red-600">0.75%</td>
+                      <td className="p-2 border">60</td>
+                      <td className="p-2 border">10°</td>
+                      <td className="p-2 border">1.55</td>
+                      <td className="p-2 border">1.53</td>
+                      <td className="p-2 border">1.57</td>
+                      <td className="p-2 border font-medium">1.55</td>
+                      <td className="p-2 border">
+                        1.56 <span className="text-xs text-gray-500">(2π√(0.60/9.8))</span>
+                      </td>
+                      <td className="p-2 border text-red-600">0.64%</td>
                     </tr>
                   </tbody>
                 </table>
+                {/* Explicación de la fórmula */}
+                <div className="p-3 bg-blue-50 dark:bg-blue-900 rounded-lg">
+                  <p className="text-sm mb-2"><strong>Cálculo Teórico:</strong></p>
 
-                <h4 className="font-semibold mt-4">Registro del Péndulo Doble:</h4>
-                <div className="p-4 bg-gray-50 dark:bg-gray-700 rounded-lg">
-                  <div className="grid grid-cols-4 gap-4 mb-4 font-semibold">
-                    <div>Tiempo (s)</div>
-                    <div>θ1 (°)</div>
-                    <div>θ2 (°)</div>
-                    <div>Comportamiento</div>
+                  {/* Fórmula general destacada */}
+                  <div className="mb-2 text-sm font-medium text-gray-800 dark:text-gray-200">
+                    Fórmula general:
+                    <span className="font-mono ml-2">
+                      T = 2π√(<span className="text-blue-600">L</span>/<span className="text-green-600">g</span>)
+                    </span>
                   </div>
-                  {/* Ejemplo de registro temporal */}
-                  <div className="grid grid-cols-4 gap-4 mb-2">
-                    <div>0</div>
-                    <div className="border p-1">45.0</div>
-                    <div className="border p-1">30.5</div>
-                    <div className="border p-1 text-sm">O</div>
-                  </div>
-                  <div className="grid grid-cols-4 gap-4 mb-2">
-                    <div>5</div>
-                    <div className="border p-1">62.3</div>
-                    <div className="border p-1">-15.2</div>
-                    <div className="border p-1 text-sm">C</div>
-                  </div>
-                  <p className="mt-3 text-sm">Nota: Valores de ejemplo con θ1=45°, θ2=30.5° iniciales</p>
+
+                  <code className="block mb-2 font-mono text-sm">
+                    T = 2π√(L/g) = 2 × 3.1416 × √({'{'}0.60 m / 9.8 m/s²{'}'}) ≈ 1.56s
+                  </code>
+
+                  <p className="text-xs text-gray-600 dark:text-gray-300">
+                    <span className="block mb-1"><span className="text-blue-600">L</span> = Longitud en metros (60 cm = 0.60 m)</span>
+                    <span className="block mb-1"><span className="text-green-600">g</span> = Aceleración gravitacional (9.8 m/s²)</span>
+                    <span className="block">Error = |(Experimental - Teórico)/Teórico| × 100 = |(1.55 - 1.56)/1.56| × 100 ≈ 0.64%</span>
+                  </p>
                 </div>
+
+                <div>
+                  <h4 className="font-semibold mt-4">Registro del Péndulo Doble:</h4>
+
+                  {/* Nueva sección de códigos */}
+                  <div className="mb-4 p-3 bg-yellow-50 dark:bg-yellow-900 rounded-lg">
+                    <h5 className="font-semibold mb-2 text-sm text-gray-900 dark:text-white">
+                      Códigos de Comportamiento:
+                    </h5>
+                    <ul className="list-disc pl-6 space-y-1 text-xs text-gray-700 dark:text-gray-300">
+                      <li><span className="font-bold">O (Ordenado):</span> Movimiento periódico predecible</li>
+                      <li><span className="font-bold">T (Transición):</span> Patrón cambiante entre orden y caos</li>
+                      <li><span className="font-bold">C (Caótico):</span> Movimiento irregular no repetitivo</li>
+                    </ul>
+                    <p className="mt-2 text-xs italic text-gray-600 dark:text-gray-400">
+                      Ejemplo de identificación: {">"}3 cruces de posición en 5 segundos = C
+                    </p>
+                  </div>
+
+                  <div className="p-4 bg-gray-50 dark:bg-gray-700 rounded-lg">
+                    <div className="grid grid-cols-4 gap-4 mb-4 font-semibold">
+                      <div>Tiempo (s)</div>
+                      <div>θ1 (°)</div>
+                      <div>θ2 (°)</div>
+                      <div>Comportamiento</div>
+                    </div>
+
+                    {/* Ejemplo de registros */}
+                    <div className="grid grid-cols-4 gap-4 mb-2">
+                      <div>0</div>
+                      <div className="border p-1">60.0</div>
+                      <div className="border p-1">30.0</div>
+                      <div className="border p-1 text-sm bg-green-100 dark:bg-green-800">O</div>
+                    </div>
+                    <div className="grid grid-cols-4 gap-4 mb-2">
+                      <div>5</div>
+                      <div className="border p-1">45.5</div>
+                      <div className="border p-1">-25.3</div>
+                      <div className="border p-1 text-sm bg-yellow-100 dark:bg-yellow-800">T</div>
+                    </div>
+                    <div className="grid grid-cols-4 gap-4 mb-2">
+                      <div>10</div>
+                      <div className="border p-1">-12.7</div>
+                      <div className="border p-1">82.4</div>
+                      <div className="border p-1 text-sm bg-red-100 dark:bg-red-800">C</div>
+                    </div>
+
+                    <p className="mt-3 text-sm text-gray-600 dark:text-gray-400">
+                      Nota: Registrar cada 5 segundos. Colores de referencia:
+                      <span className="mx-2 px-2 py-1 bg-green-100 dark:bg-green-800">Ordenado</span>
+                      <span className="mx-2 px-2 py-1 bg-yellow-100 dark:bg-yellow-800">Transición</span>
+                      <span className="mx-2 px-2 py-1 bg-red-100 dark:bg-red-800">Caótico</span>
+                    </p>
+                  </div>
+                </div>
+
               </div>
             </div>
 

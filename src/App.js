@@ -19,6 +19,7 @@ import InterpretacionPatrones from './pages/matematicas/actividades/progresion1/
 import OrganizacionHallazgos from './pages/matematicas/actividades/progresion1/OrganizacionHallazgos';
 import SistemasCaoticos from './pages/matematicas/actividades/progresion2/SistemasCaoticos';
 import GuiaObservaciones from './pages/matematicas/actividades/progresion2/GuiaObservaciones';
+import OrganizacionHallazgosPlan2 from './pages/matematicas/actividades/progresion2/OrganizacionHallazgosPlan2';
 
 function App() {
   return (
@@ -43,6 +44,7 @@ function App() {
         <Route path="/actividades/organizacion-hallazgos" element={<OrganizacionHallazgos />} />
         <Route path="/actividades/sistemas-caoticos" element={<SistemasCaoticos />} />
         <Route path="/actividades/guia-observaciones" element={<GuiaObservaciones />} />
+        <Route path="/actividades/organizacion-hallazgos-plan-2" element={<OrganizacionHallazgosPlan2 />} />
       </Routes>
     </Router>
   );

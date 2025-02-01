@@ -28,7 +28,7 @@ const planClase = {
       sesion: 2,
       titulo: "Construcción y Medición del Péndulo Simple",
       actividades_docente: [
-        { text: 'Demostración de construcción y medición del péndulo simple', route: 'construccion-pendulo-simple' }
+        { text: 'Demostración de construcción y medición del péndulo simple', route: 'https://youtu.be/rAZIY-__WwU?feature=shared' }
       ],
       actividades_alumno: [
         'Construcción del péndulo simple por equipo',
@@ -49,7 +49,7 @@ const planClase = {
       sesion: 3,
       titulo: "Construcción y Análisis del Péndulo Doble",
       actividades_docente: [
-        { text: 'Guía para construcción y análisis del péndulo doble', route: 'construccion-pendulo-doble' }
+        { text: 'Guía para construcción y análisis del péndulo doble', route: 'https://youtu.be/w5WRBRjQVuQ?feature=shared' }
       ],
       actividades_alumno: [
         'Construcción del péndulo doble',
@@ -70,7 +70,12 @@ const planClase = {
       sesion: 4,
       titulo: "Modelación Digital de Sistemas",
       actividades_docente: [
-        { text: 'Demostración de modelación en GeoGebra', route: 'modelacion-digital' }
+        { text: 'Modelo en GeoGebra del Pendulo Simple', route: 'https://www.geogebra.org/m/HrnNWHte' },
+        { text: 'Modelo en GeoGebra del Pendulo Doble', route: 'https://www.geogebra.org/m/c3kzYpNq' },
+        { text: 'Modelo en Traker del Pendulo Simple y Doble', route: 'https://www.compadre.org/portal/items/detail.cfm?ID=7364' },
+        { text: 'Como crear un Pendulo Simple en Geogebra', route: 'https://youtu.be/_7GzZkR6n8w?feature=shared' },        
+        { text: 'Como crear un Pendulo Simple en Geogebra', route: 'https://youtu.be/P_y-chY26f4?feature=shared' },
+        { text: 'Como crear un Modelo de Simulacion en Traker', route: 'https://youtu.be/La3H7JywgX0?feature=shared' },
       ],      
       actividades_alumno: [
         'Creación de modelos en GeoGebra',
@@ -91,7 +96,7 @@ const planClase = {
       sesion: 5,
       titulo: "Integración y Preparación Final",
       actividades_docente: [
-        { text: 'Guía para la organización de hallazgos', route: 'organizacion-hallazgos' }
+        { text: 'Guía para la organización de hallazgos', route: 'organizacion-hallazgos-plan-2' }
       ],        
       actividades_alumno: [
         'Integración de análisis comparativo',
