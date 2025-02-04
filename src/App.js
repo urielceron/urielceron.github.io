@@ -20,6 +20,8 @@ import OrganizacionHallazgos from './pages/matematicas/actividades/progresion1/O
 import SistemasCaoticos from './pages/matematicas/actividades/progresion2/SistemasCaoticos';
 import GuiaObservaciones from './pages/matematicas/actividades/progresion2/GuiaObservaciones';
 import OrganizacionHallazgosPlan2 from './pages/matematicas/actividades/progresion2/OrganizacionHallazgosPlan2';
+import DemostracionCollatz from './pages/matematicas/actividades/progresion3/DemostracionCollatz';
+import GuiaCollatz from './pages/matematicas/actividades/progresion3/GuiaCollatz';
 
 function App() {
   return (
@@ -45,6 +47,8 @@ function App() {
         <Route path="/actividades/sistemas-caoticos" element={<SistemasCaoticos />} />
         <Route path="/actividades/guia-observaciones" element={<GuiaObservaciones />} />
         <Route path="/actividades/organizacion-hallazgos-plan-2" element={<OrganizacionHallazgosPlan2 />} />
+        <Route path="/actividades/demostracion-collatz" element={<DemostracionCollatz />} />
+        <Route path="/actividades/analisis-secuencias" element={<GuiaCollatz />} />
       </Routes>
     </Router>
   );

@@ -2,6 +2,7 @@ const planClase = {
   apertura: {
     titulo: "Introducción a Sistemas Dinámicos Discretos y la Conjetura de Collatz",
     actividades_docente: [
+      { text: 'Sobre la Conjetura de Collatz', route: 'https://repository.udistrital.edu.co/server/api/core/bitstreams/0720a6b2-8523-4a2a-a613-e0d8d3915632/content' },
       { text: 'Demostración de la Conjetura de Collatz y sistemas dinámicos discretos', route: 'demostracion-collatz' }
     ],
     actividades_alumno: [
@@ -24,7 +25,7 @@ const planClase = {
     {
       sesion: 2,
       titulo: "Exploración Manual de la Conjetura de Collatz",
-      actividades_docente: [
+      actividades_docente: [        
         { text: 'Guía para el análisis sistemático de secuencias Collatz', route: 'analisis-secuencias' }
       ],
       actividades_alumno: [
