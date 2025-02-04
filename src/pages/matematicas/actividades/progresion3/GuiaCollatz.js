@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Card, CardHeader, CardTitle, CardContent } from '../../../../components/ui/card';
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import { useNavigate } from 'react-router-dom';
 import useDarkMode from '../../../../hooks/useDarkMode';
 import DarkModeToggle from '../../../../components/DarkModeToggle';
@@ -7,10 +8,10 @@ import DarkModeToggle from '../../../../components/DarkModeToggle';
 const GuiaCollatz = () => {
   const navigate = useNavigate();
   const { darkMode, toggleDarkMode } = useDarkMode();
-  
+
   const [number, setNumber] = useState('');
   const [sequence, setSequence] = useState([]);
-  const [setError] = useState('');  
+  const [error, setError] = useState('');
 
   const calculateSteps = (n) => {
     const num = parseInt(n);
@@ -19,42 +20,36 @@ const GuiaCollatz = () => {
       return;
     }
     setError('');
-    
+
     let current = num;
-    let seq = [{
+    let sequence = [{
       step: 0,
       value: current,
-      x: 0,
-      y: current,
       operation: 'Inicio',
       isEven: current % 2 === 0
     }];
     let i = 1;
-    
+
     while (current !== 1) {
       let operation = '';
-      let newValue;
-      
       if (current % 2 === 0) {
         operation = `${current} ÷ 2`;
-        newValue = current / 2;
+        current = current / 2;
       } else {
         operation = `(${current} × 3) + 1`;
-        newValue = 3 * current + 1;
+        current = 3 * current + 1;
       }
-      
-      current = newValue;
-      seq.push({
+      sequence.push({
         step: i,
         value: current,
-        x: i,
-        y: current,
         operation: operation,
-        isEven: current % 2 === 0
+        isEven: current % 2 === 0,
+        x: i,  // Añadir para el eje X
+        y: current  // Añadir para el eje Y
       });
       i++;
     }
-    setSequence(seq);
+    setSequence(sequence);
   };
 
   return (
@@ -64,9 +59,8 @@ const GuiaCollatz = () => {
           <div className="flex justify-between items-center h-16">
             <button
               onClick={() => navigate('/matematicas')}
-              className={`${
-                darkMode ? 'text-blue-400 hover:text-blue-300' : 'text-blue-600 hover:text-blue-800'
-              } font-medium transition-colors duration-300`}
+              className={`${darkMode ? 'text-blue-400 hover:text-blue-300' : 'text-blue-600 hover:text-blue-800'
+                } font-medium transition-colors duration-300`}
             >
               ← Regresar a Temas Selectos
             </button>
@@ -78,9 +72,9 @@ const GuiaCollatz = () => {
             </div>
           </div>
         </div>
-      </nav>     
+      </nav>
 
-      <main className="max-w-4xl mx-auto px-4 py-8">      
+      <main className="max-w-4xl mx-auto px-4 py-8">
         <Card className={darkMode ? 'bg-gray-800' : 'bg-white'}>
           <CardHeader>
             <CardTitle className="text-gray-900 dark:text-white">
@@ -139,7 +133,7 @@ const GuiaCollatz = () => {
                     </tr>
                   </thead>
                   <tbody>
-                    {[1,2,3].map(i => (
+                    {[1, 2, 3].map(i => (
                       <tr key={i} className="text-gray-700 dark:text-gray-300">
                         <td className="p-2 border">{i}</td>
                         <td className="p-2 border"></td>
@@ -167,6 +161,7 @@ const GuiaCollatz = () => {
                     placeholder="Ingresa un número"
                     className="w-48 px-3 py-2 border rounded-md"
                   />
+                  {error && <div className="text-red-500 mt-2">{error}</div>}
                   <button
                     onClick={() => calculateSteps(number)}
                     className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-md"
@@ -175,28 +170,54 @@ const GuiaCollatz = () => {
                   </button>
                 </div>
                 {sequence.length > 0 && (
-                  <div className="overflow-x-auto">
-                    <table className="w-full text-left border-collapse">
-                      <thead>
-                        <tr className="bg-gray-100 dark:bg-gray-700">
-                          <th className="p-2 border">Paso</th>
-                          <th className="p-2 border">Valor</th>
-                          <th className="p-2 border">Operación</th>
-                          <th className="p-2 border">Par/Impar</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        {sequence.map((step, i) => (
-                          <tr key={i} className="text-gray-700 dark:text-gray-300">
-                            <td className="p-2 border">{step.step}</td>
-                            <td className="p-2 border">{step.value}</td>
-                            <td className="p-2 border">{step.operation}</td>
-                            <td className="p-2 border">{step.isEven ? 'Par' : 'Impar'}</td>
+                  <>
+                    <div className="mt-4 h-96 bg-white dark:bg-gray-800 p-4 rounded-lg">
+                      <ResponsiveContainer width="100%" height="100%">
+                        <LineChart data={sequence}>
+                          <CartesianGrid strokeDasharray="3 3" />
+                          <XAxis
+                            dataKey="x"
+                            label={{ value: 'Paso', position: 'insideBottom', offset: -5 }}
+                          />
+                          <YAxis
+                            label={{ value: 'Valor', angle: -90, position: 'insideLeft', offset: 10 }}
+                          />
+                          <Tooltip />
+                          <Legend />
+                          <Line
+                            type="monotone"
+                            dataKey="y"
+                            stroke="#8884d8"
+                            name="Secuencia"
+                            dot={{ r: 4 }}
+                          />
+                        </LineChart>
+                      </ResponsiveContainer>
+                    </div>
+                    <div className="overflow-x-auto mt-4">
+                      <table className="w-full text-left border-collapse">
+                        <thead>
+                          <tr className="bg-gray-100 dark:bg-gray-700">
+                            <th className="p-2 border">Paso</th>
+                            <th className="p-2 border">Valor</th>
+                            <th className="p-2 border">Operación</th>
+                            <th className="p-2 border">Par/Impar</th>
                           </tr>
-                        ))}
-                      </tbody>
-                    </table>
-                  </div>
+                        </thead>
+                        <tbody>
+                          {sequence.map((step, i) => (
+                            <tr key={i} className={`text-gray-700 dark:text-gray-300 ${step.isEven ? 'bg-blue-50 dark:bg-blue-900/30' : 'bg-red-50 dark:bg-red-900/30'
+                              }`}>
+                              <td className="p-2 border">{step.step}</td>
+                              <td className="p-2 border">{step.value}</td>
+                              <td className="p-2 border">{step.operation}</td>
+                              <td className="p-2 border">{step.isEven ? 'Par' : 'Impar'}</td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                  </>
                 )}
               </div>
             </div>
@@ -235,7 +256,7 @@ const GuiaCollatz = () => {
                     </tr>
                   </thead>
                   <tbody>
-                    {[1,2,3].map(i => (
+                    {[1, 2, 3].map(i => (
                       <tr key={i} className="text-gray-700 dark:text-gray-300">
                         <td className="p-2 border"></td>
                         <td className="p-2 border"></td>
