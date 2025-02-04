@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Card, CardHeader, CardTitle, CardContent } from '../../../../components/ui/card';
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import { useNavigate } from 'react-router-dom';
 import useDarkMode from '../../../../hooks/useDarkMode';
 import DarkModeToggle from '../../../../components/DarkModeToggle';
@@ -11,7 +10,7 @@ const GuiaCollatz = () => {
   
   const [number, setNumber] = useState('');
   const [sequence, setSequence] = useState([]);
-  const [error, setError] = useState('');  
+  const [setError] = useState('');  
 
   const calculateSteps = (n) => {
     const num = parseInt(n);
