@@ -3,6 +3,7 @@ import { Menu, X } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import DarkModeToggle from '../components/DarkModeToggle';
 import useDarkMode from '../hooks/useDarkMode';
+import { Star } from 'lucide-react';
 
 const CV = () => {
   const navigate = useNavigate();  
@@ -28,7 +29,12 @@ const CV = () => {
     { title: 'Experiencia', id: 'experience', action: 'scroll' },
     { title: 'Educación', id: 'education', action: 'scroll' },
     {
-      title: 'Clases impartidas',
+      title: (
+        <div className="flex items-center gap-2">
+          <Star className="w-4 h-4 text-yellow-400" />
+          <span className="text-blue-500 font-semibold">Asignaturas 2025</span>
+        </div>
+      ),
       id: 'classroom',
       hasSubmenu: true,
       submenu: [        
