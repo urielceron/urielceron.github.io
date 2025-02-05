@@ -22,6 +22,10 @@ import GuiaObservaciones from './pages/matematicas/actividades/progresion2/GuiaO
 import OrganizacionHallazgosPlan2 from './pages/matematicas/actividades/progresion2/OrganizacionHallazgosPlan2';
 import DemostracionCollatz from './pages/matematicas/actividades/progresion3/DemostracionCollatz';
 import GuiaCollatz from './pages/matematicas/actividades/progresion3/GuiaCollatz';
+import WikiContentQuality from './pages/culturadigital2/actividades/WikiContentQuality';
+import DesignUsability from './pages/culturadigital2/actividades/DesignUsability';
+import MultimediaIntegration from './pages/culturadigital2/actividades/MultimediaIntegration';
+import TeamCollaboration from './pages/culturadigital2/actividades/TeamCollaboration';
 
 function App() {
   return (
@@ -49,6 +53,10 @@ function App() {
         <Route path="/actividades/organizacion-hallazgos-plan-2" element={<OrganizacionHallazgosPlan2 />} />
         <Route path="/actividades/demostracion-collatz" element={<DemostracionCollatz />} />
         <Route path="/actividades/analisis-secuencias" element={<GuiaCollatz />} />
+        <Route path="/actividades/wiki-content-quality" element={<WikiContentQuality />} />
+        <Route path="/actividades/design-usability" element={<DesignUsability />} />
+        <Route path="/actividades/integration-multimedia" element={<MultimediaIntegration />} />
+        <Route path="/actividades/team-collaboration" element={<TeamCollaboration />} />
       </Routes>
     </Router>
   );

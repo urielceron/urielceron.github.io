@@ -13,11 +13,15 @@ const planClase = {
       {
         text: "Más ejemplos de Sitios Web con Google Sites",
         route: 'https://www.tomasolid.com/ejemplos-google-sites#h.di8b3tkfjdw1'
-      },      
+      },
+      {
+        text: "Calidad y organización del contenido wiki",
+        route: 'wiki-content-quality'
+      },          
       {
         text: "Demostración de Google Sites",
         route: ''
-      },           
+      },
     ],
     actividades_alumno: [
       "Organizarse en equipos de 8 integrantes",
@@ -45,6 +49,10 @@ const planClase = {
         {
           text: "Diseño visual consistente",
           route: 'https://sites.google.com/view/diseoen2dparaweb/corte-i/1-t%C3%A9cnicas-de-dise%C3%B1o-visual'
+        },
+        {
+          text: "Diseño y usabilidad de la plataforma",
+          route: 'design-usability'
         },
         {
           text: "Orientar en la implementación del diseño y navegación",
@@ -79,6 +87,10 @@ const planClase = {
           route: 'https://ladivinaproporcion.es/manejo-efectivo-de-imagenes-y-videos-para-un-rendimiento-web-optimo/'
         },
         {
+          text: "Integración efectiva de recursos multimedia",
+          route: 'integration-multimedia'
+        },        
+        {
           text: "Demostrar integración de recursos multimedia en Google Sites",
           route: ''
         },
@@ -105,6 +117,10 @@ const planClase = {
         {
           text: "Guía: Trabajo efectivo en equipo",
           route: 'https://youtu.be/INRzFKTzmZs'
+        },
+        {
+          text: "Trabajo colaborativo y gestión del equipo",
+          route: 'team-collaboration'
         },
         {
           text: "Guiar en la revisión y refinamiento colaborativo",
