@@ -28,7 +28,7 @@ const GraficasManuales = () => {
     <div className={`min-h-screen ${darkMode ? 'dark bg-gray-900' : 'bg-gray-50'}`}>
       <nav className={`${darkMode ? 'bg-gray-800' : 'bg-white'} shadow-lg`}>
         <div className="max-w-7xl mx-auto px-4">
-          <div className="flex justify-between items-center h-16">
+          <div className="flex justify-between8 items-center h-16">
             <button
               onClick={() => navigate('/matematicas')}
               className={`${darkMode

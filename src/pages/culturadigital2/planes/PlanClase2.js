@@ -17,6 +17,10 @@ const planClase = {
       {
         text: "RiverSide para grabar y recortar audio de forma remota",
         route: 'https://riverside.fm/'
+      },
+      {
+        text: "Calidad y relevancia del contenido del podcast",
+        route: 'podcast-setup'
       },      
       { 
         text: "Presentar conceptos básicos de podcast y configuración", 
@@ -50,6 +54,10 @@ const planClase = {
           text: "Grabar y edición de video con Spotify y Riverside.fm",
           route: 'https://support.spotify.com/mx/creators/article/creating-with-riverside-fm/'
         },
+        {
+          text: "Producción y edición técnica de audio",
+          route: 'podcast-production'
+        },        
         { 
           text: "Guiar en el uso de herramientas de grabación de Anchor",
           route: ''
@@ -81,6 +89,10 @@ const planClase = {
         {
           text: "Publicar episodios de audio guardados",
           route: 'https://support.spotify.com/mx/creators/article/publishing-a-saved-episode/'
+        },
+        {
+          text: "Uso efectivo de herramientas digitales",
+          route: 'podcast-music-transitions'
         },        
         { 
           text: "Demostrar uso de biblioteca de música y transiciones de Anchor",
@@ -111,6 +123,10 @@ const planClase = {
           text: "Guía: Publicación y distribución en Anchor",
           route: 'https://drive.google.com/file/anchor-publishing'
         },
+        {
+          text: "Trabajo colaborativo y gestión de roles",
+          route: 'podcast-collaboration'
+        },        
         { 
           text: "Orientar en la revisión final y proceso de publicación",
           route: ''

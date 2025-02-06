@@ -26,7 +26,10 @@ import WikiContentQuality from './pages/culturadigital2/actividades/WikiContentQ
 import DesignUsability from './pages/culturadigital2/actividades/DesignUsability';
 import MultimediaIntegration from './pages/culturadigital2/actividades/MultimediaIntegration';
 import TeamCollaboration from './pages/culturadigital2/actividades/TeamCollaboration';
-
+import PodcastSetup from './pages/culturadigital2/actividades/PodcastSetup';
+import PodcastProduction from './pages/culturadigital2/actividades/PodcastProduction';
+import PodcastMusicTransitions from './pages/culturadigital2/actividades/PodcastMusicTransitions';
+import PodcastCollaboration from './pages/culturadigital2/actividades/PodcastCollaboration';
 function App() {
   return (
     <Router>
@@ -57,6 +60,10 @@ function App() {
         <Route path="/actividades/design-usability" element={<DesignUsability />} />
         <Route path="/actividades/integration-multimedia" element={<MultimediaIntegration />} />
         <Route path="/actividades/team-collaboration" element={<TeamCollaboration />} />
+        <Route path="/actividades/podcast-setup" element={<PodcastSetup />} />
+        <Route path="/actividades/podcast-production" element={<PodcastProduction />} />
+        <Route path="/actividades/podcast-music-transitions" element={<PodcastMusicTransitions />} />
+        <Route path="/actividades/podcast-collaboration" element={<PodcastCollaboration />} />
       </Routes>
     </Router>
   );
