@@ -26,8 +26,15 @@ const ProporcionesEscalas = () => {
       url: 'http://prepa8.unam.mx/academia/colegios/matematicas/paginacolmate/applets/matematicas_IV/Applets_Geogebra/proporcion_i_archivos/image021.jpg',
       titulo: 'Proporciones en círculos',
       descripcion: 'Ejemplo de prporciones iguales en un círculo'
+    },
+    {
+      tipo: 'imagen',
+      url: 'https://i.pinimg.com/originals/a4/1f/1c/a41f1cf0e5c2cca49993bc2ab723ab16.jpg',
+      titulo: 'Dibujo técnico de hoja',
+      descripcion: 'Ejemplo de aplicación de escalas en dibujo botánico'
     }
-  ];  
+  ];
+
   return (
     <div className={`min-h-screen ${darkMode ? 'dark bg-gray-900' : 'bg-gray-50'}`}>
       <nav className={`${darkMode ? 'bg-gray-800' : 'bg-white'} shadow-lg`}>
@@ -198,6 +205,75 @@ const ProporcionesEscalas = () => {
                   </ul>
                 </li>
               </ul>
+            </div>
+            
+            <div>
+              <h3 className="text-xl font-bold mb-3 text-gray-900 dark:text-white">
+                Aplicación en Dibujo de Hojas Naturales
+              </h3>
+              <ol className="list-decimal pl-6 space-y-3 text-gray-700 dark:text-gray-300">
+                <li>Preparación de la escala:
+                  <ul className="list-disc pl-6 mt-2">
+                    <li>Medir la hoja real (Ej: Largo total = 24 cm)</li>
+                    <li>Comparar con el tamaño del papel (Ej: Hoja carta = 21.6 cm)</li>
+                    <li>Establecer escala de reducción (Ej: 1:1.5 → 24 cm reales = 16 cm en papel)</li>
+                  </ul>
+                </li>
+
+                <li>Tabla de conversión de medidas:
+                  <table className="mt-2 w-full text-left border-collapse">
+                    <thead>
+                      <tr className="bg-gray-100 dark:bg-gray-700">
+                        <th className="p-2 border">Medida Real</th>
+                        <th className="p-2 border">Escala 1:1.5</th>
+                        <th className="p-2 border">Posición en papel</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td className="p-2 border">24 cm (largo)</td>
+                        <td className="p-2 border">24 ÷ 1.5 = 16 cm</td>
+                        <td className="p-2 border">De 0 a 16 cm en eje X</td>
+                      </tr>
+                      <tr>
+                        <td className="p-2 border">12 cm (ancho)</td>
+                        <td className="p-2 border">12 ÷ 1.5 = 8 cm</td>
+                        <td className="p-2 border">De 0 a 8 cm en eje Y</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </li>
+
+                <li>Trazado de contorno:
+                  <ul className="list-disc pl-6 mt-2">
+                    <li>Dibujar eje central usando simetría medida previamente</li>
+                    <li>Marcar puntos clave aplicando la escala (ej: peciolo = 3 cm real → 2 cm en papel)</li>
+                    <li>Unir puntos con líneas curvas suaves</li>
+                  </ul>
+                </li>
+
+                <li>Patrones de nervaduras:
+                  <div className="mt-2 pl-4">
+                    <p><strong>Ejemplo de proporción angular:</strong></p>
+                    <ul className="list-disc pl-6">
+                      <li>Ángulo real entre nervaduras: 45°</li>
+                      <li>Distancia real: 6 cm → 4 cm en papel</li>
+                      <li>Mantener misma relación angular en el dibujo</li>
+                    </ul>
+                  </div>
+                </li>
+              </ol>
+
+              <div className="mt-6 p-4 bg-gray-50 dark:bg-gray-700 rounded-lg">
+                <h4 className="font-semibold text-lg mb-2 text-gray-900 dark:text-white">
+                  Ejemplo de dibujo escalado
+                </h4>
+                <img
+                  src="https://elpatiocubierto.es/templates/yootheme/cache/escalas-tecnologia-eso-c7883086.jpeg"
+                  alt="Hoja escalada en papel milimetrado"
+                  className="w-full h-64 object-contain border rounded-lg"
+                />                
+              </div>
             </div>
 
             <div>
