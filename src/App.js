@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import CV from './pages/CV';
 import CulturaDigital from './pages/CulturaDigital';
 import Matematicas from './pages/MatematicasSelectos';
+import DesarrolloWeb from './pages/DesarrolloWeb';
+import GameDesigner from './pages/GameDesigner';
 import MedicionPulso from './pages/matematicas/actividades/progresion1/MedicionPulso';
 import PatronesNaturales from './pages/matematicas/actividades/progresion1/PatronesNaturales';
 import FormacionEquipos from './pages/matematicas/actividades/progresion1/FormacionEquipos';
@@ -30,6 +32,8 @@ import PodcastSetup from './pages/culturadigital2/actividades/PodcastSetup';
 import PodcastProduction from './pages/culturadigital2/actividades/PodcastProduction';
 import PodcastMusicTransitions from './pages/culturadigital2/actividades/PodcastMusicTransitions';
 import PodcastCollaboration from './pages/culturadigital2/actividades/PodcastCollaboration';
+import DemostracionRive from './pages/gamedesigner/actividades/progresion1/DemostracionRive';
+import DisenoGuiado from './pages/gamedesigner/actividades/progresion1/DisenoGuiado';
 function App() {
   return (
     <Router>
@@ -37,6 +41,8 @@ function App() {
         <Route path="/" element={<CV />} />        
         <Route path="/cultura-digital-2" element={<CulturaDigital numero="2"/>} />
         <Route path="/matematicas" element={<Matematicas />} />
+        <Route path="/desarrolloweb" element={<DesarrolloWeb />} />
+        <Route path="/gamedesigner" element={<GameDesigner />} />
         <Route path="/actividades/medicion-pulso" element={<MedicionPulso />} />
         <Route path="/actividades/patrones-naturales" element={<PatronesNaturales />} />
         <Route path="/actividades/formacion-equipos" element={<FormacionEquipos />} />
@@ -64,6 +70,8 @@ function App() {
         <Route path="/actividades/podcast-production" element={<PodcastProduction />} />
         <Route path="/actividades/podcast-music-transitions" element={<PodcastMusicTransitions />} />
         <Route path="/actividades/podcast-collaboration" element={<PodcastCollaboration />} />
+        <Route path="/actividades/demo-completa-rive" element={<DemostracionRive />} />
+        <Route path="/actividades/diseno-guiado" element={<DisenoGuiado />} />
       </Routes>
     </Router>
   );

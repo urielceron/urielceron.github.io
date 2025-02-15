@@ -39,7 +39,9 @@ const CV = () => {
       hasSubmenu: true,
       submenu: [        
         { title: 'Cultura Digital II', path: '/cultura-digital-2' },
-        { title: 'Temas Selectos de Matemáticas I', path: '/matematicas' },                
+        { title: 'Temas Selectos de Matemáticas I', path: '/matematicas' },
+        { title: 'Web Develoment', path: '/desarrolloweb' },                
+        { title: 'Game Designer', path: '/gamedesigner' },
       ]
     }
   ];
@@ -212,7 +214,7 @@ const CV = () => {
               <div className="flex flex-col md:flex-row md:items-start gap-8">
                 {/* Foto */}
                 <div className="flex-shrink-0">
-                  <div className="w-40 h-48 rounded-full overflow-hidden border-4 border-blue-500 shadow-lg mx-auto md:mx-0">
+                  <div className="w-32 h-40 rounded-full overflow-hidden border-4 border-blue-500 shadow-lg mx-auto md:mx-0">
                     <img
                       src="/profile-photo.png"
                       alt="Uriel Antonio Cerón Interian"
