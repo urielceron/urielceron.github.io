@@ -477,7 +477,7 @@ const TemasSelectos = ({ asignatura = 'culturadigital2', tabs = 2 }) => {
                   {/* Botón para descargar pre-examen */}
                   {selectedTab === '1' && (
                     <button
-                      onClick={() => window.open('../../public/pre-examen-prog1.pdf', '_blank')}
+                      onClick={() => window.open('/pre-examen-prog1.pdf', '_blank')}
                       className="mt-2 flex items-center gap-2 px-3 py-1.5 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors"
                     >
                       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
