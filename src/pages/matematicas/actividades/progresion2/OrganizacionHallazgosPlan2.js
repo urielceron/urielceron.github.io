@@ -12,8 +12,15 @@ const OrganizacionHallazgos = () => {
       <nav className={`${darkMode ? 'bg-gray-800' : 'bg-white'} shadow-lg`}>
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex justify-between items-center h-16">
-            <button
-              onClick={() => navigate('/matematicas')}
+           <button
+              onClick={() => {
+  const savedState = sessionStorage.getItem('lastAsignaturaPath');
+  if (savedState) {
+    window.location.href = '/#' + savedState;
+  } else {
+    navigate('/matematicas?asignatura=matematicas&tab=1&page=0&fase=0');
+  }
+}}
               className={`${
                 darkMode ? 'text-blue-400 hover:text-blue-300' : 'text-blue-600 hover:text-blue-800'
               } font-medium transition-colors duration-300`}
@@ -173,7 +180,7 @@ const OrganizacionHallazgos = () => {
             </div>
 
             <div>
-              <h3 className="text-xl font-bold mb-4 text-gray-900 dark:text-white">Recursos Digitales</h3>              
+              <h3 className="text-xl font-bold mb-4 text-gray-900 dark:text-white">Recursos Digitales</h3>
               <div className="mt-6 p-4 bg-gray-50 dark:bg-gray-700 rounded-lg">
                 <h4 className="font-semibold text-lg mb-2 text-gray-900 dark:text-white">
                   Tutorial: Construcción de Péndulo Doble

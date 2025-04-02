@@ -155,8 +155,15 @@ const PodcastCollaboration = () => {
                 <div className="max-w-7xl mx-auto px-4">
                     <div className="flex justify-between items-center h-16">
                         <button
-                            onClick={() => navigate('/cultura-digital-2')}
-                            className={`${darkMode ? 'text-blue-400 hover:text-blue-300' : 'text-blue-600 hover:text-blue-800'} 
+                            onClick={() => {
+  const savedState = sessionStorage.getItem('lastAsignaturaPath');
+  if (savedState) {
+    window.location.href = '/#' + savedState;
+  } else {
+    navigate('/cultura-digital-2?asignatura=culturadigital2&tab=1&page=0&fase=0');
+  }
+}}
+                            className={`${darkMode ? 'text-blue-400 hover:text-blue-300' : 'text-blue-600 hover:text-blue-800'}
                                 font-medium transition-colors duration-300`}
                         >
                             ← Regresar a Cultura Digital 2
@@ -359,4 +366,4 @@ const PodcastCollaboration = () => {
     );
 };
 
-export default PodcastCollaboration;                              
+export default PodcastCollaboration;

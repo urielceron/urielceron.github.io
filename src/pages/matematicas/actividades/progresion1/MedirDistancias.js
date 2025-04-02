@@ -28,8 +28,15 @@ const MedirDistancias = () => {
       <nav className={`${darkMode ? 'bg-gray-800' : 'bg-white'} shadow-lg`}>
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex justify-between items-center h-16">
-            <button
-              onClick={() => navigate('/matematicas')}
+           <button
+              onClick={() => {
+  const savedState = sessionStorage.getItem('lastAsignaturaPath');
+  if (savedState) {
+    window.location.href = '/#' + savedState;
+  } else {
+    navigate('/matematicas?asignatura=matematicas&tab=1&page=0&fase=0');
+  }
+}}
               className={`${
                 darkMode ? 'text-blue-400 hover:text-blue-300' : 'text-blue-600 hover:text-blue-800'
               } font-medium transition-colors duration-300`}

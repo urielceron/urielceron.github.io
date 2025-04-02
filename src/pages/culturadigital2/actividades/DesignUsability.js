@@ -104,7 +104,14 @@ const DesignUsability = () => {
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex justify-between items-center h-16">
             <button
-              onClick={() => navigate('/cultura-digital-2')}
+              onClick={() => {
+  const savedState = sessionStorage.getItem('lastAsignaturaPath');
+  if (savedState) {
+    window.location.href = '/#' + savedState;
+  } else {
+    navigate('/cultura-digital-2?asignatura=culturadigital2&tab=1&page=0&fase=0');
+  }
+}}
               className={`${darkMode ? 'text-blue-400 hover:text-blue-300' : 'text-blue-600 hover:text-blue-800'
                 } font-medium transition-colors duration-300`}
             >
@@ -138,7 +145,7 @@ const DesignUsability = () => {
 
             {/* Lista de Verificación de Diseño */}
             <div className="mb-8">
-              <h3 className={`text-xl font-semibold mb-4 ${darkMode ? 'text-white' : ''}`}> 
+              <h3 className={`text-xl font-semibold mb-4 ${darkMode ? 'text-white' : ''}`}>
                 Lista de Verificación</h3>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 {guidelines.map((category, categoryIndex) => (

@@ -20,7 +20,7 @@ const InterpretacionPatrones = () => {
       url: 'https://economipedia.com/wp-content/uploads/Ejemplo-l%C3%ADneas-de-tendencia.jpg',
       titulo: 'Tendencia Alcitas o Bajista',
       descripcion: 'Análisis de patrones de Tendencia'
-    },    
+    },
     {
       tipo: 'imagen',
       url: 'https://guiadetrading.com/wp-content/uploads/linea_tendencia_alcista_bajista.png',
@@ -32,7 +32,7 @@ const InterpretacionPatrones = () => {
       url: 'https://s3.tradingview.com/x/XEhMf8eS_mid.png',
       titulo: 'Patrones en Gráficas',
       descripcion: 'Análisis de patrones de Tendencia'
-    },    
+    },
   ];
 
   return (
@@ -40,8 +40,15 @@ const InterpretacionPatrones = () => {
       <nav className={`${darkMode ? 'bg-gray-800' : 'bg-white'} shadow-lg`}>
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex justify-between items-center h-16">
-            <button
-              onClick={() => navigate('/matematicas')}
+           <button
+              onClick={() => {
+  const savedState = sessionStorage.getItem('lastAsignaturaPath');
+  if (savedState) {
+    window.location.href = '/#' + savedState;
+  } else {
+    navigate('/matematicas?asignatura=matematicas&tab=1&page=0&fase=0');
+  }
+}}
               className={`${
                 darkMode ? 'text-blue-400 hover:text-blue-300' : 'text-blue-600 hover:text-blue-800'
               } font-medium transition-colors duration-300`}
@@ -320,7 +327,7 @@ const InterpretacionPatrones = () => {
                       <li>Anotar cualquier observación inusual</li>
                     </ul>
                   </li>
-                  
+
                   <li>Análisis Visual:
                     <ul className="list-disc pl-6 mt-2">
                       <li>Crear gráficas de tendencias para visualizar patrones</li>
@@ -329,7 +336,7 @@ const InterpretacionPatrones = () => {
                       <li>Comparar con patrones conocidos o esperados</li>
                     </ul>
                   </li>
-                  
+
                   <li>Validación de Datos:
                     <ul className="list-disc pl-6 mt-2">
                       <li>Verificar la consistencia de las mediciones</li>
@@ -357,7 +364,7 @@ const InterpretacionPatrones = () => {
                     <li>Mejora la toma de decisiones en estudios científicos</li>
                   </ul>
                 </div>
-                
+
                 <div className="p-4 bg-gray-50 dark:bg-gray-700 rounded-lg">
                   <h4 className="font-semibold mb-2">Aplicaciones Prácticas:</h4>
                   <ul className="list-disc pl-6 space-y-2">

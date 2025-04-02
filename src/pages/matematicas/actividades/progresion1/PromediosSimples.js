@@ -14,7 +14,7 @@ const PromediosSimples = () => {
       url: 'https://yosoytuprofe.20minutos.es/wp-content/uploads/2020/02/Progresiones-geom%C3%A9tricas12-1024x1024.jpg',
       titulo: 'Cálculo de Promedios',
       descripcion: 'Fórmula y ejemplo de cálculo de promedio'
-    },    
+    },
   ];
 
   return (
@@ -22,8 +22,15 @@ const PromediosSimples = () => {
       <nav className={`${darkMode ? 'bg-gray-800' : 'bg-white'} shadow-lg`}>
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex justify-between items-center h-16">
-            <button
-              onClick={() => navigate('/matematicas')}
+           <button
+              onClick={() => {
+  const savedState = sessionStorage.getItem('lastAsignaturaPath');
+  if (savedState) {
+    window.location.href = '/#' + savedState;
+  } else {
+    navigate('/matematicas?asignatura=matematicas&tab=1&page=0&fase=0');
+  }
+}}
               className={`${
                 darkMode ? 'text-blue-400 hover:text-blue-300' : 'text-blue-600 hover:text-blue-800'
               } font-medium transition-colors duration-300`}

@@ -9,21 +9,21 @@ const DemostracionRive = () => {
   const navigate = useNavigate();
   const { darkMode, toggleDarkMode } = useDarkMode();
 
-  const recursos = [    
+  const recursos = [
     {
       tipo: 'imagen',
       url: 'https://framerusercontent.com/images/2JXYrtjatUlCqWfjLVYQvGkVuuU.jpg',
       titulo: '¿Qué es Rive? Una guía introductoria',
       descripcion: 'Descubre el programa para crear animaciones interactivas 100% funcionales y compatibles con código',
       link: 'https://theeyeofthebeholder.substack.com/p/que-es-rive-una-guia-introductoria',
-    },     
+    },
     {
       tipo: 'imagen',
       url: 'https://framerusercontent.com/images/Z1cJElZHNuySt8oJR0CGTJquI.jpg',
       titulo: 'Interfaz de Rive',
       descripcion: 'Principales elementos y herramientas de la interfaz',
       link: 'https://rive.app/docs/editor/interface-overview/overview',
-    },    
+    },
     {
       tipo: 'imagen',
       url: 'https://glarity.app/cover-photo/6vfrPDuKWyg/hqdefault.jpg',
@@ -51,7 +51,7 @@ const DemostracionRive = () => {
       titulo: 'No te convence trabajar con Rive, ve los siguientes ejemplos que pudieras aprender a crear.',
       descripcion: 'Puedes crear animaciones con Rive como lo hace Duolingo en su App',
       link: 'https://rive.app/use-cases',
-    },    
+    },
   ];
 
   return (
@@ -60,7 +60,14 @@ const DemostracionRive = () => {
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex justify-between items-center h-16">
             <button
-              onClick={() => navigate('/gamedesigner')}
+              onClick={() => {
+                const savedState = sessionStorage.getItem('lastAsignaturaPath');
+                if (savedState) {
+                  window.location.href = '/#' + savedState;
+                } else {
+                  navigate('/gamedesigner?asignatura=gamedesigner&tab=1&page=0&fase=0');
+                }
+              }}
               className={`${
                 darkMode ? 'text-blue-400 hover:text-blue-300' : 'text-blue-600 hover:text-blue-800'
               } font-medium transition-colors duration-300`}
@@ -228,7 +235,7 @@ const DemostracionRive = () => {
               </h3>
               <div className="aspect-w-16 aspect-h-9">
                 <div className="w-full h-96 bg-gray-200 dark:bg-gray-600 rounded-lg flex items-center justify-center">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/mMpik32gkt4?si=xxpzNbQKu_cDVe9N" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                  
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/mMpik32gkt4?si=xxpzNbQKu_cDVe9N" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 </div>
               </div>
             </section>
@@ -251,7 +258,7 @@ const DemostracionRive = () => {
                 <iframe width="560" height="315" src="https://www.youtube.com/embed/UNPgrK-qtsA?si=LMaOAyCQmeFuPS1-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 </div>
               </div>
-            </section>                        
+            </section>
           </CardContent>
         </Card>
       </main>

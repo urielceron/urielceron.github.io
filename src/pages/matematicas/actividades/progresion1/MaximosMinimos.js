@@ -16,11 +16,11 @@ const MaximosMinimos = () => {
       descripcion: 'Ejemplo visual de máximos y mínimos en una gráfica'
     },
     {
-      tipo: 'imagen',      
+      tipo: 'imagen',
       url: 'https://www.funciones.xyz/wp-content/uploads/2021/07/maximos-y-minimos-de-una-funcion.png',
       titulo: 'Máximos y Mínimos Relativos',
       descripcion: 'Ejemplo de identificación de puntos críticos en una gráfica'
-    } 
+    }
   ];
 
   return (
@@ -28,8 +28,15 @@ const MaximosMinimos = () => {
       <nav className={`${darkMode ? 'bg-gray-800' : 'bg-white'} shadow-lg`}>
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex justify-between items-center h-16">
-            <button
-              onClick={() => navigate('/matematicas')}
+           <button
+              onClick={() => {
+  const savedState = sessionStorage.getItem('lastAsignaturaPath');
+  if (savedState) {
+    window.location.href = '/#' + savedState;
+  } else {
+    navigate('/matematicas?asignatura=matematicas&tab=1&page=0&fase=0');
+  }
+}}
               className={`${
                 darkMode ? 'text-blue-400 hover:text-blue-300' : 'text-blue-600 hover:text-blue-800'
               } font-medium transition-colors duration-300`}

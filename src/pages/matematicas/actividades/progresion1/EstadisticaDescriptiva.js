@@ -32,7 +32,7 @@ const EstadisticaDescriptiva = () => {
       url: 'https://datatab.es/assets/tutorial/Desviaci%C3%B3n_est%C3%A1ndar.png',
       titulo: 'Desviación estándar y varianza',
       descripcion: 'Estas dos medidas relacionan cada característica de una variable con el valor medio y, por tanto, indican hasta qué punto las características individuales están dispersas en torno al valor medio.'
-    }    
+    }
   ];
 
   return (
@@ -40,8 +40,15 @@ const EstadisticaDescriptiva = () => {
       <nav className={`${darkMode ? 'bg-gray-800' : 'bg-white'} shadow-lg`}>
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex justify-between items-center h-16">
-            <button
-              onClick={() => navigate('/matematicas')}
+           <button
+              onClick={() => {
+  const savedState = sessionStorage.getItem('lastAsignaturaPath');
+  if (savedState) {
+    window.location.href = '/#' + savedState;
+  } else {
+    navigate('/matematicas?asignatura=matematicas&tab=1&page=0&fase=0');
+  }
+}}
               className={`${
                 darkMode ? 'text-blue-400 hover:text-blue-300' : 'text-blue-600 hover:text-blue-800'
               } font-medium transition-colors duration-300`}
@@ -171,8 +178,8 @@ const EstadisticaDescriptiva = () => {
                     </div>
                   </div>
                 ))}
-              </div>              
-              
+              </div>
+
               <div className="mt-6 p-4 bg-gray-50 dark:bg-gray-700 rounded-lg">
                 <h4 className="font-semibold text-lg mb-2">
                   Video: Medidas de Tendencia Central (Mediana, Moda, Media)
@@ -190,14 +197,14 @@ const EstadisticaDescriptiva = () => {
                   <iframe width="560" height="315" src="https://www.youtube.com/embed/BoUMgcA2MhA?si=20muiH-cer_xGUnc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 </div>
               </div>
-              
+
               <div className="mt-6 p-4 bg-gray-50 dark:bg-gray-700 rounded-lg">
                 <h4 className="font-semibold text-lg mb-2">
                   Video: Medidas de Posición (Cuartiles, Deciles, Percentiles)
                 </h4>
                 <div className="aspect-w-16 aspect-h-9">
                   <iframe width="560" height="315" src="https://www.youtube.com/embed/V6vGrBCxQj8?si=x3fcNq3kaUOpqTUu" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                </div>              
+                </div>
               </div>
             </div>
           </CardContent>

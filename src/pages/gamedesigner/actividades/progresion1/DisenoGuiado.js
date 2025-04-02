@@ -23,7 +23,7 @@ const DisenoGuiado = () => {
       titulo: 'Los 12 principios de la animación',
       descripcion: 'Descubre como crear animaciones de expertos en el tema',
       link: 'https://www.youtube.com/watch?v=3UiAeCwTWT4&list=PLmxcIrCbCbSinKopfbltVIFTSsu2NaExU&t',
-    },  
+    },
     {
       tipo: 'imagen',
       url: 'https://belenestradaflores.es/wp-content/uploads/2022/12/3A.1-1536x864.png',
@@ -59,7 +59,7 @@ const DisenoGuiado = () => {
       descripcion: '',
       link: 'https://belenestradaflores.es/formas-basicas-diseno-de-personajes/'
     },
-    
+
   ];
 
   return (
@@ -68,7 +68,14 @@ const DisenoGuiado = () => {
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex justify-between items-center h-16">
             <button
-              onClick={() => navigate('/gamedesigner')}
+              onClick={() => {
+                const savedState = sessionStorage.getItem('lastAsignaturaPath');
+                if (savedState) {
+                  window.location.href = '/#' + savedState;
+                } else {
+                  navigate('/gamedesigner?asignatura=gamedesigner&tab=1&page=0&fase=0');
+                }
+              }}
               className={`${
                 darkMode ? 'text-blue-400 hover:text-blue-300' : 'text-blue-600 hover:text-blue-800'
               } font-medium transition-colors duration-300`}
@@ -244,7 +251,7 @@ const DisenoGuiado = () => {
                 <iframe width="560" height="315" src="https://www.youtube.com/embed/gTbBd7bHugY?si=IyhpuQLCiQVnWDj8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 </div>
               </div>
-            </section>            
+            </section>
             <section>
               <h3 className="text-xl font-bold mb-4 text-gray-900 dark:text-white">
                 Tutorial: Diseñando en Rive
@@ -254,7 +261,7 @@ const DisenoGuiado = () => {
                 <iframe width="560" height="315" src="https://www.youtube.com/embed/3P7RV4kG2Wc?si=EaeBuSD8Fyz4HILa" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 </div>
               </div>
-            </section>            
+            </section>
             <section>
               <h3 className="text-xl font-bold mb-4 text-gray-900 dark:text-white">
                 Tutorial: Animando en River
@@ -264,7 +271,7 @@ const DisenoGuiado = () => {
                 <iframe width="560" height="315" src="https://www.youtube.com/embed/jlqaAW9YojA?si=k2hqOoUyQAXcyIK6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 </div>
               </div>
-            </section>            
+            </section>
           </CardContent>
         </Card>
       </main>

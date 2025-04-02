@@ -6,8 +6,8 @@ const TemasSelectos = ({ asignatura = 'culturadigital2', tabs = 2 }) => {
   const location = useLocation();
 
   // Obtener parámetros de la URL o usar valores predeterminados
-  const [selectedTab, setSelectedTab] = useState(searchParams.get('tab') || '1');
-  const [openSection, setOpenSection] = useState(searchParams.get('section') || '');
+  const [selectedTab, setSelectedTab] = useState(searchParams.get('tab') || '0');
+  const [openSection, setOpenSection] = useState(searchParams.get('section') || 'progresion');
   const [currentPlanClase, setCurrentPlanClase] = useState(null);
   const [progresiones, setProgresiones] = useState([]);
   const [planesClase, setPlanesClase] = useState([]);
@@ -285,21 +285,24 @@ const TemasSelectos = ({ asignatura = 'culturadigital2', tabs = 2 }) => {
 
     // Abrir la sección correspondiente
     if (newFase === '0') {
-      setOpenSection('apertura');
+      setOpenSection('progresion');
     } else if (newFase === '1') {
-      setOpenSection('desarrollo');
+      setOpenSection('apertura');
     } else if (newFase === '2') {
-      setOpenSection('cierre');
+      setOpenSection('desarrollo');
     } else if (newFase === '3') {
+      setOpenSection('cierre');
+    } else if (newFase === '4') {
       setOpenSection('evaluacion');
     }
 
     // Pequeño retraso para asegurar que el DOM se actualice antes de desplazarse
     setTimeout(() => {
       // Encontrar el elemento correspondiente y desplazarse hacia él
-      const sectionId = newFase === '0' ? 'apertura' :
-                        newFase === '1' ? 'desarrollo' :
-                        newFase === '2' ? 'cierre' :
+      const sectionId = newFase === '0' ? 'progresion' :
+                        newFase === '1' ? 'apertura' :
+                        newFase === '2' ? 'desarrollo' :
+                        newFase === '3' ? 'cierre' :
                         'evaluacion';
 
       const element = document.getElementById(sectionId);
@@ -451,13 +454,13 @@ const TemasSelectos = ({ asignatura = 'culturadigital2', tabs = 2 }) => {
       {/* Fase actual (visible en todo momento) */}
       <div className="mb-4 p-3 bg-blue-50 dark:bg-blue-900 rounded-lg">
         <div className="flex flex-wrap gap-2 justify-center">
-          <button
+        <button
             onClick={() => handleFaseChange('0')}
             className={`px-3 py-1 rounded transition-colors ${
               currentFase === '0' ? 'bg-blue-600 text-white' : 'bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200'
             }`}
           >
-            Fase de Apertura
+            Planeación
           </button>
           <button
             onClick={() => handleFaseChange('1')}
@@ -465,7 +468,7 @@ const TemasSelectos = ({ asignatura = 'culturadigital2', tabs = 2 }) => {
               currentFase === '1' ? 'bg-blue-600 text-white' : 'bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200'
             }`}
           >
-            Fase de Desarrollo
+            Fase de Apertura
           </button>
           <button
             onClick={() => handleFaseChange('2')}
@@ -473,7 +476,7 @@ const TemasSelectos = ({ asignatura = 'culturadigital2', tabs = 2 }) => {
               currentFase === '2' ? 'bg-blue-600 text-white' : 'bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200'
             }`}
           >
-            Fase de Cierre
+            Fase de Desarrollo
           </button>
           <button
             onClick={() => handleFaseChange('3')}
@@ -481,13 +484,21 @@ const TemasSelectos = ({ asignatura = 'culturadigital2', tabs = 2 }) => {
               currentFase === '3' ? 'bg-blue-600 text-white' : 'bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200'
             }`}
           >
-            Fase de Evaluación
+            Fase de Cierre
+          </button>
+          <button
+            onClick={() => handleFaseChange('4')}
+            className={`px-3 py-1 rounded transition-colors ${
+              currentFase === '4' ? 'bg-blue-600 text-white' : 'bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200'
+            }`}
+          >
+            Evaluación
           </button>
         </div>
       </div>
 
       {/* Contenido de la Progresión */}
-      <div className="rounded-lg p-6 mb-6 bg-white dark:bg-gray-800 shadow-md">
+      <div id="progresion" className="rounded-lg p-6 mb-6 bg-white dark:bg-gray-800 shadow-md">
         <h2 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">
           Progresión {selectedTab}: {progresiones[parseInt(selectedTab) - 1].title}
         </h2>

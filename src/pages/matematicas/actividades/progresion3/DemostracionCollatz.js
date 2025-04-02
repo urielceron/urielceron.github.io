@@ -8,10 +8,10 @@ import DarkModeToggle from '../../../../components/DarkModeToggle';
 const DemostracionCollatz = () => {
   const navigate = useNavigate();
   const { darkMode, toggleDarkMode } = useDarkMode();
-  
+
   const [number, setNumber] = useState('');
   const [sequence, setSequence] = useState([]);
-  const [error, setError] = useState('');  
+  const [error, setError] = useState('');
 
   const calculateCollatz = (n) => {
     const num = parseInt(n);
@@ -20,11 +20,11 @@ const DemostracionCollatz = () => {
       return;
     }
     setError('');
-    
+
     let current = num;
     let seq = [{x: 0, y: current}];
     let i = 1;
-    
+
     while (current !== 1) {
       if (current % 2 === 0) {
         current = current / 2;
@@ -42,8 +42,15 @@ const DemostracionCollatz = () => {
       <nav className={`${darkMode ? 'bg-gray-800' : 'bg-white'} shadow-lg`}>
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex justify-between items-center h-16">
-            <button
-              onClick={() => navigate('/matematicas')}
+           <button
+              onClick={() => {
+  const savedState = sessionStorage.getItem('lastAsignaturaPath');
+  if (savedState) {
+    window.location.href = '/#' + savedState;
+  } else {
+    navigate('/matematicas?asignatura=matematicas&tab=1&page=0&fase=0');
+  }
+}}
               className={`${
                 darkMode ? 'text-blue-400 hover:text-blue-300' : 'text-blue-600 hover:text-blue-800'
               } font-medium transition-colors duration-300`}
@@ -58,7 +65,7 @@ const DemostracionCollatz = () => {
             </div>
           </div>
         </div>
-      </nav>    
+      </nav>
 
       <main className="max-w-4xl mx-auto px-4 py-8">
         <Card className={darkMode ? 'bg-gray-800' : 'bg-white'}>
@@ -74,8 +81,8 @@ const DemostracionCollatz = () => {
               </h3>
               <div className="space-y-4 text-gray-700 dark:text-gray-300">
                 <p>
-                  La Conjetura de Collatz, también conocida como la conjetura 3n + 1, establece que 
-                  siguiendo una secuencia específica de operaciones, cualquier número entero positivo 
+                  La Conjetura de Collatz, también conocida como la conjetura 3n + 1, establece que
+                  siguiendo una secuencia específica de operaciones, cualquier número entero positivo
                   eventualmente llegará a 1.
                 </p>
                 <div className="bg-blue-50 dark:bg-blue-900 p-4 rounded-lg">

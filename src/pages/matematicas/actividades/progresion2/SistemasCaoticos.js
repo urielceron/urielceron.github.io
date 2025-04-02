@@ -45,8 +45,15 @@ const SistemasCaoticos = () => {
       <nav className={`${darkMode ? 'bg-gray-800' : 'bg-white'} shadow-lg`}>
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex justify-between items-center h-16">
-            <button
-              onClick={() => navigate('/matematicas')}
+           <button
+              onClick={() => {
+  const savedState = sessionStorage.getItem('lastAsignaturaPath');
+  if (savedState) {
+    window.location.href = '/#' + savedState;
+  } else {
+    navigate('/matematicas?asignatura=matematicas&tab=1&page=0&fase=0');
+  }
+}}
               className={`${
                 darkMode ? 'text-blue-400 hover:text-blue-300' : 'text-blue-600 hover:text-blue-800'
               } font-medium transition-colors duration-300`}
@@ -177,7 +184,7 @@ const SistemasCaoticos = () => {
                 {recursos.map((recurso, index) => (
                   <div key={index} className="bg-gray-50 dark:bg-gray-700 rounded-lg overflow-hidden shadow-md">
                     <Link
-                      to={recurso.link}                      
+                      to={recurso.link}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-blue-600 hover:text-blue-800 cursor-pointer"
@@ -190,7 +197,7 @@ const SistemasCaoticos = () => {
                         />
                         <div className="p-4">
                         <h4 className="font-semibold text-lg mb-2 text-gray-900 dark:text-white">
-                            
+
                             {recurso.titulo}
                         </h4>
                         <p className="text-gray-600 dark:text-gray-300 text-sm">
@@ -200,7 +207,7 @@ const SistemasCaoticos = () => {
                     </Link>
                   </div>
                 ))}
-              </div>              
+              </div>
               <div className="mt-6 p-4 bg-gray-50 dark:bg-gray-700 rounded-lg">
                 <h4 className="font-semibold text-lg mb-2 text-gray-900 dark:text-white">
                   Introducción a Sistemas Caóticos
@@ -220,7 +227,7 @@ const SistemasCaoticos = () => {
                   <iframe width="560" height="315" src="https://www.youtube.com/embed/u24UMy-4hl4?si=NRv1EzzMIkaxbeFo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                   </div>
                 </div>
-              </div>              
+              </div>
             </div>
           </CardContent>
         </Card>
