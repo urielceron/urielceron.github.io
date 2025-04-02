@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useSearchParams } from 'react-router-dom';
+import { Link, useSearchParams, useLocation } from 'react-router-dom';
 
 const TemasSelectos = ({ asignatura = 'culturadigital2', tabs = 2 }) => {
   const [searchParams, setSearchParams] = useSearchParams();
+  const location = useLocation();
+
+  // Obtener parámetros de la URL o usar valores predeterminados
   const [selectedTab, setSelectedTab] = useState(searchParams.get('tab') || '1');
   const [openSection, setOpenSection] = useState(searchParams.get('section') || '');
   const [currentPlanClase, setCurrentPlanClase] = useState(null);
@@ -10,6 +13,45 @@ const TemasSelectos = ({ asignatura = 'culturadigital2', tabs = 2 }) => {
   const [planesClase, setPlanesClase] = useState([]);
   const TABS_PER_PAGE = parseInt(tabs);
   const [currentPage, setCurrentPage] = useState(parseInt(searchParams.get('page')) || 0);
+  const [currentFase, setCurrentFase] = useState(searchParams.get('fase') || '0');
+
+  // Guarda el último estado válido en sessionStorage como respaldo
+  const saveStateToStorage = () => {
+    const stateToSave = {
+      tab: selectedTab, // # de progresion
+      page: currentPage, // pagina de la progresion
+      section: openSection,
+      fase: currentFase,
+      asignatura,
+      path: location.pathname + location.search
+    };
+
+    sessionStorage.setItem(`${asignatura}State`, JSON.stringify(stateToSave));
+    // También guardamos la última ruta completa para restaurarla en caso de error 404
+    sessionStorage.setItem('lastValidPath', location.pathname + location.search);
+  };
+
+  // Modifica la función restoreStateFromStorage para permitir navegar al inicio
+  const restoreStateFromStorage = () => {
+    // Verificar si es una navegación intencional a la página principal
+    if (location.pathname === '/' && !location.hash && !location.search) {
+      // Es una navegación explícita al inicio, no hacer nada
+      return;
+    }
+
+    const savedState = sessionStorage.getItem(`${asignatura}State`);
+    if (savedState) {
+      try {
+        const state = JSON.parse(savedState);
+        if (state.tab) setSelectedTab(state.tab);
+        if (state.page) setCurrentPage(parseInt(state.page));
+        if (state.section) setOpenSection(state.section);
+        if (state.fase) setCurrentFase(state.fase);
+      } catch (e) {
+        console.error('Error parsing saved state:', e);
+      }
+    }
+  };
 
   const visibleProgresiones = progresiones.slice(
     currentPage * TABS_PER_PAGE,
@@ -22,57 +64,155 @@ const TemasSelectos = ({ asignatura = 'culturadigital2', tabs = 2 }) => {
     const params = new URLSearchParams(searchParams);
     params.set('tab', selectedTab);
     params.set('asignatura', asignatura);
+    params.set('page', currentPage.toString());
+
+    // Asegúrate de que fase siempre esté presente en los parámetros
+    params.set('fase', currentFase);
+
     if (openSection) {
       params.set('section', openSection);
     } else {
       params.delete('section');
     }
-    params.set('page', currentPage.toString());
+
     setSearchParams(params);
-  }, [selectedTab, openSection, currentPage, asignatura, setSearchParams, searchParams]);
 
-  // Initialize selected tab from URL on mount
+    // Guardar estado en sessionStorage cada vez que cambie
+    saveStateToStorage();
+  }, [selectedTab, openSection, currentPage, currentFase, asignatura, setSearchParams, searchParams, location.pathname]);
+
+  // Modifica este useEffect para permitir la navegación al inicio
   useEffect(() => {
-    const tabFromUrl = searchParams.get('tab');
-    if (tabFromUrl) {
-      setSelectedTab(tabFromUrl);
+    // Comprobar si estamos intentando ir a la página principal explícitamente
+    if (location.pathname === '/' && !location.hash && !location.search) {
+      // Es una navegación explícita al inicio, no hacer nada
+      return;
     }
-  }, [searchParams]);
 
+    // El resto de tu código existente para este useEffect...
+    // Verificar primero la asignatura
+    const asignaturaFromUrl = searchParams.get('asignatura');
+
+    // Si no hay asignatura, intentar recuperarla del sessionStorage
+    if (!asignaturaFromUrl) {
+      restoreStateFromStorage();
+      return;
+    }
+
+    // El resto del código sigue igual...
+  }, [searchParams, asignatura, setSearchParams, location]);
+
+  // Cargar módulos de forma más robusta
   useEffect(() => {
     const loadModules = async () => {
       try {
-        const progModule = await import(`./${asignatura}/Progresiones`);
-        setProgresiones(progModule.default);
+        // Intentamos cargar las progresiones
+        let progModule;
+        try {
+          progModule = await import(`./${asignatura}/Progresiones`);
+          setProgresiones(progModule.default);
+        } catch (e) {
+          console.error(`Error loading progresiones for ${asignatura}:`, e);
+          setProgresiones([]);
+        }
 
+        // Intentamos cargar los planes de clase
         const planes = [];
         let i = 1;
-        while (true) {
+        while (i <= 10) { // Límite razonable para evitar bucles infinitos
           try {
             const planModule = await import(`./${asignatura}/planes/PlanClase${i}`);
             planes.push(planModule.default);
             i++;
           } catch (e) {
+            console.log(`No more plans found after ${i-1} plans`);
             break;
           }
         }
+
         setPlanesClase(planes);
-        const tabIndex = parseInt(searchParams.get('tab') || '1') - 1;
-        setCurrentPlanClase(planes[tabIndex] || planes[0]);
+
+        // Establecer el plan de clase actual basado en el tab seleccionado
+        const tabIndex = parseInt(selectedTab) - 1;
+        if (planes.length > 0 && tabIndex >= 0 && tabIndex < planes.length) {
+          setCurrentPlanClase(planes[tabIndex]);
+        } else if (planes.length > 0) {
+          setCurrentPlanClase(planes[0]);
+        }
       } catch (error) {
-        console.error('Error loading modules:', error);
+        console.error('Error general loading modules:', error);
       }
     };
 
     loadModules();
-  }, [asignatura, searchParams]);
+  }, [asignatura, selectedTab]);
 
+  // Actualizar el plan de clase cuando cambie el tab seleccionado
   useEffect(() => {
     const planIndex = parseInt(selectedTab) - 1;
-    if (planesClase[planIndex]) {
+    if (planesClase.length > 0 && planIndex >= 0 && planIndex < planesClase.length) {
       setCurrentPlanClase(planesClase[planIndex]);
     }
   }, [selectedTab, planesClase]);
+
+  // Añade este useEffect para manejar el desplazamiento inicial basado en los parámetros de URL
+  useEffect(() => {
+    // Solo ejecutar este efecto después de que el componente esté completamente cargado
+    if (currentPlanClase && progresiones.length > 0) {
+      // Pequeño retraso para asegurar que todos los elementos del DOM estén renderizados
+      setTimeout(() => {
+        const sectionFromUrl = searchParams.get('section');
+        const faseFromUrl = searchParams.get('fase');
+
+        if (sectionFromUrl) {
+          // Abrir la sección correspondiente
+          setOpenSection(sectionFromUrl);
+
+          // Encuentra el elemento y desplázate hacia él
+          const element = document.getElementById(sectionFromUrl);
+          if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+          }
+        } else if (faseFromUrl) {
+          // Si no hay una sección específica pero hay un parámetro de fase,
+          // abrir y desplazarse a la fase correspondiente
+          let sectionId;
+          if (faseFromUrl === '0') sectionId = 'apertura';
+          else if (faseFromUrl === '1') sectionId = 'desarrollo';
+          else if (faseFromUrl === '2') sectionId = 'cierre';
+          else if (faseFromUrl === '3') sectionId = 'evaluacion';
+
+          if (sectionId) {
+            setOpenSection(sectionId);
+            const element = document.getElementById(sectionId);
+            if (element) {
+              element.scrollIntoView({ behavior: 'smooth' });
+            }
+          }
+        }
+      }, 500); // Un retraso mayor para asegurar que el DOM esté completamente listo
+    }
+  }, [currentPlanClase, progresiones, searchParams, setOpenSection]);
+
+  // Detectar errores 404 y restaurar el último estado válido
+  useEffect(() => {
+    const handleError = (event) => {
+      if (event.type === 'error' && event.target.tagName === 'LINK' || event.target.tagName === 'SCRIPT') {
+        console.warn('Detected potential 404 error, attempting to restore last valid state');
+        const lastPath = sessionStorage.getItem('lastValidPath');
+        if (lastPath && lastPath !== location.pathname + location.search) {
+          // Intentamos restaurar la última ruta válida
+          window.location.replace(`/#${lastPath}`);
+        }
+      }
+    };
+
+    window.addEventListener('error', handleError, true);
+
+    return () => {
+      window.removeEventListener('error', handleError, true);
+    };
+  }, [location]);
 
   const toggleSection = (section) => {
     setOpenSection(openSection === section ? '' : section);
@@ -97,34 +237,76 @@ const TemasSelectos = ({ asignatura = 'culturadigital2', tabs = 2 }) => {
       );
     }
 
+    // Guardar el estado actual antes de navegar a una actividad
+    const handleActivityClick = (e) => {
+      e.preventDefault();
+
+      // Guardar explícitamente todos los parámetros actuales
+      const stateToSave = {
+        tab: selectedTab,
+        page: currentPage,
+        section: openSection,
+        fase: currentFase,
+        asignatura,
+        path: location.pathname,
+        lastActivityTime: new Date().getTime() // Añadir timestamp
+      };
+
+      // Guardar en múltiples claves para mayor redundancia
+      sessionStorage.setItem(`${asignatura}State`, JSON.stringify(stateToSave));
+      sessionStorage.setItem('lastValidPath', location.pathname + location.search);
+      sessionStorage.setItem('lastActivityState', JSON.stringify(stateToSave));
+
+      // Navegar directamente usando window.location para evitar problemas con React Router
+      window.location.href = `/#/actividades/${act.route}`;
+    };
+
     return (
-      <Link
-        to={`/actividades/${act.route}`}
+      <a
+        href={`/actividades/${act.route}`}
+        onClick={handleActivityClick}
         className="text-blue-600 hover:text-blue-800 cursor-pointer"
       >
         {act.text}
-      </Link>
+      </a>
     );
   };
 
   const handleTabChange = (tabId) => {
     setSelectedTab(tabId);
-    const params = new URLSearchParams(searchParams);
-    params.set('tab', tabId);
-    if (openSection) {
-      params.set('section', openSection);
-    }
-    setSearchParams(params);
   };
 
   const handlePageChange = (newPage) => {
     setCurrentPage(newPage);
-    const params = new URLSearchParams(searchParams);
-    params.set('page', newPage.toString());
-    if (openSection) {
-      params.set('section', openSection);
+  };
+
+  const handleFaseChange = (newFase) => {
+    setCurrentFase(newFase);
+
+    // Abrir la sección correspondiente
+    if (newFase === '0') {
+      setOpenSection('apertura');
+    } else if (newFase === '1') {
+      setOpenSection('desarrollo');
+    } else if (newFase === '2') {
+      setOpenSection('cierre');
+    } else if (newFase === '3') {
+      setOpenSection('evaluacion');
     }
-    setSearchParams(params);
+
+    // Pequeño retraso para asegurar que el DOM se actualice antes de desplazarse
+    setTimeout(() => {
+      // Encontrar el elemento correspondiente y desplazarse hacia él
+      const sectionId = newFase === '0' ? 'apertura' :
+                        newFase === '1' ? 'desarrollo' :
+                        newFase === '2' ? 'cierre' :
+                        'evaluacion';
+
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 100);
   };
 
   // Renderizar sección de cierre según su estructura
@@ -200,9 +382,25 @@ const TemasSelectos = ({ asignatura = 'culturadigital2', tabs = 2 }) => {
 
   return (
     <div className="space-y-4">
+
+      {/* Agregar el botón de emergencia para volver al inicio */}
+      <div className="flex justify-center mt-4">
+        <button
+          onClick={() => {
+            // Limpiar todo el estado
+            sessionStorage.clear();
+            // Navegar forzadamente al inicio
+            window.location.href = '/';
+          }}
+          className="px-3 py-1 rounded bg-red-600 text-white hover:bg-red-700 transition-colors"
+        >
+          Volver al Inicio
+        </button>
+      </div>
+
       {/* Tabs de Progresiones con Paginación */}
       <div className="mb-6">
-        <div className="flex flex-col space-y-4">
+        <div className="flex justify-center items-center flex-col space-y-4">
           <div className="flex flex-wrap gap-2">
             {visibleProgresiones.map((prog) => (
               <button
@@ -218,34 +416,73 @@ const TemasSelectos = ({ asignatura = 'culturadigital2', tabs = 2 }) => {
             ))}
           </div>
 
-          {/* Controles de Paginación */}
-          <div className="flex justify-center items-center space-x-4">
-            <button
-              onClick={() => handlePageChange(Math.max(0, currentPage - 1))}
-              disabled={currentPage === 0}
-              className={`px-3 py-1 rounded ${currentPage === 0
-                ? 'bg-gray-300 dark:bg-gray-700 cursor-not-allowed'
-                : 'bg-blue-600 dark:bg-blue-500 text-white hover:bg-blue-700'
-                }`}
-            >
-              ← Anterior
-            </button>
+        </div>
+      </div>
 
-            <span className="text-gray-700 dark:text-gray-300">
-              Página {currentPage + 1} de {totalPages}
-            </span>
+         {/* Controles de Paginación */}
+         <div className="flex justify-center items-center space-x-4">
+        <button
+          onClick={() => handlePageChange(Math.max(0, currentPage - 1))}
+          disabled={currentPage === 0}
+          className={`px-3 py-1 rounded ${currentPage === 0
+            ? 'bg-gray-300 dark:bg-gray-700 cursor-not-allowed'
+            : 'bg-blue-600 dark:bg-blue-500 text-white hover:bg-blue-700'
+            }`}
+        >
+          ← Anterior
+        </button>
 
-            <button
-              onClick={() => handlePageChange(Math.min(totalPages - 1, currentPage + 1))}
-              disabled={currentPage === totalPages - 1}
-              className={`px-3 py-1 rounded ${currentPage === totalPages - 1
-                ? 'bg-gray-300 dark:bg-gray-700 cursor-not-allowed'
-                : 'bg-blue-600 dark:bg-blue-500 text-white hover:bg-blue-700'
-                }`}
-            >
-              Siguiente →
-            </button>
-          </div>
+        <span className="text-gray-700 dark:text-gray-300">
+          Página {currentPage + 1} de {totalPages}
+        </span>
+
+        <button
+          onClick={() => handlePageChange(Math.min(totalPages - 1, currentPage + 1))}
+          disabled={currentPage === totalPages - 1}
+          className={`px-3 py-1 rounded ${currentPage === totalPages - 1
+            ? 'bg-gray-300 dark:bg-gray-700 cursor-not-allowed'
+            : 'bg-blue-600 dark:bg-blue-500 text-white hover:bg-blue-700'
+            }`}
+        >
+          Siguiente →
+        </button>
+      </div>
+
+      {/* Fase actual (visible en todo momento) */}
+      <div className="mb-4 p-3 bg-blue-50 dark:bg-blue-900 rounded-lg">
+        <div className="flex flex-wrap gap-2 justify-center">
+          <button
+            onClick={() => handleFaseChange('0')}
+            className={`px-3 py-1 rounded transition-colors ${
+              currentFase === '0' ? 'bg-blue-600 text-white' : 'bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200'
+            }`}
+          >
+            Fase de Apertura
+          </button>
+          <button
+            onClick={() => handleFaseChange('1')}
+            className={`px-3 py-1 rounded transition-colors ${
+              currentFase === '1' ? 'bg-blue-600 text-white' : 'bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200'
+            }`}
+          >
+            Fase de Desarrollo
+          </button>
+          <button
+            onClick={() => handleFaseChange('2')}
+            className={`px-3 py-1 rounded transition-colors ${
+              currentFase === '2' ? 'bg-blue-600 text-white' : 'bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200'
+            }`}
+          >
+            Fase de Cierre
+          </button>
+          <button
+            onClick={() => handleFaseChange('3')}
+            className={`px-3 py-1 rounded transition-colors ${
+              currentFase === '3' ? 'bg-blue-600 text-white' : 'bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200'
+            }`}
+          >
+            Fase de Evaluación
+          </button>
         </div>
       </div>
 
@@ -313,7 +550,7 @@ const TemasSelectos = ({ asignatura = 'culturadigital2', tabs = 2 }) => {
       {/* Secciones Colapsables */}
       <div className="space-y-4">
         {/* Fase de Apertura */}
-        <div className="border dark:border-gray-700 rounded-lg">
+        <div id="apertura" className="border dark:border-gray-700 rounded-lg">
           <button
             onClick={() => toggleSection('apertura')}
             className="w-full text-left p-4 font-semibold flex justify-between items-center bg-gray-50 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg text-gray-900 dark:text-white transition-colors duration-200"
@@ -368,7 +605,7 @@ const TemasSelectos = ({ asignatura = 'culturadigital2', tabs = 2 }) => {
         </div>
 
         {/* Fase de Desarrollo */}
-        <div className="border dark:border-gray-700 rounded-lg">
+        <div id="desarrollo" className="border dark:border-gray-700 rounded-lg">
           <button
             onClick={() => toggleSection('desarrollo')}
             className="w-full text-left p-4 font-semibold flex justify-between items-center bg-gray-50 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg text-gray-900 dark:text-white transition-colors duration-200"
@@ -431,7 +668,7 @@ const TemasSelectos = ({ asignatura = 'culturadigital2', tabs = 2 }) => {
         </div>
 
         {/* Fase de Cierre */}
-        <div className="border dark:border-gray-700 rounded-lg">
+        <div id="cierre" className="border dark:border-gray-700 rounded-lg">
           <button
             onClick={() => toggleSection('cierre')}
             className="w-full text-left p-4 font-semibold flex justify-between items-center bg-gray-50 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg text-gray-900 dark:text-white transition-colors duration-200"
@@ -447,7 +684,7 @@ const TemasSelectos = ({ asignatura = 'culturadigital2', tabs = 2 }) => {
         </div>
 
         {/* Evaluación Final */}
-        <div className="border dark:border-gray-700 rounded-lg">
+        <div id="evaluacion" className="border dark:border-gray-700 rounded-lg">
           <button
             onClick={() => toggleSection('evaluacion')}
             className="w-full text-left p-4 font-semibold flex justify-between items-center bg-gray-50 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg text-gray-900 dark:text-white transition-colors duration-200"

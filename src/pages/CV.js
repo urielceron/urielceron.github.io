@@ -6,11 +6,11 @@ import useDarkMode from '../hooks/useDarkMode';
 import { Star } from 'lucide-react';
 
 const CV = () => {
-  const navigate = useNavigate();  
+  const navigate = useNavigate();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [openSubmenu, setOpenSubmenu] = useState(null);
-  const { darkMode, toggleDarkMode } = useDarkMode(); 
+  const { darkMode, toggleDarkMode } = useDarkMode();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -19,10 +19,10 @@ const CV = () => {
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []); 
+  }, []);
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
-  
+
   const menuItems = [
     { title: 'Inicio', id: 'home', action: 'scroll' },
     { title: 'Perfil', id: 'profile', action: 'scroll' },
@@ -37,10 +37,10 @@ const CV = () => {
       ),
       id: 'classroom',
       hasSubmenu: true,
-      submenu: [        
+      submenu: [
         { title: 'Cultura Digital II', path: '/cultura-digital-2' },
         { title: 'Temas Selectos de Matemáticas I', path: '/matematicas' },
-        { title: 'Web Develoment', path: '/desarrolloweb' },                
+        { title: 'Web Develoment', path: '/desarrolloweb' },
         { title: 'Game Designer', path: '/gamedesigner' },
       ]
     }
@@ -63,7 +63,28 @@ const CV = () => {
 
   // Función para manejar el clic en elementos del submenú
   const handleSubmenuClick = (path) => {
-    navigate(path);
+    // Determinamos qué asignatura es basado en la ruta
+    let asignatura = '';
+    if (path.includes('cultura-digital-2')) {
+      asignatura = 'culturadigital2';
+    } else if (path.includes('matematicas')) {
+      asignatura = 'matematicas';
+    } else if (path.includes('desarrolloweb')) {
+      asignatura = 'desarrolloweb';
+    } else if (path.includes('gamedesigner')) {
+      asignatura = 'gamedesigner';
+    }
+
+    // Para asegurarnos de que la navegación funcione correctamente,
+    // añadimos los parámetros iniciales específicos para cada asignatura
+    const initialParams = new URLSearchParams();
+    initialParams.set('asignatura', asignatura);
+    initialParams.set('tab', '1');
+    initialParams.set('page', '0');
+    initialParams.set('fase', '0');
+
+    // Navegamos a la ruta con los parámetros iniciales
+    navigate(`${path}?${initialParams.toString()}`);
     setIsMenuOpen(false);
     setOpenSubmenu(null);
   };
@@ -107,8 +128,8 @@ const CV = () => {
         target="_blank"
         rel="noopener noreferrer"
         className={`px-4 py-2 rounded-md text-sm font-medium ${
-          darkMode 
-            ? 'bg-blue-500 text-white hover:bg-blue-600' 
+          darkMode
+            ? 'bg-blue-500 text-white hover:bg-blue-600'
             : 'bg-blue-600 text-white hover:bg-blue-700'
         } transition-colors duration-300`}
         >
@@ -154,10 +175,10 @@ const CV = () => {
         target="_blank"
         rel="noopener noreferrer"
         className={`block w-full text-center px-4 py-2 mt-2 text-sm font-medium ${
-          darkMode 
-            ? 'bg-blue-500 text-white hover:bg-blue-600' 
+          darkMode
+            ? 'bg-blue-500 text-white hover:bg-blue-600'
             : 'bg-blue-600 text-white hover:bg-blue-700'
-        } rounded-md`}      
+        } rounded-md`}
       >
         Descargar
       </a>

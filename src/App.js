@@ -1,5 +1,5 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import CV from './pages/CV';
 import CulturaDigital from './pages/CulturaDigital';
 import Matematicas from './pages/MatematicasSelectos';
@@ -34,46 +34,162 @@ import PodcastMusicTransitions from './pages/culturadigital2/actividades/Podcast
 import PodcastCollaboration from './pages/culturadigital2/actividades/PodcastCollaboration';
 import DemostracionRive from './pages/gamedesigner/actividades/progresion1/DemostracionRive';
 import DisenoGuiado from './pages/gamedesigner/actividades/progresion1/DisenoGuiado';
+
+// Componente que redirige a la ruta correcta basado en los parámetros
+const AsignaturaRouter = () => {
+  const location = useLocation();
+  const searchParams = new URLSearchParams(location.search);
+
+ // Dentro del useEffect en AsignaturaRouter
+  useEffect(() => {
+    // Si no hay parámetros, añadimos valores predeterminados
+    if (!searchParams.has('asignatura')) {
+      const newParams = new URLSearchParams(searchParams);
+
+      // Determinar la asignatura basada en la ruta
+      if (location.pathname.includes('cultura-digital-2')) {
+        newParams.set('asignatura', 'culturadigital2');
+      } else if (location.pathname.includes('matematicas')) {
+        newParams.set('asignatura', 'matematicas');
+      } else if (location.pathname.includes('desarrolloweb')) {
+        newParams.set('asignatura', 'desarrolloweb');
+      } else if (location.pathname.includes('gamedesigner')) {
+        newParams.set('asignatura', 'gamedesigner');
+      }
+
+      // Establecer valores predeterminados si no existen
+      if (!newParams.has('tab')) newParams.set('tab', '1');
+      if (!newParams.has('page')) newParams.set('page', '0');
+      if (!newParams.has('fase')) newParams.set('fase', '0');
+
+      // Recargar la página con los parámetros correctos
+      window.location.replace(`${location.pathname}?${newParams.toString()}`);
+      return;
+    }
+  }, [location, searchParams]);
+
+  // Obtiene parámetros de la URL
+  const asignatura = searchParams.get('asignatura');
+  const tab = searchParams.get('tab');
+  const page = searchParams.get('page');
+  const fase = searchParams.get('fase');
+
+  // Esta función renderiza la página correcta según los parámetros
+  const renderAsignaturaContent = () => {
+    switch (asignatura) {
+      case 'culturadigital2':
+        return <CulturaDigital numero="2" tab={tab} page={page} fase={fase} />;
+      case 'matematicas':
+        return <Matematicas tab={tab} page={page} fase={fase} />;
+      case 'desarrolloweb':
+        return <DesarrolloWeb tab={tab} page={page} fase={fase} />;
+      case 'gamedesigner':
+        return <GameDesigner tab={tab} page={page} fase={fase} />;
+      default:
+        // Si llegamos aquí, redireccionar a la página principal
+        setTimeout(() => {
+          window.location.replace('/');
+        }, 100);
+        return <div>Redirigiendo...</div>;
+    }
+  };
+
+  return renderAsignaturaContent();
+};
+
+// Componente que maneja las actividades específicas
+const ActividadRouter = () => {
+  const location = useLocation();
+  const rutaActividad = location.pathname.split('/').pop();
+
+  // Aquí guardamos el estado de navegación en sessionStorage
+  // para restaurarlo si se recarga la página
+  React.useEffect(() => {
+    const path = location.pathname + location.search;
+    sessionStorage.setItem('lastPath', path);
+  }, [location]);
+
+  // Mapeo de rutas a componentes de actividad
+  const actividadesMap = {
+    'medicion-pulso': MedicionPulso,
+    'patrones-naturales': PatronesNaturales,
+    'formacion-equipos': FormacionEquipos,
+    'registro-datos': RegistroDatos,
+    'graficas-manuales': GraficasManuales,
+    'maximos-minimos': MaximosMinimos,
+    'promedios-simples': PromediosSimples,
+    'medir-distancias': MedirDistancias,
+    'proporciones-escalas': ProporcionesEscalas,
+    'secuencias-numericas': SecuenciasNumericas,
+    'estadistica-descriptiva': EstadisticaDescriptiva,
+    'calculo-variaciones': CalculoVariaciones,
+    'interpretacion-patrones': InterpretacionPatrones,
+    'organizacion-hallazgos': OrganizacionHallazgos,
+    'sistemas-caoticos': SistemasCaoticos,
+    'guia-observaciones': GuiaObservaciones,
+    'organizacion-hallazgos-plan-2': OrganizacionHallazgosPlan2,
+    'demostracion-collatz': DemostracionCollatz,
+    'analisis-secuencias': GuiaCollatz,
+    'wiki-content-quality': WikiContentQuality,
+    'design-usability': DesignUsability,
+    'integration-multimedia': MultimediaIntegration,
+    'team-collaboration': TeamCollaboration,
+    'podcast-setup': PodcastSetup,
+    'podcast-production': PodcastProduction,
+    'podcast-music-transitions': PodcastMusicTransitions,
+    'podcast-collaboration': PodcastCollaboration,
+    'demo-completa-rive': DemostracionRive,
+    'diseno-guiado': DisenoGuiado,
+  };
+
+  const Actividad = actividadesMap[rutaActividad];
+
+  if (!Actividad) {
+    return <Navigate to="/" replace />;
+  }
+
+  return <Actividad />;
+};
+
+// Componente para restaurar la navegación después de recargar la página
+const NavigationRestorer = () => {
+  const location = useLocation();
+
+  React.useEffect(() => {
+    // Solo restaura la navegación si estamos en la página principal
+    // y hay una ruta guardada
+    if (location.pathname === '/' && !location.search) {
+      const lastPath = sessionStorage.getItem('lastPath');
+      if (lastPath && lastPath !== '/') {
+        // Usamos replace para no agregar una entrada adicional en el historial
+        window.location.replace(`/#${lastPath}`);
+      }
+    }
+  }, [location]);
+
+  return null;
+};
+
 function App() {
   return (
-    <Router>
+    <>
+      <NavigationRestorer />
       <Routes>
-        <Route path="/" element={<CV />} />        
-        <Route path="/cultura-digital-2" element={<CulturaDigital numero="2"/>} />
-        <Route path="/matematicas" element={<Matematicas />} />
-        <Route path="/desarrolloweb" element={<DesarrolloWeb />} />
-        <Route path="/gamedesigner" element={<GameDesigner />} />
-        <Route path="/actividades/medicion-pulso" element={<MedicionPulso />} />
-        <Route path="/actividades/patrones-naturales" element={<PatronesNaturales />} />
-        <Route path="/actividades/formacion-equipos" element={<FormacionEquipos />} />
-        <Route path="/actividades/registro-datos" element={<RegistroDatos />} />
-        <Route path="/actividades/graficas-manuales" element={<GraficasManuales />} />
-        <Route path="/actividades/maximos-minimos" element={<MaximosMinimos />} />
-        <Route path="/actividades/promedios-simples" element={<PromediosSimples />} />        
-        <Route path="/actividades/medir-distancias" element={<MedirDistancias />} />
-        <Route path="/actividades/proporciones-escalas" element={<ProporcionesEscalas />} />
-        <Route path="/actividades/secuencias-numericas" element={<SecuenciasNumericas />} />
-        <Route path="/actividades/estadistica-descriptiva" element={<EstadisticaDescriptiva />} />
-        <Route path="/actividades/calculo-variaciones" element={<CalculoVariaciones />} />
-        <Route path="/actividades/interpretacion-patrones" element={<InterpretacionPatrones />} />
-        <Route path="/actividades/organizacion-hallazgos" element={<OrganizacionHallazgos />} />
-        <Route path="/actividades/sistemas-caoticos" element={<SistemasCaoticos />} />
-        <Route path="/actividades/guia-observaciones" element={<GuiaObservaciones />} />
-        <Route path="/actividades/organizacion-hallazgos-plan-2" element={<OrganizacionHallazgosPlan2 />} />
-        <Route path="/actividades/demostracion-collatz" element={<DemostracionCollatz />} />
-        <Route path="/actividades/analisis-secuencias" element={<GuiaCollatz />} />
-        <Route path="/actividades/wiki-content-quality" element={<WikiContentQuality />} />
-        <Route path="/actividades/design-usability" element={<DesignUsability />} />
-        <Route path="/actividades/integration-multimedia" element={<MultimediaIntegration />} />
-        <Route path="/actividades/team-collaboration" element={<TeamCollaboration />} />
-        <Route path="/actividades/podcast-setup" element={<PodcastSetup />} />
-        <Route path="/actividades/podcast-production" element={<PodcastProduction />} />
-        <Route path="/actividades/podcast-music-transitions" element={<PodcastMusicTransitions />} />
-        <Route path="/actividades/podcast-collaboration" element={<PodcastCollaboration />} />
-        <Route path="/actividades/demo-completa-rive" element={<DemostracionRive />} />
-        <Route path="/actividades/diseno-guiado" element={<DisenoGuiado />} />
+        <Route path="/" element={<CV />} />
+
+        {/* Rutas principales que usan parámetros de consulta */}
+        <Route path="/cultura-digital-2" element={<AsignaturaRouter />} />
+        <Route path="/matematicas" element={<AsignaturaRouter />} />
+        <Route path="/desarrolloweb" element={<AsignaturaRouter />} />
+        <Route path="/gamedesigner" element={<AsignaturaRouter />} />
+
+        {/* Rutas para actividades específicas */}
+        <Route path="/actividades/*" element={<ActividadRouter />} />
+
+        {/* Ruta de respaldo para URLs desconocidas */}
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
-    </Router>
+    </>
   );
 }
 
