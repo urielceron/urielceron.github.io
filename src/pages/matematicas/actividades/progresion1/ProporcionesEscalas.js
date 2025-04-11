@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { Card, CardHeader, CardTitle, CardContent } from '../../../../components/ui/card';
 import useDarkMode from '../../../../hooks/useDarkMode';
 import DarkModeToggle from '../../../../components/DarkModeToggle';
+import BackButton from '../../../../components/BackButton';
 
 const ProporcionesEscalas = () => {
   const navigate = useNavigate();
@@ -40,13 +41,7 @@ const ProporcionesEscalas = () => {
       <nav className={`${darkMode ? 'bg-gray-800' : 'bg-white'} shadow-lg`}>
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex justify-between items-center h-16">
-            <button
-              onClick={() => navigate('/matematicas')}
-              className={`${darkMode ? 'text-blue-400 hover:text-blue-300' : 'text-blue-600 hover:text-blue-800'
-                } font-medium transition-colors duration-300`}
-            >
-              ← Regresar a Temas Selectos
-            </button>
+            <BackButton />
             <div className="flex items-center space-x-4">
               <h1 className={`text-xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>
                 Proporciones y Escalas en Mediciones del Pulso
@@ -206,7 +201,7 @@ const ProporcionesEscalas = () => {
                 </li>
               </ul>
             </div>
-            
+
             <div>
               <h3 className="text-xl font-bold mb-3 text-gray-900 dark:text-white">
                 Aplicación en Dibujo de Hojas Naturales
@@ -272,7 +267,7 @@ const ProporcionesEscalas = () => {
                   src="https://elpatiocubierto.es/templates/yootheme/cache/escalas-tecnologia-eso-c7883086.jpeg"
                   alt="Hoja escalada en papel milimetrado"
                   className="w-full h-64 object-contain border rounded-lg"
-                />                
+                />
               </div>
             </div>
 

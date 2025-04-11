@@ -18,12 +18,6 @@ const CulturaDigital = ({ numero }) => {
 
   // Para CulturaDigital.js
   const handleVolver = () => {
-    // Usar el identificador explícito de la asignatura
-    sessionStorage.removeItem(`culturadigital${numero}State`);
-    sessionStorage.removeItem('lastValidPath');
-    sessionStorage.removeItem('lastAsignaturaPath');
-
-    // Navegar a la página principal
     navigate('/');
   };
 
@@ -57,12 +51,12 @@ const CulturaDigital = ({ numero }) => {
           darkMode ? 'bg-gray-800 text-white' : 'bg-white text-gray-900'
         } transition-colors duration-300`}>
           <h2 className="text-2xl font-bold mb-4">Contenido de Cultura Digital {numero}</h2>
-          <p className={darkMode ? 'text-gray-300' : 'text-gray-600'}>
+          <div className={darkMode ? 'text-gray-300' : 'text-gray-600'}>
             <PlanClaseLayout
               asignatura="culturadigital2"
               tabs="3"
             />
-          </p>
+          </div>
         </div>
       </main>
     </div>

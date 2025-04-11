@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { Card, CardHeader, CardTitle, CardContent } from '../../../../components/ui/card';
 import useDarkMode from '../../../../hooks/useDarkMode';
 import DarkModeToggle from '../../../../components/DarkModeToggle';
+import BackButton from '../../../../components/BackButton';
 
 const PatronesNaturales = () => {
   const navigate = useNavigate();
@@ -55,7 +56,7 @@ const PatronesNaturales = () => {
       url: 'https://revistaholiwi.weebly.com/uploads/3/1/1/8/31188957/2622002_orig.jpg',
       titulo: 'La sucesión de Fibonacci en la mano',
       descripcion: 'Observar la secuencia en nuestra mano'
-    },  
+    },
   ];
 
   return (
@@ -63,15 +64,7 @@ const PatronesNaturales = () => {
       <nav className={`${darkMode ? 'bg-gray-800' : 'bg-white'} shadow-lg`}>
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex justify-between items-center h-16">
-            <button
-              onClick={() => navigate('/matematicas')}
-              className={`${darkMode
-                  ? 'text-blue-400 hover:text-blue-300'
-                  : 'text-blue-600 hover:text-blue-800'
-                } font-medium transition-colors duration-300`}
-            >
-              ← Regresar a Temas Selectos
-            </button>
+            <BackButton />
             <div className="flex items-center space-x-4">
               <h1 className={`text-xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>
                 Patrones Naturales
@@ -140,7 +133,7 @@ const PatronesNaturales = () => {
                   </div>
                 ))}
               </div>
-              
+
             </div>
           </CardContent>
         </Card>

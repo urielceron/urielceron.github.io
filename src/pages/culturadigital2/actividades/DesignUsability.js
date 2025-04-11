@@ -5,6 +5,7 @@ import { Alert, AlertDescription, AlertTitle } from "../../../components/ui/aler
 import { Checkbox } from "../../../components/ui/checkbox";
 import useDarkMode from '../../../hooks/useDarkMode';
 import DarkModeToggle from '../../../components/DarkModeToggle';
+import BackButton from '../../../components/BackButton';
 
 const DesignUsability = () => {
   const navigate = useNavigate();
@@ -103,20 +104,7 @@ const DesignUsability = () => {
       <nav className={`${darkMode ? 'bg-gray-800' : 'bg-white'} shadow-lg`}>
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex justify-between items-center h-16">
-            <button
-              onClick={() => {
-  const savedState = sessionStorage.getItem('lastAsignaturaPath');
-  if (savedState) {
-    window.location.href = '/#' + savedState;
-  } else {
-    navigate('/cultura-digital-2?asignatura=culturadigital2&tab=1&page=0&fase=0');
-  }
-}}
-              className={`${darkMode ? 'text-blue-400 hover:text-blue-300' : 'text-blue-600 hover:text-blue-800'
-                } font-medium transition-colors duration-300`}
-            >
-              ← Regresar a Cultura Digital 2
-            </button>
+            <BackButton />
             <div className="flex items-center space-x-4">
               <h1 className={`text-xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>
                 Diseño y Usabilidad de la Plataforma

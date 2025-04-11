@@ -59,27 +59,54 @@ const TemasSelectos = ({ asignatura = 'culturadigital2', tabs = 2 }) => {
   );
   const totalPages = Math.ceil((progresiones?.length || 0) / TABS_PER_PAGE);
 
-  // Update URL when state changes
+  // Modifica este useEffect para prevenir ciclos infinitos
   useEffect(() => {
+    // Solo actualizar los parámetros de URL si realmente cambiaron
     const params = new URLSearchParams(searchParams);
-    params.set('tab', selectedTab);
-    params.set('asignatura', asignatura);
-    params.set('page', currentPage.toString());
+    const currentTab = params.get('tab');
+    const currentPage = params.get('page');
+    const currentFase = params.get('fase');
+    const currentSection = params.get('section');
+    const currentAsignatura = params.get('asignatura');
 
-    // Asegúrate de que fase siempre esté presente en los parámetros
-    params.set('fase', currentFase);
+    let shouldUpdate = false;
 
-    if (openSection) {
-      params.set('section', openSection);
-    } else {
-      params.delete('section');
+    if (currentTab !== selectedTab) {
+      params.set('tab', selectedTab);
+      shouldUpdate = true;
     }
 
-    setSearchParams(params);
+    if (currentAsignatura !== asignatura) {
+      params.set('asignatura', asignatura);
+      shouldUpdate = true;
+    }
 
-    // Guardar estado en sessionStorage cada vez que cambie
+    if (currentPage !== currentPage.toString()) {
+      params.set('page', currentPage.toString());
+      shouldUpdate = true;
+    }
+
+    if (currentFase !== currentFase) {
+      params.set('fase', currentFase);
+      shouldUpdate = true;
+    }
+
+    if (openSection && currentSection !== openSection) {
+      params.set('section', openSection);
+      shouldUpdate = true;
+    } else if (!openSection && currentSection) {
+      params.delete('section');
+      shouldUpdate = true;
+    }
+
+    // Solo actualizar URL si algo realmente cambió
+    if (shouldUpdate) {
+      setSearchParams(params, { replace: true });
+    }
+
+    // Guardar estado en sessionStorage
     saveStateToStorage();
-  }, [selectedTab, openSection, currentPage, currentFase, asignatura, setSearchParams, searchParams, location.pathname]);
+  }, [selectedTab, openSection, currentPage, currentFase, asignatura]);
 
   // Modifica este useEffect para permitir la navegación al inicio
   useEffect(() => {
@@ -241,6 +268,9 @@ const TemasSelectos = ({ asignatura = 'culturadigital2', tabs = 2 }) => {
     const handleActivityClick = (e) => {
       e.preventDefault();
 
+      // Guardar la ruta completa actual para regresar después
+      const currentPath = location.pathname + location.search;
+
       // Guardar explícitamente todos los parámetros actuales
       const stateToSave = {
         tab: selectedTab,
@@ -248,13 +278,14 @@ const TemasSelectos = ({ asignatura = 'culturadigital2', tabs = 2 }) => {
         section: openSection,
         fase: currentFase,
         asignatura,
-        path: location.pathname,
+        path: currentPath,
         lastActivityTime: new Date().getTime() // Añadir timestamp
       };
 
       // Guardar en múltiples claves para mayor redundancia
       sessionStorage.setItem(`${asignatura}State`, JSON.stringify(stateToSave));
-      sessionStorage.setItem('lastValidPath', location.pathname + location.search);
+      sessionStorage.setItem('lastValidPath', currentPath);
+      sessionStorage.setItem('lastAsignaturaPath', currentPath);
       sessionStorage.setItem('lastActivityState', JSON.stringify(stateToSave));
 
       // Navegar directamente usando window.location para evitar problemas con React Router

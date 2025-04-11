@@ -17,11 +17,6 @@ const GameDesigner = ({ numero }) => {
   }, [location]);
 
   const handleVolver = () => {
-    // Usar el identificador explícito de la asignatura
-    sessionStorage.removeItem('gamedesignerState');
-    sessionStorage.removeItem('lastValidPath');
-    sessionStorage.removeItem('lastAsignaturaPath');
-
     // Navegar a la página principal
     navigate('/');
   };
@@ -56,12 +51,12 @@ const GameDesigner = ({ numero }) => {
           darkMode ? 'bg-gray-800 text-white' : 'bg-white text-gray-900'
         } transition-colors duration-300`}>
           <h2 className="text-2xl font-bold mb-4">Contenido de Game Designer {numero}</h2>
-          <p className={darkMode ? 'text-gray-300' : 'text-gray-600'}>
+          <div className={darkMode ? 'text-gray-300' : 'text-gray-600'}>
             <PlanClaseLayout
               asignatura="gamedesigner"
               tabs="3"
             />
-          </p>
+          </div>
         </div>
       </main>
     </div>

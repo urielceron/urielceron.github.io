@@ -4,6 +4,7 @@ import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Responsi
 import { useNavigate } from 'react-router-dom';
 import useDarkMode from '../../../../hooks/useDarkMode';
 import DarkModeToggle from '../../../../components/DarkModeToggle';
+import BackButton from '../../../../components/BackButton';
 
 const DemostracionCollatz = () => {
   const navigate = useNavigate();
@@ -42,21 +43,7 @@ const DemostracionCollatz = () => {
       <nav className={`${darkMode ? 'bg-gray-800' : 'bg-white'} shadow-lg`}>
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex justify-between items-center h-16">
-           <button
-              onClick={() => {
-  const savedState = sessionStorage.getItem('lastAsignaturaPath');
-  if (savedState) {
-    window.location.href = '/#' + savedState;
-  } else {
-    navigate('/matematicas?asignatura=matematicas&tab=1&page=0&fase=0');
-  }
-}}
-              className={`${
-                darkMode ? 'text-blue-400 hover:text-blue-300' : 'text-blue-600 hover:text-blue-800'
-              } font-medium transition-colors duration-300`}
-            >
-              ← Regresar a Temas Selectos
-            </button>
+            <BackButton />
             <div className="flex items-center space-x-4">
               <h1 className={`text-xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>
               Conjetura de Collatz y Sistemas Dinámicos Discretos

@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { Card, CardHeader, CardTitle, CardContent } from '../../../../components/ui/card';
 import useDarkMode from '../../../../hooks/useDarkMode';
 import DarkModeToggle from '../../../../components/DarkModeToggle';
+import BackButton from '../../../../components/BackButton';
 
 const MedicionPulso = () => {
   const navigate = useNavigate();
@@ -19,7 +20,7 @@ const MedicionPulso = () => {
       url: 'https://concepto.de/wp-content/uploads/2015/04/pulso-2-e1548895122356.jpg',
       titulo: 'Medición del pulso en el cuello',
       descripcion: 'Técnica de medición en la arteria carótida'
-    },    
+    },
     {
       tipo: 'imagen',
       url: 'https://as1.ftcdn.net/v2/jpg/05/59/06/16/1000_F_559061642_EI2mq5GUGIle2SrV9uDyEcYNtQTz0X8H.jpg',
@@ -33,16 +34,7 @@ const MedicionPulso = () => {
       <nav className={`${darkMode ? 'bg-gray-800' : 'bg-white'} shadow-lg`}>
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex justify-between items-center h-16">
-            <button 
-              onClick={() => navigate('/matematicas')}
-              className={`${
-                darkMode 
-                  ? 'text-blue-400 hover:text-blue-300' 
-                  : 'text-blue-600 hover:text-blue-800'
-              } font-medium transition-colors duration-300`}
-            >
-              ← Regresar a Temas Selectos
-            </button>
+            <BackButton />
             <div className="flex items-center space-x-4">
               <h1 className={`text-xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>
                 Medición del Pulso Manual
@@ -71,7 +63,7 @@ const MedicionPulso = () => {
                 <li>El ejercicio aumenta temporalmente la frecuencia cardíaca</li>
               </ul>
             </div>
-            
+
             <div>
               <h3 className="text-xl font-bold mb-3 text-gray-900 dark:text-white">Saber Cómo (Procedimiento)</h3>
               <ol className="list-decimal pl-6 space-y-2 mb-6 text-gray-700 dark:text-gray-300">
@@ -91,8 +83,8 @@ const MedicionPulso = () => {
               <div className="grid grid-cols-1 gap-6">
                 {recursos.map((recurso, index) => (
                   <div key={index} className="bg-gray-50 dark:bg-gray-700 rounded-lg overflow-hidden shadow-md">
-                    <img 
-                      src={recurso.url} 
+                    <img
+                      src={recurso.url}
                       alt={recurso.titulo}
                       className="w-full h-50 object-cover"
                     />
@@ -108,7 +100,7 @@ const MedicionPulso = () => {
                 <h4 className="font-semibold text-lg mb-2 text-gray-900 dark:text-white">Medición del pulso en la muñeca</h4>
                 <div className="aspect-w-16 aspect-h-9">
                   <div className="w-full h-96 bg-gray-200 dark:bg-gray-600 rounded-lg flex items-center justify-center">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/8LfoD0DoZRI?si=oLSejIpW90nYpoAz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                    
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/8LfoD0DoZRI?si=oLSejIpW90nYpoAz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                   </div>
                 </div>
               </div>
@@ -124,7 +116,7 @@ const MedicionPulso = () => {
           </CardContent>
         </Card>
       </main>
-    </div>    
+    </div>
   );
 };
 

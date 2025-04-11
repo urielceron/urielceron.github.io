@@ -16,13 +16,7 @@ const DesarrolloWeb = ({ numero }) => {
     sessionStorage.setItem('lastAsignaturaPath', location.pathname + location.search);
   }, [location]);
 
-  // Para DesarrolloWeb.js
   const handleVolver = () => {
-    // Usar el identificador explícito de la asignatura
-    sessionStorage.removeItem('desarrollowebState');
-    sessionStorage.removeItem('lastValidPath');
-    sessionStorage.removeItem('lastAsignaturaPath');
-
     // Navegar a la página principal
     navigate('/');
   };
@@ -57,12 +51,12 @@ const DesarrolloWeb = ({ numero }) => {
           darkMode ? 'bg-gray-800 text-white' : 'bg-white text-gray-900'
         } transition-colors duration-300`}>
           <h2 className="text-2xl font-bold mb-4">Contenido de Desarrollo Web {numero}</h2>
-          <p className={darkMode ? 'text-gray-300' : 'text-gray-600'}>
+          <div className={darkMode ? 'text-gray-300' : 'text-gray-600'}>
             <PlanClaseLayout
               asignatura="desarrolloweb"
               tabs="3"
             />
-          </p>
+          </div>
         </div>
       </main>
     </div>

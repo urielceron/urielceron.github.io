@@ -17,13 +17,7 @@ const MatematicasSelectos = () => {
     sessionStorage.setItem('lastAsignaturaPath', location.pathname + location.search);
   }, [location]);
 
-  // Para MatematicasSelectos.js
   const handleVolver = () => {
-    // Usar el identificador explícito de la asignatura
-    sessionStorage.removeItem('matematicasState');
-    sessionStorage.removeItem('lastValidPath');
-    sessionStorage.removeItem('lastAsignaturaPath');
-
     // Navegar a la página principal
     navigate('/');
   };

@@ -98,15 +98,42 @@ const AsignaturaRouter = () => {
 };
 
 // Componente que maneja las actividades específicas
+// Componente que maneja las actividades específicas
 const ActividadRouter = () => {
   const location = useLocation();
   const rutaActividad = location.pathname.split('/').pop();
 
-  // Aquí guardamos el estado de navegación en sessionStorage
-  // para restaurarlo si se recarga la página
+  // Guardamos el estado de navegación en sessionStorage
   React.useEffect(() => {
+    // Guardar la ruta completa actual
     const path = location.pathname + location.search;
     sessionStorage.setItem('lastPath', path);
+
+    // Si vemos que estamos entrando a una actividad, asegurarnos que sabemos de dónde venimos
+    if (location.pathname.includes('/actividades/')) {
+      // Verificar si tenemos un referrer guardado
+      const referrer = document.referrer;
+      const lastValidPath = sessionStorage.getItem('lastValidPath');
+
+      // Si no hay lastAsignaturaPath pero tenemos lastValidPath, usarlo
+      if (!sessionStorage.getItem('lastAsignaturaPath') && lastValidPath) {
+        sessionStorage.setItem('lastAsignaturaPath', lastValidPath);
+      }
+      // Si no hay lastAsignaturaPath ni lastValidPath, pero tenemos un referrer
+      else if (!sessionStorage.getItem('lastAsignaturaPath') && !lastValidPath && referrer) {
+        const referrerPath = new URL(referrer).hash.substring(1); // Eliminar el # inicial
+        if (referrerPath && (referrerPath.includes('/matematicas') ||
+                             referrerPath.includes('/culturadigital') ||
+                             referrerPath.includes('/desarrolloweb') ||
+                             referrerPath.includes('/gamedesigner'))) {
+          sessionStorage.setItem('lastAsignaturaPath', referrerPath);
+        }
+      }
+      // Si aún no tenemos nada, configurar una opción predeterminada
+      if (!sessionStorage.getItem('lastAsignaturaPath')) {
+        sessionStorage.setItem('lastAsignaturaPath', '/matematicas?asignatura=matematicas&tab=1&page=0&fase=0');
+      }
+    }
   }, [location]);
 
   // Mapeo de rutas a componentes de actividad

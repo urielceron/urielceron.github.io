@@ -5,6 +5,7 @@ import useDarkMode from '../../../hooks/useDarkMode';
 import DarkModeToggle from '../../../components/DarkModeToggle';
 import { Checkbox } from "../../../components/ui/checkbox";
 import { Alert, AlertDescription, AlertTitle } from "../../../components/ui/alert";
+import BackButton from '../../../components/BackButton';
 
 const WikiContentQuality = () => {
     const navigate = useNavigate();
@@ -180,20 +181,7 @@ const WikiContentQuality = () => {
             <nav className={`${darkMode ? 'bg-gray-800' : 'bg-white'} shadow-lg`}>
                 <div className="max-w-7xl mx-auto px-4">
                     <div className="flex justify-between items-center h-16">
-                        <button
-                            onClick={() => {
-  const savedState = sessionStorage.getItem('lastAsignaturaPath');
-  if (savedState) {
-    window.location.href = '/#' + savedState;
-  } else {
-    navigate('/cultura-digital-2?asignatura=culturadigital2&tab=1&page=0&fase=0');
-  }
-}}
-                            className={`${darkMode ? 'text-blue-400 hover:text-blue-300' : 'text-blue-600 hover:text-blue-800'
-                                } font-medium transition-colors duration-300`}
-                        >
-                            ← Regresar a Cultura Digital 2
-                        </button>
+                        <BackButton />
                         <div className="flex items-center space-x-4">
                             <h1 className={`text-xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>
                                 Calidad y Organización del Contenido Wiki

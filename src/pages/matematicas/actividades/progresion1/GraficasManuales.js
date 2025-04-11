@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { Card, CardHeader, CardTitle, CardContent } from '../../../../components/ui/card';
 import useDarkMode from '../../../../hooks/useDarkMode';
 import DarkModeToggle from '../../../../components/DarkModeToggle';
+import BackButton from '../../../../components/BackButton';
 
 const GraficasManuales = () => {
   const navigate = useNavigate();
@@ -29,15 +30,7 @@ const GraficasManuales = () => {
       <nav className={`${darkMode ? 'bg-gray-800' : 'bg-white'} shadow-lg`}>
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex justify-between8 items-center h-16">
-            <button
-              onClick={() => navigate('/matematicas')}
-              className={`${darkMode
-                  ? 'text-blue-400 hover:text-blue-300'
-                  : 'text-blue-600 hover:text-blue-800'
-                } font-medium transition-colors duration-300`}
-            >
-              ← Regresar a Temas Selectos
-            </button>
+            <BackButton />
             <div className="flex items-center space-x-4">
               <h1 className={`text-xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>
                 Registro y Gráfica del Pulso
@@ -191,7 +184,7 @@ const GraficasManuales = () => {
                 </h4>
                 <div className="aspect-w-16 aspect-h-9">
                   <div className="w-full h-96 bg-gray-200 dark:bg-gray-600 rounded-lg flex items-center justify-center">
-                  <iframe width="560" height="315" src="https://www.youtube.com/embed/SHabr1Vi4Ss?si=81S66YHjlJ0NXqB7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                  
+                  <iframe width="560" height="315" src="https://www.youtube.com/embed/SHabr1Vi4Ss?si=81S66YHjlJ0NXqB7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                   </div>
                 </div>
               </div>

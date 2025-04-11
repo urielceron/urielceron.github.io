@@ -5,6 +5,7 @@ import { Input } from '../../../../components/ui/input';
 import { Button } from '../../../../components/ui/button';
 import useDarkMode from '../../../../hooks/useDarkMode';
 import DarkModeToggle from '../../../../components/DarkModeToggle';
+import BackButton from '../../../../components/BackButton';
 
 const FormacionEquipos = () => {
     const navigate = useNavigate();
@@ -48,15 +49,7 @@ const FormacionEquipos = () => {
             <nav className={`${darkMode ? 'bg-gray-800' : 'bg-white'} shadow-lg`}>
                 <div className="max-w-7xl mx-auto px-4">
                     <div className="flex justify-between items-center h-16">
-                        <button
-                            onClick={() => navigate('/matematicas')}
-                            className={`${darkMode
-                                ? 'text-blue-400 hover:text-blue-300'
-                                : 'text-blue-600 hover:text-blue-800'
-                                } font-medium transition-colors duration-300`}
-                        >
-                            ← Regresar a Temas Selectos
-                        </button>
+                        <BackButton />
                         <div className="flex items-center space-x-4">
                             <h1 className={`text-xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>
                                 Formación de Equipos
@@ -247,7 +240,7 @@ const FormacionEquipos = () => {
                                         <li>Establecer metas claras y alcanzables</li>
                                     </ul>
                                 </div>
-                            </div>                            
+                            </div>
 
                             <div className="mt-6 p-4 bg-gray-50 dark:bg-gray-700 rounded-lg">
                                 <h4 className="font-semibold text-lg mb-2 text-gray-900 dark:text-white">Video Tutorial: Trabajo en Equipo Efectivo</h4>
