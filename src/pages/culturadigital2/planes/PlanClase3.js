@@ -2,14 +2,22 @@ const planClase = {
   apertura: {
     titulo: "Introducción al Proyecto: Infografía Digital con Teoría del Color",
     actividades_docente: [
-      { 
-        text: "Presentar fundamentos de teoría del color y diseño básico en Canva", 
+      {
+        text: "Presentar fundamentos de teoría del color y diseño básico en Canva",
         route: ''
       },
       {
+        text: "Tutorial: Como crear una infografía: paso por paso",
+        route: 'https://www.canva.com/es_mx/aprende/como-hacer-infografias-garanticen-exito-marca/'
+      },
+      {
         text: "Tutorial: Fundamentos de diseño y color en Canva",
-        route: 'https://drive.google.com/file/canva-basics'
-      }
+        route: 'https://www.youtube.com/watch?v=mL0DEQw4Z-o'
+      },
+      {
+        text: "Como compartir una infografia en CANVA (para un trabajo en equipo)",
+        route: 'https://www.youtube.com/watch?v=Ee2hBiM8FH4'
+      },
     ],
     actividades_alumno: [
       "Organizarse en equipos de 8 integrantes",
@@ -34,14 +42,18 @@ const planClase = {
       sesion: 2,
       titulo: "Creatividad y Originalidad Visual",
       actividades_docente: [
-        { 
+        {
           text: "Guiar en el desarrollo de conceptos visuales originales",
           route: 'S2'
         },
         {
-          text: "Guía: Creatividad visual en infografías",
-          route: 'https://drive.google.com/file/visual-creativity'
-        }
+          text: "Guía: Como construir una Jerarquía Visual en el Diseño",
+          route: 'https://www.shutterstock.com/es/blog/como-construir-jerarquia-visual-diseno'
+        },
+        {
+          text: "Guía: Creatividad visual orientada a contenidos digitales",
+          route: 'https://www.visibilidadweb.unam.mx/sites/default/files/docs/practicas/contenido/TallerCreatividadVisual_presentacion.pdf'
+        },
       ],
       actividades_alumno: [
         "Desarrollar concepto visual único",
@@ -62,13 +74,17 @@ const planClase = {
       sesion: 3,
       titulo: "Organización y Claridad Visual",
       actividades_docente: [
-        { 
+        {
           text: "Orientar en la organización efectiva de información visual",
           route: 'S3'
         },
         {
-          text: "Tutorial: Jerarquía visual en infografías",
-          route: 'https://drive.google.com/file/visual-hierarchy'
+          text: "Guía: Como crear una jerarquía visual",
+          route: 'https://www.canva.com/es_mx/aprende/guia-jerarquia-visual-design-school/'
+        },
+        {
+          text: "¿Qué es una infografía y como se hace?",
+          route: 'https://www.canva.com/es_mx/aprende/que-es-una-infografia-como-se-hace/'
         }
       ],
       actividades_alumno: [
@@ -90,14 +106,22 @@ const planClase = {
       sesion: 4,
       titulo: "Herramientas Digitales y Finalización",
       actividades_docente: [
-        { 
+        {
           text: "Demostrar herramientas avanzadas de Canva y exportación",
           route: 'S4'
         },
         {
           text: "Guía: Optimización y exportación en Canva",
-          route: 'https://drive.google.com/file/canva-export'
-        }
+          route: 'https://www.youtube.com/watch?v=vxFVcw0ZrOY'
+        },
+        {
+          text: "Tipos de archivos de descarga compatibles",
+          route: 'https://www.canva.com/es_mx/help/download-file-types/'
+        },
+        {
+          text: "Como compartir link en Canva | Compartir el enlace de Canva",
+          route: 'https://www.youtube.com/watch?v=nltzabJ6ksU'
+        },
       ],
       actividades_alumno: [
         "Aplicar efectos finales",
