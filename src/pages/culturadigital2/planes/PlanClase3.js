@@ -44,6 +44,7 @@ const planClase = {
       actividades_docente: [
         {
           text: "Guiar en el desarrollo de conceptos visuales originales",
+          route: '',
         },
         {
           text: "Guía: Como construir una Jerarquía Visual en el Diseño",
@@ -75,6 +76,7 @@ const planClase = {
       actividades_docente: [
         {
           text: "Orientar en la organización efectiva de información visual",
+          route: '',
         },
         {
           text: "Guía: Como crear una jerarquía visual",
@@ -106,6 +108,7 @@ const planClase = {
       actividades_docente: [
         {
           text: "Demostrar herramientas avanzadas de Canva y exportación",
+          route: '',
         },
         {
           text: "Guía: Optimización y exportación en Canva",
