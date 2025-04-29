@@ -34,6 +34,7 @@ import PodcastMusicTransitions from './pages/culturadigital2/actividades/Podcast
 import PodcastCollaboration from './pages/culturadigital2/actividades/PodcastCollaboration';
 import DemostracionRive from './pages/gamedesigner/actividades/progresion1/DemostracionRive';
 import DisenoGuiado from './pages/gamedesigner/actividades/progresion1/DisenoGuiado';
+import IdentificacionPatronesCollatz from './pages/matematicas/actividades/progresion3/IdentificacionPatronesCollatz';
 
 // Componente que redirige a la ruta correcta basado en los parámetros
 const AsignaturaRouter = () => {
@@ -167,6 +168,7 @@ const ActividadRouter = () => {
     'podcast-collaboration': PodcastCollaboration,
     'demo-completa-rive': DemostracionRive,
     'diseno-guiado': DisenoGuiado,
+    'identificacion-patrones-collatz': IdentificacionPatronesCollatz,
   };
 
   const Actividad = actividadesMap[rutaActividad];

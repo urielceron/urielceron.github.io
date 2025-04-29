@@ -25,7 +25,7 @@ const planClase = {
     {
       sesion: 2,
       titulo: "Exploración Manual de la Conjetura de Collatz",
-      actividades_docente: [        
+      actividades_docente: [
         { text: 'Guía para el análisis sistemático de secuencias Collatz', route: 'analisis-secuencias' }
       ],
       actividades_alumno: [
@@ -47,7 +47,7 @@ const planClase = {
       sesion: 3,
       titulo: "Patrones en Secuencias Collatz",
       actividades_docente: [
-        { text: 'Demostración de análisis de patrones en secuencias', route: 'patrones-secuencias' }
+        { text: 'Demostración de análisis de patrones en secuencias', route: 'identificacion-patrones-collatz' }
       ],
       actividades_alumno: [
         'Análisis de diferentes secuencias',
@@ -69,7 +69,7 @@ const planClase = {
       titulo: "Modelación Digital de Sistemas Dinámicos",
       actividades_docente: [
         { text: 'Explicación de implementación en Excel/GeoGebra', route: 'implementacion-digital' }
-      ],      
+      ],
       actividades_alumno: [
         'Implementación de fórmulas en Excel',
         'Automatización de cálculos',
@@ -90,7 +90,7 @@ const planClase = {
       titulo: "Integración y Análisis Final",
       actividades_docente: [
         { text: 'Guía para la integración de hallazgos', route: 'integracion-hallazgos' }
-      ],        
+      ],
       actividades_alumno: [
         'Integración de análisis manual y digital',
         'Preparación de visualizaciones',
@@ -145,6 +145,6 @@ const planClase = {
     ],
     examen: { porcentaje: 30 }
   }
-}; 
+};
 
 export default planClase;
