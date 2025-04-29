@@ -68,7 +68,8 @@ const planClase = {
       sesion: 4,
       titulo: "Modelación Digital de Sistemas Dinámicos",
       actividades_docente: [
-        { text: 'Explicación de implementación en Excel/GeoGebra', route: 'implementacion-digital' }
+        { text: 'Implementación en GeoGebra', route: 'https://www.geogebra.org/m/s5eb2wcy' },
+        { text: 'Implementación en Excel', route: 'https://sprestridge.net/files/Collatz%20Conjecture.xlsm' }
       ],
       actividades_alumno: [
         'Implementación de fórmulas en Excel',
@@ -89,7 +90,7 @@ const planClase = {
       sesion: 5,
       titulo: "Integración y Análisis Final",
       actividades_docente: [
-        { text: 'Guía para la integración de hallazgos', route: 'integracion-hallazgos' }
+        { text: 'Guía para la integración de hallazgos', route: 'integracion-hallazgos-collatz' }
       ],
       actividades_alumno: [
         'Integración de análisis manual y digital',
