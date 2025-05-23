@@ -36,6 +36,7 @@ import DemostracionRive from './pages/gamedesigner/actividades/progresion1/Demos
 import DisenoGuiado from './pages/gamedesigner/actividades/progresion1/DisenoGuiado';
 import IdentificacionPatronesCollatz from './pages/matematicas/actividades/progresion3/IdentificacionPatronesCollatz';
 import IntegracionHallazgosCollatz from './pages/matematicas/actividades/progresion3/IntegracionHallazgosCollatz';
+import DemostracionGeometrias from './pages/matematicas/actividades/progresion4/DemostracionGeometrias';
 
 // Componente que redirige a la ruta correcta basado en los parámetros
 const AsignaturaRouter = () => {
@@ -171,6 +172,7 @@ const ActividadRouter = () => {
     'diseno-guiado': DisenoGuiado,
     'identificacion-patrones-collatz': IdentificacionPatronesCollatz,
     'integracion-hallazgos-collatz': IntegracionHallazgosCollatz,
+    'demostracion-geometrias': DemostracionGeometrias,
   };
 
   const Actividad = actividadesMap[rutaActividad];
