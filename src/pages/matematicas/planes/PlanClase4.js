@@ -25,7 +25,7 @@ const planClase = {
       sesion: 2,
       titulo: "Exploración de la Geometría del Taxista",
       actividades_docente: [
-        { text: 'Guía para análisis de rutas en geometría del taxista', route: 'analisis-taxista' }
+        { text: 'Guía para análisis de rutas en geometría del taxista', route: 'geometria-taxista' }
       ],
       actividades_alumno: [
         'Cálculo de distancias en modelo del taxista',
@@ -68,7 +68,7 @@ const planClase = {
       titulo: "Análisis Comparativo de Geometrías",
       actividades_docente: [
         { text: 'Guía para comparación entre geometrías', route: 'comparacion-geometrias' }
-      ],      
+      ],
       actividades_alumno: [
         'Comparación de casos prácticos',
         'Cálculos en diferentes geometrías',
@@ -89,7 +89,7 @@ const planClase = {
       titulo: "Integración y Aplicaciones Prácticas",
       actividades_docente: [
         { text: 'Orientación para aplicaciones prácticas', route: 'aplicaciones-practicas' }
-      ],        
+      ],
       actividades_alumno: [
         'Integración de análisis comparativo',
         'Preparación de visualizaciones',
@@ -144,6 +144,6 @@ const planClase = {
     ],
     examen: { porcentaje: 30 }
   }
-}; 
+};
 
 export default planClase;

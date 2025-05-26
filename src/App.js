@@ -37,6 +37,7 @@ import DisenoGuiado from './pages/gamedesigner/actividades/progresion1/DisenoGui
 import IdentificacionPatronesCollatz from './pages/matematicas/actividades/progresion3/IdentificacionPatronesCollatz';
 import IntegracionHallazgosCollatz from './pages/matematicas/actividades/progresion3/IntegracionHallazgosCollatz';
 import DemostracionGeometrias from './pages/matematicas/actividades/progresion4/DemostracionGeometrias';
+import GeometriaTaxista from './pages/matematicas/actividades/progresion4/GeometriaTaxista';
 
 // Componente que redirige a la ruta correcta basado en los parámetros
 const AsignaturaRouter = () => {
@@ -173,6 +174,7 @@ const ActividadRouter = () => {
     'identificacion-patrones-collatz': IdentificacionPatronesCollatz,
     'integracion-hallazgos-collatz': IntegracionHallazgosCollatz,
     'demostracion-geometrias': DemostracionGeometrias,
+    'geometria-taxista': GeometriaTaxista,
   };
 
   const Actividad = actividadesMap[rutaActividad];
