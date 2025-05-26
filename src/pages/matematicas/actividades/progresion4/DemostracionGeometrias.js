@@ -12,7 +12,7 @@ const DemostracionGeometrias = () => {
   const recursos = [
     {
       tipo: 'imagen',
-      url: 'http://gamesetmap.com/wp-content/upLoads/2012/11/EuclideanDistanceGraphic.jpg',
+      url: 'https://worldscienceu.com/wp-content/uploads/2019/08/EB91A00C-5CE2-4DC3-81E1-52E60D795496.png',
       titulo: 'Comparación de Geometrías',
       descripcion: 'Diferencias entre geometría euclidiana y no euclidiana',
       link: "https://todosloshechos.es/que-es-la-geometria-euclidiana-y-no-euclidiana",
@@ -22,28 +22,28 @@ const DemostracionGeometrias = () => {
       url: 'https://static.packt-cdn.com/products/9781800205819/graphics/image/B16060_01_10.jpg',
       titulo: 'Distancia Manhattan (Taxista)',
       descripcion: 'La distancia del taxista en una cuadrícula urbana',
-      link:'https://vicmat.com/la-geometria-del-taxista-una-paradoja-aparente/',
+      link: 'https://vicmat.com/la-geometria-del-taxista-una-paradoja-aparente/',
     },
     {
       tipo: 'imagen',
       url: 'https://www.geogebra.org/resource/B7gNYPb9/8TGPfKN8GPsfCcwA/material-B7gNYPb9.png',
       titulo: 'Geodésicas en la Esfera',
       descripcion: 'Rutas más cortas sobre la superficie terrestre',
-      link:'https://sistemas.fciencias.unam.mx/~erhc/geometria_analitica_20181/geometria_esferica.pdf',
+      link: 'https://sistemas.fciencias.unam.mx/~erhc/geometria_analitica_20181/geometria_esferica.pdf',
     },
     {
       tipo: 'imagen',
       url: 'https://genesisgeodesica.com.br/images/internas/1200px-half-icosafreq4domeside.jpg',
       titulo: 'Geodésicas sobre una Esfera',
       descripcion: 'Rutas más cortas sobre la superficie terrestre',
-      link:'https://www.geogebra.org/m/B7gNYPb9',
+      link: 'https://www.geogebra.org/m/B7gNYPb9',
     },
     {
       tipo: 'imagen',
       url: 'https://2.bp.blogspot.com/-4SBKgQ-jqbc/UNrFuynKcYI/AAAAAAAAAbo/nQKm0SKbapU/s1600/PMercator2.jpg',
       titulo: 'Proyección de Mercator',
       descripcion: 'Distorsiones al representar la Tierra en un plano',
-      link:'https://matadornetwork.com/read/incredible-map-too-reveals-mercator-distortions/',
+      link: 'https://matadornetwork.com/read/incredible-map-too-reveals-mercator-distortions/',
     },
   ];
 
@@ -300,19 +300,28 @@ const DemostracionGeometrias = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {recursos.map((recurso, index) => (
                   <div key={index} className="bg-gray-50 dark:bg-gray-700 rounded-lg overflow-hidden shadow-md">
-                    <img
-                      src={recurso.url}
-                      alt={recurso.titulo}
-                      className="w-full h-64 object-cover"
-                    />
-                    <div className="p-4">
-                      <h4 className="font-semibold text-lg mb-2 text-gray-900 dark:text-white">
-                        {recurso.titulo}
-                      </h4>
-                      <p className="text-gray-600 dark:text-gray-300 text-sm">
-                        {recurso.descripcion}
-                      </p>
-                    </div>
+                    <Link
+                      to={recurso.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-blue-600 hover:text-blue-800 cursor-pointer"
+                    >
+                      <img
+                        src={recurso.url}
+                        alt={recurso.titulo}
+                        className="w-full h-50 object-cover"
+
+                      />
+                      <div className="p-4">
+                        <h4 className="font-semibold text-lg mb-2 text-gray-900 dark:text-white">
+
+                          {recurso.titulo}
+                        </h4>
+                        <p className="text-gray-600 dark:text-gray-300 text-sm">
+                          {recurso.descripcion}
+                        </p>
+                      </div>
+                    </Link>
                   </div>
                 ))}
               </div>
