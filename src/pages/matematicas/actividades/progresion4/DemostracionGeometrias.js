@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { Card, CardHeader, CardTitle, CardContent } from '../../../../components/ui/card';
 import useDarkMode from '../../../../hooks/useDarkMode';
 import DarkModeToggle from '../../../../components/DarkModeToggle';
