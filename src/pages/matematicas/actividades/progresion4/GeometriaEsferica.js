@@ -4,11 +4,9 @@ import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
 import { FontLoader } from 'three/examples/jsm/loaders/FontLoader.js';
 import useDarkMode from '../../../../hooks/useDarkMode';
 import DarkModeToggle from '../../../../components/DarkModeToggle';
-import BackButton from '../../../../components/BackButton';
 
 const GeometriaEsferica = () => {
-  const [darkMode, setDarkMode] = useState(false);
-  const toggleDarkMode = () => setDarkMode(!darkMode);
+  const { darkMode, toggleDarkMode } = useDarkMode();
   const mountRef = useRef(null);
   const sceneRef = useRef(null);
   const rendererRef = useRef(null);
@@ -17,14 +15,17 @@ const GeometriaEsferica = () => {
   const cameraRef = useRef(null);
   const [sceneInitialized, setSceneInitialized] = useState(false);
 
+  // ESTADOS - declarar PRIMERO
   const [puntos, setPuntos] = useState([
     { nombre: 'Ciudad de México', lat: 19.4326, lon: -99.1332, color: '#EF4444' },
     { nombre: 'Madrid', lat: 40.4168, lon: -3.7038, color: '#3B82F6' }
   ]);
-
   const [mediciones, setMediciones] = useState([]);
   const [mostrarGeodesia, setMostrarGeodesia] = useState(true);
   const [rotacionAutomatica, setRotacionAutomatica] = useState(true);
+
+  // REF para rotación automática - declarar DESPUÉS del estado
+  const rotacionAutomaticaRef = useRef(rotacionAutomatica);
 
   // Función para convertir lat/lon a coordenadas 3D en la esfera
   const latLonToVector3 = useCallback((lat, lon, radius = 5) => {
@@ -278,6 +279,11 @@ const GeometriaEsferica = () => {
     );
   }, [darkMode, latLonToVector3, sceneInitialized]);
 
+  // Efecto para mantener el ref sincronizado
+  useEffect(() => {
+    rotacionAutomaticaRef.current = rotacionAutomatica;
+  }, [rotacionAutomatica]);
+
   // Inicializar Three.js - solo una vez al montar el componente
   useEffect(() => {
     const container = mountRef.current;
@@ -441,12 +447,69 @@ const GeometriaEsferica = () => {
       globeGroup.add(marker);
     });
 
-    // Controles de mouse mejorados
+    // Controles de mouse y touch mejorados para móviles
     let mouseX = 0;
     let mouseY = 0;
     let isDragging = false;
     let rotationX = 0;
     let rotationY = 0;
+
+    const getEventPos = (event) => {
+      // Soporte para touch y mouse
+      if (event.touches && event.touches.length > 0) {
+        return { x: event.touches[0].clientX, y: event.touches[0].clientY };
+      }
+      return { x: event.clientX, y: event.clientY };
+    };
+
+    const handleMove = (event) => {
+      event.preventDefault(); // Prevenir scroll en móviles
+      if (isDragging) {
+        const pos = getEventPos(event);
+        const deltaX = pos.x - mouseX;
+        const deltaY = pos.y - mouseY;
+
+        rotationY += deltaX * 0.01;
+        rotationX += deltaY * 0.01;
+
+        // Limitar rotación vertical
+        rotationX = Math.max(-Math.PI/2, Math.min(Math.PI/2, rotationX));
+
+        if (globeGroupRef.current) {
+          globeGroupRef.current.rotation.y = rotationY;
+          globeGroupRef.current.rotation.x = rotationX;
+        }
+
+        mouseX = pos.x;
+        mouseY = pos.y;
+      }
+    };
+
+    const handleStart = (event) => {
+      event.preventDefault();
+      isDragging = true;
+      const pos = getEventPos(event);
+      mouseX = pos.x;
+      mouseY = pos.y;
+      renderer.domElement.style.cursor = 'grabbing';
+    };
+
+    const handleEnd = (event) => {
+      event.preventDefault();
+      isDragging = false;
+      renderer.domElement.style.cursor = 'grab';
+    };
+
+    // Eventos mouse
+    renderer.domElement.addEventListener('mousemove', handleMove);
+    renderer.domElement.addEventListener('mousedown', handleStart);
+    renderer.domElement.addEventListener('mouseup', handleEnd);
+    renderer.domElement.addEventListener('mouseleave', handleEnd);
+
+    // Eventos touch para móviles
+    renderer.domElement.addEventListener('touchmove', handleMove, { passive: false });
+    renderer.domElement.addEventListener('touchstart', handleStart, { passive: false });
+    renderer.domElement.addEventListener('touchend', handleEnd, { passive: false });
 
     const handleMouseMove = (event) => {
       if (isDragging) {
@@ -486,8 +549,10 @@ const GeometriaEsferica = () => {
     renderer.domElement.addEventListener('mouseup', handleMouseUp);
     renderer.domElement.addEventListener('mouseleave', handleMouseUp);
 
-    // Resize handler
+    // Resize handler mejorado
     const handleResize = () => {
+      if (!container || !camera || !renderer) return;
+
       const width = container.clientWidth;
       const height = container.clientHeight;
 
@@ -496,13 +561,16 @@ const GeometriaEsferica = () => {
       renderer.setSize(width, height);
     };
 
+    // Llamar resize inicialmente para asegurar tamaño correcto
+    handleResize();
     window.addEventListener('resize', handleResize);
 
     // Animación mejorada
     const animate = () => {
       frameRef.current = requestAnimationFrame(animate);
 
-      if (rotacionAutomatica && !isDragging && globeGroupRef.current) {
+      // Usar el ref que siempre tiene el valor actual
+      if (rotacionAutomaticaRef.current && !isDragging && globeGroupRef.current) {
         globeGroupRef.current.rotation.y += 0.003;
       }
 
@@ -513,7 +581,7 @@ const GeometriaEsferica = () => {
     setSceneInitialized(true);
     animate();
 
-    // Cleanup function
+    // Cleanup function actualizada
     return () => {
       if (frameRef.current) {
         cancelAnimationFrame(frameRef.current);
@@ -522,10 +590,16 @@ const GeometriaEsferica = () => {
       window.removeEventListener('resize', handleResize);
 
       if (renderer.domElement) {
-        renderer.domElement.removeEventListener('mousemove', handleMouseMove);
-        renderer.domElement.removeEventListener('mousedown', handleMouseDown);
-        renderer.domElement.removeEventListener('mouseup', handleMouseUp);
-        renderer.domElement.removeEventListener('mouseleave', handleMouseUp);
+        // Remover eventos mouse
+        renderer.domElement.removeEventListener('mousemove', handleMove);
+        renderer.domElement.removeEventListener('mousedown', handleStart);
+        renderer.domElement.removeEventListener('mouseup', handleEnd);
+        renderer.domElement.removeEventListener('mouseleave', handleEnd);
+
+        // Remover eventos touch
+        renderer.domElement.removeEventListener('touchmove', handleMove);
+        renderer.domElement.removeEventListener('touchstart', handleStart);
+        renderer.domElement.removeEventListener('touchend', handleEnd);
       }
 
       if (container && renderer.domElement && container.contains(renderer.domElement)) {
@@ -621,7 +695,7 @@ const GeometriaEsferica = () => {
   ];
 
   return (
-    <div className={`min-h-screen ${darkMode ? 'dark bg-gray-900' : 'bg-gray-50'}`}>
+     <div className={`min-h-screen ${darkMode ? 'dark bg-gray-900' : 'bg-gray-50'}`} style={{ overflowX: 'hidden' }}>
       <nav className={`${darkMode ? 'bg-gray-800' : 'bg-white'} shadow-lg`}>
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex justify-between items-center h-16">
@@ -775,19 +849,21 @@ const GeometriaEsferica = () => {
             </CardTitle>
           </CardHeader>
           <CardContent className="space-y-6">
-            <div className="grid md:grid-cols-2 gap-6">
-              <div>
+            {/* Layout responsive: columna única en móvil, dos columnas en desktop */}
+            <div className="flex flex-col lg:grid lg:grid-cols-2 gap-6">
+              <div className="order-2 lg:order-1">
                 <h4 className="font-semibold mb-3">
                   Globo Terráqueo Interactivo
                   {!sceneInitialized && <span className="text-sm text-gray-500 ml-2">(Cargando...)</span>}
                 </h4>
                 <div
                   ref={mountRef}
-                  className="w-full h-[600px] bg-gray-100 dark:bg-gray-700 rounded-lg border-2 border-gray-300 dark:border-gray-600"
+                  className="w-full h-[400px] sm:h-[500px] lg:h-[600px] bg-gray-100 dark:bg-gray-700 rounded-lg border-2 border-gray-300 dark:border-gray-600 touch-none"
                   style={{
                     cursor: sceneInitialized ? 'grab' : 'wait',
                     aspectRatio: '1',
-                    overflow: 'hidden'
+                    overflow: 'hidden',
+                    maxWidth: '100%'
                   }}
                 />
                 <div className="mt-3 space-y-2">
@@ -814,7 +890,7 @@ const GeometriaEsferica = () => {
                 </div>
               </div>
 
-              <div className="space-y-4">
+              <div className="space-y-4 order-1 lg:order-2">
                 <h4 className="font-semibold">Selección de Puntos</h4>
 
                 {[0, 1].map((index) => (
@@ -835,7 +911,7 @@ const GeometriaEsferica = () => {
                           setPuntos(nuevosPuntos);
                         }
                       }}
-                      className="w-full p-2 border rounded dark:bg-gray-700 dark:border-gray-600"
+                      className="w-full p-3 text-base border rounded dark:bg-gray-700 dark:border-gray-600"
                       disabled={!sceneInitialized}
                     >
                       <option value="">Seleccionar ciudad...</option>
@@ -852,27 +928,27 @@ const GeometriaEsferica = () => {
                   <div className="bg-gray-50 dark:bg-gray-700 p-4 rounded-lg space-y-3">
                     <h5 className="font-semibold">Resultados de Medición:</h5>
                     <div className="space-y-2 text-sm">
-                      <div className="flex justify-between">
+                      <div className="flex justify-between items-center">
                         <span>🌐 Distancia Esférica:</span>
-                        <strong className="text-green-600">
+                        <strong className="text-green-600 text-right">
                           {calcularDistanciaEsferica(
                             puntos[0].lat, puntos[0].lon,
                             puntos[1].lat, puntos[1].lon
                           ).toFixed(2)} km
                         </strong>
                       </div>
-                      <div className="flex justify-between">
+                      <div className="flex justify-between items-center">
                         <span>📏 Distancia Euclidiana:</span>
-                        <strong className="text-blue-600">
+                        <strong className="text-blue-600 text-right">
                           {calcularDistanciaEuclidiana(
                             puntos[0].lat, puntos[0].lon,
                             puntos[1].lat, puntos[1].lon
                           ).toFixed(2)} km
                         </strong>
                       </div>
-                      <div className="flex justify-between">
+                      <div className="flex justify-between items-center">
                         <span>📊 Diferencia:</span>
-                        <strong className="text-orange-600">
+                        <strong className="text-orange-600 text-right">
                           {(((calcularDistanciaEsferica(
                             puntos[0].lat, puntos[0].lon,
                             puntos[1].lat, puntos[1].lon
@@ -889,7 +965,7 @@ const GeometriaEsferica = () => {
 
                     <button
                       onClick={agregarMedicion}
-                      className="w-full bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 mt-3 disabled:opacity-50"
+                      className="w-full bg-blue-600 text-white py-3 px-4 text-base rounded hover:bg-blue-700 mt-3 disabled:opacity-50 active:bg-blue-800"
                       disabled={!sceneInitialized}
                     >
                       ➕ Agregar a Tabla de Análisis
@@ -899,8 +975,8 @@ const GeometriaEsferica = () => {
 
                 <div className="bg-amber-50 dark:bg-amber-900 p-3 rounded-lg">
                   <p className="text-sm">
-                    <strong>💡 Tip:</strong> Arrastra el globo para rotarlo. Observa cómo la ruta
-                    más corta (geodésica) no es una línea recta en el mapa plano.
+                    <strong>💡 Tip:</strong> Arrastra el globo para rotarlo. En móviles, usa un dedo para rotar.
+                    Observa cómo la ruta más corta (geodésica) no es una línea recta en el mapa plano.
                   </p>
                 </div>
               </div>
