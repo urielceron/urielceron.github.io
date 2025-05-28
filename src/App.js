@@ -38,6 +38,7 @@ import IdentificacionPatronesCollatz from './pages/matematicas/actividades/progr
 import IntegracionHallazgosCollatz from './pages/matematicas/actividades/progresion3/IntegracionHallazgosCollatz';
 import DemostracionGeometrias from './pages/matematicas/actividades/progresion4/DemostracionGeometrias';
 import GeometriaTaxista from './pages/matematicas/actividades/progresion4/GeometriaTaxista';
+import GeometriaEsferica from './pages/matematicas/actividades/progresion4/GeometriaEsferica';
 
 // Componente que redirige a la ruta correcta basado en los parámetros
 const AsignaturaRouter = () => {
@@ -175,6 +176,7 @@ const ActividadRouter = () => {
     'integracion-hallazgos-collatz': IntegracionHallazgosCollatz,
     'demostracion-geometrias': DemostracionGeometrias,
     'geometria-taxista': GeometriaTaxista,
+    'mediciones-esfericas': GeometriaEsferica,
   };
 
   const Actividad = actividadesMap[rutaActividad];

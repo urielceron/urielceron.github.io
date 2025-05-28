@@ -48,11 +48,18 @@ const DemostracionGeometrias = () => {
   ];
 
   return (
-    <div className={`min-h-screen ${darkMode ? 'dark bg-gray-900' : 'bg-gray-50'}`}>
+      <div className={`min-h-screen ${darkMode ? 'dark bg-gray-900' : 'bg-gray-50'}`}>
       <nav className={`${darkMode ? 'bg-gray-800' : 'bg-white'} shadow-lg`}>
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex justify-between items-center h-16">
-            <BackButton />
+            <button
+              onClick={() => window.history.back()}
+              className={`flex items-center px-4 py-2 rounded-md ${
+                darkMode ? 'bg-gray-700 text-white hover:bg-gray-600' : 'bg-gray-100 text-gray-800 hover:bg-gray-200'
+              }`}
+            >
+              ← Regresar
+            </button>
             <div className="flex items-center space-x-4">
               <h1 className={`text-xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>
                 Introducción a las Geometrías No Euclidianas
