@@ -2,7 +2,7 @@ const planClase = {
   apertura: {
     titulo: "Diseño de Proyectos de Investigación en Sistemas Complejos",
     actividades_docente: [
-      { text: 'Demostración de metodología de investigación en sistemas complejos', route: 'metodologia-investigacion' }
+      { text: 'Metodología de investigación en sistemas complejos', route: 'metodologia-investigacion' }
     ],
     actividades_alumno: [
       'Identificación de problemas complejos',
@@ -68,7 +68,7 @@ const planClase = {
       titulo: "Análisis y Modelación",
       actividades_docente: [
         { text: 'Guía para modelación de sistemas complejos', route: 'modelacion-sistemas' }
-      ],      
+      ],
       actividades_alumno: [
         'Análisis de datos',
         'Desarrollo de modelos',
@@ -89,7 +89,7 @@ const planClase = {
       titulo: "Integración y Defensa",
       actividades_docente: [
         { text: 'Orientación para integración de resultados', route: 'integracion-resultados' }
-      ],        
+      ],
       actividades_alumno: [
         'Integración del reporte',
         'Preparación de defensa',
@@ -145,6 +145,6 @@ const planClase = {
     ],
     examen: { porcentaje: 30 }
   }
-}; 
+};
 
 export default planClase;

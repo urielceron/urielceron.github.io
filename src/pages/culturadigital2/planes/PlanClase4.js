@@ -2,13 +2,13 @@ const planClase = {
   apertura: {
     titulo: "Introducción al Proyecto: Investigación Digital con Google Forms",
     actividades_docente: [
-      { 
-        text: "Presentar metodología de investigación digital y diseño de instrumentos", 
-        route: 'M1'
+      {
+        text: "Metodología de investigación digital y diseño de instrumentos",
+        route: 'https://drive.google.com/file/d/19Png-xPqMhQhf9Zc0PQgzaGD6_DutGjY/view?usp=sharing'
       },
       {
         text: "Tutorial: Diseño efectivo de encuestas en Google Forms",
-        route: 'https://drive.google.com/file/forms-design'
+        route: 'https://youtu.be/x4XRuy7SoRo?feature=shared'
       }
     ],
     actividades_alumno: [
@@ -34,13 +34,13 @@ const planClase = {
       sesion: 2,
       titulo: "Recolección y Organización de Datos",
       actividades_docente: [
-        { 
+        {
           text: "Guiar en la implementación de estrategias de recolección de datos",
-          route: 'S2'
+          route: 'https://youtu.be/B8RC5RUXPQo'
         },
         {
           text: "Guía: Organización efectiva de datos en Sheets",
-          route: 'https://drive.google.com/file/sheets-organization'
+          route: 'https://youtu.be/waQNWjwjwLs'
         }
       ],
       actividades_alumno: [
@@ -62,14 +62,10 @@ const planClase = {
       sesion: 3,
       titulo: "Análisis y Visualización",
       actividades_docente: [
-        { 
-          text: "Orientar en técnicas básicas de análisis y visualización",
-          route: 'S3'
-        },
         {
-          text: "Tutorial: Visualización de datos en Sheets",
-          route: 'https://drive.google.com/file/sheets-visualization'
-        }
+          text: "Orientar en técnicas básicas de análisis y visualización en Excel",
+          route: 'https://youtu.be/MtKMpJzjh0I'
+        },
       ],
       actividades_alumno: [
         "Crear gráficos básicos",
@@ -90,7 +86,7 @@ const planClase = {
       sesion: 4,
       titulo: "Integración y Presentación",
       actividades_docente: [
-        { 
+        {
           text: "Guiar en la presentación efectiva de resultados",
           route: 'S4'
         },

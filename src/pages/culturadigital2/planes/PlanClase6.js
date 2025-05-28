@@ -2,8 +2,8 @@ const planClase = {
   apertura: {
     titulo: "Introducción al Proyecto: Blog de Investigación Digital",
     actividades_docente: [
-      { 
-        text: "Presentar metodología de investigación digital y herramientas de blogging", 
+      {
+        text: "Metodología de investigación digital y herramientas de blogging",
         route: 'M1'
       },
       {
@@ -34,7 +34,7 @@ const planClase = {
       sesion: 2,
       titulo: "Organización y Estructura del Blog",
       actividades_docente: [
-        { 
+        {
           text: "Guiar en la organización efectiva de contenido digital",
           route: 'S2'
         },
@@ -62,7 +62,7 @@ const planClase = {
       sesion: 3,
       titulo: "Herramientas Digitales y Contenido",
       actividades_docente: [
-        { 
+        {
           text: "Orientar en el uso de herramientas digitales para investigación",
           route: 'S3'
         },
@@ -90,7 +90,7 @@ const planClase = {
       sesion: 4,
       titulo: "Colaboración y Publicación",
       actividades_docente: [
-        { 
+        {
           text: "Facilitar proceso de revisión y publicación colaborativa",
           route: 'S4'
         },
