@@ -2,13 +2,17 @@ const planClase = {
   apertura: {
     titulo: "Introducción al Proyecto: Sitio Web con GitHub Pages y Asistencia de IA",
     actividades_docente: [
-      { 
-        text: "Presentar GitHub Pages y el uso de IA para desarrollo web", 
+      {
+        text: "GitHub Pages y el uso de IA para desarrollo web",
         route: 'M1'
       },
       {
-        text: "Tutorial: Configuración de GitHub Pages con IA",
-        route: 'https://drive.google.com/file/github-ia-basics'
+        text: "Tutorial: Como crear un sitio web con IA DeepSeek",
+        route: 'https://youtu.be/gjK936VtHxY?feature=shared'
+      },
+      {
+        text: "Tutorial: Como publicar un sitio web en GitHub Pages",
+        route: 'https://youtu.be/-inUSqemk9Q?feature=shared'
       }
     ],
     actividades_alumno: [
@@ -34,13 +38,9 @@ const planClase = {
       sesion: 2,
       titulo: "Contenido y Diseño Web",
       actividades_docente: [
-        { 
-          text: "Guiar en la generación y adaptación de contenido web con IA",
-          route: 'S2'
-        },
         {
           text: "Guía: Prompts efectivos para diseño web",
-          route: 'https://drive.google.com/file/ia-web-prompts'
+          route: 'https://youtu.be/zXv52OFkfYk?feature=shared'
         }
       ],
       actividades_alumno: [
@@ -62,13 +62,9 @@ const planClase = {
       sesion: 3,
       titulo: "Herramientas Digitales y Multimedia",
       actividades_docente: [
-        { 
-          text: "Orientar en la integración de elementos multimedia con IA",
-          route: 'S3'
-        },
         {
           text: "Tutorial: Optimización multimedia para web",
-          route: 'https://drive.google.com/file/web-multimedia'
+          route: 'https://www.tiktok.com/@midudev/video/7439749845222427937'
         }
       ],
       actividades_alumno: [
@@ -90,13 +86,9 @@ const planClase = {
       sesion: 4,
       titulo: "Colaboración y Publicación",
       actividades_docente: [
-        { 
-          text: "Facilitar proceso de publicación y trabajo colaborativo",
-          route: 'S4'
-        },
         {
           text: "Guía: Publicación efectiva en GitHub Pages",
-          route: 'https://drive.google.com/file/github-publishing'
+          route: 'https://youtu.be/-aoAUJMFHXc'
         }
       ],
       actividades_alumno: [
