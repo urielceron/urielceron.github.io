@@ -2,8 +2,8 @@ const planClase = {
   apertura: {
     titulo: "Introducción al Proyecto: Análisis Estadístico con Google Sheets",
     actividades_docente: [
-      { 
-        text: "Presentar conceptos básicos de análisis estadístico y Google Sheets", 
+      {
+        text: "Presentar conceptos básicos de análisis estadístico y Google Sheets",
         route: 'M1'
       },
       {
@@ -35,7 +35,7 @@ const planClase = {
       sesion: 2,
       titulo: "Cálculos Estadísticos",
       actividades_docente: [
-        { 
+        {
           text: "Guiar en la implementación de funciones estadísticas básicas",
           route: 'S2'
         },
@@ -63,7 +63,7 @@ const planClase = {
       sesion: 3,
       titulo: "Visualización de Datos",
       actividades_docente: [
-        { 
+        {
           text: "Orientar en la creación de visualizaciones efectivas",
           route: 'S3'
         },
@@ -91,7 +91,7 @@ const planClase = {
       sesion: 4,
       titulo: "Trabajo Colaborativo y Presentación",
       actividades_docente: [
-        { 
+        {
           text: "Facilitar integración de resultados y trabajo en equipo",
           route: 'S4'
         },

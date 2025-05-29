@@ -21,11 +21,7 @@ const planClase = {
       {
         text: "Calidad y relevancia del contenido del podcast",
         route: 'podcast-setup'
-      },      
-      { 
-        text: "Presentar conceptos básicos de podcast y configuración", 
-        route: ''
-      },      
+      },
     ],
     actividades_alumno: [
       "Organizarse en equipos de 8 integrantes",
@@ -57,11 +53,7 @@ const planClase = {
         {
           text: "Producción y edición técnica de audio",
           route: 'podcast-production'
-        },        
-        { 
-          text: "Guiar en el uso de herramientas de grabación de Anchor",
-          route: ''
-        },        
+        },
       ],
       actividades_alumno: [
         "Grabar segmentos iniciales con app móvil",
@@ -93,12 +85,7 @@ const planClase = {
         {
           text: "Uso efectivo de herramientas digitales",
           route: 'podcast-music-transitions'
-        },        
-        { 
-          text: "Demostrar uso de biblioteca de música y transiciones de Anchor",
-          route: ''
         },
-        
       ],
       actividades_alumno: [
         "Seleccionar música de biblioteca Anchor",
@@ -126,11 +113,7 @@ const planClase = {
         {
           text: "Trabajo colaborativo y gestión de roles",
           route: 'podcast-collaboration'
-        },        
-        { 
-          text: "Orientar en la revisión final y proceso de publicación",
-          route: ''
-        },        
+        },
       ],
       actividades_alumno: [
         "Realizar revisión colaborativa",

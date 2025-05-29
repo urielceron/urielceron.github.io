@@ -35,11 +35,11 @@ const planClase = {
       titulo: "Recolección y Organización de Datos",
       actividades_docente: [
         {
-          text: "Guiar en la implementación de estrategias de recolección de datos",
+          text: "Guia en la implementación de estrategias de recolección de datos",
           route: 'https://youtu.be/B8RC5RUXPQo'
         },
         {
-          text: "Guía: Organización efectiva de datos en Sheets",
+          text: "Guía para la organización efectiva de datos en Google Sheets",
           route: 'https://youtu.be/waQNWjwjwLs'
         }
       ],
@@ -63,7 +63,7 @@ const planClase = {
       titulo: "Análisis y Visualización",
       actividades_docente: [
         {
-          text: "Orientar en técnicas básicas de análisis y visualización en Excel",
+          text: "Técnicas básicas de análisis y visualización en Excel",
           route: 'https://youtu.be/MtKMpJzjh0I'
         },
       ],
@@ -92,7 +92,7 @@ const planClase = {
         },
         {
           text: "Guía: Presentación de resultados de investigación",
-          route: 'https://drive.google.com/file/research-presentation'
+          route: 'https://youtu.be/IBPYIUlkQDo?feature=shared'
         }
       ],
       actividades_alumno: [

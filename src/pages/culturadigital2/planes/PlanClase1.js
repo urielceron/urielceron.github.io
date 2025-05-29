@@ -17,10 +17,6 @@ const planClase = {
       {
         text: "Calidad y organización del contenido wiki",
         route: 'wiki-content-quality'
-      },          
-      {
-        text: "Demostración de Google Sites",
-        route: ''
       },
     ],
     actividades_alumno: [
@@ -45,7 +41,7 @@ const planClase = {
     {
       sesion: 2,
       titulo: "Desarrollo de Diseño y Usabilidad",
-      actividades_docente: [        
+      actividades_docente: [
         {
           text: "Diseño visual consistente",
           route: 'https://sites.google.com/view/diseoen2dparaweb/corte-i/1-t%C3%A9cnicas-de-dise%C3%B1o-visual'
@@ -53,10 +49,6 @@ const planClase = {
         {
           text: "Diseño y usabilidad de la plataforma",
           route: 'design-usability'
-        },
-        {
-          text: "Orientar en la implementación del diseño y navegación",
-          route: ''
         },
       ],
       actividades_alumno: [
@@ -77,7 +69,7 @@ const planClase = {
     {
       sesion: 3,
       titulo: "Integración de Recursos Multimedia",
-      actividades_docente: [        
+      actividades_docente: [
         {
           text: "Tutorial: Optimización de imágenes en Sitios web",
           route: 'https://www.hostinger.mx/tutoriales/optimizar-imagenes'
@@ -89,10 +81,6 @@ const planClase = {
         {
           text: "Integración efectiva de recursos multimedia",
           route: 'integration-multimedia'
-        },        
-        {
-          text: "Demostrar integración de recursos multimedia en Google Sites",
-          route: ''
         },
       ],
       actividades_alumno: [
@@ -113,7 +101,7 @@ const planClase = {
     {
       sesion: 4,
       titulo: "Trabajo Colaborativo y Gestión",
-      actividades_docente: [        
+      actividades_docente: [
         {
           text: "Guía: Trabajo efectivo en equipo",
           route: 'https://youtu.be/INRzFKTzmZs'
@@ -121,10 +109,6 @@ const planClase = {
         {
           text: "Trabajo colaborativo y gestión del equipo",
           route: 'team-collaboration'
-        },
-        {
-          text: "Guiar en la revisión y refinamiento colaborativo",
-          route: ''
         },
       ],
       actividades_alumno: [
