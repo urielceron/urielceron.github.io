@@ -87,8 +87,8 @@ const planClase = {
       titulo: "Integración y Presentación",
       actividades_docente: [
         {
-          text: "Guiar en la presentación efectiva de resultados",
-          route: 'S4'
+          text: "Presentación efectiva de resultados",
+          route: 'https://youtu.be/kyAqlqW40Fs'
         },
         {
           text: "Guía: Presentación de resultados de investigación",

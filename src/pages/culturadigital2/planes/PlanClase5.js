@@ -3,10 +3,6 @@ const planClase = {
     titulo: "Introducción al Proyecto: Sitio Web con GitHub Pages y Asistencia de IA",
     actividades_docente: [
       {
-        text: "GitHub Pages y el uso de IA para desarrollo web",
-        route: 'M1'
-      },
-      {
         text: "Tutorial: Como crear un sitio web con IA DeepSeek",
         route: 'https://youtu.be/gjK936VtHxY?feature=shared'
       },
@@ -64,7 +60,7 @@ const planClase = {
       actividades_docente: [
         {
           text: "Tutorial: Optimización multimedia para web",
-          route: 'https://www.tiktok.com/@midudev/video/7439749845222427937'
+          route: 'https://youtu.be/CijOHKawAjM'
         }
       ],
       actividades_alumno: [
