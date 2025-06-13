@@ -295,102 +295,107 @@ const ComparacionGeometrias = () => {
                     <li>Rutas intercontinentales</li>
                   </ul>
                 </div>
-
-                <div className="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg mt-6">
-                  <h4 className="font-semibold text-lg mb-4 text-center">📝 Ejemplos con Cálculos Paso a Paso</h4>
-
-                  <div className="grid md:grid-cols-3 gap-6">
-                    <div className="bg-blue-100 dark:bg-blue-800 p-4 rounded-lg">
-                      <h5 className="font-semibold mb-3 text-blue-700 dark:text-blue-300">
-                        🔷 Ejemplo Euclidiano
-                      </h5>
-                      <div className="text-sm space-y-2">
-                        <p><strong>Problema:</strong> Tendido de cable de A(2,1) a B(5,4)</p>
-                        <div className="bg-white dark:bg-gray-700 p-3 rounded font-mono text-xs">
-                          <p>d = √[(x₂-x₁)² + (y₂-y₁)²]</p>
-                          <p>d = √[(5-2)² + (4-1)²]</p>
-                          <p>d = √[3² + 3²]</p>
-                          <p>d = √[9 + 9]</p>
-                          <p>d = √18 = 4.24 unidades</p>
-                        </div>
-                        <p className="text-xs"><strong>Uso:</strong> Distancia más corta posible, ideal para infraestructura directa.</p>
-                      </div>
-                    </div>
-
-                    <div className="bg-orange-100 dark:bg-orange-800 p-4 rounded-lg">
-                      <h5 className="font-semibold mb-3 text-orange-700 dark:text-orange-300">
-                        🚕 Ejemplo Taxista
-                      </h5>
-                      <div className="text-sm space-y-2">
-                        <p><strong>Problema:</strong> Entrega urbana de A(2,1) a B(5,4)</p>
-                        <div className="bg-white dark:bg-gray-700 p-3 rounded font-mono text-xs">
-                          <p>d = |x₂-x₁| + |y₂-y₁|</p>
-                          <p>d = |5-2| + |4-1|</p>
-                          <p>d = |3| + |3|</p>
-                          <p>d = 3 + 3 = 6 unidades</p>
-                        </div>
-                        <p className="text-xs"><strong>Uso:</strong> Navegación en calles cuadriculadas, múltiples rutas óptimas posibles.</p>
-                      </div>
-                    </div>
-
-                    <div className="bg-green-100 dark:bg-green-800 p-4 rounded-lg">
-                      <h5 className="font-semibold mb-3 text-green-700 dark:text-green-300">
-                        🌍 Ejemplo Esférico
-                      </h5>
-                      <div className="text-sm space-y-2">
-                        <p><strong>Problema:</strong> Vuelo Cancún (21.16°N, -86.85°W) a Madrid (40.42°N, -3.70°W)</p>
-                        <div className="bg-white dark:bg-gray-700 p-3 rounded font-mono text-xs">
-                          <p>Δlat = (40.42-21.16)×π/180 = 0.337 rad</p>
-                          <p>Δlon = (-3.70-(-86.85))×π/180 = 1.451 rad</p>
-                          <p>a = sin²(0.337/2) + cos(21.16°)×cos(40.42°)×sin²(1.451/2)</p>
-                          <p>a = 0.028 + 0.928×0.764×0.491 = 0.375</p>
-                          <p>c = 2×atan2(√0.375, √0.625) = 1.287 rad</p>
-                          <p>d = 6371×1.287 = 8,202 km</p>
-                        </div>
-                        <p className="text-xs"><strong>Uso:</strong> Obligatorio para distancias largas en la superficie terrestre.</p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="mt-4 bg-yellow-100 dark:bg-yellow-800 p-4 rounded-lg">
-                    <h5 className="font-semibold mb-2">🔍 Comparación del Ejemplo</h5>
-                    <div className="text-sm grid md:grid-cols-3 gap-4">
-                      <div>
-                        <strong>Euclidiana:</strong> 4.24 unidades<br />
-                        <span className="text-xs">Más directa, menor distancia</span>
-                      </div>
-                      <div>
-                        <strong>Taxista:</strong> 6.00 unidades<br />
-                        <span className="text-xs">41% más larga que euclidiana</span>
-                      </div>
-                      <div>
-                        <strong>Esférica:</strong> 8,202 km<br />
-                        <span className="text-xs">Para coordenadas reales</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
               </div>
 
               <div className="bg-purple-50 dark:bg-purple-900 p-4 rounded-lg">
                 <h4 className="font-semibold mb-3">⚖️ Criterios de Comparación</h4>
-                <div className="grid md:grid-cols-4 gap-4 text-sm">
-                  <div>
-                    <strong>Eficiencia:</strong>
-                    <p>Relación distancia/tiempo real</p>
+
+                <div>
+                  <strong>Eficiencia:</strong>
+                  <p>Relación distancia/tiempo real</p>
+                </div>
+                <div>
+                  <strong>Aplicabilidad:</strong>
+                  <p>Contextos donde es útil</p>
+                </div>
+                <div>
+                  <strong>Precisión:</strong>
+                  <p>Qué tan exacto es el modelo</p>
+                </div>
+                <div>
+                  <strong>Practicidad:</strong>
+                  <p>Facilidad de implementación</p>
+                </div>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* EJEMPLOS CON CÁLCULOS PASO A PASO */}
+        <Card className={darkMode ? 'bg-gray-800' : 'bg-white'}>
+          <CardHeader>
+            <CardTitle className="text-gray-900 dark:text-white">
+              📝 Ejemplos con Cálculos Paso a Paso
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-6">
+            <div className="grid md:grid-cols-3 gap-6">
+              <div className="bg-blue-100 dark:bg-blue-800 p-4 rounded-lg">
+                <h5 className="font-semibold mb-3 text-blue-700 dark:text-blue-300">
+                  🔷 Ejemplo Euclidiano
+                </h5>
+                <div className="text-sm space-y-2">
+                  <p><strong>Problema:</strong> Tendido de cable de A(2,1) a B(5,4)</p>
+                  <div className="bg-white dark:bg-gray-700 p-3 rounded font-mono text-xs">
+                    <p>d = √[(x₂-x₁)² + (y₂-y₁)²]</p>
+                    <p>d = √[(5-2)² + (4-1)²]</p>
+                    <p>d = √[3² + 3²]</p>
+                    <p>d = √[9 + 9]</p>
+                    <p>d = √18 = 4.24 unidades</p>
                   </div>
-                  <div>
-                    <strong>Aplicabilidad:</strong>
-                    <p>Contextos donde es útil</p>
+                  <p className="text-xs"><strong>Uso:</strong> Distancia más corta posible, ideal para infraestructura directa.</p>
+                </div>
+              </div>
+
+              <div className="bg-orange-100 dark:bg-orange-800 p-4 rounded-lg">
+                <h5 className="font-semibold mb-3 text-orange-700 dark:text-orange-300">
+                  🚕 Ejemplo Taxista
+                </h5>
+                <div className="text-sm space-y-2">
+                  <p><strong>Problema:</strong> Entrega urbana de A(2,1) a B(5,4)</p>
+                  <div className="bg-white dark:bg-gray-700 p-3 rounded font-mono text-xs">
+                    <p>d = |x₂-x₁| + |y₂-y₁|</p>
+                    <p>d = |5-2| + |4-1|</p>
+                    <p>d = |3| + |3|</p>
+                    <p>d = 3 + 3 = 6 unidades</p>
                   </div>
-                  <div>
-                    <strong>Precisión:</strong>
-                    <p>Qué tan exacto es el modelo</p>
+                  <p className="text-xs"><strong>Uso:</strong> Navegación en calles cuadriculadas, múltiples rutas óptimas posibles.</p>
+                </div>
+              </div>
+
+              <div className="bg-green-100 dark:bg-green-800 p-4 rounded-lg">
+                <h5 className="font-semibold mb-3 text-green-700 dark:text-green-300">
+                  🌍 Ejemplo Esférico
+                </h5>
+                <div className="text-sm space-y-2">
+                  <p><strong>Problema:</strong> Vuelo Cancún (21.16°N, -86.85°W) a Madrid (40.42°N, -3.70°W)</p>
+                  <div className="bg-white dark:bg-gray-700 p-3 rounded font-mono text-xs">
+                    <p>Δlat = (40.42-21.16)×π/180 = 0.337 rad</p>
+                    <p>Δlon = (-3.70-(-86.85))×π/180 = 1.451 rad</p>
+                    <p>a = sin²(0.337/2) + cos(21.16°)×cos(40.42°)×sin²(1.451/2)</p>
+                    <p>a = 0.028 + 0.928×0.764×0.491 = 0.375</p>
+                    <p>c = 2×atan2(√0.375, √0.625) = 1.287 rad</p>
+                    <p>d = 6371×1.287 = 8,202 km</p>
                   </div>
-                  <div>
-                    <strong>Practicidad:</strong>
-                    <p>Facilidad de implementación</p>
-                  </div>
+                  <p className="text-xs"><strong>Uso:</strong> Obligatorio para distancias largas en la superficie terrestre.</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-yellow-100 dark:bg-yellow-800 p-4 rounded-lg">
+              <h5 className="font-semibold mb-2">🔍 Comparación del Ejemplo</h5>
+              <div className="text-sm grid md:grid-cols-3 gap-4">
+                <div>
+                  <strong>Euclidiana:</strong> 4.24 unidades<br/>
+                  <span className="text-xs">Más directa, menor distancia</span>
+                </div>
+                <div>
+                  <strong>Taxista:</strong> 6.00 unidades<br/>
+                  <span className="text-xs">41% más larga que euclidiana</span>
+                </div>
+                <div>
+                  <strong>Esférica:</strong> 8,202 km<br/>
+                  <span className="text-xs">Para coordenadas reales</span>
                 </div>
               </div>
             </div>
