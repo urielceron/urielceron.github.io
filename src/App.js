@@ -39,6 +39,8 @@ import IntegracionHallazgosCollatz from './pages/matematicas/actividades/progres
 import DemostracionGeometrias from './pages/matematicas/actividades/progresion4/DemostracionGeometrias';
 import GeometriaTaxista from './pages/matematicas/actividades/progresion4/GeometriaTaxista';
 import GeometriaEsferica from './pages/matematicas/actividades/progresion4/GeometriaEsferica';
+import ComparacionGeometrias from './pages/matematicas/actividades/progresion4/ComparacionGeometrias';
+import AplicacionesPracticas from './pages/matematicas/actividades/progresion4/AplicacionesPracticas';
 
 // Componente que redirige a la ruta correcta basado en los parámetros
 const AsignaturaRouter = () => {
@@ -177,6 +179,8 @@ const ActividadRouter = () => {
     'demostracion-geometrias': DemostracionGeometrias,
     'geometria-taxista': GeometriaTaxista,
     'mediciones-esfericas': GeometriaEsferica,
+    'comparacion-geometrias': ComparacionGeometrias,
+    'aplicaciones-practicas': AplicacionesPracticas,
   };
 
   const Actividad = actividadesMap[rutaActividad];
