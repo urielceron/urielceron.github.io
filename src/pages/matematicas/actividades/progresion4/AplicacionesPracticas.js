@@ -297,15 +297,7 @@ const AplicacionesPracticas = () => {
                     <li>Formular conclusiones integradas</li>
                   </ol>
                 </div>
-                <div>
-                  <h5 className="font-semibold mb-2">Fase 4: Presentación (15 min)</h5>
-                  <ol className="list-decimal pl-6 space-y-1 text-sm">
-                    <li>Estructurar presentación de 10 minutos</li>
-                    <li>Preparar materiales visuales</li>
-                    <li>Ensayar con tiempo controlado</li>
-                    <li>Anticipar preguntas frecuentes</li>
-                  </ol>
-                </div>
+
               </div>
             </div>
 
@@ -362,30 +354,7 @@ const AplicacionesPracticas = () => {
                 </div>
               </div>
 
-              <div className="bg-purple-50 dark:bg-purple-900 p-4 rounded-lg">
-                <h4 className="font-semibold mb-3">📢 Estructura de Presentación</h4>
-                <div className="space-y-2 text-sm">
-                  <div className="border-l-4 border-blue-500 pl-3">
-                    <p><strong>Introducción (1 min)</strong></p>
-                    <p>Presentación del problema y objetivos</p>
-                  </div>
 
-                  <div className="border-l-4 border-green-500 pl-3">
-                    <p><strong>Análisis (4 min)</strong></p>
-                    <p>Comparación de geometrías y datos</p>
-                  </div>
-
-                  <div className="border-l-4 border-orange-500 pl-3">
-                    <p><strong>Solución (3 min)</strong></p>
-                    <p>Propuesta y justificación</p>
-                  </div>
-
-                  <div className="border-l-4 border-red-500 pl-3">
-                    <p><strong>Conclusiones (2 min)</strong></p>
-                    <p>Resultados y aplicabilidad</p>
-                  </div>
-                </div>
-              </div>
             </div>
           </CardContent>
         </Card>
@@ -513,144 +482,6 @@ const AplicacionesPracticas = () => {
           </CardContent>
         </Card>
 
-        {/* SABER HACER - ACTIVIDADES PRÁCTICAS */}
-        <Card className={darkMode ? 'bg-gray-800' : 'bg-white'}>
-          <CardHeader>
-            <CardTitle className="text-gray-900 dark:text-white">
-              🎯 Saber Hacer: Actividades Prácticas de Integración - 60 minutos
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-6">
-
-            <div className="bg-blue-50 dark:bg-blue-900 p-6 rounded-lg">
-              <h4 className="font-semibold text-lg mb-4">📊 Actividad 1: Consolidación de Análisis Comparativo (20 min)</h4>
-              <div className="space-y-3">
-                <p><strong>Objetivo:</strong> Integrar todos los datos recolectados en las sesiones anteriores en un análisis unificado</p>
-                <div className="bg-white dark:bg-gray-700 p-4 rounded">
-                  <p><strong>Pasos a seguir:</strong></p>
-                  <ol className="list-decimal pl-6 space-y-2 mt-2">
-                    <li><strong>Recopilación (5 min):</strong> Reunir todas las tablas y mediciones de sesiones 1-4</li>
-                    <li><strong>Organización (5 min):</strong> Crear tabla maestra con todos los datos comparativos</li>
-                    <li><strong>Análisis de patrones (5 min):</strong> Identificar tendencias y conclusiones consistentes</li>
-                    <li><strong>Síntesis (5 min):</strong> Redactar 3 conclusiones principales del estudio completo</li>
-                  </ol>
-
-                  <div className="mt-4 p-3 bg-yellow-100 dark:bg-yellow-800 rounded">
-                    <p><strong>Entregable:</strong> Tabla comparativa integrada con conclusiones documentadas</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-green-50 dark:bg-green-900 p-6 rounded-lg">
-              <h4 className="font-semibold text-lg mb-4">🎨 Actividad 2: Preparación de Materiales de Presentación (15 min)</h4>
-              <div className="space-y-3">
-                <p><strong>Objetivo:</strong> Crear visualizaciones efectivas y material de apoyo para la presentación final</p>
-                <div className="bg-white dark:bg-gray-700 p-4 rounded">
-                  <p><strong>Tareas específicas:</strong></p>
-                  <ol className="list-decimal pl-6 space-y-2 mt-2">
-                    <li><strong>Gráfico comparativo (4 min):</strong> Crear gráfico de barras con eficiencias por geometría</li>
-                    <li><strong>Matriz de decisión (4 min):</strong> Completar tabla de cuándo usar cada geometría</li>
-                    <li><strong>Capturas de evidencia (4 min):</strong> Seleccionar mejores imágenes de herramientas usadas</li>
-                    <li><strong>Lista de verificación (3 min):</strong> Preparar checklist para la presentación</li>
-                  </ol>
-
-                  <div className="mt-4 p-3 bg-yellow-100 dark:bg-yellow-800 rounded">
-                    <p><strong>Entregable:</strong> Kit completo de materiales visuales listos para presentar</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-yellow-50 dark:bg-yellow-900 p-6 rounded-lg">
-              <h4 className="font-semibold text-lg mb-4">🏗️ Actividad 3: Desarrollo de Casos de Aplicación (15 min)</h4>
-              <div className="space-y-3">
-                <p><strong>Objetivo:</strong> Documentar aplicaciones prácticas reales usando la metodología aprendida</p>
-                <div className="bg-white dark:bg-gray-700 p-4 rounded">
-                  <p><strong>Proceso por caso (7.5 min cada uno):</strong></p>
-                  <ol className="list-decimal pl-6 space-y-2 mt-2">
-                    <li><strong>Selección:</strong> Elegir 2 casos de la biblioteca de aplicaciones</li>
-                    <li><strong>Análisis:</strong> Aplicar la metodología de evaluación de geometrías</li>
-                    <li><strong>Justificación:</strong> Documentar por qué es la mejor opción</li>
-                    <li><strong>Cuantificación:</strong> Calcular beneficios específicos cuando sea posible</li>
-                  </ol>
-
-                  <div className="mt-4 p-3 bg-yellow-100 dark:bg-yellow-800 rounded">
-                    <p><strong>Entregable:</strong> 2 casos completamente documentados con análisis técnico</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-purple-50 dark:bg-purple-900 p-6 rounded-lg">
-              <h4 className="font-semibold text-lg mb-4">🎤 Actividad 4: Ensayo de Presentación (10 min)</h4>
-              <div className="space-y-3">
-                <p><strong>Objetivo:</strong> Practicar la presentación final con tiempo controlado y retroalimentación</p>
-                <div className="bg-white dark:bg-gray-700 p-4 rounded">
-                  <p><strong>Estructura del ensayo:</strong></p>
-                  <ol className="list-decimal pl-6 space-y-2 mt-2">
-                    <li><strong>Preparación (2 min):</strong> Organizar materiales y revisar estructura</li>
-                    <li><strong>Presentación completa (6 min):</strong> Exponer siguiendo la estructura de 10 minutos</li>
-                    <li><strong>Autoevaluación (2 min):</strong> Identificar áreas de mejora y ajustes necesarios</li>
-                  </ol>
-
-                  <div className="mt-4 space-y-2">
-                    <div className="p-3 bg-green-100 dark:bg-green-800 rounded">
-                      <p><strong>Criterios de evaluación:</strong></p>
-                      <ul className="list-disc pl-4 text-sm">
-                        <li>Claridad en la explicación de conceptos</li>
-                        <li>Uso efectivo de evidencias y datos</li>
-                        <li>Conexión lógica entre secciones</li>
-                        <li>Manejo del tiempo asignado</li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-
-        {/* ESTRUCTURA DE PRESENTACIÓN DETALLADA */}
-        <Card className={darkMode ? 'bg-gray-800' : 'bg-white'}>
-          <CardHeader>
-            <CardTitle className="text-gray-900 dark:text-white">
-              📋 Guía Detallada para la Presentación Final (10 minutos)
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-6">
-            <div className="grid md:grid-cols-2 gap-6">
-              {estructurasPresentacion.map((seccion, index) => (
-                <div key={index} className="bg-gray-50 dark:bg-gray-700 p-4 rounded-lg">
-                  <div className="flex justify-between items-center mb-3">
-                    <h5 className="font-semibold text-lg">{seccion.nombre}</h5>
-                    <span className="text-sm bg-blue-100 dark:bg-blue-800 text-blue-800 dark:text-blue-200 px-2 py-1 rounded">
-                      {seccion.tiempo}
-                    </span>
-                  </div>
-
-                  <ul className="space-y-2 text-sm">
-                    {seccion.contenido.map((item, idx) => (
-                      <li key={idx} className="flex items-start space-x-2">
-                        <span className="text-blue-600 dark:text-blue-400 font-bold">•</span>
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-
-                  <div className="mt-3 p-2 bg-yellow-50 dark:bg-yellow-900 rounded text-xs">
-                    <strong>💡 Tip: </strong>
-                    {index === 0 && "Capta la atención con un problema real y relevante"}
-                    {index === 1 && "Usa datos específicos de tus mediciones anteriores"}
-                    {index === 2 && "Incluye visualizaciones de las herramientas utilizadas"}
-                    {index === 3 && "Conecta con aplicaciones futuras y haz preguntas"}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </CardContent>
-        </Card>
-
         {/* CONTRIBUCIÓN AL PROYECTO FINAL */}
         <Card className={darkMode ? 'bg-gray-800' : 'bg-white'}>
           <CardHeader>
@@ -675,108 +506,48 @@ const AplicacionesPracticas = () => {
                 <div>
                   <h5 className="font-semibold mb-3 text-lg">5.1 Síntesis del Análisis Comparativo (4 puntos)</h5>
                   <ul className="list-disc pl-6 space-y-1 text-sm">
-                    <li><strong>Tabla maestra integrada:</strong> Consolidación de todos los datos de sesiones 1-4</li>
+                    <li><strong>Tablas de las sesiones:</strong> Consolidación de todos los datos de sesiones 1-4</li>
                     <li><strong>Patrones identificados:</strong> Tendencias consistentes observadas a través del estudio</li>
-                    <li><strong>Matriz de decisión final:</strong> Guía práctica para seleccionar geometrías</li>
+                    <li><strong>Matriz de decisión final:</strong> Guía práctica para seleccionar geometrías euclidiana, taxista, y esferica</li>
                     <li><strong>Conclusiones principales:</strong> 3-5 hallazgos clave del estudio completo</li>
                   </ul>
                 </div>
 
-                <div>
-                  <h5 className="font-semibold mb-3 text-lg">5.2 Casos de Aplicación Documentados (6 puntos)</h5>
-                  <div className="bg-white dark:bg-gray-700 p-4 rounded">
-                    <p className="font-semibold mb-2">Documentación requerida para cada caso:</p>
-                    <div className="grid md:grid-cols-2 gap-4 text-sm">
-                      <div>
-                        <p className="font-semibold">Caso 1: [Título seleccionado]</p>
-                        <ul className="list-disc pl-4 space-y-1">
-                          <li>Descripción detallada del problema</li>
-                          <li>Análisis de opciones geométricas</li>
-                          <li>Justificación de la selección</li>
-                          <li>Beneficios cuantificados</li>
-                          <li>Plan de implementación</li>
-                        </ul>
-                      </div>
-                      <div>
-                        <p className="font-semibold">Caso 2: [Título seleccionado]</p>
-                        <ul className="list-disc pl-4 space-y-1">
-                          <li>Análisis completo siguiendo metodología</li>
-                          <li>Comparación con alternativas</li>
-                          <li>Resultados esperados</li>
-                          <li>Aplicabilidad a otros contextos</li>
-                          <li>Lecciones aprendidas</li>
-                        </ul>
-                      </div>
+                <div className="mt-4 p-4 bg-green-100 dark:bg-green-800 rounded">
+                  <h6 className="font-semibold mb-2">📋 Checklist de Entrega:</h6>
+                  <div className="grid md:grid-cols-2 gap-4 text-sm">
+                    <div>
+                      <p className="font-semibold">Evidencias Obligatorias:</p>
+                      <ul className="list-disc pl-4 space-y-1">
+                        <li>☐ Tabla de las sesiones con datos integrados</li>
+                        <li>☐ 2 casos completamente documentados (pueden ser los mismos de la sesión 4 *casos libres</li>
+                        <li>☐ Matriz de decisión personalizada</li>
+                        <li>☐ Reflexión personal documentada</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <p className="font-semibold">Formato y Calidad:</p>
+                      <ul className="list-disc pl-4 space-y-1">
+                        <li>☐ Máximo 3 páginas para esta sección</li>
+                        <li>☐ Integración con secciones anteriores</li>
+                        <li>☐ Redacción clara y profesional</li>
+                        <li>☐ Evidencias visuales incluidas</li>
+                        <li>☐ Preparación para exposición oral</li>
+                      </ul>
                     </div>
                   </div>
                 </div>
 
-                <div>
-                  <h5 className="font-semibold mb-3 text-lg">5.3 Reflexión sobre el Aprendizaje (3 puntos)</h5>
+                <div className="mt-4 p-4 bg-purple-100 dark:bg-purple-800 rounded">
+                  <h6 className="font-semibold mb-2">💡 Consejos para la Excelencia:</h6>
                   <ul className="list-disc pl-6 space-y-1 text-sm">
-                    <li><strong>Evolución del entendimiento:</strong> Cómo cambió la comprensión a lo largo de las sesiones</li>
-                    <li><strong>Conexiones interdisciplinarias:</strong> Relaciones con otras áreas del conocimiento</li>
-                    <li><strong>Aplicabilidad futura:</strong> Cómo usar estos conocimientos en el futuro</li>
-                    <li><strong>Valoración personal:</strong> Aspectos más significativos del aprendizaje</li>
+                    <li>Demostrar comprensión profunda conectando conceptos de todas las sesiones</li>
+                    <li>Usar datos reales y específicos en lugar de generalizaciones</li>
+                    <li>Mostrar pensamiento crítico evaluando limitaciones y alternativas</li>
+                    <li>Preparar material que pueda ser presentado efectivamente en 10 minutos</li>
+                    <li>Documentar el proceso de aprendizaje, no solo los resultados finales</li>
                   </ul>
                 </div>
-
-                <div>
-                  <h5 className="font-semibold mb-3 text-lg">5.4 Material de Presentación (2 puntos)</h5>
-                  <ul className="list-disc pl-6 space-y-1 text-sm">
-                    <li><strong>Visualizaciones efectivas:</strong> Gráficos, tablas y diagramas claros</li>
-                    <li><strong>Estructura organizada:</strong> Presentación lógica y coherente</li>
-                    <li><strong>Evidencias sólidas:</strong> Datos y cálculos que respalden las conclusiones</li>
-                    <li><strong>Calidad de comunicación:</strong> Claridad y efectividad en la transmisión de ideas</li>
-                  </ul>
-                </div>
-              </div>
-
-              <div className="mt-6 p-4 bg-yellow-100 dark:bg-yellow-800 rounded">
-                <h6 className="font-semibold mb-2">🔗 Integración con el Proyecto Completo:</h6>
-                <ul className="list-disc pl-6 space-y-1 text-sm">
-                  <li><strong>Culminación coherente:</strong> Esta sección debe cerrar de manera lógica todo el proyecto</li>
-                  <li><strong>Referencias cruzadas:</strong> Conectar con todas las secciones anteriores</li>
-                  <li><strong>Valor agregado:</strong> Demostrar cómo la integración genera valor adicional</li>
-                  <li><strong>Preparación para presentación:</strong> Material listo para la exposición final</li>
-                </ul>
-              </div>
-
-              <div className="mt-4 p-4 bg-green-100 dark:bg-green-800 rounded">
-                <h6 className="font-semibold mb-2">📋 Checklist de Entrega:</h6>
-                <div className="grid md:grid-cols-2 gap-4 text-sm">
-                  <div>
-                    <p className="font-semibold">Evidencias Obligatorias:</p>
-                    <ul className="list-disc pl-4 space-y-1">
-                      <li>☐ Tabla maestra con datos integrados</li>
-                      <li>☐ 2 casos completamente documentados</li>
-                      <li>☐ Matriz de decisión personalizada</li>
-                      <li>☐ Material visual para presentación</li>
-                      <li>☐ Reflexión personal documentada</li>
-                    </ul>
-                  </div>
-                  <div>
-                    <p className="font-semibold">Formato y Calidad:</p>
-                    <ul className="list-disc pl-4 space-y-1">
-                      <li>☐ Máximo 3 páginas para esta sección</li>
-                      <li>☐ Integración con secciones anteriores</li>
-                      <li>☐ Redacción clara y profesional</li>
-                      <li>☐ Evidencias visuales incluidas</li>
-                      <li>☐ Preparación para exposición oral</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-
-              <div className="mt-4 p-4 bg-purple-100 dark:bg-purple-800 rounded">
-                <h6 className="font-semibold mb-2">💡 Consejos para la Excelencia:</h6>
-                <ul className="list-disc pl-6 space-y-1 text-sm">
-                  <li>Demostrar comprensión profunda conectando conceptos de todas las sesiones</li>
-                  <li>Usar datos reales y específicos en lugar de generalizaciones</li>
-                  <li>Mostrar pensamiento crítico evaluando limitaciones y alternativas</li>
-                  <li>Preparar material que pueda ser presentado efectivamente en 10 minutos</li>
-                  <li>Documentar el proceso de aprendizaje, no solo los resultados finales</li>
-                </ul>
               </div>
             </div>
           </CardContent>
