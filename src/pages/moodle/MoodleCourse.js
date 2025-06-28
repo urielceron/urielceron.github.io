@@ -18,13 +18,22 @@ const MoodleCourse = () => {
   useEffect(() => {
     const saved = localStorage.getItem('moodleCourseProgress');
     if (saved) {
-      setCheckedPractices(JSON.parse(saved));
+      try {
+        setCheckedPractices(JSON.parse(saved));
+      } catch (error) {
+        console.error('Error loading progress:', error);
+        setCheckedPractices({});
+      }
     }
   }, []);
 
-  // Guardar progreso en localStorage
+  // Guardar progreso en localStorage cada vez que cambie
   useEffect(() => {
-    localStorage.setItem('moodleCourseProgress', JSON.stringify(checkedPractices));
+    try {
+      localStorage.setItem('moodleCourseProgress', JSON.stringify(checkedPractices));
+    } catch (error) {
+      console.error('Error saving progress:', error);
+    }
   }, [checkedPractices]);
 
   const toggleSection = (sectionId) => {
@@ -35,10 +44,21 @@ const MoodleCourse = () => {
   };
 
   const togglePractice = (practiceId) => {
-    setCheckedPractices(prev => ({
-      ...prev,
-      [practiceId]: !prev[practiceId]
-    }));
+    setCheckedPractices(prev => {
+      const newState = {
+        ...prev,
+        [practiceId]: !prev[practiceId]
+      };
+
+      // Guardar inmediatamente en localStorage para mayor persistencia
+      try {
+        localStorage.setItem('moodleCourseProgress', JSON.stringify(newState));
+      } catch (error) {
+        console.error('Error saving practice toggle:', error);
+      }
+
+      return newState;
+    });
   };
 
   const courseInfo = {
@@ -348,6 +368,22 @@ const MoodleCourse = () => {
     });
   });
 
+  // Agrupar prácticas por día para la lista de cotejo
+  const practicesByDay = {};
+  allPractices.forEach(practice => {
+    if (!practicesByDay[practice.day]) {
+      practicesByDay[practice.day] = [];
+    }
+    practicesByDay[practice.day].push(practice);
+  });
+
+  // Ordenar días
+  const sortedDays = Object.keys(practicesByDay).sort((a, b) => {
+    const dayA = parseInt(a.replace('DÍA ', ''));
+    const dayB = parseInt(b.replace('DÍA ', ''));
+    return dayA - dayB;
+  });
+
   const SectionAccordion = ({ id, title, children, icon: Icon }) => (
     <div className="border border-gray-200 rounded-lg mb-4">
       <button
@@ -379,8 +415,8 @@ const MoodleCourse = () => {
             <button
               onClick={handleVolver}
               className={`${darkMode
-                  ? 'text-blue-400 hover:text-blue-300'
-                  : 'text-blue-600 hover:text-blue-800'
+                ? 'text-blue-400 hover:text-blue-300'
+                : 'text-blue-600 hover:text-blue-800'
                 } font-medium transition-colors duration-300`}
             >
               ← Volver
@@ -426,9 +462,9 @@ const MoodleCourse = () => {
           <div className="mb-8">
             <h2 className="text-2xl font-bold text-gray-800 mb-6 flex items-center gap-2">
               <BookOpen className="h-6 w-6 text-blue-600" />
-                <div className={darkMode ? 'text-gray-300' : 'text-gray-600'}>
-                  Contenido del Curso
-                </div>
+              <div className={darkMode ? 'text-gray-300' : 'text-gray-600'}>
+                Contenido del Curso
+              </div>
             </h2>
 
             {courseDays.map(day => (
@@ -493,47 +529,102 @@ const MoodleCourse = () => {
             ))}
           </div>
 
-          {/* Lista de Cotejo Principal */}
+          {/* Lista de Cotejo Principal - Organizada por Días */}
           <div className="mt-8">
-            <h2 className="text-2xl font-bold text-gray-800 mb-6 flex items-center gap-2">
+            <h2 className={`text-2xl font-bold ${darkMode ? 'text-white' : 'text-gray-800'} mb-6 flex items-center gap-2`}>
               <CheckCircle2 className="h-6 w-6 text-green-600" />
-              <div className={darkMode ? 'text-gray-300' : 'text-gray-600'}>
-                Lista de Cotejo - Progreso del Curso
-              </div>
+              Lista de Cotejo - Progreso del Curso
             </h2>
 
-            <div className="bg-gray-50 p-6 rounded-lg">
-              <div className="mb-4 text-sm text-gray-600">
-                Progreso: {Object.values(checkedPractices).filter(Boolean).length} de {allPractices.length} prácticas completadas
+            <div className={`${darkMode ? 'bg-gray-700' : 'bg-gray-50'} p-6 rounded-lg`}>
+              <div className={`mb-6 text-center p-4 ${darkMode ? 'bg-gray-600' : 'bg-white'} rounded-lg`}>
+                <div className={`text-lg font-semibold ${darkMode ? 'text-white' : 'text-gray-800'} mb-2`}>
+                  Progreso General del Curso
+                </div>
+                <div className={`text-sm ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
+                  {Object.values(checkedPractices).filter(Boolean).length} de {allPractices.length} prácticas completadas
+                </div>
+                <div className="mt-3 w-full bg-gray-300 rounded-full h-3">
+                  <div
+                    className="bg-green-500 h-3 rounded-full transition-all duration-300"
+                    style={{
+                      width: `${(Object.values(checkedPractices).filter(Boolean).length / allPractices.length) * 100}%`
+                    }}
+                  ></div>
+                </div>
+                <div className={`text-xs mt-1 ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>
+                  {Math.round((Object.values(checkedPractices).filter(Boolean).length / allPractices.length) * 100)}% completado
+                </div>
               </div>
 
-              <div className="grid gap-3">
-                {allPractices.map(practice => (
-                  <div
-                    key={practice.id}
-                    className="flex items-center gap-3 p-3 bg-white rounded-lg border border-gray-200 hover:border-gray-300 transition-colors"
-                  >
-                    <button
-                      onClick={() => togglePractice(practice.id)}
-                      className="flex-shrink-0"
-                    >
-                      {checkedPractices[practice.id] ?
-                        <CheckCircle2 className="h-5 w-5 text-green-600" /> :
-                        <Circle className="h-5 w-5 text-gray-400" />
-                      }
-                    </button>
+              {/* Acordeones por Día */}
+              <div className="space-y-3">
+                {sortedDays.map(day => {
+                  const dayPractices = practicesByDay[day];
+                  const completedInDay = dayPractices.filter(practice => checkedPractices[practice.id]).length;
+                  const totalInDay = dayPractices.length;
+                  const dayProgress = Math.round((completedInDay / totalInDay) * 100);
 
-                    <div className="flex-1">
-                      <div className="flex items-center gap-2 mb-1">
-                        <span className="font-medium text-gray-800">{practice.name}</span>
-                        <span className="text-xs text-gray-500">({practice.duration})</span>
+                  return (
+                    <SectionAccordion
+                      key={`checklist_${day}`}
+                      id={`checklist_${day}`}
+                      title={
+                        <div className="flex items-center justify-between w-full">
+                          <span>{day}</span>
+                          <div className="flex items-center gap-3">
+                            <span className={`text-sm ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
+                              {completedInDay}/{totalInDay}
+                            </span>
+                            <div className="w-20 bg-gray-300 rounded-full h-2">
+                              <div
+                                className="bg-green-500 h-2 rounded-full transition-all duration-300"
+                                style={{ width: `${dayProgress}%` }}
+                              ></div>
+                            </div>
+                            <span className={`text-xs ${darkMode ? 'text-gray-400' : 'text-gray-500'} min-w-12`}>
+                              {dayProgress}%
+                            </span>
+                          </div>
+                        </div>
+                      }
+                      icon={CheckCircle2}
+                    >
+                      <div className="grid gap-3">
+                        {dayPractices.map(practice => (
+                          <div
+                            key={practice.id}
+                            className={`flex items-center gap-3 p-3 ${darkMode ? 'bg-gray-600' : 'bg-white'} rounded-lg border ${darkMode ? 'border-gray-500 hover:border-gray-400' : 'border-gray-200 hover:border-gray-300'} transition-colors`}
+                          >
+                            <button
+                              onClick={() => togglePractice(practice.id)}
+                              className="flex-shrink-0"
+                            >
+                              {checkedPractices[practice.id] ?
+                                <CheckCircle2 className="h-5 w-5 text-green-600" /> :
+                                <Circle className={`h-5 w-5 ${darkMode ? 'text-gray-400' : 'text-gray-400'}`} />
+                              }
+                            </button>
+
+                            <div className="flex-1">
+                              <div className="flex items-center gap-2 mb-1">
+                                <span className={`font-medium ${darkMode ? 'text-white' : 'text-gray-800'}`}>
+                                  {practice.name}
+                                </span>
+                                <span className={`text-xs ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>
+                                  ({practice.duration})
+                                </span>
+                              </div>
+                              <div className={`text-sm ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
+                                {practice.type}
+                              </div>
+                            </div>
+                          </div>
+                        ))}
                       </div>
-                      <div className="text-sm text-gray-600">
-                        {practice.day} - {practice.type}
-                      </div>
-                    </div>
-                  </div>
-                ))}
+                    </SectionAccordion>
+                  );
+                })}
               </div>
             </div>
           </div>
