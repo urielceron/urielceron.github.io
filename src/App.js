@@ -42,7 +42,24 @@ import GeometriaEsferica from './pages/matematicas/actividades/progresion4/Geome
 import ComparacionGeometrias from './pages/matematicas/actividades/progresion4/ComparacionGeometrias';
 import AplicacionesPracticas from './pages/matematicas/actividades/progresion4/AplicacionesPracticas';
 import MoodleCourse from './pages/moodle/MoodleCourse';
-import { Activity1, Activity2, Activity3 } from './pages/moodle/activities';
+import {
+  Activity1,
+  Activity2,
+  Activity3,
+  Activity4,
+  Activity5,
+  Activity6,
+  Activity7,
+  Activity8,
+  Activity9,
+  Activity10,
+  Activity11,
+  Activity12,
+  Activity13,
+  Activity14,
+  Activity15,
+  Activity16
+} from './pages/moodle/activities';
 
 // Componente que redirige a la ruta correcta basado en los parámetros
 const AsignaturaRouter = () => {
@@ -186,6 +203,19 @@ const ActividadRouter = () => {
     'moodle-activity-1': Activity1,
     'moodle-activity-2': Activity2,
     'moodle-activity-3': Activity3,
+    'moodle-activity-4': Activity4,
+    'moodle-activity-5': Activity5,
+    'moodle-activity-6': Activity6,
+    'moodle-activity-7': Activity7,
+    'moodle-activity-8': Activity8,
+    'moodle-activity-9': Activity9,
+    'moodle-activity-10': Activity10,
+    'moodle-activity-11': Activity11,
+    'moodle-activity-12': Activity12,
+    'moodle-activity-13': Activity13,
+    'moodle-activity-14': Activity14,
+    'moodle-activity-15': Activity15,
+    'moodle-activity-16': Activity16
   };
 
   const Actividad = actividadesMap[rutaActividad];
@@ -237,6 +267,19 @@ function App() {
         <Route path="/moodle-activity-1" element={<Activity1 darkMode={false} />} />
         <Route path="/moodle-activity-2" element={<Activity2 darkMode={false} />} />
         <Route path="/moodle-activity-3" element={<Activity3 darkMode={false} />} />
+        <Route path="/moodle-activity-4" element={<Activity4 darkMode={false} />} />
+        <Route path="/moodle-activity-5" element={<Activity5 darkMode={false} />} />
+        <Route path="/moodle-activity-6" element={<Activity6 darkMode={false} />} />
+        <Route path="/moodle-activity-7" element={<Activity7 darkMode={false} />} />
+        <Route path="/moodle-activity-8" element={<Activity8 darkMode={false} />} />
+        <Route path="/moodle-activity-9" element={<Activity9 darkMode={false} />} />
+        <Route path="/moodle-activity-10" element={<Activity10 darkMode={false} />} />
+        <Route path="/moodle-activity-11" element={<Activity11 darkMode={false} />} />
+        <Route path="/moodle-activity-12" element={<Activity12 darkMode={false} />} />
+        <Route path="/moodle-activity-13" element={<Activity13 darkMode={false} />} />
+        <Route path="/moodle-activity-14" element={<Activity14 darkMode={false} />} />
+        <Route path="/moodle-activity-15" element={<Activity15 darkMode={false} />} />
+        <Route path="/moodle-activity-16" element={<Activity16 darkMode={false} />} />
 
         {/* Ruta de respaldo para URLs desconocidas */}
         <Route path="*" element={<Navigate to="/" replace />} />
