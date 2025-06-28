@@ -2,7 +2,7 @@ import React from 'react';
 import { ArrowLeft, CheckCircle2, Users, Clock, Calendar } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
-const Activity16 = ({ darkMode }) => {
+const Homework4Day1 = ({ darkMode }) => {
   const navigate = useNavigate();
 
   return (
@@ -326,4 +326,4 @@ const Activity16 = ({ darkMode }) => {
   );
 };
 
-export default Activity16;
+export default Homework4Day1;

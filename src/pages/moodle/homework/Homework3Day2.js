@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { ArrowLeft, FileText, CheckCircle2, Users, Clock, BookOpen, Archive, Share2 } from 'lucide-react';
+import { ArrowLeft, FileCheck, CheckCircle2, Users, Clock, Search, AlertCircle, Shield } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
-const Homework3Day1 = ({ darkMode }) => {
+const Homework3Day2 = ({ darkMode }) => {
   const navigate = useNavigate();
   const [checkedItems, setCheckedItems] = useState({});
 
@@ -37,7 +37,7 @@ const Homework3Day1 = ({ darkMode }) => {
           <div className="flex items-center gap-4">
             <div className="flex items-center gap-2 text-blue-600">
               <Clock className="h-5 w-5" />
-              <span className="font-medium">30 min</span>
+              <span className="font-medium">20 min</span>
             </div>
             <div className="flex items-center gap-2 text-green-600">
               <Users className="h-5 w-5" />
@@ -47,13 +47,13 @@ const Homework3Day1 = ({ darkMode }) => {
         </div>
 
         <div className="flex items-center gap-3 mb-4">
-          <FileText className="h-8 w-8 text-green-600" />
+          <FileCheck className="h-8 w-8 text-green-600" />
           <div>
             <h1 className={`text-2xl font-bold ${darkMode ? 'text-white' : 'text-gray-800'}`}>
-              ACTIVIDAD 3: DOCUMENTACIÓN
+              ACTIVIDAD EN CASA 3 - DÍA 2: VERIFICACIÓN
             </h1>
             <p className={`${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
-              Trabajo en Casa - Día 1
+              DÍA 2 - Trabajo en Casa • Actividad 3 de 4
             </p>
           </div>
         </div>
@@ -65,14 +65,111 @@ const Homework3Day1 = ({ darkMode }) => {
           🎯 Objetivo
         </h2>
         <p className={`${darkMode ? 'text-gray-300' : 'text-gray-700'} text-lg`}>
-          Crear un manual personal completo de todos los pasos aprendidos durante el Día 1,
-          que sirva como referencia rápida para futuras implementaciones y como guía para capacitar a otros docentes.
+          Verificar formato correcto para importación mediante verificación sistemática de todos los
+          archivos, asegurando importación exitosa sin errores técnicos.
         </p>
       </div>
 
-      {/* Instrucciones */}
+      {/* Checklist Master de Verificación */}
       <div className={`${darkMode ? 'bg-gray-800' : 'bg-white'} rounded-lg p-6 mb-6`}>
-        <h2 className={`text-2xl font-bold mb-6 ${darkMode ? 'text-white' : 'text-gray-800'}`}>
+        <h2 className={`text-xl font-semibold mb-4 ${darkMode ? 'text-white' : 'text-gray-800'}`}>
+          ✅ Checklist Master de Verificación Aiken
+        </h2>
+
+        <div className="grid md:grid-cols-2 gap-6">
+          {/* Verificación por Pregunta */}
+          <div className={`p-4 rounded-lg border-l-4 ${darkMode ? 'border-green-500 bg-green-900/20' : 'border-green-500 bg-green-50'}`}>
+            <h3 className={`font-bold mb-3 ${darkMode ? 'text-green-300' : 'text-green-800'}`}>
+              📝 POR CADA PREGUNTA
+            </h3>
+            <div className={`space-y-2 text-sm ${darkMode ? 'text-green-200' : 'text-green-700'}`}>
+              <div className="flex items-center gap-2">
+                <span>☐</span><span>Estructura: Pregunta + A. B. C. D. + ANSWER: X</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span>☐</span><span>Puntos después de letras (A. B. C. D.)</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span>☐</span><span>ANSWER en MAYÚSCULAS</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span>☐</span><span>Línea en blanco entre preguntas</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span>☐</span><span>Sin numeración o formato extra</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Verificación del Archivo */}
+          <div className={`p-4 rounded-lg border-l-4 ${darkMode ? 'border-blue-500 bg-blue-900/20' : 'border-blue-500 bg-blue-50'}`}>
+            <h3 className={`font-bold mb-3 ${darkMode ? 'text-blue-300' : 'text-blue-800'}`}>
+              📄 ARCHIVO COMPLETO
+            </h3>
+            <div className={`space-y-2 text-sm ${darkMode ? 'text-blue-200' : 'text-blue-700'}`}>
+              <div className="flex items-center gap-2">
+                <span>☐</span><span>Codificación UTF-8</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span>☐</span><span>Solo texto plano (.txt)</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span>☐</span><span>Sin caracteres especiales problemáticos</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span>☐</span><span>Nomenclatura consistente</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span>☐</span><span>Sin líneas extra al final</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Archivos a Verificar */}
+      <div className={`${darkMode ? 'bg-gray-800' : 'bg-white'} rounded-lg p-6 mb-6`}>
+        <h2 className={`text-xl font-semibold mb-4 ${darkMode ? 'text-white' : 'text-gray-800'}`}>
+          📁 Archivos a Verificar Sistemáticamente
+        </h2>
+
+        <div className="grid md:grid-cols-3 gap-6">
+          <div className={`p-4 rounded-lg ${darkMode ? 'bg-purple-900/30 border-purple-700' : 'bg-purple-50 border-purple-200'} border`}>
+            <h3 className={`font-bold mb-3 ${darkMode ? 'text-purple-300' : 'text-purple-800'}`}>
+              🎯 Archivos Estratégicos
+            </h3>
+            <div className={`space-y-2 text-sm ${darkMode ? 'text-purple-100' : 'text-purple-700'}`}>
+              <div>• [Materia]_BASICO_30preguntas.txt</div>
+              <div>• [Materia]_INTERMEDIO_40preguntas.txt</div>
+              <div>• [Materia]_AVANZADO_30preguntas.txt</div>
+            </div>
+          </div>
+
+          <div className={`p-4 rounded-lg ${darkMode ? 'bg-orange-900/30 border-orange-700' : 'bg-orange-50 border-orange-200'} border`}>
+            <h3 className={`font-bold mb-3 ${darkMode ? 'text-orange-300' : 'text-orange-800'}`}>
+              📊 Archivos por Examen
+            </h3>
+            <div className={`space-y-2 text-sm ${darkMode ? 'text-orange-100' : 'text-orange-700'}`}>
+              <div>• [Materia]_DIAGNOSTICO_20preguntas.txt</div>
+              <div>• [Materia]_PARCIAL_35preguntas.txt</div>
+              <div>• [Materia]_FINAL_50preguntas.txt</div>
+            </div>
+          </div>
+
+          <div className={`p-4 rounded-lg ${darkMode ? 'border-gray-500 bg-gray-700' : 'border-gray-300 bg-gray-50'} border`}>
+            <h3 className={`font-bold mb-3 ${darkMode ? 'text-gray-300' : 'text-gray-800'}`}>
+              📚 Archivo Maestro
+            </h3>
+            <div className={`space-y-2 text-sm ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+              <div>• [Materia]_BANCO_COMPLETO_100preguntas.txt</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Instrucciones Paso a Paso */}
+      <div className={`${darkMode ? 'bg-gray-800' : 'bg-white'} rounded-lg p-6 mb-6`}>
+        <h2 className={`text-xl font-semibold mb-6 ${darkMode ? 'text-white' : 'text-gray-800'}`}>
           Instrucciones Paso a Paso
         </h2>
 
@@ -84,19 +181,19 @@ const Homework3Day1 = ({ darkMode }) => {
             </div>
             <div className={`flex-1 border-l-4 ${darkMode ? 'border-red-500 bg-gray-700' : 'border-red-500 bg-red-50'} rounded-r-lg p-4`}>
               <h3 className={`font-semibold mb-2 ${darkMode ? 'text-red-300' : 'text-red-800'}`}>
-                Paso 1: Crear estructura del manual
+                Paso 1: Verificar formato Aiken en todos los archivos (15 min)
               </h3>
               <div className={`space-y-2 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-                <p>• Abre un documento nuevo (Word, Google Docs o editor de tu preferencia)</p>
-                <p>• Título: "Manual Personal Moodle - [Tu Nombre] - [Tu Materia]"</p>
-                <p>• Crea esta estructura de secciones:</p>
-                <p className="ml-4">1. Información básica del curso creado</p>
-                <p className="ml-4">2. Proceso de creación de cuentas</p>
-                <p className="ml-4">3. Configuración de cursos</p>
-                <p className="ml-4">4. Métodos de inscripción</p>
-                <p className="ml-4">5. Personalización y apariencia</p>
-                <p className="ml-4">6. Lecciones aprendidas y notas importantes</p>
-                <p className="ml-4">7. Próximos pasos y plan de implementación</p>
+                <p>• <strong>Usa checklist desarrollado en Actividad 19:</strong></p>
+                <div className={`ml-4 p-3 rounded ${darkMode ? 'bg-gray-600' : 'bg-gray-100'} text-sm`}>
+                  <div>Por cada archivo verificar:</div>
+                  <div>☐ Estructura: Pregunta + A. B. C. D. + ANSWER: X</div>
+                  <div>☐ Puntos después de letras (A. B. C. D.)</div>
+                  <div>☐ ANSWER en MAYÚSCULAS</div>
+                  <div>☐ Línea en blanco entre preguntas</div>
+                  <div>☐ Sin numeración o formato extra</div>
+                  <div>☐ Codificación UTF-8</div>
+                </div>
               </div>
             </div>
           </div>
@@ -108,15 +205,13 @@ const Homework3Day1 = ({ darkMode }) => {
             </div>
             <div className={`flex-1 border-l-4 ${darkMode ? 'border-orange-500 bg-gray-700' : 'border-orange-500 bg-orange-50'} rounded-r-lg p-4`}>
               <h3 className={`font-semibold mb-2 ${darkMode ? 'text-orange-300' : 'text-orange-800'}`}>
-                Paso 2: Documentar información básica
+                Paso 2: Crear archivos consolidados para importación (10 min)
               </h3>
               <div className={`space-y-2 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-                <p>• <strong>Sección 1 - Información básica:</strong></p>
-                <p className="ml-4">- URLs de acceso a Moodle</p>
-                <p className="ml-4">- Credenciales de tus cuentas (sin contraseñas, solo usuarios)</p>
-                <p className="ml-4">- Nombres de cursos creados</p>
-                <p className="ml-4">- Fecha de creación y versión de Moodle utilizada</p>
-                <p>• <strong>Incluye captura de pantalla</strong> de la página principal de tu curso</p>
+                <p>• <strong>Archivo MAESTRO completo:</strong></p>
+                <p className="ml-4">- <code>[Materia]_BANCO_COMPLETO_100preguntas.txt</code></p>
+                <p className="ml-4">- Todas las preguntas en un solo archivo</p>
+                <p className="ml-4">- Separadores por tema para navegación fácil</p>
               </div>
             </div>
           </div>
@@ -128,126 +223,75 @@ const Homework3Day1 = ({ darkMode }) => {
             </div>
             <div className={`flex-1 border-l-4 ${darkMode ? 'border-yellow-500 bg-gray-700' : 'border-yellow-500 bg-yellow-50'} rounded-r-lg p-4`}>
               <h3 className={`font-semibold mb-2 ${darkMode ? 'text-yellow-300' : 'text-yellow-800'}`}>
-                Paso 3: Documentar proceso de cuentas
+                Paso 3: Crear archivos estratégicos para importación (5 min)
               </h3>
               <div className={`space-y-2 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-                <p>• <strong>Sección 2 - Creación de cuentas:</strong></p>
-                <p className="ml-4">- Proceso paso a paso para crear cuenta docente</p>
-                <p className="ml-4">- Proceso para crear cuenta estudiante</p>
-                <p className="ml-4">- Diferencias clave entre ambos tipos</p>
-                <p className="ml-4">- Problemas encontrados y cómo se resolvieron</p>
-                <p>• <strong>Tip importante:</strong> Anota las dificultades que tuviste para ayudar a futuros usuarios</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Paso 4 */}
-          <div className="flex gap-4">
-            <div className="flex-shrink-0 w-8 h-8 bg-green-500 text-white rounded-full flex items-center justify-center font-semibold">
-              4
-            </div>
-            <div className={`flex-1 border-l-4 ${darkMode ? 'border-green-500 bg-gray-700' : 'border-green-500 bg-green-50'} rounded-r-lg p-4`}>
-              <h3 className={`font-semibold mb-2 ${darkMode ? 'text-green-300' : 'text-green-800'}`}>
-                Paso 4: Documentar configuración de cursos
-              </h3>
-              <div className={`space-y-2 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-                <p>• <strong>Sección 3 - Configuración de cursos:</strong></p>
-                <p className="ml-4">- Checklist de campos obligatorios</p>
-                <p className="ml-4">- Configuraciones recomendadas para tu tipo de materia</p>
-                <p className="ml-4">- Estructura de secciones que funcionó mejor</p>
-                <p className="ml-4">- Formatos de curso disponibles y cuál elegiste</p>
-                <p>• <strong>Incluye template</strong> con la información básica que usarías para futuros cursos</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Paso 5 */}
-          <div className="flex gap-4">
-            <div className="flex-shrink-0 w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center font-semibold">
-              5
-            </div>
-            <div className={`flex-1 border-l-4 ${darkMode ? 'border-blue-500 bg-gray-700' : 'border-blue-500 bg-blue-50'} rounded-r-lg p-4`}>
-              <h3 className={`font-semibold mb-2 ${darkMode ? 'text-blue-300' : 'text-blue-800'}`}>
-                Paso 5: Documentar métodos de inscripción
-              </h3>
-              <div className={`space-y-2 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-                <p>• <strong>Sección 4 - Métodos de inscripción:</strong></p>
-                <p className="ml-4">- Tabla comparativa de los 3 métodos:</p>
-                <div className="ml-8 space-y-1">
-                  <p>* Manual: Ventajas, desventajas, cuándo usar</p>
-                  <p>* Con clave: Ventajas, desventajas, cuándo usar</p>
-                  <p>* Libre: Ventajas, desventajas, cuándo usar</p>
+                <p>• <strong>Identifica archivo para primera importación:</strong></p>
+                <p className="ml-4">- <strong>Recomendado:</strong> <code>[Materia]_BASICO_30preguntas.txt</code></p>
+                <p className="ml-4">- <strong>Motivo:</strong> Menos riesgo, fácil detectar errores</p>
+                <p>• <strong>Verifica que tengas listos:</strong></p>
+                <div className="ml-4 space-y-1">
+                  <p>- Archivo básico (primera prueba)</p>
+                  <p>- Archivo por tema (importación por categorías)</p>
+                  <p>- Archivo maestro (importación masiva final)</p>
                 </div>
-                <p className="ml-4">- Tu decisión final para implementación real</p>
-                <p className="ml-4">- Pasos detallados para configurar cada método</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Paso 6 */}
-          <div className="flex gap-4">
-            <div className="flex-shrink-0 w-8 h-8 bg-purple-500 text-white rounded-full flex items-center justify-center font-semibold">
-              6
-            </div>
-            <div className={`flex-1 border-l-4 ${darkMode ? 'border-purple-500 bg-gray-700' : 'border-purple-500 bg-purple-50'} rounded-r-lg p-4`}>
-              <h3 className={`font-semibold mb-2 ${darkMode ? 'text-purple-300' : 'text-purple-800'}`}>
-                Paso 6: Documentar personalización
-              </h3>
-              <div className={`space-y-2 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-                <p>• <strong>Sección 5 - Personalización:</strong></p>
-                <p className="ml-4">- Cambios visuales aplicados</p>
-                <p className="ml-4">- Imágenes utilizadas y sus fuentes</p>
-                <p className="ml-4">- Estructura final de secciones</p>
-                <p className="ml-4">- Configuraciones de visualización optimizadas</p>
-                <p>• <strong>Incluye antes y después:</strong> Capturas de cómo se veía inicialmente vs final</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Paso 7 */}
-          <div className="flex gap-4">
-            <div className="flex-shrink-0 w-8 h-8 bg-pink-500 text-white rounded-full flex items-center justify-center font-semibold">
-              7
-            </div>
-            <div className={`flex-1 border-l-4 ${darkMode ? 'border-pink-500 bg-gray-700' : 'border-pink-500 bg-pink-50'} rounded-r-lg p-4`}>
-              <h3 className={`font-semibold mb-2 ${darkMode ? 'text-pink-300' : 'text-pink-800'}`}>
-                Paso 7: Reflexión y próximos pasos
-              </h3>
-              <div className={`space-y-2 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-                <p>• <strong>Sección 6 - Lecciones aprendidas:</strong></p>
-                <p className="ml-4">- Los 3 aspectos más fáciles del proceso</p>
-                <p className="ml-4">- Los 3 aspectos más difíciles</p>
-                <p className="ml-4">- Errores cometidos y cómo evitarlos</p>
-                <p className="ml-4">- Funciones que más te emocionan usar</p>
-                <p>• <strong>Sección 7 - Plan de implementación:</strong></p>
-                <p className="ml-4">- Cronograma tentativo para usar con estudiantes reales</p>
-                <p className="ml-4">- Preparativos necesarios antes de la implementación</p>
-                <p className="ml-4">- Dudas pendientes para resolver en DÍA 2</p>
               </div>
             </div>
           </div>
         </div>
       </div>
 
+      {/* Validación Técnica */}
+      <div className={`${darkMode ? 'bg-gray-800' : 'bg-white'} rounded-lg p-6 mb-6`}>
+        <h2 className={`text-xl font-semibold mb-4 ${darkMode ? 'text-white' : 'text-gray-800'} flex items-center gap-2`}>
+          <Shield className="h-6 w-6 text-red-600" />
+          Validación Técnica Final
+        </h2>
+
+        <div className={`p-4 rounded-lg ${darkMode ? 'bg-red-900/30 border-red-700' : 'bg-red-50 border-red-200'} border mb-4`}>
+          <h3 className={`font-bold mb-3 ${darkMode ? 'text-red-300' : 'text-red-800'} flex items-center gap-2`}>
+            <AlertCircle className="h-5 w-5" />
+            Errores Comunes a Buscar
+          </h3>
+          <div className={`space-y-2 text-sm ${darkMode ? 'text-red-100' : 'text-red-700'}`}>
+            <div>• <strong>Caracteres especiales:</strong> ñ, acentos problemáticos</div>
+            <div>• <strong>Líneas en blanco faltantes</strong> entre preguntas</div>
+            <div>• <strong>ANSWER incorrectos:</strong> minúsculas o formato incorrecto</div>
+            <div>• <strong>Numeración accidental:</strong> 1., 2., etc.</div>
+            <div>• <strong>Formato extra:</strong> **negrita**, *cursiva*, etc.</div>
+          </div>
+        </div>
+
+        <div className={`p-4 rounded-lg ${darkMode ? 'bg-green-900/30 border-green-700' : 'bg-green-50 border-green-200'} border`}>
+          <h3 className={`font-bold mb-2 ${darkMode ? 'text-green-300' : 'text-green-800'}`}>
+            🔧 Proceso de Corrección
+          </h3>
+          <p className={`text-sm ${darkMode ? 'text-green-100' : 'text-green-700'}`}>
+            <strong>Corrige inmediatamente</strong> cualquier error encontrado. Es más eficiente corregir
+            ahora que enfrentar errores de importación en DÍA 3.
+          </p>
+        </div>
+      </div>
+
       {/* Lista de Cotejo */}
       <div className={`${darkMode ? 'bg-gray-800' : 'bg-white'} rounded-lg p-6 mb-6`}>
-        <h2 className={`text-xl font-semibold mb-4 ${darkMode ? 'text-white' : 'text-gray-800'}`}>
-          📋 Lista de Cotejo
+        <h2 className={`text-xl font-semibold mb-4 ${darkMode ? 'text-white' : 'text-gray-800'} flex items-center gap-2`}>
+          <CheckCircle2 className="h-6 w-6 text-green-600" />
+          Lista de Cotejo
         </h2>
         <div className="space-y-3">
           {[
-            'Estructura del manual creada con 7 secciones organizadas',
-            'Información básica y capturas de pantalla incluidas',
-            'Procesos de creación de cuentas documentados paso a paso',
-            'Configuraciones de curso y templates creados',
-            'Tabla comparativa de métodos de inscripción completada',
-            'Personalización visual documentada con antes/después',
-            'Reflexión personal y plan de implementación incluidos'
+            'Formato Aiken verificado en todos los archivos individuales',
+            'Archivo maestro consolidado creado (100+ preguntas)',
+            '3 archivos por dificultad preparados para importación',
+            '3 archivos estratégicos para tipos de examen creados',
+            'Codificación UTF-8 confirmada en todos los archivos',
+            'Nomenclatura final consistente aplicada'
           ].map((item, index) => (
-            <div key={index} className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors">
+            <div key={index} className="flex items-center gap-3">
               <button
                 onClick={() => toggleCheck(`checklist-${index}`)}
-                className={`flex-shrink-0 w-6 h-6 rounded border-2 flex items-center justify-center transition-colors ${
+                className={`w-5 h-5 rounded border-2 flex items-center justify-center transition-colors ${
                   checkedItems[`checklist-${index}`]
                     ? 'bg-green-500 border-green-500 text-white'
                     : `border-gray-300 ${darkMode ? 'hover:border-green-400' : 'hover:border-green-500'}`
@@ -263,28 +307,27 @@ const Homework3Day1 = ({ darkMode }) => {
         </div>
       </div>
 
-      {/* Notas Importantes */}
-      <div className={`${darkMode ? 'bg-gray-800' : 'bg-white'} rounded-lg p-6`}>
-        <h2 className={`text-xl font-semibold mb-4 ${darkMode ? 'text-white' : 'text-gray-800'}`}>
-          📝 Notas Importantes
+      {/* Preparación para DÍA 3 */}
+      <div className={`${darkMode ? 'bg-blue-900/30 border-blue-700' : 'bg-blue-50 border-blue-200'} border rounded-lg p-6`}>
+        <h2 className={`text-xl font-semibold mb-4 ${darkMode ? 'text-blue-300' : 'text-blue-800'}`}>
+          🚀 Estado Ideal para DÍA 3: IMPORTACIÓN
         </h2>
-        <div className={`space-y-3 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-          <div className={`p-4 rounded-lg border-l-4 ${darkMode ? 'border-blue-500 bg-blue-900/20' : 'border-blue-500 bg-blue-50'}`}>
-            <p><strong>Documento vivo:</strong> Este manual crecerá conforme avances en el curso. Mantenlo actualizado después de cada día.</p>
-          </div>
-          <div className={`p-4 rounded-lg border-l-4 ${darkMode ? 'border-yellow-500 bg-yellow-900/20' : 'border-yellow-500 bg-yellow-50'}`}>
-            <p><strong>Utilidad futura:</strong> Este manual te ahorrará tiempo cuando implementes Moodle con tus estudiantes reales o capacites a otros docentes.</p>
-          </div>
-          <div className={`p-4 rounded-lg border-l-4 ${darkMode ? 'border-green-500 bg-green-900/20' : 'border-green-500 bg-green-50'}`}>
-            <p><strong>Formato flexible:</strong> Puedes usar Word, Google Docs, Notion, o cualquier herramienta que prefieras para documentación.</p>
-          </div>
-          <div className={`p-4 rounded-lg border-l-4 ${darkMode ? 'border-purple-500 bg-purple-900/20' : 'border-purple-500 bg-purple-50'}`}>
-            <p><strong>Respaldo importante:</strong> Guarda copias en la nube (Google Drive, OneDrive) para no perder tu trabajo.</p>
-          </div>
+        <div className={`space-y-3 ${darkMode ? 'text-blue-100' : 'text-blue-700'}`}>
+          <div>• <strong>Archivos verificados:</strong> Todos los formatos validados y listos</div>
+          <div>• <strong>Organización completa:</strong> Múltiples opciones de importación disponibles</div>
+          <div>• <strong>Archivo de prueba:</strong> Identificado para primera importación segura</div>
+          <div>• <strong>Confianza técnica:</strong> Proceso de verificación dominado</div>
+        </div>
+
+        <div className={`mt-4 p-3 rounded ${darkMode ? 'bg-blue-800/50' : 'bg-blue-100'}`}>
+          <p className={`text-sm font-medium ${darkMode ? 'text-blue-200' : 'text-blue-800'}`}>
+            💡 <strong>Ventaja competitiva:</strong> Un banco bien organizado y verificado acelera
+            dramáticamente la importación y reduce errores a cero.
+          </p>
         </div>
       </div>
     </div>
   );
 };
 
-export default Homework3Day1;
+export default Homework3Day2;

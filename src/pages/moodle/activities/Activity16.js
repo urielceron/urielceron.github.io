@@ -50,7 +50,7 @@ const Activity16 = ({ darkMode }) => {
           <FileText className="h-8 w-8 text-green-600" />
           <div>
             <h1 className={`text-2xl font-bold ${darkMode ? 'text-white' : 'text-gray-800'}`}>
-              ACTIVIDAD 16: ESTRUCTURA AIKEN
+              ACTIVIDAD 16: COMPRENDER FORMATO AIKEN
             </h1>
             <p className={`${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
               DÍA 2 - Sesión Presencial • Bloque 2: Formato Aiken

@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { ArrowLeft, Palette, CheckCircle2, Users, Clock, Image, Layout, Settings } from 'lucide-react';
+import { ArrowLeft, FolderOpen, CheckCircle2, Users, Clock, FileText, SortAsc, Archive } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
-const Homework2Day1 = ({ darkMode }) => {
+const Homework2Day2 = ({ darkMode }) => {
   const navigate = useNavigate();
   const [checkedItems, setCheckedItems] = useState({});
 
@@ -37,7 +37,7 @@ const Homework2Day1 = ({ darkMode }) => {
           <div className="flex items-center gap-4">
             <div className="flex items-center gap-2 text-blue-600">
               <Clock className="h-5 w-5" />
-              <span className="font-medium">45 min</span>
+              <span className="font-medium">30 min</span>
             </div>
             <div className="flex items-center gap-2 text-green-600">
               <Users className="h-5 w-5" />
@@ -47,13 +47,13 @@ const Homework2Day1 = ({ darkMode }) => {
         </div>
 
         <div className="flex items-center gap-3 mb-4">
-          <Palette className="h-8 w-8 text-purple-600" />
+          <FolderOpen className="h-8 w-8 text-orange-600" />
           <div>
             <h1 className={`text-2xl font-bold ${darkMode ? 'text-white' : 'text-gray-800'}`}>
-              ACTIVIDAD 2: PERSONALIZACIÓN AVANZADA
+              ACTIVIDAD EN CASA 2 - DÍA 2: ORGANIZACIÓN
             </h1>
             <p className={`${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
-              Trabajo en Casa - Día 1
+              DÍA 2 - Trabajo en Casa • Actividad 2 de 4
             </p>
           </div>
         </div>
@@ -65,14 +65,102 @@ const Homework2Day1 = ({ darkMode }) => {
           🎯 Objetivo
         </h2>
         <p className={`${darkMode ? 'text-gray-300' : 'text-gray-700'} text-lg`}>
-          Mejorar la apariencia y estructura del curso aplicando configuraciones visuales y
-          organizacionales avanzadas que hagan el entorno más atractivo y funcional para los estudiantes.
+          Separar preguntas por temas y dificultad, creando estructura organizacional que facilite
+          la importación estratégica y creación de exámenes diferenciados.
         </p>
       </div>
 
-      {/* Instrucciones */}
+      {/* Estrategias de Organización */}
       <div className={`${darkMode ? 'bg-gray-800' : 'bg-white'} rounded-lg p-6 mb-6`}>
-        <h2 className={`text-2xl font-bold mb-6 ${darkMode ? 'text-white' : 'text-gray-800'}`}>
+        <h2 className={`text-xl font-semibold mb-4 ${darkMode ? 'text-white' : 'text-gray-800'}`}>
+          📊 Estrategias de Organización
+        </h2>
+
+        <div className="grid md:grid-cols-3 gap-6">
+          <div className={`p-4 rounded-lg ${darkMode ? 'bg-blue-900/30 border-blue-700' : 'bg-blue-50 border-blue-200'} border`}>
+            <h3 className={`font-bold mb-3 ${darkMode ? 'text-blue-300' : 'text-blue-800'} flex items-center gap-2`}>
+              <SortAsc className="h-5 w-5" />
+              Por Dificultad
+            </h3>
+            <div className={`space-y-2 text-sm ${darkMode ? 'text-blue-100' : 'text-blue-700'}`}>
+              <div>• <strong>BÁSICO:</strong> 30 preguntas</div>
+              <div>• <strong>INTERMEDIO:</strong> 40 preguntas</div>
+              <div>• <strong>AVANZADO:</strong> 30 preguntas</div>
+            </div>
+          </div>
+
+          <div className={`p-4 rounded-lg ${darkMode ? 'bg-green-900/30 border-green-700' : 'bg-green-50 border-green-200'} border`}>
+            <h3 className={`font-bold mb-3 ${darkMode ? 'text-green-300' : 'text-green-800'} flex items-center gap-2`}>
+              <FileText className="h-5 w-5" />
+              Por Tipo de Examen
+            </h3>
+            <div className={`space-y-2 text-sm ${darkMode ? 'text-green-100' : 'text-green-700'}`}>
+              <div>• <strong>DIAGNÓSTICO:</strong> 20 preguntas</div>
+              <div>• <strong>PARCIAL:</strong> 35 preguntas</div>
+              <div>• <strong>FINAL:</strong> 50 preguntas</div>
+            </div>
+          </div>
+
+          <div className={`p-4 rounded-lg ${darkMode ? 'bg-purple-900/30 border-purple-700' : 'bg-purple-50 border-purple-200'} border`}>
+            <h3 className={`font-bold mb-3 ${darkMode ? 'text-purple-300' : 'text-purple-800'} flex items-center gap-2`}>
+              <Archive className="h-5 w-5" />
+              Archivo Maestro
+            </h3>
+            <div className={`space-y-2 text-sm ${darkMode ? 'text-purple-100' : 'text-purple-700'}`}>
+              <div>• <strong>COMPLETO:</strong> 100+ preguntas</div>
+              <div>• <strong>Separadores por tema</strong></div>
+              <div>• <strong>Nomenclatura unificada</strong></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Estructura de Archivos */}
+      <div className={`${darkMode ? 'bg-gray-800' : 'bg-white'} rounded-lg p-6 mb-6`}>
+        <h2 className={`text-xl font-semibold mb-4 ${darkMode ? 'text-white' : 'text-gray-800'}`}>
+          📁 Estructura de Archivos Resultante
+        </h2>
+
+        <div className="grid md:grid-cols-2 gap-6">
+          <div className={`p-4 rounded-lg ${darkMode ? 'bg-gray-700' : 'bg-gray-50'} border ${darkMode ? 'border-gray-600' : 'border-gray-200'}`}>
+            <h3 className={`font-bold mb-3 ${darkMode ? 'text-gray-300' : 'text-gray-800'}`}>
+              📄 Archivos por Dificultad
+            </h3>
+            <div className={`space-y-2 text-sm font-mono ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
+              <div>[Materia]_BASICO_30preguntas.txt</div>
+              <div>[Materia]_INTERMEDIO_40preguntas.txt</div>
+              <div>[Materia]_AVANZADO_30preguntas.txt</div>
+            </div>
+          </div>
+
+          <div className={`p-4 rounded-lg ${darkMode ? 'bg-gray-700' : 'bg-gray-50'} border ${darkMode ? 'border-gray-600' : 'border-gray-200'}`}>
+            <h3 className={`font-bold mb-3 ${darkMode ? 'text-gray-300' : 'text-gray-800'}`}>
+              📄 Archivos Estratégicos
+            </h3>
+            <div className={`space-y-2 text-sm font-mono ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
+              <div>[Materia]_DIAGNOSTICO_20preguntas.txt</div>
+              <div>[Materia]_PARCIAL_35preguntas.txt</div>
+              <div>[Materia]_FINAL_50preguntas.txt</div>
+            </div>
+          </div>
+        </div>
+
+        <div className={`mt-6 p-4 rounded-lg ${darkMode ? 'bg-purple-900/30 border-purple-700' : 'bg-purple-50 border-purple-200'} border`}>
+          <h3 className={`font-bold mb-3 ${darkMode ? 'text-purple-300' : 'text-purple-800'}`}>
+            📚 Archivo Maestro Consolidado
+          </h3>
+          <div className={`text-sm font-mono ${darkMode ? 'text-purple-100' : 'text-purple-700'}`}>
+            [Materia]_BANCO_COMPLETO_100preguntas.txt
+          </div>
+          <div className={`mt-2 text-sm ${darkMode ? 'text-purple-200' : 'text-purple-600'}`}>
+            Con separadores por tema para navegación fácil
+          </div>
+        </div>
+      </div>
+
+      {/* Instrucciones Paso a Paso */}
+      <div className={`${darkMode ? 'bg-gray-800' : 'bg-white'} rounded-lg p-6 mb-6`}>
+        <h2 className={`text-xl font-semibold mb-6 ${darkMode ? 'text-white' : 'text-gray-800'}`}>
           Instrucciones Paso a Paso
         </h2>
 
@@ -84,34 +172,17 @@ const Homework2Day1 = ({ darkMode }) => {
             </div>
             <div className={`flex-1 border-l-4 ${darkMode ? 'border-red-500 bg-gray-700' : 'border-red-500 bg-red-50'} rounded-r-lg p-4`}>
               <h3 className={`font-semibold mb-2 ${darkMode ? 'text-red-300' : 'text-red-800'}`}>
-                Paso 1: Cambiar tema visual del curso
+                Paso 1: Clasificar preguntas por dificultad (10 min)
               </h3>
               <div className={`space-y-2 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-                <p>• Accede a tu curso principal con cuenta docente</p>
-                <p>• Ve a "Administración" → "Editar configuración"</p>
-                <p>• Busca la sección "Apariencia" o "Tema"</p>
-                <p>• Si hay opciones de tema disponibles, selecciona uno diferente al por defecto</p>
-                <p>• <strong>Si no hay opciones de tema:</strong> Continúa con personalización de colores y elementos</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Paso 2 */}
-          <div className="flex gap-4">
-            <div className="flex-shrink-0 w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-semibold">
-              2
-            </div>
-            <div className={`flex-1 border-l-4 ${darkMode ? 'border-orange-500 bg-gray-700' : 'border-orange-500 bg-orange-50'} rounded-r-lg p-4`}>
-              <h3 className={`font-semibold mb-2 ${darkMode ? 'text-orange-300' : 'text-orange-800'}`}>
-                Paso 2: Agregar imagen de encabezado
-              </h3>
-              <div className={`space-y-2 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-                <p>• En la configuración del curso, busca "Imagen del curso" o "Imagen de encabezado"</p>
-                <p>• Busca una imagen relacionada con tu materia:</p>
-                <p className="ml-4">- <strong>Opciones gratuitas:</strong> Unsplash.com, Pixabay.com</p>
-                <p className="ml-4">- <strong>Tamaño recomendado:</strong> 1200x300 píxeles</p>
-                <p className="ml-4">- <strong>Temática:</strong> Relacionada con tu área de enseñanza</p>
-                <p>• Sube la imagen y verifica que se muestre correctamente</p>
+                <p>• <strong>Crea 3 archivos separados:</strong></p>
+                <div className="ml-4 space-y-1">
+                  <p>- <code>[Materia]_BASICO_30preguntas.txt</code></p>
+                  <p>- <code>[Materia]_INTERMEDIO_40preguntas.txt</code></p>
+                  <p>- <code>[Materia]_AVANZADO_30preguntas.txt</code></p>
+                </div>
+                <p>• <strong>Copia y pega</strong> preguntas según clasificación</p>
+                <p>• <strong>Mantén formato Aiken</strong> en todos los archivos</p>
               </div>
             </div>
           </div>
@@ -123,18 +194,24 @@ const Homework2Day1 = ({ darkMode }) => {
             </div>
             <div className={`flex-1 border-l-4 ${darkMode ? 'border-yellow-500 bg-gray-700' : 'border-yellow-500 bg-yellow-50'} rounded-r-lg p-4`}>
               <h3 className={`font-semibold mb-2 ${darkMode ? 'text-yellow-300' : 'text-yellow-800'}`}>
-                Paso 3: Crear 6 secciones con nombres creativos
+                Paso 3: Crear archivos estratégicos por tipo de examen (7 min)
               </h3>
               <div className={`space-y-2 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-                <p>• Activa la edición del curso</p>
-                <p>• Expande tu estructura a 6 secciones temáticas principales:</p>
-                <p className="ml-4">- <strong>Sección 0:</strong> "🏠 Bienvenida y Orientación"</p>
-                <p className="ml-4">- <strong>Sección 1:</strong> [Nombre creativo para tu primer tema]</p>
-                <p className="ml-4">- <strong>Sección 2:</strong> [Nombre creativo para tu segundo tema]</p>
-                <p className="ml-4">- <strong>Sección 3:</strong> [Nombre creativo para tu tercer tema]</p>
-                <p className="ml-4">- <strong>Sección 4:</strong> [Nombre creativo para tu cuarto tema]</p>
-                <p className="ml-4">- <strong>Sección 5:</strong> [Nombre creativo para tu quinto tema]</p>
-                <p className="ml-4">- <strong>Sección 6:</strong> "🎯 Evaluación y Cierre"</p>
+                <p>• <strong>Combina dificultades según tipo de evaluación:</strong></p>
+                <div className="ml-4 space-y-2">
+                  <div>
+                    <strong>DIAGNÓSTICO (20 preguntas):</strong>
+                    <div className="text-sm ml-4">- 15 básicas + 5 intermedias</div>
+                  </div>
+                  <div>
+                    <strong>PARCIAL (35 preguntas):</strong>
+                    <div className="text-sm ml-4">- 15 básicas + 15 intermedias + 5 avanzadas</div>
+                  </div>
+                  <div>
+                    <strong>FINAL (50 preguntas):</strong>
+                    <div className="text-sm ml-4">- 15 básicas + 20 intermedias + 15 avanzadas</div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -146,72 +223,56 @@ const Homework2Day1 = ({ darkMode }) => {
             </div>
             <div className={`flex-1 border-l-4 ${darkMode ? 'border-green-500 bg-gray-700' : 'border-green-500 bg-green-50'} rounded-r-lg p-4`}>
               <h3 className={`font-semibold mb-2 ${darkMode ? 'text-green-300' : 'text-green-800'}`}>
-                Paso 4: Personalizar cada sección
+                Paso 4: Crear archivo maestro consolidado (5 min)
               </h3>
               <div className={`space-y-2 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-                <p>• <strong>Para cada sección temática:</strong></p>
-                <p className="ml-4">- Agrega una etiqueta con descripción atractiva</p>
-                <p className="ml-4">- Incluye los objetivos específicos de esa unidad</p>
-                <p className="ml-4">- Agrega una imagen representativa (opcional)</p>
-                <p className="ml-4">- Configura si la sección será visible desde el inicio</p>
+                <p>• <strong>Archivo:</strong> <code>[Materia]_BANCO_COMPLETO_100preguntas.txt</code></p>
+                <p>• <strong>Incluye TODAS las preguntas organizadas por tema:</strong></p>
+                <div className={`ml-4 p-3 rounded ${darkMode ? 'bg-gray-600' : 'bg-gray-100'} font-mono text-sm`}>
+                  <div># TEMA 1: ÁLGEBRA (25 preguntas)</div>
+                  <div></div>
+                  <div>[25 preguntas tema 1]</div>
+                  <div></div>
+                  <div># TEMA 2: GEOMETRÍA (25 preguntas)</div>
+                  <div></div>
+                  <div>[25 preguntas tema 2]</div>
+                  <div></div>
+                  <div>[...continuar con todos los temas]</div>
+                </div>
               </div>
             </div>
           </div>
+        </div>
+      </div>
 
-          {/* Paso 5 */}
-          <div className="flex gap-4">
-            <div className="flex-shrink-0 w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center font-semibold">
-              5
+      {/* Ventajas de la Organización */}
+      <div className={`${darkMode ? 'bg-gray-800' : 'bg-white'} rounded-lg p-6 mb-6`}>
+        <h2 className={`text-xl font-semibold mb-4 ${darkMode ? 'text-white' : 'text-gray-800'}`}>
+          🌟 Ventajas de esta Organización
+        </h2>
+
+        <div className="grid md:grid-cols-2 gap-6">
+          <div className={`space-y-4 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+            <div className={`p-4 rounded-lg border-l-4 ${darkMode ? 'border-blue-500 bg-blue-900/20' : 'border-blue-500 bg-blue-50'}`}>
+              <h3 className={`font-bold mb-2 ${darkMode ? 'text-blue-300' : 'text-blue-800'}`}>⚡ Eficiencia en Importación</h3>
+              <p className="text-sm">Archivos específicos por propósito aceleran el proceso de selección e importación</p>
             </div>
-            <div className={`flex-1 border-l-4 ${darkMode ? 'border-blue-500 bg-gray-700' : 'border-blue-500 bg-blue-50'} rounded-r-lg p-4`}>
-              <h3 className={`font-semibold mb-2 ${darkMode ? 'text-blue-300' : 'text-blue-800'}`}>
-                Paso 5: Configurar página principal
-              </h3>
-              <div className={`space-y-2 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-                <p>• En la Sección 0, agrega:</p>
-                <p className="ml-4">- <strong>Etiqueta de bienvenida:</strong> Mensaje personal del docente</p>
-                <p className="ml-4">- <strong>Foro de anuncios:</strong> Para comunicaciones importantes</p>
-                <p className="ml-4">- <strong>Etiqueta de información:</strong> Horarios, forma de contacto, reglas básicas</p>
-                <p className="ml-4">- <strong>Recurso:</strong> Programa del curso en PDF (puede ser simulado)</p>
-              </div>
+
+            <div className={`p-4 rounded-lg border-l-4 ${darkMode ? 'border-green-500 bg-green-900/20' : 'border-green-500 bg-green-50'}`}>
+              <h3 className={`font-bold mb-2 ${darkMode ? 'text-green-300' : 'text-green-800'}`}>🎯 Evaluación Diferenciada</h3>
+              <p className="text-sm">Facilita creación de exámenes apropiados para diferentes niveles y momentos</p>
             </div>
           </div>
 
-          {/* Paso 6 */}
-          <div className="flex gap-4">
-            <div className="flex-shrink-0 w-8 h-8 bg-purple-500 text-white rounded-full flex items-center justify-center font-semibold">
-              6
+          <div className={`space-y-4 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+            <div className={`p-4 rounded-lg border-l-4 ${darkMode ? 'border-purple-500 bg-purple-900/20' : 'border-purple-500 bg-purple-50'}`}>
+              <h3 className={`font-bold mb-2 ${darkMode ? 'text-purple-300' : 'text-purple-800'}`}>📊 Control de Calidad</h3>
+              <p className="text-sm">Separación permite verificar distribución equilibrada y detectar deficiencias</p>
             </div>
-            <div className={`flex-1 border-l-4 ${darkMode ? 'border-purple-500 bg-gray-700' : 'border-purple-500 bg-purple-50'} rounded-r-lg p-4`}>
-              <h3 className={`font-semibold mb-2 ${darkMode ? 'text-purple-300' : 'text-purple-800'}`}>
-                Paso 6: Organizar navegación
-              </h3>
-              <div className={`space-y-2 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-                <p>• Configura el menú de navegación del curso:</p>
-                <p className="ml-4">- Oculta secciones que no usarás inmediatamente</p>
-                <p className="ml-4">- Agrupa secciones relacionadas</p>
-                <p className="ml-4">- Configura el formato de presentación (acordeón, pestañas, etc.)</p>
-              </div>
-            </div>
-          </div>
 
-          {/* Paso 7 */}
-          <div className="flex gap-4">
-            <div className="flex-shrink-0 w-8 h-8 bg-pink-500 text-white rounded-full flex items-center justify-center font-semibold">
-              7
-            </div>
-            <div className={`flex-1 border-l-4 ${darkMode ? 'border-pink-500 bg-gray-700' : 'border-pink-500 bg-pink-50'} rounded-r-lg p-4`}>
-              <h3 className={`font-semibold mb-2 ${darkMode ? 'text-pink-300' : 'text-pink-800'}`}>
-                Paso 7: Configuraciones de visualización
-              </h3>
-              <div className={`space-y-2 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-                <p>• <strong>Ajusta:</strong></p>
-                <p className="ml-4">- Número de anuncios recientes a mostrar: 3-5</p>
-                <p className="ml-4">- Mostrar calificaciones: Sí</p>
-                <p className="ml-4">- Mostrar informes de actividad: Sí</p>
-                <p className="ml-4">- Permitir descargas: Según tu preferencia</p>
-                <p className="ml-4">- Formato de fecha: México (español)</p>
-              </div>
+            <div className={`p-4 rounded-lg border-l-4 ${darkMode ? 'border-yellow-500 bg-yellow-900/20' : 'border-yellow-500 bg-yellow-50'}`}>
+              <h3 className={`font-bold mb-2 ${darkMode ? 'text-yellow-300' : 'text-yellow-800'}`}>🔄 Reutilización Estratégica</h3>
+              <p className="text-sm">Base escalable para futuras expansiones y adaptaciones curriculares</p>
             </div>
           </div>
         </div>
@@ -219,22 +280,23 @@ const Homework2Day1 = ({ darkMode }) => {
 
       {/* Lista de Cotejo */}
       <div className={`${darkMode ? 'bg-gray-800' : 'bg-white'} rounded-lg p-6 mb-6`}>
-        <h2 className={`text-xl font-semibold mb-4 ${darkMode ? 'text-white' : 'text-gray-800'}`}>
-          📋 Lista de Cotejo
+        <h2 className={`text-xl font-semibold mb-4 ${darkMode ? 'text-white' : 'text-gray-800'} flex items-center gap-2`}>
+          <CheckCircle2 className="h-6 w-6 text-green-600" />
+          Lista de Cotejo
         </h2>
         <div className="space-y-3">
           {[
-            'Tema visual personalizado o mejorado aplicado',
-            'Imagen de encabezado relevante agregada exitosamente',
-            '6 secciones creadas con nombres creativos y descriptivos',
-            'Contenido básico agregado a cada sección',
-            'Página principal organizada con elementos esenciales',
-            'Configuraciones de visualización optimizadas'
+            'Clasificación por dificultad completada (básico/intermedio/avanzado)',
+            '3 archivos por dificultad creados con nomenclatura correcta',
+            '3 archivos estratégicos para tipos de examen creados',
+            'Archivo maestro consolidado con separadores por tema',
+            'Formato Aiken mantenido en todos los archivos',
+            'Distribución equilibrada verificada en cada categoría'
           ].map((item, index) => (
-            <div key={index} className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors">
+            <div key={index} className="flex items-center gap-3">
               <button
                 onClick={() => toggleCheck(`checklist-${index}`)}
-                className={`flex-shrink-0 w-6 h-6 rounded border-2 flex items-center justify-center transition-colors ${
+                className={`w-5 h-5 rounded border-2 flex items-center justify-center transition-colors ${
                   checkedItems[`checklist-${index}`]
                     ? 'bg-green-500 border-green-500 text-white'
                     : `border-gray-300 ${darkMode ? 'hover:border-green-400' : 'hover:border-green-500'}`
@@ -257,16 +319,19 @@ const Homework2Day1 = ({ darkMode }) => {
         </h2>
         <div className={`space-y-3 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
           <div className={`p-4 rounded-lg border-l-4 ${darkMode ? 'border-blue-500 bg-blue-900/20' : 'border-blue-500 bg-blue-50'}`}>
-            <p><strong>Para Moodle 4.5:</strong> Aprovecha las opciones mejoradas de personalización visual disponibles en esta versión.</p>
+            <p><strong>Organización estratégica:</strong> La separación por dificultad y tipo facilita la selección rápida según el contexto educativo específico</p>
           </div>
           <div className={`p-4 rounded-lg border-l-4 ${darkMode ? 'border-yellow-500 bg-yellow-900/20' : 'border-yellow-500 bg-yellow-50'}`}>
-            <p><strong>Creatividad:</strong> Los nombres de secciones deben ser atractivos pero profesionales, que motiven a los estudiantes.</p>
+            <p><strong>Flexibilidad de uso:</strong> Múltiples archivos permiten importaciones parciales según necesidades inmediatas sin comprometer el banco completo</p>
           </div>
           <div className={`p-4 rounded-lg border-l-4 ${darkMode ? 'border-green-500 bg-green-900/20' : 'border-green-500 bg-green-50'}`}>
-            <p><strong>Funcionalidad:</strong> La apariencia debe mejorar la usabilidad, no complicarla. Prioriza la claridad sobre la decoración.</p>
+            <p><strong>Control de calidad:</strong> La organización permite detectar fácilmente deficiencias en cobertura temática o distribución de dificultad</p>
           </div>
           <div className={`p-4 rounded-lg border-l-4 ${darkMode ? 'border-purple-500 bg-purple-900/20' : 'border-purple-500 bg-purple-50'}`}>
-            <p><strong>Escalabilidad:</strong> Organiza pensando en cómo crecerá tu curso a medida que agregues más contenido.</p>
+            <p><strong>Base escalable:</strong> Esta estructura te permite agregar más temas fácilmente en el futuro sin reorganizar todo</p>
+          </div>
+          <div className={`p-4 rounded-lg border-l-4 ${darkMode ? 'border-orange-500 bg-orange-900/20' : 'border-orange-500 bg-orange-50'}`}>
+            <p><strong>Aplicación inmediata:</strong> Estos bancos por tema son perfectos para exámenes parciales, quizzes rápidos y evaluaciones diferenciadas</p>
           </div>
         </div>
       </div>
@@ -274,4 +339,4 @@ const Homework2Day1 = ({ darkMode }) => {
   );
 };
 
-export default Homework2Day1;
+export default Homework2Day2;

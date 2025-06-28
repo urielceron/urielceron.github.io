@@ -70,7 +70,11 @@ import {
   Homework1Day1,
   Homework2Day1,
   Homework3Day1,
-  Homework4Day1
+  Homework4Day1,
+  Homework1Day2,
+  Homework2Day2,
+  Homework3Day2,
+  Homework4Day2
 } from './pages/moodle/homework';
 
 // Componente que redirige a la ruta correcta basado en los parámetros
@@ -309,6 +313,10 @@ function App() {
         <Route path="/moodle-homework-2-day1" element={<Homework2Day1 darkMode={false} />} />
         <Route path="/moodle-homework-3-day1" element={<Homework3Day1 darkMode={false} />} />
         <Route path="/moodle-homework-4-day1" element={<Homework4Day1 darkMode={false} />} />
+        <Route path="/moodle-homework-1-day2" element={<Homework1Day2 darkMode={false} />} />
+        <Route path="/moodle-homework-2-day2" element={<Homework2Day2 darkMode={false} />} />
+        <Route path="/moodle-homework-3-day2" element={<Homework3Day2 darkMode={false} />} />
+        <Route path="/moodle-homework-4-day2" element={<Homework4Day2 darkMode={false} />} />
 
         {/* Ruta de respaldo para URLs desconocidas */}
         <Route path="*" element={<Navigate to="/" replace />} />

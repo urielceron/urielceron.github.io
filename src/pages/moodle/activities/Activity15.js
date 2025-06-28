@@ -50,7 +50,7 @@ const Activity15 = ({ darkMode }) => {
           <Search className="h-8 w-8 text-blue-600" />
           <div>
             <h1 className={`text-2xl font-bold ${darkMode ? 'text-white' : 'text-gray-800'}`}>
-              ACTIVIDAD 15: EVALUAR CALIDAD
+              ACTIVIDAD 15: VALIDAR Y MEJORAR
             </h1>
             <p className={`${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
               DÍA 2 - Sesión Presencial • Bloque 1: IA para Educación

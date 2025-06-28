@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { ArrowLeft, Compass, CheckCircle2, Users, Clock, FileText, Search, Settings } from 'lucide-react';
+import { ArrowLeft, Target, CheckCircle2, Users, Clock, BookOpen, TrendingUp, FileText } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
-const Homework1Day1 = ({ darkMode }) => {
+const Homework1Day2 = ({ darkMode }) => {
   const navigate = useNavigate();
   const [checkedItems, setCheckedItems] = useState({});
 
@@ -37,7 +37,7 @@ const Homework1Day1 = ({ darkMode }) => {
           <div className="flex items-center gap-4">
             <div className="flex items-center gap-2 text-blue-600">
               <Clock className="h-5 w-5" />
-              <span className="font-medium">60 min</span>
+              <span className="font-medium">90 min</span>
             </div>
             <div className="flex items-center gap-2 text-green-600">
               <Users className="h-5 w-5" />
@@ -47,13 +47,13 @@ const Homework1Day1 = ({ darkMode }) => {
         </div>
 
         <div className="flex items-center gap-3 mb-4">
-          <Compass className="h-8 w-8 text-blue-600" />
+          <Target className="h-8 w-8 text-blue-600" />
           <div>
             <h1 className={`text-2xl font-bold ${darkMode ? 'text-white' : 'text-gray-800'}`}>
-              ACTIVIDAD 1: EXPLORACIÓN LIBRE
+              ACTIVIDAD EN CASA 1 - DÍA 2: BANCO COMPLETO
             </h1>
             <p className={`${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
-              Trabajo en Casa - Día 1
+              DÍA 2 - Trabajo en Casa • Actividad 1 de 4
             </p>
           </div>
         </div>
@@ -65,14 +65,74 @@ const Homework1Day1 = ({ darkMode }) => {
           🎯 Objetivo
         </h2>
         <p className={`${darkMode ? 'text-gray-300' : 'text-gray-700'} text-lg`}>
-          Explorar herramientas adicionales de Moodle que no se cubrieron en la sesión presencial,
-          familiarizándose con funcionalidades que podrían ser útiles para tu materia específica.
+          Generar 100+ preguntas para tu materia usando todos los prompts y técnicas dominadas
+          durante el día, creando un banco robusto listo para uso profesional.
         </p>
       </div>
 
-      {/* Instrucciones */}
+      {/* Meta de Producción */}
       <div className={`${darkMode ? 'bg-gray-800' : 'bg-white'} rounded-lg p-6 mb-6`}>
-        <h2 className={`text-2xl font-bold mb-6 ${darkMode ? 'text-white' : 'text-gray-800'}`}>
+        <h2 className={`text-xl font-semibold mb-4 ${darkMode ? 'text-white' : 'text-gray-800'}`}>
+          📊 Meta de Producción: 100+ Preguntas
+        </h2>
+
+        <div className="grid md:grid-cols-2 gap-6">
+          <div className={`p-4 rounded-lg ${darkMode ? 'bg-blue-900/30 border-blue-700' : 'bg-blue-50 border-blue-200'} border`}>
+            <h3 className={`font-bold mb-3 ${darkMode ? 'text-blue-300' : 'text-blue-800'}`}>
+              📈 Inventario Actual
+            </h3>
+            <div className={`space-y-2 text-sm ${darkMode ? 'text-blue-100' : 'text-blue-700'}`}>
+              <div>• <strong>Actividad 13-15:</strong> ~10 preguntas básicas</div>
+              <div>• <strong>Actividad 18:</strong> Preguntas calculadas</div>
+              <div>• <strong>Actividad 19:</strong> Tipos variados</div>
+              <div>• <strong>Actividad 22:</strong> 15 preguntas del examen maestro</div>
+              <div className="pt-2 border-t">
+                <strong>Total estimado:</strong> ~40 preguntas
+              </div>
+            </div>
+          </div>
+
+          <div className={`p-4 rounded-lg ${darkMode ? 'bg-green-900/30 border-green-700' : 'bg-green-50 border-green-200'} border`}>
+            <h3 className={`font-bold mb-3 ${darkMode ? 'text-green-300' : 'text-green-800'}`}>
+              🎯 Distribución por Temas (100 preguntas)
+            </h3>
+            <div className={`space-y-2 text-sm ${darkMode ? 'text-green-100' : 'text-green-700'}`}>
+              <div>• <strong>Tema 1 (principal):</strong> 25 preguntas</div>
+              <div>• <strong>Tema 2 (principal):</strong> 25 preguntas</div>
+              <div>• <strong>Tema 3 (importante):</strong> 20 preguntas</div>
+              <div>• <strong>Tema 4 (secundario):</strong> 15 preguntas</div>
+              <div>• <strong>Tema 5 (secundario):</strong> 15 preguntas</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Diversificación de Tipos */}
+      <div className={`${darkMode ? 'bg-gray-800' : 'bg-white'} rounded-lg p-6 mb-6`}>
+        <h2 className={`text-xl font-semibold mb-4 ${darkMode ? 'text-white' : 'text-gray-800'}`}>
+          🔄 Diversificación de Tipos por Tema
+        </h2>
+
+        <div className={`p-4 rounded-lg ${darkMode ? 'bg-yellow-900/30 border-yellow-700' : 'bg-yellow-50 border-yellow-200'} border`}>
+          <h3 className={`font-bold mb-3 ${darkMode ? 'text-yellow-300' : 'text-yellow-800'}`}>
+            📋 No Solo Opción Múltiple - Distribución Recomendada:
+          </h3>
+          <div className={`grid md:grid-cols-2 gap-4 text-sm ${darkMode ? 'text-yellow-100' : 'text-yellow-700'}`}>
+            <div>
+              <div>• <strong>70% Opción múltiple</strong> (base sólida)</div>
+              <div>• <strong>15% Verdadero/Falso</strong> (rápidas)</div>
+            </div>
+            <div>
+              <div>• <strong>10% Respuesta corta</strong> (aplicación)</div>
+              <div>• <strong>5% Calculadas/Numéricas</strong> (si aplica)</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Instrucciones Paso a Paso */}
+      <div className={`${darkMode ? 'bg-gray-800' : 'bg-white'} rounded-lg p-6 mb-6`}>
+        <h2 className={`text-xl font-semibold mb-6 ${darkMode ? 'text-white' : 'text-gray-800'}`}>
           Instrucciones Paso a Paso
         </h2>
 
@@ -84,17 +144,15 @@ const Homework1Day1 = ({ darkMode }) => {
             </div>
             <div className={`flex-1 border-l-4 ${darkMode ? 'border-red-500 bg-gray-700' : 'border-red-500 bg-red-50'} rounded-r-lg p-4`}>
               <h3 className={`font-semibold mb-2 ${darkMode ? 'text-red-300' : 'text-red-800'}`}>
-                Paso 1: Explorar el menú de administración completo
+                Paso 1: Inventario de lo ya creado (10 min)
               </h3>
               <div className={`space-y-2 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-                <p>• Accede a tu curso principal con cuenta docente</p>
-                <p>• En "Administración del curso", explora TODAS las opciones:</p>
-                <p className="ml-4">- Usuarios y participantes</p>
-                <p className="ml-4">- Copias de seguridad</p>
-                <p className="ml-4">- Importar contenido</p>
-                <p className="ml-4">- Reiniciar curso</p>
-                <p className="ml-4">- Informes de actividad</p>
-                <p>• Anota 3 funciones que no conocías antes</p>
+                <p>• <strong>Cuenta todas las preguntas creadas durante el día:</strong></p>
+                <p className="ml-4">- Actividad 13-15: ~10 preguntas básicas</p>
+                <p className="ml-4">- Actividad 18: Preguntas calculadas</p>
+                <p className="ml-4">- Actividad 19: Tipos variados</p>
+                <p className="ml-4">- Actividad 22: 15 preguntas del examen maestro</p>
+                <p>• <strong>Meta:</strong> Llegar a 100+ preguntas total</p>
               </div>
             </div>
           </div>
@@ -106,18 +164,18 @@ const Homework1Day1 = ({ darkMode }) => {
             </div>
             <div className={`flex-1 border-l-4 ${darkMode ? 'border-orange-500 bg-gray-700' : 'border-orange-500 bg-orange-50'} rounded-r-lg p-4`}>
               <h3 className={`font-semibold mb-2 ${darkMode ? 'text-orange-300' : 'text-orange-800'}`}>
-                Paso 2: Investigar tipos de actividades disponibles
+                Paso 2: Planificar distribución por temas (10 min)
               </h3>
               <div className={`space-y-2 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-                <p>• Activa la edición en tu curso</p>
-                <p>• Haz clic en "Agregar una actividad o recurso"</p>
-                <p>• Explora TODOS los tipos disponibles:</p>
-                <p className="ml-4">- Foros, chats, mensajería</p>
-                <p className="ml-4">- Tareas, talleres, wikis</p>
-                <p className="ml-4">- Encuestas, consultas</p>
-                <p className="ml-4">- Herramientas externas (LTI)</p>
-                <p>• Identifica 5 actividades que podrías usar en tu materia</p>
-                <p>• NO las agregues aún, solo explora las opciones</p>
+                <p>• <strong>Usa tus 5 temas principales identificados</strong></p>
+                <p>• <strong>Distribución sugerida para 100 preguntas:</strong></p>
+                <div className="ml-4 space-y-1">
+                  <p>- <strong>Tema 1 (principal):</strong> 25 preguntas</p>
+                  <p>- <strong>Tema 2 (principal):</strong> 25 preguntas</p>
+                  <p>- <strong>Tema 3 (importante):</strong> 20 preguntas</p>
+                  <p>- <strong>Tema 4 (secundario):</strong> 15 preguntas</p>
+                  <p>- <strong>Tema 5 (secundario):</strong> 15 preguntas</p>
+                </div>
               </div>
             </div>
           </div>
@@ -129,17 +187,22 @@ const Homework1Day1 = ({ darkMode }) => {
             </div>
             <div className={`flex-1 border-l-4 ${darkMode ? 'border-yellow-500 bg-gray-700' : 'border-yellow-500 bg-yellow-50'} rounded-r-lg p-4`}>
               <h3 className={`font-semibold mb-2 ${darkMode ? 'text-yellow-300' : 'text-yellow-800'}`}>
-                Paso 3: Explorar recursos disponibles
+                Paso 3: Producción intensiva con IA (60 min)
               </h3>
               <div className={`space-y-2 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-                <p>• Revisa los tipos de recursos que puedes agregar:</p>
-                <p className="ml-4">- Archivos (PDF, Word, Excel, videos)</p>
-                <p className="ml-4">- Carpetas para organizar materiales</p>
-                <p className="ml-4">- Páginas web internas</p>
-                <p className="ml-4">- Enlaces a sitios externos</p>
-                <p className="ml-4">- Etiquetas informativas</p>
-                <p>• Piensa cómo organizarías tus materiales de clase</p>
-                <p>• Considera qué archivos podrías subir para tus estudiantes</p>
+                <p>• <strong>Por cada tema, usa tu prompt automatizado exitoso</strong></p>
+                <p>• <strong>Sesión productiva por tema:</strong></p>
+                <div className={`ml-4 p-3 rounded ${darkMode ? 'bg-gray-600' : 'bg-gray-100'} font-mono text-sm`}>
+                  <div>TEMA 1 (15 min):</div>
+                  <div>- Ejecuta prompt para 25 preguntas</div>
+                  <div>- Guarda como "[Materia]_Tema1_Casa.txt"</div>
+                  <div></div>
+                  <div>TEMA 2 (15 min):</div>
+                  <div>- Ejecuta prompt para 25 preguntas</div>
+                  <div>- Guarda como "[Materia]_Tema2_Casa.txt"</div>
+                  <div></div>
+                  <div>[Continuar con temas 3, 4, 5]</div>
+                </div>
               </div>
             </div>
           </div>
@@ -151,60 +214,16 @@ const Homework1Day1 = ({ darkMode }) => {
             </div>
             <div className={`flex-1 border-l-4 ${darkMode ? 'border-green-500 bg-gray-700' : 'border-green-500 bg-green-50'} rounded-r-lg p-4`}>
               <h3 className={`font-semibold mb-2 ${darkMode ? 'text-green-300' : 'text-green-800'}`}>
-                Paso 4: Investigar herramientas de calificación
+                Paso 4: Diversificar tipos por tema (10 min)
               </h3>
               <div className={`space-y-2 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-                <p>• Ve al "Libro de calificaciones" de tu curso</p>
-                <p>• Explora las opciones de configuración:</p>
-                <p className="ml-4">- Categorías de calificación</p>
-                <p className="ml-4">- Escalas personalizadas</p>
-                <p className="ml-4">- Cartas de competencias</p>
-                <p className="ml-4">- Reportes para exportar</p>
-                <p>• Considera cómo organizarías las calificaciones de tu materia</p>
-                <p>• ¿Usarías categorías por parciales, por tipo de actividad, etc.?</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Paso 5 */}
-          <div className="flex gap-4">
-            <div className="flex-shrink-0 w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center font-semibold">
-              5
-            </div>
-            <div className={`flex-1 border-l-4 ${darkMode ? 'border-blue-500 bg-gray-700' : 'border-blue-500 bg-blue-50'} rounded-r-lg p-4`}>
-              <h3 className={`font-semibold mb-2 ${darkMode ? 'text-blue-300' : 'text-blue-800'}`}>
-                Paso 5: Explorar herramientas de comunicación
-              </h3>
-              <div className={`space-y-2 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-                <p>• Investiga las opciones de comunicación:</p>
-                <p className="ml-4">- Sistema de mensajería interna</p>
-                <p className="ml-4">- Foros de discusión</p>
-                <p className="ml-4">- Anuncios del curso</p>
-                <p className="ml-4">- Notificaciones automáticas</p>
-                <p>• Prueba enviarte un mensaje usando el sistema interno</p>
-                <p>• Configura las notificaciones según tus preferencias</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Paso 6 */}
-          <div className="flex gap-4">
-            <div className="flex-shrink-0 w-8 h-8 bg-purple-500 text-white rounded-full flex items-center justify-center font-semibold">
-              6
-            </div>
-            <div className={`flex-1 border-l-4 ${darkMode ? 'border-purple-500 bg-gray-700' : 'border-purple-500 bg-purple-50'} rounded-r-lg p-4`}>
-              <h3 className={`font-semibold mb-2 ${darkMode ? 'text-purple-300' : 'text-purple-800'}`}>
-                Paso 6: Documentar hallazgos
-              </h3>
-              <div className={`space-y-2 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-                <p>• Crea un documento (Word o Google Docs) con:</p>
-                <p className="ml-4">- 3 funciones administrativas nuevas que descubriste</p>
-                <p className="ml-4">- 5 actividades que planeas usar en tu materia</p>
-                <p className="ml-4">- Ideas para organizar recursos y materiales</p>
-                <p className="ml-4">- Plan básico para sistema de calificaciones</p>
-                <p className="ml-4">- Estrategia de comunicación con estudiantes</p>
-                <p>• Incluye capturas de pantalla de las funciones más interesantes</p>
-                <p>• Este documento te servirá como referencia futura</p>
+                <p>• <strong>No solo opción múltiple:</strong> Por cada tema incluye:</p>
+                <div className="ml-4 space-y-1">
+                  <p>- 70% Opción múltiple (base sólida)</p>
+                  <p>- 15% Verdadero/Falso (rápidas)</p>
+                  <p>- 10% Respuesta corta (aplicación)</p>
+                  <p>- 5% Calculadas/Numéricas (si aplica)</p>
+                </div>
               </div>
             </div>
           </div>
@@ -213,22 +232,23 @@ const Homework1Day1 = ({ darkMode }) => {
 
       {/* Lista de Cotejo */}
       <div className={`${darkMode ? 'bg-gray-800' : 'bg-white'} rounded-lg p-6 mb-6`}>
-        <h2 className={`text-xl font-semibold mb-4 ${darkMode ? 'text-white' : 'text-gray-800'}`}>
-          📋 Lista de Cotejo
+        <h2 className={`text-xl font-semibold mb-4 ${darkMode ? 'text-white' : 'text-gray-800'} flex items-center gap-2`}>
+          <CheckCircle2 className="h-6 w-6 text-green-600" />
+          Lista de Cotejo
         </h2>
         <div className="space-y-3">
           {[
-            'Menú de administración completo explorado y 3 funciones nuevas identificadas',
-            'Todos los tipos de actividades revisados y 5 seleccionadas para mi materia',
-            'Tipos de recursos explorados y estrategia de organización definida',
-            'Herramientas de calificación investigadas y plan básico creado',
-            'Herramientas de comunicación probadas y configuradas',
-            'Documento de hallazgos creado con capturas de pantalla y planes'
+            'Inventario completo de preguntas existentes realizado',
+            'Plan de distribución por 5 temas definido (100+ preguntas)',
+            '5 archivos separados creados (uno por tema)',
+            'Variedad de tipos incluida en cada tema',
+            'Meta de 100+ preguntas alcanzada',
+            'Nomenclatura consistente aplicada a todos los archivos'
           ].map((item, index) => (
-            <div key={index} className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors">
+            <div key={index} className="flex items-center gap-3">
               <button
                 onClick={() => toggleCheck(`checklist-${index}`)}
-                className={`flex-shrink-0 w-6 h-6 rounded border-2 flex items-center justify-center transition-colors ${
+                className={`w-5 h-5 rounded border-2 flex items-center justify-center transition-colors ${
                   checkedItems[`checklist-${index}`]
                     ? 'bg-green-500 border-green-500 text-white'
                     : `border-gray-300 ${darkMode ? 'hover:border-green-400' : 'hover:border-green-500'}`
@@ -244,23 +264,23 @@ const Homework1Day1 = ({ darkMode }) => {
         </div>
       </div>
 
-      {/* Notas Importantes */}
+      {/* Beneficios */}
       <div className={`${darkMode ? 'bg-gray-800' : 'bg-white'} rounded-lg p-6`}>
         <h2 className={`text-xl font-semibold mb-4 ${darkMode ? 'text-white' : 'text-gray-800'}`}>
-          📝 Notas Importantes
+          🌟 Beneficios de este Banco Completo
         </h2>
         <div className={`space-y-3 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
           <div className={`p-4 rounded-lg border-l-4 ${darkMode ? 'border-blue-500 bg-blue-900/20' : 'border-blue-500 bg-blue-50'}`}>
-            <p><strong>Exploración sin riesgos:</strong> Esta actividad es para explorar únicamente. No hay riesgo de dañar tu curso mientras solo observes las opciones.</p>
-          </div>
-          <div className={`p-4 rounded-lg border-l-4 ${darkMode ? 'border-yellow-500 bg-yellow-900/20' : 'border-yellow-500 bg-yellow-50'}`}>
-            <p><strong>Enfoque en tu materia:</strong> Mientras exploras, siempre piensa cómo cada herramienta podría aplicarse específicamente a tu asignatura.</p>
+            <p><strong>Versatilidad educativa:</strong> 100+ preguntas permiten crear múltiples exámenes sin repetición</p>
           </div>
           <div className={`p-4 rounded-lg border-l-4 ${darkMode ? 'border-green-500 bg-green-900/20' : 'border-green-500 bg-green-50'}`}>
-            <p><strong>Documentación valiosa:</strong> El documento que crees será tu hoja de ruta para implementar Moodle con tus estudiantes reales.</p>
+            <p><strong>Organización temática:</strong> Separación por temas facilita creación de evaluaciones específicas</p>
           </div>
           <div className={`p-4 rounded-lg border-l-4 ${darkMode ? 'border-purple-500 bg-purple-900/20' : 'border-purple-500 bg-purple-50'}`}>
-            <p><strong>Preparación para DÍA 2:</strong> La familiarización con estas herramientas te permitirá enfocarte mejor en las actividades de IA mañana.</p>
+            <p><strong>Diversidad evaluativa:</strong> Diferentes tipos mantienen el interés estudiantil y evalúan competencias variadas</p>
+          </div>
+          <div className={`p-4 rounded-lg border-l-4 ${darkMode ? 'border-yellow-500 bg-yellow-900/20' : 'border-yellow-500 bg-yellow-50'}`}>
+            <p><strong>Escalabilidad profesional:</strong> Base sólida para futuras expansiones y adaptaciones curriculares</p>
           </div>
         </div>
       </div>
@@ -268,4 +288,4 @@ const Homework1Day1 = ({ darkMode }) => {
   );
 };
 
-export default Homework1Day1;
+export default Homework1Day2;

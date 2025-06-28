@@ -50,7 +50,7 @@ const Activity18 = ({ darkMode }) => {
           <Zap className="h-8 w-8 text-yellow-600" />
           <div>
             <h1 className={`text-2xl font-bold ${darkMode ? 'text-white' : 'text-gray-800'}`}>
-              ACTIVIDAD 18: AUTOMATIZACIÓN
+              ACTIVIDAD 18: AUTOMATIZAR CON IA
             </h1>
             <p className={`${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
               DÍA 2 - Sesión Presencial • Bloque 2: Formato Aiken

@@ -13,8 +13,10 @@ const MoodleCourse = () => {
   const handleActivityClick = (activityId) => {
     if (activityId.startsWith('hw')) {
       // Manejar actividades de trabajo en casa
-      const homeworkId = activityId.replace('hw', '').replace('_day', '-day');
-      navigate(`/moodle-homework-${homeworkId}`);
+      const parts = activityId.split('_');
+      const homeworkNumber = parts[0].replace('hw', '');
+      const dayPart = parts[1]; // day1, day2, etc.
+      navigate(`/moodle-homework-${homeworkNumber}-${dayPart}`);
     } else {
       // Manejar actividades presenciales normales
       const activityNumber = activityId.replace('act', '');
@@ -152,29 +154,29 @@ const MoodleCourse = () => {
             duration: "40 min",
             activities: [
               { id: 'act13', name: "Prompts educativos básicos", duration: "10 min", description: "Aprender estructura de prompts efectivos para generar preguntas" },
-              { id: 'act14', name: "Generar primeras preguntas", duration: "15 min", description: "Crear 10 preguntas con IA sobre un tema específico" },
-              { id: 'act15', name: "Evaluar calidad", duration: "15 min", description: "Revisar y mejorar preguntas generadas" }
+              { id: 'act14', name: "Generar primeras preguntas", duration: "15 min", description: "Usar IA para crear 5 preguntas de opción múltiple básicas" },
+              { id: 'act15', name: "Validar y mejorar", duration: "15 min", description: "Revisar calidad de preguntas generadas. Establecer criterios de validación" }
             ]
           },
           {
             id: 'block2_day2',
             title: "FORMATO AIKEN",
-            duration: "50 min",
+            duration: "40 min",
             activities: [
-              { id: 'act16', name: "Estructura Aiken", duration: "10 min", description: "Aprender formato de preguntas Aiken para importación masiva" },
-              { id: 'act17', name: "Conversión manual", duration: "15 min", description: "Convertir preguntas de IA a formato Aiken" },
-              { id: 'act18', name: "Automatización", duration: "15 min", description: "Usar IA para generar directamente en formato Aiken" },
-              { id: 'act19', name: "Verificación", duration: "10 min", description: "Validar formato correcto para importación" }
+              { id: 'act16', name: "Comprender formato Aiken", duration: "15 min", description: "Aprender estructura exacta del formato Aiken para importación" },
+              { id: 'act17', name: "Conversión manual", duration: "15 min", description: "Practicar conversión manual de preguntas de IA al formato Aiken" },
+              { id: 'act18', name: "Automatizar con IA", duration: "10 min", description: "Prompt para que IA genere directamente en formato Aiken" }
             ]
           },
           {
             id: 'block3_day2',
             title: "PRODUCCIÓN MASIVA",
-            duration: "70 min",
+            duration: "90 min",
             activities: [
-              { id: 'act20', name: "Banco por temas", duration: "30 min", description: "Generar 50+ preguntas organizadas por tema" },
-              { id: 'act21', name: "Diferentes niveles", duration: "20 min", description: "Crear preguntas básicas, intermedias y avanzadas" },
-              { id: 'act22', name: "Tipos variados", duration: "20 min", description: "Opción múltiple, verdadero/falso, completar" }
+              { id: 'act19', name: "Verificación de formato", duration: "20 min", description: "Validar formato correcto mediante checklist sistemático" },
+              { id: 'act20', name: "Primer examen anticopia", duration: "25 min", description: "Crear examen aplicando estrategias anticopia básicas" },
+              { id: 'act21', name: "Diferentes niveles", duration: "20 min", description: "Crear preguntas básicas, intermedias y avanzadas para un mismo tema" },
+              { id: 'act22', name: "Examen maestro", duration: "25 min", description: "Crear examen completo combinando todos los tipos de preguntas" }
             ]
           }
         ]
@@ -182,10 +184,10 @@ const MoodleCourse = () => {
       homeWork: {
         duration: "2.5 hrs",
         activities: [
-          { id: 'hw1_day2', name: "Banco completo", duration: "90 min", description: "Generar 100+ preguntas para su materia" },
-          { id: 'hw2_day2', name: "Organización", duration: "30 min", description: "Separar preguntas por temas y dificultad" },
-          { id: 'hw3_day2', name: "Formato final", duration: "30 min", description: "Preparar archivos Aiken para importación" },
-          { id: 'hw4_day2', name: "Revisión", duration: "20 min", description: "Verificar calidad y formato de todas las preguntas" }
+          { id: 'hw1_day2', name: "Banco completo", duration: "90 min", description: "Generar 100+ preguntas usando todos los prompts y técnicas dominadas" },
+          { id: 'hw2_day2', name: "Organización", duration: "30 min", description: "Separar preguntas por temas y dificultad para importación estratégica" },
+          { id: 'hw3_day2', name: "Verificación", duration: "20 min", description: "Verificar formato correcto mediante verificación sistemática" },
+          { id: 'hw4_day2', name: "Revisión", duration: "20 min", description: "Verificar calidad mediante revisión sistemática, preparar para uso profesional" }
         ]
       }
     },
