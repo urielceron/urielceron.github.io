@@ -11,8 +11,15 @@ const MoodleCourse = () => {
   const [checkedPractices, setCheckedPractices] = useState({});
 
   const handleActivityClick = (activityId) => {
-    const activityNumber = activityId.replace('act', '').replace('hw', '');
-    navigate(`/moodle-activity-${activityNumber}`);
+    if (activityId.startsWith('hw')) {
+      // Manejar actividades de trabajo en casa
+      const homeworkId = activityId.replace('hw', '').replace('_day', '-day');
+      navigate(`/moodle-homework-${homeworkId}`);
+    } else {
+      // Manejar actividades presenciales normales
+      const activityNumber = activityId.replace('act', '');
+      navigate(`/moodle-activity-${activityNumber}`);
+    }
   };
 
   const handleVolver = () => {

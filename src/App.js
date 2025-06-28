@@ -60,6 +60,12 @@ import {
   Activity15,
   Activity16
 } from './pages/moodle/activities';
+import {
+  Homework1Day1,
+  Homework2Day1,
+  Homework3Day1,
+  Homework4Day1
+} from './pages/moodle/homework';
 
 // Componente que redirige a la ruta correcta basado en los parámetros
 const AsignaturaRouter = () => {
@@ -280,6 +286,11 @@ function App() {
         <Route path="/moodle-activity-14" element={<Activity14 darkMode={false} />} />
         <Route path="/moodle-activity-15" element={<Activity15 darkMode={false} />} />
         <Route path="/moodle-activity-16" element={<Activity16 darkMode={false} />} />
+
+        <Route path="/moodle-homework-1-day1" element={<Homework1Day1 darkMode={false} />} />
+        <Route path="/moodle-homework-2-day1" element={<Homework2Day1 darkMode={false} />} />
+        <Route path="/moodle-homework-3-day1" element={<Homework3Day1 darkMode={false} />} />
+        <Route path="/moodle-homework-4-day1" element={<Homework4Day1 darkMode={false} />} />
 
         {/* Ruta de respaldo para URLs desconocidas */}
         <Route path="*" element={<Navigate to="/" replace />} />
