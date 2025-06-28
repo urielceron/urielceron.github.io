@@ -43,6 +43,14 @@ const CV = () => {
         { title: 'Web Develoment', path: '/desarrolloweb' },
         { title: 'Game Designer', path: '/gamedesigner' },
       ]
+    },
+    {
+      title: 'Cursos',
+      id: 'courses',
+      hasSubmenu: true,
+      submenu: [
+        { title: 'Moodle + Safe Exam Browser + IA', path: '/moodle-course' },
+      ]
     }
   ];
 
@@ -69,10 +77,13 @@ const CV = () => {
       asignatura = 'culturadigital2';
     } else if (path.includes('matematicas')) {
       asignatura = 'matematicas';
-    } else if (path.includes('desarrolloweb')) {
-      asignatura = 'desarrolloweb';
     } else if (path.includes('gamedesigner')) {
       asignatura = 'gamedesigner';
+    } else if (path.includes('moodle-course')) {
+      navigate(path);
+      setIsMenuOpen(false);
+      setOpenSubmenu(null);
+      return;
     }
 
     // Para asegurarnos de que la navegación funcione correctamente,

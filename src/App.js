@@ -41,6 +41,7 @@ import GeometriaTaxista from './pages/matematicas/actividades/progresion4/Geomet
 import GeometriaEsferica from './pages/matematicas/actividades/progresion4/GeometriaEsferica';
 import ComparacionGeometrias from './pages/matematicas/actividades/progresion4/ComparacionGeometrias';
 import AplicacionesPracticas from './pages/matematicas/actividades/progresion4/AplicacionesPracticas';
+import MoodleCourse from './pages/moodle/MoodleCourse';
 
 // Componente que redirige a la ruta correcta basado en los parámetros
 const AsignaturaRouter = () => {
@@ -226,6 +227,8 @@ function App() {
 
         {/* Rutas para actividades específicas */}
         <Route path="/actividades/*" element={<ActividadRouter />} />
+
+        <Route path="/moodle-course" element={<MoodleCourse />} />
 
         {/* Ruta de respaldo para URLs desconocidas */}
         <Route path="*" element={<Navigate to="/" replace />} />
