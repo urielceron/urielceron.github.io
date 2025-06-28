@@ -10,6 +10,11 @@ const MoodleCourse = () => {
   const [openSections, setOpenSections] = useState({});
   const [checkedPractices, setCheckedPractices] = useState({});
 
+  const handleActivityClick = (activityId) => {
+    const activityNumber = activityId.replace('act', '').replace('hw', '');
+    navigate(`/moodle-activity-${activityNumber}`);
+  };
+
   const handleVolver = () => {
     navigate('/');
   };
@@ -492,13 +497,17 @@ const MoodleCourse = () => {
                     >
                       <div className="space-y-3">
                         {block.activities.map((activity, index) => (
-                          <div key={activity.id} className="p-4 border border-gray-200 rounded-lg">
+                          <div key={activity.id} className={`p-4 border rounded-lg cursor-pointer transition-all hover:shadow-md ${darkMode ? 'border-gray-600 bg-gray-700 hover:bg-gray-600' : 'border-gray-200 hover:bg-gray-50'}`}
+                            onClick={() => handleActivityClick(activity.id)}>
                             <div className="flex items-center justify-between mb-2">
-                              <h4 className="font-medium text-gray-800">
+                              <h4 className={`font-medium ${darkMode ? 'text-gray-200' : 'text-gray-800'}`}>
                                 ACTIVIDAD {activity.id.replace('act', '')} ({activity.duration}): {activity.name}
                               </h4>
+                              <span className={`text-xs px-2 py-1 rounded ${darkMode ? 'bg-blue-900 text-blue-300' : 'bg-blue-100 text-blue-800'}`}>
+                                Ver instrucciones →
+                              </span>
                             </div>
-                            <p className="text-gray-700 text-sm">{activity.description}</p>
+                            <p className={`text-sm ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>{activity.description}</p>
                           </div>
                         ))}
                       </div>
@@ -514,13 +523,17 @@ const MoodleCourse = () => {
                 >
                   <div className="space-y-3">
                     {day.homeWork.activities.map((activity, index) => (
-                      <div key={activity.id} className="p-4 border border-gray-200 rounded-lg">
+                      <div key={activity.id} className={`p-4 border rounded-lg cursor-pointer transition-all hover:shadow-md ${darkMode ? 'border-gray-600 bg-gray-700 hover:bg-gray-600' : 'border-gray-200 hover:bg-gray-50'}`}
+                        onClick={() => handleActivityClick(activity.id)}>
                         <div className="flex items-center justify-between mb-2">
-                          <h4 className="font-medium text-gray-800">
+                          <h4 className={`font-medium ${darkMode ? 'text-gray-200' : 'text-gray-800'}`}>
                             ACTIVIDAD {activity.id.split('_')[0].replace('hw', '')} ({activity.duration}): {activity.name}
                           </h4>
+                          <span className={`text-xs px-2 py-1 rounded ${darkMode ? 'bg-blue-900 text-blue-300' : 'bg-blue-100 text-blue-800'}`}>
+                            Ver instrucciones →
+                          </span>
                         </div>
-                        <p className="text-gray-700 text-sm">{activity.description}</p>
+                        <p className={`text-sm ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>{activity.description}</p>
                       </div>
                     ))}
                   </div>

@@ -42,6 +42,7 @@ import GeometriaEsferica from './pages/matematicas/actividades/progresion4/Geome
 import ComparacionGeometrias from './pages/matematicas/actividades/progresion4/ComparacionGeometrias';
 import AplicacionesPracticas from './pages/matematicas/actividades/progresion4/AplicacionesPracticas';
 import MoodleCourse from './pages/moodle/MoodleCourse';
+import { Activity1, Activity2, Activity3 } from './pages/moodle/activities';
 
 // Componente que redirige a la ruta correcta basado en los parámetros
 const AsignaturaRouter = () => {
@@ -182,6 +183,9 @@ const ActividadRouter = () => {
     'mediciones-esfericas': GeometriaEsferica,
     'comparacion-geometrias': ComparacionGeometrias,
     'aplicaciones-practicas': AplicacionesPracticas,
+    'moodle-activity-1': Activity1,
+    'moodle-activity-2': Activity2,
+    'moodle-activity-3': Activity3,
   };
 
   const Actividad = actividadesMap[rutaActividad];
@@ -229,6 +233,10 @@ function App() {
         <Route path="/actividades/*" element={<ActividadRouter />} />
 
         <Route path="/moodle-course" element={<MoodleCourse />} />
+
+        <Route path="/moodle-activity-1" element={<Activity1 darkMode={false} />} />
+        <Route path="/moodle-activity-2" element={<Activity2 darkMode={false} />} />
+        <Route path="/moodle-activity-3" element={<Activity3 darkMode={false} />} />
 
         {/* Ruta de respaldo para URLs desconocidas */}
         <Route path="*" element={<Navigate to="/" replace />} />
