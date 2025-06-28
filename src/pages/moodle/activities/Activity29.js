@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { ArrowLeft, FileText, CheckCircle2, Users, Clock, AlertTriangle, Settings } from 'lucide-react';
+import { ArrowLeft, Settings, CheckCircle2, Users, Clock, AlertTriangle, Shield } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
-const Activity28 = ({ darkMode }) => {
+const Activity29 = ({ darkMode }) => {
   const navigate = useNavigate();
   const [checkedItems, setCheckedItems] = useState({});
 
@@ -14,12 +14,12 @@ const Activity28 = ({ darkMode }) => {
   };
 
   const checklistItems = [
-    { id: 'questionnaire_created', text: 'Cuestionario creado exitosamente con nombre descriptivo y claro' },
-    { id: 'time_limit_configured', text: 'Tiempo límite configurado a 15 minutos con envío automático' },
-    { id: 'single_attempt', text: 'Un solo intento permitido para simular examen real' },
-    { id: 'navigation_configured', text: 'Navegación secuencial y página nueva por pregunta configuradas' },
-    { id: 'questions_added', text: '10 preguntas agregadas desde el banco de preguntas importado' },
-    { id: 'preview_verified', text: 'Vista previa verificada sin completar el examen' }
+    { id: 'password_restriction', text: 'Restricción de contraseña configurada y probada exitosamente' },
+    { id: 'secure_window', text: 'Ventana emergente segura activada para prevenir navegación externa' },
+    { id: 'question_delay', text: 'Delay entre preguntas configurado para evitar respuestas impulsivas' },
+    { id: 'review_options', text: 'Opciones de revisión configuradas estratégicamente por fase' },
+    { id: 'immediate_feedback', text: 'Retroalimentación inmediata habilitada para aprendizaje durante examen' },
+    { id: 'student_tested', text: 'Configuración probada desde perspectiva estudiantil sin completar examen' }
   ];
 
   return (
@@ -42,7 +42,7 @@ const Activity28 = ({ darkMode }) => {
             <div className="flex items-center gap-2">
               <Clock size={20} className="text-blue-500" />
               <span className={`font-medium ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-                20 min
+                25 min
               </span>
             </div>
             <div className="flex items-center gap-2">
@@ -54,26 +54,26 @@ const Activity28 = ({ darkMode }) => {
           </div>
         </div>
         <h1 className={`text-3xl font-bold mb-2 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-          ACTIVIDAD 28: EXAMEN BÁSICO
+          ACTIVIDAD 29: CONFIGURACIÓN AVANZADA
         </h1>
         <p className={`text-lg ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>
-          Crear tu primer examen en Moodle usando preguntas del banco importado
+          Implementar configuraciones avanzadas de seguridad y control en el examen
         </p>
       </div>
 
       {/* Objetivo */}
-      <div className={`${darkMode ? 'bg-blue-900' : 'bg-blue-50'} rounded-lg p-6 mb-6`}>
+      <div className={`${darkMode ? 'bg-cyan-900' : 'bg-cyan-50'} rounded-lg p-6 mb-6`}>
         <div className="flex items-center gap-3 mb-3">
-          <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center">
-            <FileText className="w-4 h-4 text-white" />
+          <div className="w-8 h-8 bg-cyan-500 rounded-full flex items-center justify-center">
+            <Shield className="w-4 h-4 text-white" />
           </div>
-          <h2 className={`text-xl font-semibold ${darkMode ? 'text-blue-300' : 'text-blue-800'}`}>
+          <h2 className={`text-xl font-semibold ${darkMode ? 'text-cyan-300' : 'text-cyan-800'}`}>
             Objetivo
           </h2>
         </div>
-        <p className={`${darkMode ? 'text-blue-200' : 'text-blue-700'} leading-relaxed`}>
-          Crear tu primer examen en Moodle usando preguntas del banco importado, configurando tiempo límite
-          y número de intentos apropiados para establecer las bases de los exámenes digitales.
+        <p className={`${darkMode ? 'text-cyan-200' : 'text-cyan-700'} leading-relaxed`}>
+          Implementar configuraciones avanzadas de seguridad y control en el examen, incluyendo restricciones
+          de acceso, configuración de método de calificación y opciones de navegación sofisticadas.
         </p>
       </div>
 
@@ -91,15 +91,13 @@ const Activity28 = ({ darkMode }) => {
             </div>
             <div className={`flex-1 border-l-4 ${darkMode ? 'border-blue-500 bg-gray-700' : 'border-blue-500 bg-blue-50'} rounded-r-lg p-4`}>
               <h3 className={`font-semibold mb-2 ${darkMode ? 'text-blue-300' : 'text-blue-800'}`}>
-                Paso 1: Acceder a la creación de cuestionarios
+                Paso 1: Acceder a configuración avanzada del examen
               </h3>
               <div className={`space-y-2 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-                <p>• En <code className="bg-gray-600 px-2 py-1 rounded text-sm">http://moodle.cbtis253.edu.mx/</code>, entra a tu curso</p>
-                <p>• Activa <strong>"Modo de edición"</strong> (botón en esquina superior derecha)</p>
-                <p>• Elige una sección donde agregar el examen</p>
-                <p>• Haz clic en <strong>"Agregar una actividad o recurso"</strong></p>
-                <p>• Selecciona <strong>"Cuestionario"</strong> de la lista</p>
-                <p>• Haz clic en <strong>"Agregar"</strong></p>
+                <p>• En <code className="bg-gray-600 px-2 py-1 rounded text-sm">http://moodle.cbtis253.edu.mx/</code>, ve a tu curso y localiza el examen básico creado</p>
+                <p>• Haz clic en el <strong>icono de configuración</strong> (engrane) junto al examen</p>
+                <p>• Selecciona <strong>"Editar configuración"</strong></p>
+                <p>• Verás todas las opciones organizadas en secciones expandibles</p>
               </div>
             </div>
           </div>
@@ -111,15 +109,14 @@ const Activity28 = ({ darkMode }) => {
             </div>
             <div className={`flex-1 border-l-4 ${darkMode ? 'border-indigo-500 bg-gray-700' : 'border-indigo-500 bg-indigo-50'} rounded-r-lg p-4`}>
               <h3 className={`font-semibold mb-2 ${darkMode ? 'text-indigo-300' : 'text-indigo-800'}`}>
-                Paso 2: Configurar información básica del cuestionario
+                Paso 2: Configurar restricciones de acceso avanzadas
               </h3>
               <div className={`space-y-2 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-                <p>• <strong>Nombre:</strong> "EXAMEN BÁSICO - [Tu materia] - Práctica"</p>
-                <p>• <strong>Descripción:</strong> "Primer examen de práctica con preguntas básicas. Tiempo límite: 15 minutos"</p>
-                <p>• <strong>Mostrar descripción:</strong> Marca la casilla para que estudiantes vean la información</p>
-                <p>• <strong>Temporización:</strong></p>
-                <p className="ml-4">- <strong>Tiempo límite:</strong> 15 minutos</p>
-                <p className="ml-4">- <strong>Cuando el tiempo termine:</strong> Enviar automáticamente</p>
+                <p>• <strong>Restricciones de acceso:</strong> Amplía esta sección</p>
+                <p>• Haz clic en <strong>"Agregar restricción"</strong></p>
+                <p>• Selecciona <strong>"Contraseña"</strong></p>
+                <p>• <strong>Contraseña:</strong> Establece "EXAM2024" (cambiarás esto para cada examen real)</p>
+                <p>• <strong>Descripción para estudiantes:</strong> "Solicita la contraseña al profesor antes del examen"</p>
               </div>
             </div>
           </div>
@@ -131,15 +128,14 @@ const Activity28 = ({ darkMode }) => {
             </div>
             <div className={`flex-1 border-l-4 ${darkMode ? 'border-purple-500 bg-gray-700' : 'border-purple-500 bg-purple-50'} rounded-r-lg p-4`}>
               <h3 className={`font-semibold mb-2 ${darkMode ? 'text-purple-300' : 'text-purple-800'}`}>
-                Paso 3: Configurar intentos y calificación
+                Paso 3: Configurar seguridad del examen
               </h3>
               <div className={`space-y-2 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-                <p>• <strong>Intentos:</strong></p>
-                <p className="ml-4">- <strong>Intentos permitidos:</strong> 1</p>
-                <p className="ml-4">- <strong>Método de calificación:</strong> Calificación más alta</p>
-                <p>• <strong>Calificación:</strong></p>
-                <p className="ml-4">- <strong>Calificación máxima:</strong> 10 (o el sistema que uses en tu institución)</p>
-                <p className="ml-4">- <strong>Categoría de calificación:</strong> Mantener por defecto</p>
+                <p>• <strong>Restricciones adicionales durante el intento:</strong></p>
+                <p className="ml-4">- <strong>Exigir contraseña:</strong> Ya configurada arriba</p>
+                <p className="ml-4">- <strong>Restricción de IP:</strong> Dejar en blanco (para permitir desde casa)</p>
+                <p className="ml-4">- <strong>Delay forzado:</strong> 30 segundos entre preguntas</p>
+                <p className="ml-4">- <strong>Ventana emergente:</strong> Activar "Intentar mostrar examen en ventana 'segura'"</p>
               </div>
             </div>
           </div>
@@ -151,15 +147,17 @@ const Activity28 = ({ darkMode }) => {
             </div>
             <div className={`flex-1 border-l-4 ${darkMode ? 'border-orange-500 bg-gray-700' : 'border-orange-500 bg-orange-50'} rounded-r-lg p-4`}>
               <h3 className={`font-semibold mb-2 ${darkMode ? 'text-orange-300' : 'text-orange-800'}`}>
-                Paso 4: Configurar diseño del cuestionario
+                Paso 4: Configurar método de calificación y retroalimentación
               </h3>
               <div className={`space-y-2 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-                <p>• <strong>Diseño:</strong></p>
-                <p className="ml-4">- <strong>Página nueva:</strong> Cada pregunta</p>
-                <p className="ml-4">- <strong>Método de navegación:</strong> Secuencial</p>
-                <p>• <strong>Comportamiento de las preguntas:</strong></p>
-                <p className="ml-4">- <strong>Mezclar:</strong> Activar "Mezclar preguntas" y "Mezclar dentro de las preguntas"</p>
-                <p className="ml-4">- <strong>Cómo se comportan las preguntas:</strong> Modo diferido (recomendado para principiantes)</p>
+                <p>• <strong>Calificación:</strong></p>
+                <p className="ml-4">- <strong>Decimales en calificaciones:</strong> 1 decimal</p>
+                <p className="ml-4">- <strong>Decimales en puntos de pregunta:</strong> 0 decimales</p>
+                <p>• <strong>Opciones de revisión:</strong></p>
+                <p className="ml-4">- <strong>Durante el intento:</strong> Solo navegación</p>
+                <p className="ml-4">- <strong>Inmediatamente después:</strong> Puntos, si es correcto, calificación total</p>
+                <p className="ml-4">- <strong>Después pero antes del cierre:</strong> Todo excepto respuestas correctas</p>
+                <p className="ml-4">- <strong>Después del cierre:</strong> Permitir todas las opciones</p>
               </div>
             </div>
           </div>
@@ -171,15 +169,14 @@ const Activity28 = ({ darkMode }) => {
             </div>
             <div className={`flex-1 border-l-4 ${darkMode ? 'border-green-500 bg-gray-700' : 'border-green-500 bg-green-50'} rounded-r-lg p-4`}>
               <h3 className={`font-semibold mb-2 ${darkMode ? 'text-green-300' : 'text-green-800'}`}>
-                Paso 5: Guardar y agregar preguntas
+                Paso 5: Configurar comportamiento avanzado de preguntas
               </h3>
               <div className={`space-y-2 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-                <p>• Haz clic en <strong>"Guardar cambios y mostrar"</strong></p>
-                <p>• En la página del cuestionario, haz clic en <strong>"Editar cuestionario"</strong></p>
-                <p>• Haz clic en <strong>"Agregar"</strong> → <strong>"del banco de preguntas"</strong></p>
-                <p>• Selecciona la categoría que contiene tus preguntas básicas</p>
-                <p>• <strong>Marca 10 preguntas</strong> de dificultad similar</p>
-                <p>• Haz clic en <strong>"Agregar las preguntas seleccionadas al cuestionario"</strong></p>
+                <p>• <strong>Comportamiento de las preguntas:</strong></p>
+                <p className="ml-4">- <strong>Mezclar:</strong> Mantener ambas opciones activadas</p>
+                <p className="ml-4">- <strong>Cómo se comportan las preguntas:</strong> Cambiar a "Retroalimentación inmediata"</p>
+                <p className="ml-4">- <strong>Permitir rehacer dentro del intento:</strong> Activar</p>
+                <p className="ml-4">- <strong>Cada intento se basa en el anterior:</strong> Desactivar</p>
               </div>
             </div>
           </div>
@@ -191,14 +188,16 @@ const Activity28 = ({ darkMode }) => {
             </div>
             <div className={`flex-1 border-l-4 ${darkMode ? 'border-teal-500 bg-gray-700' : 'border-teal-500 bg-teal-50'} rounded-r-lg p-4`}>
               <h3 className={`font-semibold mb-2 ${darkMode ? 'text-teal-300' : 'text-teal-800'}`}>
-                Paso 6: Verificar configuración final
+                Paso 6: Guardar y probar configuración completa
               </h3>
               <div className={`space-y-2 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-                <p>• En "Editar cuestionario", revisa que aparezcan las 10 preguntas</p>
-                <p>• Verifica que la <strong>calificación total</strong> aparezca como "10.00" (o tu escala)</p>
-                <p>• Haz clic en <strong>"Vista previa"</strong> para probar como estudiante</p>
-                <p>• <strong>Importante:</strong> NO completes la vista previa, solo revisa que funcione</p>
-                <p>• Regresa y haz clic en <strong>"Guardar cambios"</strong></p>
+                <p>• Haz clic en <strong>"Guardar cambios y mostrar"</strong></p>
+                <p>• <strong>Prueba como estudiante:</strong></p>
+                <p className="ml-4">- Cambia a tu cuenta de estudiante</p>
+                <p className="ml-4">- Intenta acceder al examen (debe pedir contraseña)</p>
+                <p className="ml-4">- Ingresa "EXAM2024" y verifica que funcione</p>
+                <p className="ml-4">- <strong>NO completes el examen</strong>, solo verifica acceso</p>
+                <p>• Regresa a cuenta docente para continuar</p>
               </div>
             </div>
           </div>
@@ -243,13 +242,13 @@ const Activity28 = ({ darkMode }) => {
           </h2>
         </div>
         <div className={`space-y-2 ${darkMode ? 'text-amber-200' : 'text-amber-700'}`}>
-          <p>• <strong>Primer examen:</strong> Mantén configuración simple para aprender las bases</p>
-          <p>• <strong>Moodle 4.5:</strong> La interfaz de cuestionarios es más intuitiva y visual</p>
-          <p>• <strong>Práctica segura:</strong> La vista previa no afecta las estadísticas reales del examen</p>
+          <p>• <strong>Equilibrio seguridad-usabilidad:</strong> Estas configuraciones protegen sin frustrar estudiantes honestos</p>
+          <p>• <strong>Contraseñas rotativas:</strong> Cambia la contraseña para cada aplicación real del examen</p>
+          <p>• <strong>Moodle 4.5:</strong> Las opciones de revisión son más granulares y flexibles</p>
         </div>
       </div>
     </div>
   );
 };
 
-export default Activity28;
+export default Activity29;

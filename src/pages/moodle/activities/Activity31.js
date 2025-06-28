@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { ArrowLeft, FileText, CheckCircle2, Users, Clock, AlertTriangle, Settings } from 'lucide-react';
+import { ArrowLeft, BarChart3, CheckCircle2, Users, Clock, AlertTriangle, TrendingUp } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
-const Activity28 = ({ darkMode }) => {
+const Activity31 = ({ darkMode }) => {
   const navigate = useNavigate();
   const [checkedItems, setCheckedItems] = useState({});
 
@@ -14,12 +14,12 @@ const Activity28 = ({ darkMode }) => {
   };
 
   const checklistItems = [
-    { id: 'questionnaire_created', text: 'Cuestionario creado exitosamente con nombre descriptivo y claro' },
-    { id: 'time_limit_configured', text: 'Tiempo límite configurado a 15 minutos con envío automático' },
-    { id: 'single_attempt', text: 'Un solo intento permitido para simular examen real' },
-    { id: 'navigation_configured', text: 'Navegación secuencial y página nueva por pregunta configuradas' },
-    { id: 'questions_added', text: '10 preguntas agregadas desde el banco de preguntas importado' },
-    { id: 'preview_verified', text: 'Vista previa verificada sin completar el examen' }
+    { id: 'basic_results_accessed', text: 'Resultados básicos del examen accedidos desde cuenta docente' },
+    { id: 'gradebook_explored', text: 'Centro de calificaciones explorado con información estudiantil visible' },
+    { id: 'question_analysis_completed', text: 'Análisis pregunta por pregunta completado identificando patrones' },
+    { id: 'automatic_statistics_generated', text: 'Estadísticas automáticas generadas y revisadas' },
+    { id: 'question_specific_statistics', text: 'Estadísticas específicas por pregunta analizadas' },
+    { id: 'findings_documented', text: 'Hallazgos documentados con recomendaciones de mejora' }
   ];
 
   return (
@@ -42,7 +42,7 @@ const Activity28 = ({ darkMode }) => {
             <div className="flex items-center gap-2">
               <Clock size={20} className="text-blue-500" />
               <span className={`font-medium ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-                20 min
+                25 min
               </span>
             </div>
             <div className="flex items-center gap-2">
@@ -54,26 +54,26 @@ const Activity28 = ({ darkMode }) => {
           </div>
         </div>
         <h1 className={`text-3xl font-bold mb-2 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-          ACTIVIDAD 28: EXAMEN BÁSICO
+          ACTIVIDAD 31: ANÁLISIS DE RESULTADOS
         </h1>
         <p className={`text-lg ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>
-          Crear tu primer examen en Moodle usando preguntas del banco importado
+          Analizar los datos generados por la prueba estudiantil y explorar herramientas de estadísticas
         </p>
       </div>
 
       {/* Objetivo */}
-      <div className={`${darkMode ? 'bg-blue-900' : 'bg-blue-50'} rounded-lg p-6 mb-6`}>
+      <div className={`${darkMode ? 'bg-violet-900' : 'bg-violet-50'} rounded-lg p-6 mb-6`}>
         <div className="flex items-center gap-3 mb-3">
-          <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center">
-            <FileText className="w-4 h-4 text-white" />
+          <div className="w-8 h-8 bg-violet-500 rounded-full flex items-center justify-center">
+            <BarChart3 className="w-4 h-4 text-white" />
           </div>
-          <h2 className={`text-xl font-semibold ${darkMode ? 'text-blue-300' : 'text-blue-800'}`}>
+          <h2 className={`text-xl font-semibold ${darkMode ? 'text-violet-300' : 'text-violet-800'}`}>
             Objetivo
           </h2>
         </div>
-        <p className={`${darkMode ? 'text-blue-200' : 'text-blue-700'} leading-relaxed`}>
-          Crear tu primer examen en Moodle usando preguntas del banco importado, configurando tiempo límite
-          y número de intentos apropiados para establecer las bases de los exámenes digitales.
+        <p className={`${darkMode ? 'text-violet-200' : 'text-violet-700'} leading-relaxed`}>
+          Analizar los datos generados por la prueba estudiantil, explorando herramientas de estadísticas
+          y reportes de Moodle para extraer información valiosa sobre el rendimiento y calidad de las preguntas.
         </p>
       </div>
 
@@ -91,15 +91,13 @@ const Activity28 = ({ darkMode }) => {
             </div>
             <div className={`flex-1 border-l-4 ${darkMode ? 'border-blue-500 bg-gray-700' : 'border-blue-500 bg-blue-50'} rounded-r-lg p-4`}>
               <h3 className={`font-semibold mb-2 ${darkMode ? 'text-blue-300' : 'text-blue-800'}`}>
-                Paso 1: Acceder a la creación de cuestionarios
+                Paso 1: Acceder a resultados desde cuenta docente
               </h3>
               <div className={`space-y-2 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-                <p>• En <code className="bg-gray-600 px-2 py-1 rounded text-sm">http://moodle.cbtis253.edu.mx/</code>, entra a tu curso</p>
-                <p>• Activa <strong>"Modo de edición"</strong> (botón en esquina superior derecha)</p>
-                <p>• Elige una sección donde agregar el examen</p>
-                <p>• Haz clic en <strong>"Agregar una actividad o recurso"</strong></p>
-                <p>• Selecciona <strong>"Cuestionario"</strong> de la lista</p>
-                <p>• Haz clic en <strong>"Agregar"</strong></p>
+                <p>• En <code className="bg-gray-600 px-2 py-1 rounded text-sm">http://moodle.cbtis253.edu.mx/</code>, asegúrate de estar en cuenta docente</p>
+                <p>• Ve a tu curso y accede al examen básico</p>
+                <p>• Haz clic en el <strong>nombre del cuestionario</strong> para ver la página principal</p>
+                <p>• Observa el resumen: <strong>"Intentos: 1"</strong> y otros datos básicos</p>
               </div>
             </div>
           </div>
@@ -111,15 +109,17 @@ const Activity28 = ({ darkMode }) => {
             </div>
             <div className={`flex-1 border-l-4 ${darkMode ? 'border-indigo-500 bg-gray-700' : 'border-indigo-500 bg-indigo-50'} rounded-r-lg p-4`}>
               <h3 className={`font-semibold mb-2 ${darkMode ? 'text-indigo-300' : 'text-indigo-800'}`}>
-                Paso 2: Configurar información básica del cuestionario
+                Paso 2: Explorar centro de calificaciones básico
               </h3>
               <div className={`space-y-2 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-                <p>• <strong>Nombre:</strong> "EXAMEN BÁSICO - [Tu materia] - Práctica"</p>
-                <p>• <strong>Descripción:</strong> "Primer examen de práctica con preguntas básicas. Tiempo límite: 15 minutos"</p>
-                <p>• <strong>Mostrar descripción:</strong> Marca la casilla para que estudiantes vean la información</p>
-                <p>• <strong>Temporización:</strong></p>
-                <p className="ml-4">- <strong>Tiempo límite:</strong> 15 minutos</p>
-                <p className="ml-4">- <strong>Cuando el tiempo termine:</strong> Enviar automáticamente</p>
+                <p>• Desde la página del cuestionario, haz clic en <strong>"Resultados"</strong></p>
+                <p>• <strong>Vista general:</strong> Observa la tabla con el intento del estudiante</p>
+                <p>• <strong>Información visible:</strong></p>
+                <p className="ml-4">- Nombre del estudiante</p>
+                <p className="ml-4">- Calificación obtenida (X/10)</p>
+                <p className="ml-4">- Tiempo tomado</p>
+                <p className="ml-4">- Estado (Finalizado)</p>
+                <p>• Haz clic en la <strong>calificación</strong> para ver detalles específicos</p>
               </div>
             </div>
           </div>
@@ -131,15 +131,14 @@ const Activity28 = ({ darkMode }) => {
             </div>
             <div className={`flex-1 border-l-4 ${darkMode ? 'border-purple-500 bg-gray-700' : 'border-purple-500 bg-purple-50'} rounded-r-lg p-4`}>
               <h3 className={`font-semibold mb-2 ${darkMode ? 'text-purple-300' : 'text-purple-800'}`}>
-                Paso 3: Configurar intentos y calificación
+                Paso 3: Analizar respuestas pregunta por pregunta
               </h3>
               <div className={`space-y-2 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-                <p>• <strong>Intentos:</strong></p>
-                <p className="ml-4">- <strong>Intentos permitidos:</strong> 1</p>
-                <p className="ml-4">- <strong>Método de calificación:</strong> Calificación más alta</p>
-                <p>• <strong>Calificación:</strong></p>
-                <p className="ml-4">- <strong>Calificación máxima:</strong> 10 (o el sistema que uses en tu institución)</p>
-                <p className="ml-4">- <strong>Categoría de calificación:</strong> Mantener por defecto</p>
+                <p>• En la vista detallada del intento, observa cada pregunta:</p>
+                <p className="ml-4">- <strong>Pregunta correcta:</strong> ¿El estudiante eligió la opción apropiada?</p>
+                <p className="ml-4">- <strong>Preguntas incorrectas:</strong> ¿Qué opción distractora eligió?</p>
+                <p className="ml-4">- <strong>Tiempo por pregunta:</strong> ¿Alguna tomó excesivo tiempo?</p>
+                <p className="ml-4">- <strong>Patrones:</strong> ¿Hay tipos de pregunta más difíciles?</p>
               </div>
             </div>
           </div>
@@ -151,15 +150,15 @@ const Activity28 = ({ darkMode }) => {
             </div>
             <div className={`flex-1 border-l-4 ${darkMode ? 'border-orange-500 bg-gray-700' : 'border-orange-500 bg-orange-50'} rounded-r-lg p-4`}>
               <h3 className={`font-semibold mb-2 ${darkMode ? 'text-orange-300' : 'text-orange-800'}`}>
-                Paso 4: Configurar diseño del cuestionario
+                Paso 4: Generar estadísticas automáticas
               </h3>
               <div className={`space-y-2 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-                <p>• <strong>Diseño:</strong></p>
-                <p className="ml-4">- <strong>Página nueva:</strong> Cada pregunta</p>
-                <p className="ml-4">- <strong>Método de navegación:</strong> Secuencial</p>
-                <p>• <strong>Comportamiento de las preguntas:</strong></p>
-                <p className="ml-4">- <strong>Mezclar:</strong> Activar "Mezclar preguntas" y "Mezclar dentro de las preguntas"</p>
-                <p className="ml-4">- <strong>Cómo se comportan las preguntas:</strong> Modo diferido (recomendado para principiantes)</p>
+                <p>• Regresa a la página principal del cuestionario</p>
+                <p>• Haz clic en <strong>"Resultados"</strong> → <strong>"Estadísticas"</strong></p>
+                <p>• <strong>Análisis general:</strong></p>
+                <p className="ml-4">- Tiempo promedio del examen</p>
+                <p className="ml-4">- Calificación promedio</p>
+                <p className="ml-4">- Desviación estándar (aparecerá "N/A" con solo 1 intento)</p>
               </div>
             </div>
           </div>
@@ -171,15 +170,14 @@ const Activity28 = ({ darkMode }) => {
             </div>
             <div className={`flex-1 border-l-4 ${darkMode ? 'border-green-500 bg-gray-700' : 'border-green-500 bg-green-50'} rounded-r-lg p-4`}>
               <h3 className={`font-semibold mb-2 ${darkMode ? 'text-green-300' : 'text-green-800'}`}>
-                Paso 5: Guardar y agregar preguntas
+                Paso 5: Analizar estadísticas por pregunta
               </h3>
               <div className={`space-y-2 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-                <p>• Haz clic en <strong>"Guardar cambios y mostrar"</strong></p>
-                <p>• En la página del cuestionario, haz clic en <strong>"Editar cuestionario"</strong></p>
-                <p>• Haz clic en <strong>"Agregar"</strong> → <strong>"del banco de preguntas"</strong></p>
-                <p>• Selecciona la categoría que contiene tus preguntas básicas</p>
-                <p>• <strong>Marca 10 preguntas</strong> de dificultad similar</p>
-                <p>• Haz clic en <strong>"Agregar las preguntas seleccionadas al cuestionario"</strong></p>
+                <p>• En la sección de estadísticas, busca <strong>"Estadísticas de la pregunta"</strong></p>
+                <p>• Para cada pregunta observa:</p>
+                <p className="ml-4">- <strong>Índice de facilidad:</strong> % de estudiantes que la respondieron correctamente</p>
+                <p className="ml-4">- <strong>Índice de discriminación:</strong> ¿Distingue entre estudiantes buenos y débiles?</p>
+                <p className="ml-4">- <strong>Distribución de respuestas:</strong> ¿Qué distractores fueron populares?</p>
               </div>
             </div>
           </div>
@@ -191,16 +189,56 @@ const Activity28 = ({ darkMode }) => {
             </div>
             <div className={`flex-1 border-l-4 ${darkMode ? 'border-teal-500 bg-gray-700' : 'border-teal-500 bg-teal-50'} rounded-r-lg p-4`}>
               <h3 className={`font-semibold mb-2 ${darkMode ? 'text-teal-300' : 'text-teal-800'}`}>
-                Paso 6: Verificar configuración final
+                Paso 6: Documentar hallazgos para mejora
               </h3>
               <div className={`space-y-2 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-                <p>• En "Editar cuestionario", revisa que aparezcan las 10 preguntas</p>
-                <p>• Verifica que la <strong>calificación total</strong> aparezca como "10.00" (o tu escala)</p>
-                <p>• Haz clic en <strong>"Vista previa"</strong> para probar como estudiante</p>
-                <p>• <strong>Importante:</strong> NO completes la vista previa, solo revisa que funcione</p>
-                <p>• Regresa y haz clic en <strong>"Guardar cambios"</strong></p>
+                <p>• <strong>Crea lista de observaciones:</strong></p>
+                <p className="ml-4">- Preguntas que parecen muy fáciles (100% correctas)</p>
+                <p className="ml-4">- Preguntas que parecen muy difíciles (0% correctas)</p>
+                <p className="ml-4">- Distractores que nadie eligió (necesitan mejora)</p>
+                <p className="ml-4">- Tiempo promedio vs tiempo límite</p>
+                <p>• <strong>Mentor y aprendiz discuten:</strong> ¿Qué ajustes harían al examen?</p>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Panel de Análisis de Datos */}
+      <div className={`${darkMode ? 'bg-slate-800' : 'bg-slate-50'} rounded-lg p-6 mb-6`}>
+        <div className="flex items-center gap-3 mb-4">
+          <TrendingUp className="w-6 h-6 text-slate-500" />
+          <h2 className={`text-xl font-semibold ${darkMode ? 'text-slate-300' : 'text-slate-800'}`}>
+            Indicadores Clave de Análisis
+          </h2>
+        </div>
+        <div className={`grid grid-cols-1 md:grid-cols-3 gap-4 ${darkMode ? 'text-slate-200' : 'text-slate-700'}`}>
+          <div className={`${darkMode ? 'bg-slate-700' : 'bg-white'} p-4 rounded-lg`}>
+            <h3 className="font-semibold mb-2 text-blue-500">📊 Rendimiento General</h3>
+            <ul className="space-y-1 text-sm">
+              <li>• Calificación promedio</li>
+              <li>• Tiempo de completación</li>
+              <li>• Tasa de finalización</li>
+              <li>• Distribución de calificaciones</li>
+            </ul>
+          </div>
+          <div className={`${darkMode ? 'bg-slate-700' : 'bg-white'} p-4 rounded-lg`}>
+            <h3 className="font-semibold mb-2 text-green-500">🎯 Calidad de Preguntas</h3>
+            <ul className="space-y-1 text-sm">
+              <li>• Índice de facilidad</li>
+              <li>• Índice de discriminación</li>
+              <li>• Efectividad de distractores</li>
+              <li>• Tiempo por pregunta</li>
+            </ul>
+          </div>
+          <div className={`${darkMode ? 'bg-slate-700' : 'bg-white'} p-4 rounded-lg`}>
+            <h3 className="font-semibold mb-2 text-orange-500">🔧 Oportunidades de Mejora</h3>
+            <ul className="space-y-1 text-sm">
+              <li>• Preguntas muy fáciles/difíciles</li>
+              <li>• Distractores inefectivos</li>
+              <li>• Problemas de tiempo</li>
+              <li>• Configuraciones a ajustar</li>
+            </ul>
           </div>
         </div>
       </div>
@@ -243,13 +281,13 @@ const Activity28 = ({ darkMode }) => {
           </h2>
         </div>
         <div className={`space-y-2 ${darkMode ? 'text-amber-200' : 'text-amber-700'}`}>
-          <p>• <strong>Primer examen:</strong> Mantén configuración simple para aprender las bases</p>
-          <p>• <strong>Moodle 4.5:</strong> La interfaz de cuestionarios es más intuitiva y visual</p>
-          <p>• <strong>Práctica segura:</strong> La vista previa no afecta las estadísticas reales del examen</p>
+          <p>• <strong>Datos limitados:</strong> Con un solo intento, las estadísticas son básicas pero educativas</p>
+          <p>• <strong>Fundamentos:</strong> Estas herramientas serán más poderosas con grupos reales de estudiantes</p>
+          <p>• <strong>Mejora continua:</strong> Este análisis debe hacerse después de cada aplicación real</p>
         </div>
       </div>
     </div>
   );
 };
 
-export default Activity28;
+export default Activity31;
