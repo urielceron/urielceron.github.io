@@ -40,8 +40,7 @@ const CV = () => {
       submenu: [
         { title: 'Cultura Digital II', path: '/cultura-digital-2' },
         { title: 'Temas Selectos de Matemáticas I', path: '/matematicas' },
-        { title: 'Web Develoment', path: '/desarrolloweb' },
-        { title: 'Game Designer', path: '/gamedesigner' },
+        { title: 'Interactive Motion Design with River', path: '/gamedesigner' },
       ]
     },
     {
