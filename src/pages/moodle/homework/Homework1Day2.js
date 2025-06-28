@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { ArrowLeft, Brain, CheckCircle2, Users, Clock, Lightbulb, Cpu, Globe } from 'lucide-react';
+import { ArrowLeft, Compass, CheckCircle2, Users, Clock, FileText, Search, Settings } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
-const Activity13 = ({ darkMode }) => {
+const Homework1Day1 = ({ darkMode }) => {
   const navigate = useNavigate();
   const [checkedItems, setCheckedItems] = useState({});
 
@@ -37,23 +37,23 @@ const Activity13 = ({ darkMode }) => {
           <div className="flex items-center gap-4">
             <div className="flex items-center gap-2 text-blue-600">
               <Clock className="h-5 w-5" />
-              <span className="font-medium">10 min</span>
+              <span className="font-medium">60 min</span>
             </div>
             <div className="flex items-center gap-2 text-green-600">
               <Users className="h-5 w-5" />
-              <span className="font-medium">Parejas</span>
+              <span className="font-medium">Individual</span>
             </div>
           </div>
         </div>
 
         <div className="flex items-center gap-3 mb-4">
-          <Brain className="h-8 w-8 text-purple-600" />
+          <Compass className="h-8 w-8 text-blue-600" />
           <div>
             <h1 className={`text-2xl font-bold ${darkMode ? 'text-white' : 'text-gray-800'}`}>
-              ACTIVIDAD 13: PROMPTS EDUCATIVOS BÁSICOS
+              ACTIVIDAD 1: EXPLORACIÓN LIBRE
             </h1>
             <p className={`${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
-              DÍA 2 - Sesión Presencial • Bloque 1: IA para Educación
+              Trabajo en Casa - Día 1
             </p>
           </div>
         </div>
@@ -65,8 +65,8 @@ const Activity13 = ({ darkMode }) => {
           🎯 Objetivo
         </h2>
         <p className={`${darkMode ? 'text-gray-300' : 'text-gray-700'} text-lg`}>
-          Aprender la estructura de prompts efectivos para generar preguntas educativas de calidad
-          usando inteligencia artificial, estableciendo las bases para la creación masiva de contenido educativo.
+          Explorar herramientas adicionales de Moodle que no se cubrieron en la sesión presencial,
+          familiarizándose con funcionalidades que podrían ser útiles para tu materia específica.
         </p>
       </div>
 
@@ -84,15 +84,17 @@ const Activity13 = ({ darkMode }) => {
             </div>
             <div className={`flex-1 border-l-4 ${darkMode ? 'border-red-500 bg-gray-700' : 'border-red-500 bg-red-50'} rounded-r-lg p-4`}>
               <h3 className={`font-semibold mb-2 ${darkMode ? 'text-red-300' : 'text-red-800'}`}>
-                Paso 1: Acceder a herramienta de IA
+                Paso 1: Explorar el menú de administración completo
               </h3>
               <div className={`space-y-2 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-                <p>• Abre una nueva pestaña en tu navegador</p>
-                <p>• Dirígete a una de estas opciones (en orden de preferencia):</p>
-                <p className="ml-4">- <strong>ChatGPT:</strong> https://chat.openai.com/ (gratuito con límites)</p>
-                <p className="ml-4">- <strong>Claude:</strong> https://claude.ai (gratuito con límites)</p>
-                <p className="ml-4">- <strong>Gemini:</strong> https://gemini.google.com (vinculado a cuenta Google)</p>
-                <p>• Inicia sesión o crea cuenta si no la tienes</p>
+                <p>• Accede a tu curso principal con cuenta docente</p>
+                <p>• En "Administración del curso", explora TODAS las opciones:</p>
+                <p className="ml-4">- Usuarios y participantes</p>
+                <p className="ml-4">- Copias de seguridad</p>
+                <p className="ml-4">- Importar contenido</p>
+                <p className="ml-4">- Reiniciar curso</p>
+                <p className="ml-4">- Informes de actividad</p>
+                <p>• Anota 3 funciones que no conocías antes</p>
               </div>
             </div>
           </div>
@@ -104,32 +106,18 @@ const Activity13 = ({ darkMode }) => {
             </div>
             <div className={`flex-1 border-l-4 ${darkMode ? 'border-orange-500 bg-gray-700' : 'border-orange-500 bg-orange-50'} rounded-r-lg p-4`}>
               <h3 className={`font-semibold mb-2 ${darkMode ? 'text-orange-300' : 'text-orange-800'}`}>
-                Paso 2: Comprender estructura básica de prompts
+                Paso 2: Investigar tipos de actividades disponibles
               </h3>
               <div className={`space-y-2 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-                <p>• Copia y pega este template básico en la IA:</p>
-                <div className={`${darkMode ? 'bg-gray-900' : 'bg-gray-100'} p-4 rounded-lg font-mono text-sm mt-3`}>
-                  <pre className={`${darkMode ? 'text-green-300' : 'text-green-700'}`}>
-{`Actúa como experto en educación mexicana de nivel medio superior.
-
-CONTEXTO:
-- Materia: [TU MATERIA]
-- Tema específico: [TU TEMA]
-- Nivel: Preparatoria/Bachillerato
-- Estudiantes: Mexicanos de 16-18 años
-
-TAREA:
-Crea [NÚMERO] preguntas de opción múltiple que:
-- Evalúen comprensión, no memorización
-- Tengan 4 opciones (A, B, C, D)
-- Incluyan distractores plausibles
-- Usen lenguaje claro y apropiado
-
-FORMATO:
-- Una pregunta por vez
-- Incluye explicación de respuesta correcta`}
-                  </pre>
-                </div>
+                <p>• Activa la edición en tu curso</p>
+                <p>• Haz clic en "Agregar una actividad o recurso"</p>
+                <p>• Explora TODOS los tipos disponibles:</p>
+                <p className="ml-4">- Foros, chats, mensajería</p>
+                <p className="ml-4">- Tareas, talleres, wikis</p>
+                <p className="ml-4">- Encuestas, consultas</p>
+                <p className="ml-4">- Herramientas externas (LTI)</p>
+                <p>• Identifica 5 actividades que podrías usar en tu materia</p>
+                <p>• NO las agregues aún, solo explora las opciones</p>
               </div>
             </div>
           </div>
@@ -141,14 +129,17 @@ FORMATO:
             </div>
             <div className={`flex-1 border-l-4 ${darkMode ? 'border-yellow-500 bg-gray-700' : 'border-yellow-500 bg-yellow-50'} rounded-r-lg p-4`}>
               <h3 className={`font-semibold mb-2 ${darkMode ? 'text-yellow-300' : 'text-yellow-800'}`}>
-                Paso 3: Personalizar para tu materia
+                Paso 3: Explorar recursos disponibles
               </h3>
               <div className={`space-y-2 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-                <p>• Sustituye <code>[TU MATERIA]</code> por tu asignatura específica</p>
-                <p>• Identifica un tema concreto de tu currícula</p>
-                <p>• <strong>Ejemplo para Química:</strong> "Enlace químico - tipos y propiedades"</p>
-                <p>• <strong>Ejemplo para Historia:</strong> "Revolución Mexicana - causas sociales"</p>
-                <p>• <strong>Sé específico:</strong> En lugar de "Matemáticas", usa "Ecuaciones cuadráticas"</p>
+                <p>• Revisa los tipos de recursos que puedes agregar:</p>
+                <p className="ml-4">- Archivos (PDF, Word, Excel, videos)</p>
+                <p className="ml-4">- Carpetas para organizar materiales</p>
+                <p className="ml-4">- Páginas web internas</p>
+                <p className="ml-4">- Enlaces a sitios externos</p>
+                <p className="ml-4">- Etiquetas informativas</p>
+                <p>• Piensa cómo organizarías tus materiales de clase</p>
+                <p>• Considera qué archivos podrías subir para tus estudiantes</p>
               </div>
             </div>
           </div>
@@ -160,14 +151,17 @@ FORMATO:
             </div>
             <div className={`flex-1 border-l-4 ${darkMode ? 'border-green-500 bg-gray-700' : 'border-green-500 bg-green-50'} rounded-r-lg p-4`}>
               <h3 className={`font-semibold mb-2 ${darkMode ? 'text-green-300' : 'text-green-800'}`}>
-                Paso 4: Probar prompt básico
+                Paso 4: Investigar herramientas de calificación
               </h3>
               <div className={`space-y-2 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-                <p>• Completa el template con tu información</p>
-                <p>• Solicita crear <strong>2 preguntas como prueba</strong></p>
-                <p>• Observa si la IA entiende tu contexto educativo</p>
-                <p>• Evalúa si las preguntas son apropiadas para tus estudiantes</p>
-                <p>• <strong>Aprendiz valida contenido</strong>, <strong>Mentor ayuda con aspectos técnicos</strong></p>
+                <p>• Ve al "Libro de calificaciones" de tu curso</p>
+                <p>• Explora las opciones de configuración:</p>
+                <p className="ml-4">- Categorías de calificación</p>
+                <p className="ml-4">- Escalas personalizadas</p>
+                <p className="ml-4">- Cartas de competencias</p>
+                <p className="ml-4">- Reportes para exportar</p>
+                <p>• Considera cómo organizarías las calificaciones de tu materia</p>
+                <p>• ¿Usarías categorías por parciales, por tipo de actividad, etc.?</p>
               </div>
             </div>
           </div>
@@ -179,15 +173,38 @@ FORMATO:
             </div>
             <div className={`flex-1 border-l-4 ${darkMode ? 'border-blue-500 bg-gray-700' : 'border-blue-500 bg-blue-50'} rounded-r-lg p-4`}>
               <h3 className={`font-semibold mb-2 ${darkMode ? 'text-blue-300' : 'text-blue-800'}`}>
-                Paso 5: Documentar resultados
+                Paso 5: Explorar herramientas de comunicación
               </h3>
               <div className={`space-y-2 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-                <p>• En un documento nuevo (Word/Google Docs), anota:</p>
-                <p className="ml-4">- Qué herramienta de IA usaste</p>
-                <p className="ml-4">- Tu prompt personalizado</p>
-                <p className="ml-4">- Las 2 preguntas generadas</p>
-                <p className="ml-4">- Tu evaluación inicial (¿son buenas?)</p>
-                <p>• <strong>Guarda este archivo:</strong> Lo usarás en las siguientes actividades</p>
+                <p>• Investiga las opciones de comunicación:</p>
+                <p className="ml-4">- Sistema de mensajería interna</p>
+                <p className="ml-4">- Foros de discusión</p>
+                <p className="ml-4">- Anuncios del curso</p>
+                <p className="ml-4">- Notificaciones automáticas</p>
+                <p>• Prueba enviarte un mensaje usando el sistema interno</p>
+                <p>• Configura las notificaciones según tus preferencias</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Paso 6 */}
+          <div className="flex gap-4">
+            <div className="flex-shrink-0 w-8 h-8 bg-purple-500 text-white rounded-full flex items-center justify-center font-semibold">
+              6
+            </div>
+            <div className={`flex-1 border-l-4 ${darkMode ? 'border-purple-500 bg-gray-700' : 'border-purple-500 bg-purple-50'} rounded-r-lg p-4`}>
+              <h3 className={`font-semibold mb-2 ${darkMode ? 'text-purple-300' : 'text-purple-800'}`}>
+                Paso 6: Documentar hallazgos
+              </h3>
+              <div className={`space-y-2 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+                <p>• Crea un documento (Word o Google Docs) con:</p>
+                <p className="ml-4">- 3 funciones administrativas nuevas que descubriste</p>
+                <p className="ml-4">- 5 actividades que planeas usar en tu materia</p>
+                <p className="ml-4">- Ideas para organizar recursos y materiales</p>
+                <p className="ml-4">- Plan básico para sistema de calificaciones</p>
+                <p className="ml-4">- Estrategia de comunicación con estudiantes</p>
+                <p>• Incluye capturas de pantalla de las funciones más interesantes</p>
+                <p>• Este documento te servirá como referencia futura</p>
               </div>
             </div>
           </div>
@@ -201,11 +218,12 @@ FORMATO:
         </h2>
         <div className="space-y-3">
           {[
-            'Cuenta de IA creada y funcionando',
-            'Template básico de prompt comprendido y personalizado',
-            'Primer prompt completo creado para mi materia específica',
-            '2 preguntas de prueba generadas exitosamente',
-            'Resultados documentados para mejorar en siguientes actividades'
+            'Menú de administración completo explorado y 3 funciones nuevas identificadas',
+            'Todos los tipos de actividades revisados y 5 seleccionadas para mi materia',
+            'Tipos de recursos explorados y estrategia de organización definida',
+            'Herramientas de calificación investigadas y plan básico creado',
+            'Herramientas de comunicación probadas y configuradas',
+            'Documento de hallazgos creado con capturas de pantalla y planes'
           ].map((item, index) => (
             <div key={index} className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors">
               <button
@@ -233,16 +251,16 @@ FORMATO:
         </h2>
         <div className={`space-y-3 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
           <div className={`p-4 rounded-lg border-l-4 ${darkMode ? 'border-blue-500 bg-blue-900/20' : 'border-blue-500 bg-blue-50'}`}>
-            <p><strong>Para parejas mentor-aprendiz:</strong> El mentor ayuda con aspectos técnicos, el aprendiz valida que el contenido sea apropiado para la materia.</p>
+            <p><strong>Exploración sin riesgos:</strong> Esta actividad es para explorar únicamente. No hay riesgo de dañar tu curso mientras solo observes las opciones.</p>
           </div>
           <div className={`p-4 rounded-lg border-l-4 ${darkMode ? 'border-yellow-500 bg-yellow-900/20' : 'border-yellow-500 bg-yellow-50'}`}>
-            <p><strong>Moodle 4.5:</strong> Estas preguntas se importarán más tarde al banco de preguntas de tu curso.</p>
+            <p><strong>Enfoque en tu materia:</strong> Mientras exploras, siempre piensa cómo cada herramienta podría aplicarse específicamente a tu asignatura.</p>
           </div>
           <div className={`p-4 rounded-lg border-l-4 ${darkMode ? 'border-green-500 bg-green-900/20' : 'border-green-500 bg-green-50'}`}>
-            <p><strong>Iteración:</strong> Los prompts mejoran con práctica; esta es solo la base que perfeccionarás.</p>
+            <p><strong>Documentación valiosa:</strong> El documento que crees será tu hoja de ruta para implementar Moodle con tus estudiantes reales.</p>
           </div>
           <div className={`p-4 rounded-lg border-l-4 ${darkMode ? 'border-purple-500 bg-purple-900/20' : 'border-purple-500 bg-purple-50'}`}>
-            <p><strong>Calidad sobre cantidad:</strong> Es mejor tener 2 preguntas excelentes que 10 preguntas mediocres.</p>
+            <p><strong>Preparación para DÍA 2:</strong> La familiarización con estas herramientas te permitirá enfocarte mejor en las actividades de IA mañana.</p>
           </div>
         </div>
       </div>
@@ -250,4 +268,4 @@ FORMATO:
   );
 };
 
-export default Activity13;
+export default Homework1Day1;

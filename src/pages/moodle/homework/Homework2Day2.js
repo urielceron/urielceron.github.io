@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { ArrowLeft, Brain, CheckCircle2, Users, Clock, Lightbulb, Cpu, Globe } from 'lucide-react';
+import { ArrowLeft, Palette, CheckCircle2, Users, Clock, Image, Layout, Settings } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
-const Activity13 = ({ darkMode }) => {
+const Homework2Day1 = ({ darkMode }) => {
   const navigate = useNavigate();
   const [checkedItems, setCheckedItems] = useState({});
 
@@ -37,23 +37,23 @@ const Activity13 = ({ darkMode }) => {
           <div className="flex items-center gap-4">
             <div className="flex items-center gap-2 text-blue-600">
               <Clock className="h-5 w-5" />
-              <span className="font-medium">10 min</span>
+              <span className="font-medium">45 min</span>
             </div>
             <div className="flex items-center gap-2 text-green-600">
               <Users className="h-5 w-5" />
-              <span className="font-medium">Parejas</span>
+              <span className="font-medium">Individual</span>
             </div>
           </div>
         </div>
 
         <div className="flex items-center gap-3 mb-4">
-          <Brain className="h-8 w-8 text-purple-600" />
+          <Palette className="h-8 w-8 text-purple-600" />
           <div>
             <h1 className={`text-2xl font-bold ${darkMode ? 'text-white' : 'text-gray-800'}`}>
-              ACTIVIDAD 13: PROMPTS EDUCATIVOS BÁSICOS
+              ACTIVIDAD 2: PERSONALIZACIÓN AVANZADA
             </h1>
             <p className={`${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
-              DÍA 2 - Sesión Presencial • Bloque 1: IA para Educación
+              Trabajo en Casa - Día 1
             </p>
           </div>
         </div>
@@ -65,8 +65,8 @@ const Activity13 = ({ darkMode }) => {
           🎯 Objetivo
         </h2>
         <p className={`${darkMode ? 'text-gray-300' : 'text-gray-700'} text-lg`}>
-          Aprender la estructura de prompts efectivos para generar preguntas educativas de calidad
-          usando inteligencia artificial, estableciendo las bases para la creación masiva de contenido educativo.
+          Mejorar la apariencia y estructura del curso aplicando configuraciones visuales y
+          organizacionales avanzadas que hagan el entorno más atractivo y funcional para los estudiantes.
         </p>
       </div>
 
@@ -84,15 +84,14 @@ const Activity13 = ({ darkMode }) => {
             </div>
             <div className={`flex-1 border-l-4 ${darkMode ? 'border-red-500 bg-gray-700' : 'border-red-500 bg-red-50'} rounded-r-lg p-4`}>
               <h3 className={`font-semibold mb-2 ${darkMode ? 'text-red-300' : 'text-red-800'}`}>
-                Paso 1: Acceder a herramienta de IA
+                Paso 1: Cambiar tema visual del curso
               </h3>
               <div className={`space-y-2 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-                <p>• Abre una nueva pestaña en tu navegador</p>
-                <p>• Dirígete a una de estas opciones (en orden de preferencia):</p>
-                <p className="ml-4">- <strong>ChatGPT:</strong> https://chat.openai.com/ (gratuito con límites)</p>
-                <p className="ml-4">- <strong>Claude:</strong> https://claude.ai (gratuito con límites)</p>
-                <p className="ml-4">- <strong>Gemini:</strong> https://gemini.google.com (vinculado a cuenta Google)</p>
-                <p>• Inicia sesión o crea cuenta si no la tienes</p>
+                <p>• Accede a tu curso principal con cuenta docente</p>
+                <p>• Ve a "Administración" → "Editar configuración"</p>
+                <p>• Busca la sección "Apariencia" o "Tema"</p>
+                <p>• Si hay opciones de tema disponibles, selecciona uno diferente al por defecto</p>
+                <p>• <strong>Si no hay opciones de tema:</strong> Continúa con personalización de colores y elementos</p>
               </div>
             </div>
           </div>
@@ -104,32 +103,15 @@ const Activity13 = ({ darkMode }) => {
             </div>
             <div className={`flex-1 border-l-4 ${darkMode ? 'border-orange-500 bg-gray-700' : 'border-orange-500 bg-orange-50'} rounded-r-lg p-4`}>
               <h3 className={`font-semibold mb-2 ${darkMode ? 'text-orange-300' : 'text-orange-800'}`}>
-                Paso 2: Comprender estructura básica de prompts
+                Paso 2: Agregar imagen de encabezado
               </h3>
               <div className={`space-y-2 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-                <p>• Copia y pega este template básico en la IA:</p>
-                <div className={`${darkMode ? 'bg-gray-900' : 'bg-gray-100'} p-4 rounded-lg font-mono text-sm mt-3`}>
-                  <pre className={`${darkMode ? 'text-green-300' : 'text-green-700'}`}>
-{`Actúa como experto en educación mexicana de nivel medio superior.
-
-CONTEXTO:
-- Materia: [TU MATERIA]
-- Tema específico: [TU TEMA]
-- Nivel: Preparatoria/Bachillerato
-- Estudiantes: Mexicanos de 16-18 años
-
-TAREA:
-Crea [NÚMERO] preguntas de opción múltiple que:
-- Evalúen comprensión, no memorización
-- Tengan 4 opciones (A, B, C, D)
-- Incluyan distractores plausibles
-- Usen lenguaje claro y apropiado
-
-FORMATO:
-- Una pregunta por vez
-- Incluye explicación de respuesta correcta`}
-                  </pre>
-                </div>
+                <p>• En la configuración del curso, busca "Imagen del curso" o "Imagen de encabezado"</p>
+                <p>• Busca una imagen relacionada con tu materia:</p>
+                <p className="ml-4">- <strong>Opciones gratuitas:</strong> Unsplash.com, Pixabay.com</p>
+                <p className="ml-4">- <strong>Tamaño recomendado:</strong> 1200x300 píxeles</p>
+                <p className="ml-4">- <strong>Temática:</strong> Relacionada con tu área de enseñanza</p>
+                <p>• Sube la imagen y verifica que se muestre correctamente</p>
               </div>
             </div>
           </div>
@@ -141,14 +123,18 @@ FORMATO:
             </div>
             <div className={`flex-1 border-l-4 ${darkMode ? 'border-yellow-500 bg-gray-700' : 'border-yellow-500 bg-yellow-50'} rounded-r-lg p-4`}>
               <h3 className={`font-semibold mb-2 ${darkMode ? 'text-yellow-300' : 'text-yellow-800'}`}>
-                Paso 3: Personalizar para tu materia
+                Paso 3: Crear 6 secciones con nombres creativos
               </h3>
               <div className={`space-y-2 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-                <p>• Sustituye <code>[TU MATERIA]</code> por tu asignatura específica</p>
-                <p>• Identifica un tema concreto de tu currícula</p>
-                <p>• <strong>Ejemplo para Química:</strong> "Enlace químico - tipos y propiedades"</p>
-                <p>• <strong>Ejemplo para Historia:</strong> "Revolución Mexicana - causas sociales"</p>
-                <p>• <strong>Sé específico:</strong> En lugar de "Matemáticas", usa "Ecuaciones cuadráticas"</p>
+                <p>• Activa la edición del curso</p>
+                <p>• Expande tu estructura a 6 secciones temáticas principales:</p>
+                <p className="ml-4">- <strong>Sección 0:</strong> "🏠 Bienvenida y Orientación"</p>
+                <p className="ml-4">- <strong>Sección 1:</strong> [Nombre creativo para tu primer tema]</p>
+                <p className="ml-4">- <strong>Sección 2:</strong> [Nombre creativo para tu segundo tema]</p>
+                <p className="ml-4">- <strong>Sección 3:</strong> [Nombre creativo para tu tercer tema]</p>
+                <p className="ml-4">- <strong>Sección 4:</strong> [Nombre creativo para tu cuarto tema]</p>
+                <p className="ml-4">- <strong>Sección 5:</strong> [Nombre creativo para tu quinto tema]</p>
+                <p className="ml-4">- <strong>Sección 6:</strong> "🎯 Evaluación y Cierre"</p>
               </div>
             </div>
           </div>
@@ -160,14 +146,14 @@ FORMATO:
             </div>
             <div className={`flex-1 border-l-4 ${darkMode ? 'border-green-500 bg-gray-700' : 'border-green-500 bg-green-50'} rounded-r-lg p-4`}>
               <h3 className={`font-semibold mb-2 ${darkMode ? 'text-green-300' : 'text-green-800'}`}>
-                Paso 4: Probar prompt básico
+                Paso 4: Personalizar cada sección
               </h3>
               <div className={`space-y-2 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-                <p>• Completa el template con tu información</p>
-                <p>• Solicita crear <strong>2 preguntas como prueba</strong></p>
-                <p>• Observa si la IA entiende tu contexto educativo</p>
-                <p>• Evalúa si las preguntas son apropiadas para tus estudiantes</p>
-                <p>• <strong>Aprendiz valida contenido</strong>, <strong>Mentor ayuda con aspectos técnicos</strong></p>
+                <p>• <strong>Para cada sección temática:</strong></p>
+                <p className="ml-4">- Agrega una etiqueta con descripción atractiva</p>
+                <p className="ml-4">- Incluye los objetivos específicos de esa unidad</p>
+                <p className="ml-4">- Agrega una imagen representativa (opcional)</p>
+                <p className="ml-4">- Configura si la sección será visible desde el inicio</p>
               </div>
             </div>
           </div>
@@ -179,15 +165,52 @@ FORMATO:
             </div>
             <div className={`flex-1 border-l-4 ${darkMode ? 'border-blue-500 bg-gray-700' : 'border-blue-500 bg-blue-50'} rounded-r-lg p-4`}>
               <h3 className={`font-semibold mb-2 ${darkMode ? 'text-blue-300' : 'text-blue-800'}`}>
-                Paso 5: Documentar resultados
+                Paso 5: Configurar página principal
               </h3>
               <div className={`space-y-2 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-                <p>• En un documento nuevo (Word/Google Docs), anota:</p>
-                <p className="ml-4">- Qué herramienta de IA usaste</p>
-                <p className="ml-4">- Tu prompt personalizado</p>
-                <p className="ml-4">- Las 2 preguntas generadas</p>
-                <p className="ml-4">- Tu evaluación inicial (¿son buenas?)</p>
-                <p>• <strong>Guarda este archivo:</strong> Lo usarás en las siguientes actividades</p>
+                <p>• En la Sección 0, agrega:</p>
+                <p className="ml-4">- <strong>Etiqueta de bienvenida:</strong> Mensaje personal del docente</p>
+                <p className="ml-4">- <strong>Foro de anuncios:</strong> Para comunicaciones importantes</p>
+                <p className="ml-4">- <strong>Etiqueta de información:</strong> Horarios, forma de contacto, reglas básicas</p>
+                <p className="ml-4">- <strong>Recurso:</strong> Programa del curso en PDF (puede ser simulado)</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Paso 6 */}
+          <div className="flex gap-4">
+            <div className="flex-shrink-0 w-8 h-8 bg-purple-500 text-white rounded-full flex items-center justify-center font-semibold">
+              6
+            </div>
+            <div className={`flex-1 border-l-4 ${darkMode ? 'border-purple-500 bg-gray-700' : 'border-purple-500 bg-purple-50'} rounded-r-lg p-4`}>
+              <h3 className={`font-semibold mb-2 ${darkMode ? 'text-purple-300' : 'text-purple-800'}`}>
+                Paso 6: Organizar navegación
+              </h3>
+              <div className={`space-y-2 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+                <p>• Configura el menú de navegación del curso:</p>
+                <p className="ml-4">- Oculta secciones que no usarás inmediatamente</p>
+                <p className="ml-4">- Agrupa secciones relacionadas</p>
+                <p className="ml-4">- Configura el formato de presentación (acordeón, pestañas, etc.)</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Paso 7 */}
+          <div className="flex gap-4">
+            <div className="flex-shrink-0 w-8 h-8 bg-pink-500 text-white rounded-full flex items-center justify-center font-semibold">
+              7
+            </div>
+            <div className={`flex-1 border-l-4 ${darkMode ? 'border-pink-500 bg-gray-700' : 'border-pink-500 bg-pink-50'} rounded-r-lg p-4`}>
+              <h3 className={`font-semibold mb-2 ${darkMode ? 'text-pink-300' : 'text-pink-800'}`}>
+                Paso 7: Configuraciones de visualización
+              </h3>
+              <div className={`space-y-2 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+                <p>• <strong>Ajusta:</strong></p>
+                <p className="ml-4">- Número de anuncios recientes a mostrar: 3-5</p>
+                <p className="ml-4">- Mostrar calificaciones: Sí</p>
+                <p className="ml-4">- Mostrar informes de actividad: Sí</p>
+                <p className="ml-4">- Permitir descargas: Según tu preferencia</p>
+                <p className="ml-4">- Formato de fecha: México (español)</p>
               </div>
             </div>
           </div>
@@ -201,11 +224,12 @@ FORMATO:
         </h2>
         <div className="space-y-3">
           {[
-            'Cuenta de IA creada y funcionando',
-            'Template básico de prompt comprendido y personalizado',
-            'Primer prompt completo creado para mi materia específica',
-            '2 preguntas de prueba generadas exitosamente',
-            'Resultados documentados para mejorar en siguientes actividades'
+            'Tema visual personalizado o mejorado aplicado',
+            'Imagen de encabezado relevante agregada exitosamente',
+            '6 secciones creadas con nombres creativos y descriptivos',
+            'Contenido básico agregado a cada sección',
+            'Página principal organizada con elementos esenciales',
+            'Configuraciones de visualización optimizadas'
           ].map((item, index) => (
             <div key={index} className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors">
               <button
@@ -233,16 +257,16 @@ FORMATO:
         </h2>
         <div className={`space-y-3 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
           <div className={`p-4 rounded-lg border-l-4 ${darkMode ? 'border-blue-500 bg-blue-900/20' : 'border-blue-500 bg-blue-50'}`}>
-            <p><strong>Para parejas mentor-aprendiz:</strong> El mentor ayuda con aspectos técnicos, el aprendiz valida que el contenido sea apropiado para la materia.</p>
+            <p><strong>Para Moodle 4.5:</strong> Aprovecha las opciones mejoradas de personalización visual disponibles en esta versión.</p>
           </div>
           <div className={`p-4 rounded-lg border-l-4 ${darkMode ? 'border-yellow-500 bg-yellow-900/20' : 'border-yellow-500 bg-yellow-50'}`}>
-            <p><strong>Moodle 4.5:</strong> Estas preguntas se importarán más tarde al banco de preguntas de tu curso.</p>
+            <p><strong>Creatividad:</strong> Los nombres de secciones deben ser atractivos pero profesionales, que motiven a los estudiantes.</p>
           </div>
           <div className={`p-4 rounded-lg border-l-4 ${darkMode ? 'border-green-500 bg-green-900/20' : 'border-green-500 bg-green-50'}`}>
-            <p><strong>Iteración:</strong> Los prompts mejoran con práctica; esta es solo la base que perfeccionarás.</p>
+            <p><strong>Funcionalidad:</strong> La apariencia debe mejorar la usabilidad, no complicarla. Prioriza la claridad sobre la decoración.</p>
           </div>
           <div className={`p-4 rounded-lg border-l-4 ${darkMode ? 'border-purple-500 bg-purple-900/20' : 'border-purple-500 bg-purple-50'}`}>
-            <p><strong>Calidad sobre cantidad:</strong> Es mejor tener 2 preguntas excelentes que 10 preguntas mediocres.</p>
+            <p><strong>Escalabilidad:</strong> Organiza pensando en cómo crecerá tu curso a medida que agregues más contenido.</p>
           </div>
         </div>
       </div>
@@ -250,4 +274,4 @@ FORMATO:
   );
 };
 
-export default Activity13;
+export default Homework2Day1;

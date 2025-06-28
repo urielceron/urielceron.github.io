@@ -58,7 +58,13 @@ import {
   Activity13,
   Activity14,
   Activity15,
-  Activity16
+  Activity16,
+  Activity17,
+  Activity18,
+  Activity19,
+  Activity20,
+  Activity21,
+  Activity22,
 } from './pages/moodle/activities';
 import {
   Homework1Day1,
@@ -221,7 +227,13 @@ const ActividadRouter = () => {
     'moodle-activity-13': Activity13,
     'moodle-activity-14': Activity14,
     'moodle-activity-15': Activity15,
-    'moodle-activity-16': Activity16
+    'moodle-activity-16': Activity16,
+    'moodle-activity-17': Activity17,
+    'moodle-activity-18': Activity18,
+    'moodle-activity-19': Activity19,
+    'moodle-activity-20': Activity20,
+    'moodle-activity-21': Activity21,
+    'moodle-activity-22': Activity22,
   };
 
   const Actividad = actividadesMap[rutaActividad];
@@ -286,6 +298,12 @@ function App() {
         <Route path="/moodle-activity-14" element={<Activity14 darkMode={false} />} />
         <Route path="/moodle-activity-15" element={<Activity15 darkMode={false} />} />
         <Route path="/moodle-activity-16" element={<Activity16 darkMode={false} />} />
+        <Route path="/moodle-activity-17" element={<Activity17 darkMode={false} />} />
+        <Route path="/moodle-activity-18" element={<Activity18 darkMode={false} />} />
+        <Route path="/moodle-activity-19" element={<Activity19 darkMode={false} />} />
+        <Route path="/moodle-activity-20" element={<Activity20 darkMode={false} />} />
+        <Route path="/moodle-activity-21" element={<Activity21 darkMode={false} />} />
+        <Route path="/moodle-activity-22" element={<Activity22 darkMode={false} />} />
 
         <Route path="/moodle-homework-1-day1" element={<Homework1Day1 darkMode={false} />} />
         <Route path="/moodle-homework-2-day1" element={<Homework2Day1 darkMode={false} />} />

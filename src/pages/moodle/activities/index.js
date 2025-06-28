@@ -14,3 +14,10 @@ export { default as Activity13 } from './Activity13';
 export { default as Activity14 } from './Activity14';
 export { default as Activity15 } from './Activity15';
 export { default as Activity16 } from './Activity16';
+export { default as Activity17 } from './Activity17';
+export { default as Activity18 } from './Activity18';
+export { default as Activity19 } from './Activity19';
+export { default as Activity20 } from './Activity20';
+export { default as Activity21 } from './Activity21';
+export { default as Activity22 } from './Activity22';
+
