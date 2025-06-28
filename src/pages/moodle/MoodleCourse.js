@@ -165,7 +165,7 @@ const MoodleCourse = () => {
             activities: [
               { id: 'act16', name: "Comprender formato Aiken", duration: "15 min", description: "Aprender estructura exacta del formato Aiken para importación" },
               { id: 'act17', name: "Conversión manual", duration: "15 min", description: "Practicar conversión manual de preguntas de IA al formato Aiken" },
-              { id: 'act18', name: "Automatizar con IA", duration: "10 min", description: "Prompt para que IA genere directamente en formato Aiken" }
+              { id: 'act18', name: "Preguntas Calculadas con IA", duration: "10 min", description: "Prompt para que IA genere directamente en formato Aiken" }
             ]
           },
           {
@@ -173,9 +173,9 @@ const MoodleCourse = () => {
             title: "PRODUCCIÓN MASIVA",
             duration: "90 min",
             activities: [
-              { id: 'act19', name: "Verificación de formato", duration: "20 min", description: "Validar formato correcto mediante checklist sistemático" },
+              { id: 'act19', name: "Experimentación con Tipos de Preguntas", duration: "20 min", description: "Validar formato correcto mediante checklist sistemático" },
               { id: 'act20', name: "Primer examen anticopia", duration: "25 min", description: "Crear examen aplicando estrategias anticopia básicas" },
-              { id: 'act21', name: "Diferentes niveles", duration: "20 min", description: "Crear preguntas básicas, intermedias y avanzadas para un mismo tema" },
+              { id: 'act21', name: "Tipos avanzados de preguntas", duration: "20 min", description: "Crear preguntas básicas, intermedias y avanzadas para un mismo tema" },
               { id: 'act22', name: "Examen maestro", duration: "25 min", description: "Crear examen completo combinando todos los tipos de preguntas" }
             ]
           }
@@ -205,9 +205,9 @@ const MoodleCourse = () => {
             title: "IMPORTACIÓN MASIVA",
             duration: "50 min",
             activities: [
-              { id: 'act30', name: "Primera importación", duration: "15 min", description: "Importar primer archivo Aiken. Verificar que preguntas aparezcan correctas" },
-              { id: 'act31', name: "Resolución de errores", duration: "15 min", description: "Identificar preguntas que no importaron. Corregir formato y reimportar" },
-              { id: 'act32', name: "Importación por categorías", duration: "20 min", description: "Crear categorías por tema. Importar archivos separados por categoría" }
+              { id: 'act23', name: "Primera importación", duration: "15 min", description: "Importar primer archivo Aiken. Verificar que preguntas aparezcan correctas" },
+              { id: 'act24', name: "Resolución de errores", duration: "15 min", description: "Identificar preguntas que no importaron. Corregir formato y reimportar" },
+              { id: 'act25', name: "Importación por categorías", duration: "20 min", description: "Crear categorías por tema. Importar archivos separados por categoría" }
             ]
           },
           {
@@ -215,8 +215,8 @@ const MoodleCourse = () => {
             title: "ORGANIZACIÓN DEL BANCO",
             duration: "40 min",
             activities: [
-              { id: 'act33', name: "Crear estructura de categorías", duration: "20 min", description: "Categorías principales por unidad. Subcategorías por tema específico" },
-              { id: 'act34', name: "Edición y mejora", duration: "20 min", description: "Editar preguntas que necesiten ajustes. Agregar imágenes si es necesario" }
+              { id: 'act26', name: "Crear estructura de categorías", duration: "20 min", description: "Categorías principales por unidad. Subcategorías por tema específico" },
+              { id: 'act27', name: "Edición y mejora", duration: "20 min", description: "Editar preguntas que necesiten ajustes. Agregar imágenes si es necesario" }
             ]
           },
           {
@@ -224,10 +224,10 @@ const MoodleCourse = () => {
             title: "PRIMER EXAMEN",
             duration: "70 min",
             activities: [
-              { id: 'act35', name: "Examen básico", duration: "20 min", description: "Crear examen de 10 preguntas. Configurar tiempo límite y intentos" },
-              { id: 'act36', name: "Configuración avanzada", duration: "25 min", description: "Configurar método de calificación, navegación y restricciones" },
-              { id: 'act37', name: "Prueba como estudiante", duration: "15 min", description: "Tomar el examen desde cuenta de estudiante" },
-              { id: 'act38', name: "Análisis de resultados", duration: "10 min", description: "Revisar calificaciones y estadísticas básicas" }
+              { id: 'act28', name: "Examen básico", duration: "20 min", description: "Crear examen de 10 preguntas. Configurar tiempo límite y intentos" },
+              { id: 'act29', name: "Configuración avanzada", duration: "25 min", description: "Configurar método de calificación, navegación y restricciones" },
+              { id: 'act30', name: "Prueba como estudiante", duration: "15 min", description: "Tomar el examen desde cuenta de estudiante" },
+              { id: 'act31', name: "Análisis de resultados", duration: "10 min", description: "Revisar calificaciones y estadísticas básicas" }
             ]
           }
         ]
@@ -256,9 +256,9 @@ const MoodleCourse = () => {
             title: "INSTALACIÓN COLABORATIVA",
             duration: "60 min",
             activities: [
-              { id: 'act43', name: "Descarga e instalación", duration: "20 min", description: "Mentor guía instalación técnica. Aprendiz documenta pasos exactos" },
-              { id: 'act44', name: "Primera configuración", duration: "15 min", description: "Abrir SEB por primera vez. Explorar configuraciones básicas" },
-              { id: 'act45', name: "Configuración para Moodle", duration: "25 min", description: "Obtener clave de configuración de Moodle. Generar archivo .seb" }
+              { id: 'act32', name: "Descarga e instalación", duration: "20 min", description: "Mentor guía instalación técnica. Aprendiz documenta pasos exactos" },
+              { id: 'act33', name: "Primera configuración", duration: "15 min", description: "Abrir SEB por primera vez. Explorar configuraciones básicas" },
+              { id: 'act34', name: "Configuración para Moodle", duration: "25 min", description: "Obtener clave de configuración de Moodle. Generar archivo .seb" }
             ]
           },
           {
@@ -266,9 +266,9 @@ const MoodleCourse = () => {
             title: "CONFIGURACIÓN POR EXAMEN",
             duration: "80 min",
             activities: [
-              { id: 'act46', name: "Examen básico con SEB", duration: "25 min", description: "Configurar uno de los exámenes creados ayer. Habilitar requisito de Safe Exam Browser" },
-              { id: 'act47', name: "Prueba como estudiante", duration: "25 min", description: "Aprendiz toma examen usando SEB. Mentor observa restricciones" },
-              { id: 'act48', name: "Configuración avanzada", duration: "30 min", description: "Bloquear sitios específicos. Permitir calculadora si es necesario" }
+              { id: 'act35', name: "Examen básico con SEB", duration: "25 min", description: "Configurar uno de los exámenes creados ayer. Habilitar requisito de Safe Exam Browser" },
+              { id: 'act36', name: "Prueba como estudiante", duration: "25 min", description: "Aprendiz toma examen usando SEB. Mentor observa restricciones" },
+              { id: 'act37', name: "Configuración avanzada", duration: "30 min", description: "Bloquear sitios específicos. Permitir calculadora si es necesario" }
             ]
           },
           {
@@ -276,8 +276,8 @@ const MoodleCourse = () => {
             title: "RESOLUCIÓN DE PROBLEMAS",
             duration: "40 min",
             activities: [
-              { id: 'act49', name: "Simulación de problemas", duration: "20 min", description: "Intentar 'hacer trampa' en examen. Documentar qué bloquea SEB efectivamente" },
-              { id: 'act50', name: "Manual para estudiantes", duration: "20 min", description: "Crear instrucciones paso a paso. Incluir capturas de pantalla" }
+              { id: 'act38', name: "Simulación de problemas", duration: "20 min", description: "Intentar 'hacer trampa' en examen. Documentar qué bloquea SEB efectivamente" },
+              { id: 'act39', name: "Manual para estudiantes", duration: "20 min", description: "Crear instrucciones paso a paso. Incluir capturas de pantalla" }
             ]
           }
         ]
@@ -306,8 +306,8 @@ const MoodleCourse = () => {
             title: "GENERAR DATOS DE PRUEBA",
             duration: "30 min",
             activities: [
-              { id: 'act55', name: "Crear respuestas ficticias", duration: "15 min", description: "Tomar exámenes múltiples veces con respuestas variadas. Generar datos realistas para análisis" },
-              { id: 'act56', name: "Diferentes tipos de estudiantes", duration: "15 min", description: "Simular estudiante excelente (90%+), promedio (70%) y con dificultades (50%)" }
+              { id: 'act40', name: "Crear respuestas ficticias", duration: "15 min", description: "Tomar exámenes múltiples veces con respuestas variadas. Generar datos realistas para análisis" },
+              { id: 'act41', name: "Diferentes tipos de estudiantes", duration: "15 min", description: "Simular estudiante excelente (90%+), promedio (70%) y con dificultades (50%)" }
             ]
           },
           {
@@ -315,9 +315,9 @@ const MoodleCourse = () => {
             title: "ANÁLISIS EN MOODLE",
             duration: "60 min",
             activities: [
-              { id: 'act57', name: "Centro de calificaciones", duration: "20 min", description: "Navegar calificaciones por estudiante y por actividad. Identificar patrones" },
-              { id: 'act58', name: "Estadísticas por pregunta", duration: "20 min", description: "Identificar preguntas más difíciles. Ver distribución de respuestas" },
-              { id: 'act59', name: "Reportes automáticos", duration: "20 min", description: "Generar reporte de intentos. Analizar tiempo promedio por pregunta" }
+              { id: 'act42', name: "Centro de calificaciones", duration: "20 min", description: "Navegar calificaciones por estudiante y por actividad. Identificar patrones" },
+              { id: 'act43', name: "Estadísticas por pregunta", duration: "20 min", description: "Identificar preguntas más difíciles. Ver distribución de respuestas" },
+              { id: 'act44', name: "Reportes automáticos", duration: "20 min", description: "Generar reporte de intentos. Analizar tiempo promedio por pregunta" }
             ]
           },
           {
@@ -325,9 +325,9 @@ const MoodleCourse = () => {
             title: "EXCEL Y ANÁLISIS AVANZADO",
             duration: "60 min",
             activities: [
-              { id: 'act60', name: "Exportar a Excel", duration: "20 min", description: "Descargar calificaciones completas. Exportar respuestas detalladas" },
-              { id: 'act61', name: "Análisis en Excel", duration: "20 min", description: "Crear gráficos de rendimiento. Identificar preguntas problemáticas" },
-              { id: 'act62', name: "Plan de retroalimentación", duration: "20 min", description: "Diseñar feedback específico por estudiante. Crear plan de mejora" }
+              { id: 'act45', name: "Exportar a Excel", duration: "20 min", description: "Descargar calificaciones completas. Exportar respuestas detalladas" },
+              { id: 'act46', name: "Análisis en Excel", duration: "20 min", description: "Crear gráficos de rendimiento. Identificar preguntas problemáticas" },
+              { id: 'act47', name: "Plan de retroalimentación", duration: "20 min", description: "Diseñar feedback específico por estudiante. Crear plan de mejora" }
             ]
           },
           {
@@ -335,8 +335,8 @@ const MoodleCourse = () => {
             title: "PRESENTACIÓN FINAL",
             duration: "30 min",
             activities: [
-              { id: 'act63', name: "Demo del curso completo", duration: "15 min", description: "Cada pareja presenta su curso a otra pareja. Mostrar exámenes funcionando con SEB" },
-              { id: 'act64', name: "Intercambio de mejores prácticas", duration: "15 min", description: "Compartir trucos descubiertos. Documentar problemas y soluciones" }
+              { id: 'act48', name: "Demo del curso completo", duration: "15 min", description: "Cada pareja presenta su curso a otra pareja. Mostrar exámenes funcionando con SEB" },
+              { id: 'act49', name: "Intercambio de mejores prácticas", duration: "15 min", description: "Compartir trucos descubiertos. Documentar problemas y soluciones" }
             ]
           }
         ]

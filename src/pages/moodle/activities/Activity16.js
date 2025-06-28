@@ -37,7 +37,7 @@ const Activity16 = ({ darkMode }) => {
           <div className="flex items-center gap-4">
             <div className="flex items-center gap-2 text-blue-600">
               <Clock className="h-5 w-5" />
-              <span className="font-medium">10 min</span>
+              <span className="font-medium">15 min</span>
             </div>
             <div className="flex items-center gap-2 text-green-600">
               <Users className="h-5 w-5" />

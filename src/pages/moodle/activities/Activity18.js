@@ -1,359 +1,321 @@
-import React, { useState } from 'react';
-import { ArrowLeft, Zap, CheckCircle2, Users, Clock, Cpu, Rocket, Settings } from 'lucide-react';
+import React from 'react';
+import { ArrowLeft, Calculator, CheckCircle2, Users, Clock } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
 const Activity18 = ({ darkMode }) => {
   const navigate = useNavigate();
-  const [checkedItems, setCheckedItems] = useState({});
-
-  const handleBack = () => {
-    navigate('/moodle-course');
-  };
-
-  const toggleCheck = (id) => {
-    setCheckedItems(prev => ({
-      ...prev,
-      [id]: !prev[id]
-    }));
-  };
 
   return (
     <div className={`min-h-screen ${darkMode ? 'bg-gray-900' : 'bg-gray-50'} p-6`}>
       {/* Header */}
-      <div className={`${darkMode ? 'bg-gray-800' : 'bg-white'} rounded-lg shadow-md p-6 mb-6`}>
-        <div className="flex items-center justify-between mb-4">
+      <div className="max-w-4xl mx-auto">
+        <div className="flex items-center justify-between mb-6">
           <button
-            onClick={handleBack}
-            className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-colors ${
+            onClick={() => navigate('/moodle-course')}
+            className={`flex items-center gap-2 px-4 py-2 rounded-lg border transition-colors ${
               darkMode
-                ? 'bg-gray-700 hover:bg-gray-600 text-gray-300'
-                : 'bg-gray-100 hover:bg-gray-200 text-gray-700'
+                ? 'border-gray-600 hover:bg-gray-800 text-gray-300'
+                : 'border-gray-300 hover:bg-gray-100 text-gray-700'
             }`}
           >
-            <ArrowLeft className="h-5 w-5" />
-            Volver al Curso
+            <ArrowLeft className="h-4 w-4" />
+            Regresar al Curso
           </button>
 
-          <div className="flex items-center gap-4">
-            <div className="flex items-center gap-2 text-blue-600">
-              <Clock className="h-5 w-5" />
-              <span className="font-medium">15 min</span>
+          <div className="text-right">
+            <div className={`text-sm ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>
+              Día 2 - Actividad 18
             </div>
-            <div className="flex items-center gap-2 text-green-600">
-              <Users className="h-5 w-5" />
-              <span className="font-medium">Parejas</span>
+            <div className={`text-lg font-semibold ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+              Preguntas Calculadas con IA
             </div>
           </div>
         </div>
 
-        <div className="flex items-center gap-3 mb-4">
-          <Zap className="h-8 w-8 text-yellow-600" />
-          <div>
-            <h1 className={`text-2xl font-bold ${darkMode ? 'text-white' : 'text-gray-800'}`}>
-              ACTIVIDAD 18: AUTOMATIZAR CON IA
-            </h1>
-            <p className={`${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
-              DÍA 2 - Sesión Presencial • Bloque 2: Formato Aiken
-            </p>
+        {/* Información de la actividad */}
+        <div className={`${darkMode ? 'bg-gray-800' : 'bg-white'} rounded-lg p-6 mb-6`}>
+          <div className="flex items-center gap-4 mb-4">
+            <div className="flex items-center gap-2">
+              <Clock className="h-5 w-5 text-blue-600" />
+              <span className={`${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+                10 minutos
+              </span>
+            </div>
+            <div className="flex items-center gap-2">
+              <Users className="h-5 w-5 text-green-600" />
+              <span className={`${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+                Mentor y Aprendiz
+              </span>
+            </div>
           </div>
         </div>
-      </div>
 
-      {/* Objetivo */}
-      <div className={`${darkMode ? 'bg-gray-800' : 'bg-white'} rounded-lg p-6 mb-6`}>
-        <h2 className={`text-xl font-semibold mb-3 ${darkMode ? 'text-white' : 'text-gray-800'}`}>
-          🎯 Objetivo
-        </h2>
-        <p className={`${darkMode ? 'text-gray-300' : 'text-gray-700'} text-lg`}>
-          Usar IA para generar preguntas directamente en formato Aiken, eliminando la necesidad
-          de conversión manual y acelerando significativamente el proceso de creación de bancos de preguntas.
-        </p>
-      </div>
+        {/* Objetivo */}
+        <div className={`${darkMode ? 'bg-gray-800' : 'bg-white'} rounded-lg p-6 mb-6`}>
+          <h2 className={`text-xl font-semibold mb-4 ${darkMode ? 'text-white' : 'text-gray-800'} flex items-center gap-2`}>
+            <Calculator className="h-6 w-6 text-blue-600" />
+            🎯 Objetivo
+          </h2>
+          <p className={`${darkMode ? 'text-gray-300' : 'text-gray-700'} text-lg`}>
+            Crear preguntas calculadas para matemáticas y ciencias exactas, usando IA para generar
+            tanto la estructura como las variables, ideal para evaluación con números aleatorios.
+          </p>
+        </div>
 
-      {/* Prompt Automatizado */}
-      <div className={`${darkMode ? 'bg-gray-800' : 'bg-white'} rounded-lg p-6 mb-6`}>
-        <h2 className={`text-xl font-semibold mb-4 ${darkMode ? 'text-white' : 'text-gray-800'}`}>
-          🤖 Prompt Automatizado para Formato Aiken
-        </h2>
+        {/* Ventajas de Preguntas Calculadas */}
+        <div className={`${darkMode ? 'bg-gray-800' : 'bg-white'} rounded-lg p-6 mb-6`}>
+          <h2 className={`text-xl font-semibold mb-4 ${darkMode ? 'text-white' : 'text-gray-800'}`}>
+            ✨ Ventajas de las Preguntas Calculadas
+          </h2>
 
-        <div className={`${darkMode ? 'bg-gray-900' : 'bg-gray-100'} p-4 rounded-lg font-mono text-sm mb-4`}>
-          <pre className={`${darkMode ? 'text-green-300' : 'text-green-700'}`}>
-{`Actúa como experto en educación mexicana de nivel medio superior.
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className={`p-4 rounded-lg ${darkMode ? 'bg-green-900/30 border-green-700' : 'bg-green-50 border-green-200'} border`}>
+              <h3 className={`font-bold mb-3 ${darkMode ? 'text-green-300' : 'text-green-800'}`}>
+                🔒 Anticopia Automática
+              </h3>
+              <div className={`space-y-2 text-sm ${darkMode ? 'text-green-200' : 'text-green-700'}`}>
+                <p>• Cada estudiante recibe números diferentes</p>
+                <p>• Imposible copiar respuestas directamente</p>
+                <p>• Variables aleatorias en rangos configurables</p>
+                <p>• Fórmulas garantizan respuestas correctas</p>
+              </div>
+            </div>
+
+            <div className={`p-4 rounded-lg ${darkMode ? 'bg-blue-900/30 border-blue-700' : 'bg-blue-50 border-blue-200'} border`}>
+              <h3 className={`font-bold mb-3 ${darkMode ? 'text-blue-300' : 'text-blue-800'}`}>
+                📊 Ideales para Ciencias Exactas
+              </h3>
+              <div className={`space-y-2 text-sm ${darkMode ? 'text-blue-200' : 'text-blue-700'}`}>
+                <p>• <strong>Matemáticas:</strong> Ecuaciones, áreas, porcentajes</p>
+                <p>• <strong>Física:</strong> Velocidad, aceleración, energía</p>
+                <p>• <strong>Química:</strong> Concentraciones, estequiometría</p>
+                <p>• <strong>Estadística:</strong> Media, mediana, probabilidad</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Instrucciones Paso a Paso */}
+        <div className={`${darkMode ? 'bg-gray-800' : 'bg-white'} rounded-lg p-6 mb-6`}>
+          <h2 className={`text-xl font-semibold mb-6 ${darkMode ? 'text-white' : 'text-gray-800'}`}>
+            Instrucciones Paso a Paso
+          </h2>
+
+          <div className="space-y-6">
+            {/* Paso 1 */}
+            <div className="flex gap-4">
+              <div className="flex-shrink-0 w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center font-semibold">
+                1
+              </div>
+              <div className={`flex-1 border-l-4 ${darkMode ? 'border-blue-500 bg-gray-700' : 'border-blue-500 bg-blue-50'} rounded-r-lg p-4`}>
+                <h3 className={`font-semibold mb-2 ${darkMode ? 'text-blue-300' : 'text-blue-800'}`}>
+                  Paso 1: Comprender preguntas calculadas en Moodle
+                </h3>
+                <div className={`space-y-2 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+                  <p>• Ve a <strong>moodle.cbtis253.edu.mx</strong></p>
+                  <p>• Accede tu curso → Banco de preguntas → Crear nueva pregunta</p>
+                  <p>• Selecciona "Calculada" y explora la interfaz (NO crees aún)</p>
+                  <p>• Observa que requiere: fórmula, variables, conjuntos de datos</p>
+                  <p>• <strong>Ventaja:</strong> Cada estudiante recibe números diferentes, evita copia</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Paso 2 */}
+            <div className="flex gap-4">
+              <div className="flex-shrink-0 w-8 h-8 bg-green-500 text-white rounded-full flex items-center justify-center font-semibold">
+                2
+              </div>
+              <div className={`flex-1 border-l-4 ${darkMode ? 'border-green-500 bg-gray-700' : 'border-green-500 bg-green-50'} rounded-r-lg p-4`}>
+                <h3 className={`font-semibold mb-2 ${darkMode ? 'text-green-300' : 'text-green-800'}`}>
+                  Paso 2: Crear prompt para preguntas calculadas (Matemáticas/Ciencias)
+                </h3>
+                <div className={`space-y-2 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+                  <p>Si eres docente de matemáticas, física, química o estadística, usa:</p>
+                  <div className={`p-3 rounded ${darkMode ? 'bg-gray-600' : 'bg-gray-100'} text-sm mt-2`}>
+                    <pre className="whitespace-pre-wrap">
+{`Actúa como experto en educación matemática mexicana de preparatoria.
 
 CONTEXTO:
 - Materia: [TU MATERIA]
-- Tema específico: [TU TEMA]
-- Nivel: Preparatoria/Bachillerato
-- Estudiantes: Mexicanos de 16-18 años
+- Tema: [TU TEMA ESPECÍFICO]
+- Tipo: PREGUNTAS CALCULADAS
 
 TAREA:
-Crea [NÚMERO] preguntas de opción múltiple que:
-- Evalúen comprensión, no memorización
-- Tengan 4 opciones (A, B, C, D)
-- Incluyan distractores plausibles
-- Usen lenguaje claro y apropiado
+Crea 3 preguntas calculadas que incluyan:
+- Variables aleatorias (ej: {a}, {b}, {c})
+- Fórmula para calcular respuesta correcta
+- Explicación del procedimiento
 
-FORMATO REQUERIDO (CRÍTICO - SEGUIR EXACTAMENTE):
-Usa formato Aiken para importación a Moodle:
-
-Pregunta aquí
-A. Opción A
-B. Opción B
-C. Opción C
-D. Opción D
-ANSWER: [LETRA CORRECTA]
-
-(línea en blanco entre preguntas)
-
-IMPORTANTE:
-- NO numeres las preguntas
-- USA letras mayúsculas: A. B. C. D.
-- INCLUDE punto después de cada letra
-- WRITE "ANSWER:" en MAYÚSCULAS
-- LEAVE línea en blanco después de cada ANSWER
-- NO incluyas explicaciones adicionales`}
-          </pre>
-        </div>
-
-        <div className={`p-3 rounded-lg ${darkMode ? 'bg-yellow-900/20' : 'bg-yellow-50'} border-l-4 ${darkMode ? 'border-yellow-500' : 'border-yellow-400'}`}>
-          <p className={`text-sm ${darkMode ? 'text-yellow-200' : 'text-yellow-800'}`}>
-            <strong>Clave del éxito:</strong> La sección "FORMATO REQUERIDO" es lo que hace que la IA genere directamente en Aiken. Sin esta instrucción específica, tendrías que convertir manualmente.
-          </p>
-        </div>
-      </div>
-
-      {/* Instrucciones */}
-      <div className={`${darkMode ? 'bg-gray-800' : 'bg-white'} rounded-lg p-6 mb-6`}>
-        <h2 className={`text-2xl font-bold mb-6 ${darkMode ? 'text-white' : 'text-gray-800'}`}>
-          Instrucciones Paso a Paso
-        </h2>
-
-        <div className="space-y-6">
-          {/* Paso 1 */}
-          <div className="flex gap-4">
-            <div className="flex-shrink-0 w-8 h-8 bg-red-500 text-white rounded-full flex items-center justify-center font-semibold">
-              1
-            </div>
-            <div className={`flex-1 border-l-4 ${darkMode ? 'border-red-500 bg-gray-700' : 'border-red-500 bg-red-50'} rounded-r-lg p-4`}>
-              <h3 className={`font-semibold mb-2 ${darkMode ? 'text-red-300' : 'text-red-800'}`}>
-                Paso 1: Preparar prompt automatizado
-              </h3>
-              <div className={`space-y-2 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-                <p>• Copia el prompt automatizado mostrado arriba</p>
-                <p>• Personaliza los campos necesarios:</p>
-                <p className="ml-4">- Sustituye <code>[TU MATERIA]</code> por tu asignatura</p>
-                <p className="ml-4">- Sustituye <code>[TU TEMA]</code> por un nuevo tema (diferente a actividades anteriores)</p>
-                <p className="ml-4">- Sustituye <code>[NÚMERO]</code> por <strong>5</strong></p>
-                <p>• <strong>NO modifiques</strong> la sección "FORMATO REQUERIDO"</p>
+FORMATO REQUERIDO:
+PREGUNTA: Texto con variables {a}, {b}
+VARIABLES:
+- {a} = números de X a Y
+- {b} = números de Z a W
+FÓRMULA: {a} * {b} + {c}
+EJEMPLO: Si a=5, b=3, entonces respuesta = 5*3 = 15`}
+                    </pre>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
 
-          {/* Paso 2 */}
-          <div className="flex gap-4">
-            <div className="flex-shrink-0 w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-semibold">
-              2
-            </div>
-            <div className={`flex-1 border-l-4 ${darkMode ? 'border-orange-500 bg-gray-700' : 'border-orange-500 bg-orange-50'} rounded-r-lg p-4`}>
-              <h3 className={`font-semibold mb-2 ${darkMode ? 'text-orange-300' : 'text-orange-800'}`}>
-                Paso 2: Ejecutar prompt en herramienta de IA
-              </h3>
-              <div className={`space-y-2 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-                <p>• Accede a tu herramienta de IA (ChatGPT, Claude, o Gemini)</p>
-                <p>• Pega el prompt personalizado completo</p>
-                <p>• <strong>Ejecuta y observa:</strong> ¿La IA genera en formato Aiken?</p>
-                <p>• <strong>Si el formato NO es correcto:</strong></p>
-                <p className="ml-4">- Escribe: "Por favor, usa exactamente el formato Aiken que solicité"</p>
-                <p className="ml-4">- Repite el ejemplo del formato si es necesario</p>
+            {/* Paso 3 */}
+            <div className="flex gap-4">
+              <div className="flex-shrink-0 w-8 h-8 bg-yellow-500 text-white rounded-full flex items-center justify-center font-semibold">
+                3
+              </div>
+              <div className={`flex-1 border-l-4 ${darkMode ? 'border-yellow-500 bg-gray-700' : 'border-yellow-500 bg-yellow-50'} rounded-r-lg p-4`}>
+                <h3 className={`font-semibold mb-2 ${darkMode ? 'text-yellow-300' : 'text-yellow-800'}`}>
+                  Paso 3: Generar preguntas calculadas con IA
+                </h3>
+                <div className={`space-y-2 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+                  <p>• Personaliza el prompt con tu materia específica</p>
+                  <p>• <strong>Ejemplos por materia:</strong></p>
+                  <p className="ml-4">- <strong>Matemáticas:</strong> Ecuaciones lineales, áreas, porcentajes</p>
+                  <p className="ml-4">- <strong>Física:</strong> Velocidad, aceleración, trabajo y energía</p>
+                  <p className="ml-4">- <strong>Química:</strong> Concentraciones, balanceo, estequiometría</p>
+                  <p className="ml-4">- <strong>Estadística:</strong> Media, mediana, probabilidad</p>
+                  <p>• Genera 3 preguntas calculadas</p>
+                </div>
               </div>
             </div>
-          </div>
 
-          {/* Paso 3 */}
-          <div className="flex gap-4">
-            <div className="flex-shrink-0 w-8 h-8 bg-yellow-500 text-white rounded-full flex items-center justify-center font-semibold">
-              3
-            </div>
-            <div className={`flex-1 border-l-4 ${darkMode ? 'border-yellow-500 bg-gray-700' : 'border-yellow-500 bg-yellow-50'} rounded-r-lg p-4`}>
-              <h3 className={`font-semibold mb-2 ${darkMode ? 'text-yellow-300' : 'text-yellow-800'}`}>
-                Paso 3: Verificación inmediata de formato
-              </h3>
-              <div className={`space-y-2 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-                <p>• <strong>Antes de continuar,</strong> verifica que cada pregunta tenga:</p>
-                <p className="ml-4">✓ Pregunta sin numeración</p>
-                <p className="ml-4">✓ Exactamente 4 opciones: A. B. C. D.</p>
-                <p className="ml-4">✓ ANSWER: [LETRA] en mayúsculas</p>
-                <p className="ml-4">✓ Línea en blanco después de ANSWER</p>
-                <p>• <strong>Si hay problemas:</strong> Corrige inmediatamente con la IA</p>
-                <p>• <strong>Meta:</strong> 5 preguntas en formato Aiken perfecto</p>
+            {/* Paso 4 */}
+            <div className="flex gap-4">
+              <div className="flex-shrink-0 w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-semibold">
+                4
+              </div>
+              <div className={`flex-1 border-l-4 ${darkMode ? 'border-orange-500 bg-gray-700' : 'border-orange-500 bg-orange-50'} rounded-r-lg p-4`}>
+                <h3 className={`font-semibold mb-2 ${darkMode ? 'text-orange-300' : 'text-orange-800'}`}>
+                  Paso 4: Adaptar para otras materias (Si no eres de exactas)
+                </h3>
+                <div className={`space-y-2 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+                  <p><strong>Historia/Literatura/Sociales:</strong> Usa preguntas numéricas simples:</p>
+                  <div className={`p-3 rounded ${darkMode ? 'bg-gray-600' : 'bg-gray-100'} text-sm mt-2`}>
+                    <pre className="whitespace-pre-wrap">
+{`Ejemplo Historia: "Si la Revolución Mexicana inició en {año1} y
+terminó en {año2}, ¿cuántos años duró?"
+VARIABLES: {año1} = 1910-1911, {año2} = 1917-1921
+FÓRMULA: {año2} - {año1}`}
+                    </pre>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
 
-          {/* Paso 4 */}
-          <div className="flex gap-4">
-            <div className="flex-shrink-0 w-8 h-8 bg-green-500 text-white rounded-full flex items-center justify-center font-semibold">
-              4
-            </div>
-            <div className={`flex-1 border-l-4 ${darkMode ? 'border-green-500 bg-gray-700' : 'border-green-500 bg-green-50'} rounded-r-lg p-4`}>
-              <h3 className={`font-semibold mb-2 ${darkMode ? 'text-green-300' : 'text-green-800'}`}>
-                Paso 4: Probar variación de tema
-              </h3>
-              <div className={`space-y-2 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-                <p>• Modifica solo el <code>[TU TEMA]</code> en el prompt</p>
-                <p>• Usa un segundo tema de tu lista del Día 1</p>
-                <p>• Genera otras 5 preguntas con el mismo prompt</p>
-                <p>• <strong>Objetivo:</strong> Probar que el prompt funciona para diferentes temas</p>
-                <p>• <strong>Compara:</strong> ¿El formato se mantiene consistente?</p>
+            {/* Paso 5 */}
+            <div className="flex gap-4">
+              <div className="flex-shrink-0 w-8 h-8 bg-purple-500 text-white rounded-full flex items-center justify-center font-semibold">
+                5
+              </div>
+              <div className={`flex-1 border-l-4 ${darkMode ? 'border-purple-500 bg-gray-700' : 'border-purple-500 bg-purple-50'} rounded-r-lg p-4`}>
+                <h3 className={`font-semibold mb-2 ${darkMode ? 'text-purple-300' : 'text-purple-800'}`}>
+                  Paso 5: Crear primera pregunta calculada en Moodle
+                </h3>
+                <div className={`space-y-2 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+                  <p>• Ve a tu curso → Banco de preguntas → Crear nueva pregunta → Calculada</p>
+                  <p>• <strong>Mentor guía la interfaz técnica:</strong></p>
+                  <p className="ml-4">- Nombre de la pregunta</p>
+                  <p className="ml-4">- Texto con variables {'a'}, {'b'}</p>
+                  <p className="ml-4">- Definir variables y rangos</p>
+                  <p className="ml-4">- Introducir fórmula de respuesta</p>
+                  <p>• <strong>Aprendiz valida:</strong> ¿Los números tienen sentido pedagógico?</p>
+                </div>
               </div>
             </div>
-          </div>
 
-          {/* Paso 5 */}
-          <div className="flex gap-4">
-            <div className="flex-shrink-0 w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center font-semibold">
-              5
-            </div>
-            <div className={`flex-1 border-l-4 ${darkMode ? 'border-blue-500 bg-gray-700' : 'border-blue-500 bg-blue-50'} rounded-r-lg p-4`}>
-              <h3 className={`font-semibold mb-2 ${darkMode ? 'text-blue-300' : 'text-blue-800'}`}>
-                Paso 5: Comparar eficiencia vs. conversión manual
-              </h3>
-              <div className={`space-y-2 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-                <p>• <strong>Evalúa tu experiencia:</strong></p>
-                <p className="ml-4">- ¿Cuánto tiempo tomó generar 10 preguntas automatizadas?</p>
-                <p className="ml-4">- ¿Versus las 10 preguntas de conversión manual?</p>
-                <p className="ml-4">- ¿La calidad del formato es igual o mejor?</p>
-                <p>• <strong>Identifica ventajas y desventajas</strong> de cada método</p>
-                <p>• <strong>Decide:</strong> ¿Cuál usarías para producción masiva?</p>
+            {/* Paso 6 */}
+            <div className="flex gap-4">
+              <div className="flex-shrink-0 w-8 h-8 bg-red-500 text-white rounded-full flex items-center justify-center font-semibold">
+                6
+              </div>
+              <div className={`flex-1 border-l-4 ${darkMode ? 'border-red-500 bg-gray-700' : 'border-red-500 bg-red-50'} rounded-r-lg p-4`}>
+                <h3 className={`font-semibold mb-2 ${darkMode ? 'text-red-300' : 'text-red-800'}`}>
+                  Paso 6: Probar la pregunta calculada
+                </h3>
+                <div className={`space-y-2 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+                  <p>• Haz "Vista previa" de tu pregunta</p>
+                  <p>• Actualiza varias veces para ver números diferentes</p>
+                  <p>• Verifica que la fórmula calcule correctamente</p>
+                  <p>• <strong>Crítico:</strong> Cada actualización debe mostrar números distintos</p>
+                </div>
               </div>
             </div>
-          </div>
 
-          {/* Paso 6 */}
-          <div className="flex gap-4">
-            <div className="flex-shrink-0 w-8 h-8 bg-purple-500 text-white rounded-full flex items-center justify-center font-semibold">
-              6
-            </div>
-            <div className={`flex-1 border-l-4 ${darkMode ? 'border-purple-500 bg-gray-700' : 'border-purple-500 bg-purple-50'} rounded-r-lg p-4`}>
-              <h3 className={`font-semibold mb-2 ${darkMode ? 'text-purple-300' : 'text-purple-800'}`}>
-                Paso 6: Crear prompt optimizado personal
-              </h3>
-              <div className={`space-y-2 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-                <p>• Basándote en tu experiencia, mejora el prompt:</p>
-                <p className="ml-4">- ¿Qué instrucciones específicas ayudan para tu materia?</p>
-                <p className="ml-4">- ¿Necesitas mencionar nivel de dificultad específico?</p>
-                <p className="ml-4">- ¿Hay términos técnicos que la IA debe usar/evitar?</p>
-                <p>• <strong>Guarda tu prompt optimizado</strong> como plantilla</p>
-                <p>• <strong>Archivo:</strong> "[TuMateria]_PromptAiken_Optimizado.txt"</p>
+            {/* Paso 7 */}
+            <div className="flex gap-4">
+              <div className="flex-shrink-0 w-8 h-8 bg-indigo-500 text-white rounded-full flex items-center justify-center font-semibold">
+                7
+              </div>
+              <div className={`flex-1 border-l-4 ${darkMode ? 'border-indigo-500 bg-gray-700' : 'border-indigo-500 bg-indigo-50'} rounded-r-lg p-4`}>
+                <h3 className={`font-semibold mb-2 ${darkMode ? 'text-indigo-300' : 'text-indigo-800'}`}>
+                  Paso 7: Crear preguntas para otras materias con IA
+                </h3>
+                <div className={`space-y-2 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+                  <p>Solicita a la IA 5 preguntas de tipos variados:</p>
+                  <div className={`p-3 rounded ${darkMode ? 'bg-gray-600' : 'bg-gray-100'} text-sm mt-2`}>
+                    <pre className="whitespace-pre-wrap">
+{`Crea 5 preguntas para preparatoria mexicana:
+1. Verdadero/Falso con justificación
+2. Respuesta corta (una palabra/número)
+3. Relacionar columnas (5 elementos cada lado)
+4. Respuesta numérica simple
+5. Ensayo corto (100 palabras máximo)
+
+Tema: [TU TEMA]
+Formato: Especifica claramente el tipo al inicio de cada pregunta`}
+                    </pre>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
 
-      {/* Comparación de Métodos */}
-      <div className={`${darkMode ? 'bg-gray-800' : 'bg-white'} rounded-lg p-6 mb-6`}>
-        <h2 className={`text-xl font-semibold mb-4 ${darkMode ? 'text-white' : 'text-gray-800'}`}>
-          ⚖️ Comparación: Manual vs. Automatizado
-        </h2>
-
-        <div className="grid md:grid-cols-2 gap-6">
-          {/* Manual */}
-          <div className={`p-4 rounded-lg border-l-4 ${darkMode ? 'border-orange-500 bg-orange-900/20' : 'border-orange-500 bg-orange-50'}`}>
-            <h3 className={`font-bold mb-3 ${darkMode ? 'text-orange-300' : 'text-orange-800'}`}>🔧 CONVERSIÓN MANUAL</h3>
-            <div className={`space-y-2 text-sm ${darkMode ? 'text-orange-200' : 'text-orange-700'}`}>
-              <div><strong>Ventajas:</strong></div>
-              <ul className="ml-4 space-y-1">
-                <li>• Control total sobre el formato</li>
-                <li>• Puedes corregir errores específicos</li>
-                <li>• Funciona con cualquier fuente de preguntas</li>
-              </ul>
-              <div><strong>Desventajas:</strong></div>
-              <ul className="ml-4 space-y-1">
-                <li>• Lento y laborioso</li>
-                <li>• Propenso a errores humanos</li>
-                <li>• No escalable para volúmenes grandes</li>
-              </ul>
-            </div>
-          </div>
-
-          {/* Automatizado */}
-          <div className={`p-4 rounded-lg border-l-4 ${darkMode ? 'border-green-500 bg-green-900/20' : 'border-green-500 bg-green-50'}`}>
-            <h3 className={`font-bold mb-3 ${darkMode ? 'text-green-300' : 'text-green-800'}`}>⚡ GENERACIÓN AUTOMATIZADA</h3>
-            <div className={`space-y-2 text-sm ${darkMode ? 'text-green-200' : 'text-green-700'}`}>
-              <div><strong>Ventajas:</strong></div>
-              <ul className="ml-4 space-y-1">
-                <li>• Extremadamente rápido</li>
-                <li>• Escalable a cientos de preguntas</li>
-                <li>• Formato consistente</li>
-              </ul>
-              <div><strong>Desventajas:</strong></div>
-              <ul className="ml-4 space-y-1">
-                <li>• Requiere prompt bien diseñado</li>
-                <li>• Puede necesitar ajustes por materia</li>
-                <li>• Dependiente de IA cooperativa</li>
-              </ul>
-            </div>
+        {/* Lista de Cotejo */}
+        <div className={`${darkMode ? 'bg-gray-800' : 'bg-white'} rounded-lg p-6 mb-6`}>
+          <h2 className={`text-xl font-semibold mb-4 ${darkMode ? 'text-white' : 'text-gray-800'} flex items-center gap-2`}>
+            <CheckCircle2 className="h-6 w-6 text-green-600" />
+            Lista de Cotejo
+          </h2>
+          <div className="space-y-3">
+            {[
+              'Concepto de preguntas calculadas comprendido',
+              '3 preguntas calculadas generadas con IA (variables y fórmulas)',
+              'Una pregunta calculada creada y probada en Moodle 4.5',
+              'Números aleatorios verificados funcionando correctamente',
+              '5 preguntas de tipos variados generadas con IA',
+              'Ventajas de preguntas calculadas identificadas para anticopia'
+            ].map((item, index) => (
+              <label key={index} className="flex items-center gap-3 cursor-pointer">
+                <input
+                  type="checkbox"
+                  className="w-5 h-5 text-blue-600 border-2 border-gray-300 rounded focus:ring-blue-500"
+                />
+                <span className={`${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+                  {item}
+                </span>
+              </label>
+            ))}
           </div>
         </div>
 
-        <div className={`mt-4 p-3 rounded-lg ${darkMode ? 'bg-blue-900/20' : 'bg-blue-50'}`}>
-          <p className={`text-sm ${darkMode ? 'text-blue-200' : 'text-blue-700'}`}>
-            <strong>Recomendación:</strong> Usa automatización para volumen, conversión manual para casos especiales o cuando el prompt no funciona bien.
-          </p>
-        </div>
-      </div>
-
-      {/* Lista de Cotejo */}
-      <div className={`${darkMode ? 'bg-gray-800' : 'bg-white'} rounded-lg p-6 mb-6`}>
-        <h2 className={`text-xl font-semibold mb-4 ${darkMode ? 'text-white' : 'text-gray-800'}`}>
-          📋 Lista de Cotejo
-        </h2>
-        <div className="space-y-3">
-          {[
-            'Prompt automatizado personalizado y ejecutado exitosamente',
-            '5 preguntas generadas en formato Aiken perfecto (Tema 1)',
-            '5 preguntas adicionales generadas con tema diferente (Tema 2)',
-            'Comparación de eficiencia realizada entre métodos manual vs automatizado',
-            'Ventajas y desventajas de cada método identificadas',
-            'Prompt optimizado personal creado y guardado como plantilla'
-          ].map((item, index) => (
-            <div key={index} className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors">
-              <button
-                onClick={() => toggleCheck(`checklist-${index}`)}
-                className={`flex-shrink-0 w-6 h-6 rounded border-2 flex items-center justify-center transition-colors ${
-                  checkedItems[`checklist-${index}`]
-                    ? 'bg-green-500 border-green-500 text-white'
-                    : `border-gray-300 ${darkMode ? 'hover:border-green-400' : 'hover:border-green-500'}`
-                }`}
-              >
-                {checkedItems[`checklist-${index}`] && <CheckCircle2 className="h-4 w-4" />}
-              </button>
-              <span className={`${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-                {item}
-              </span>
+        {/* Notas Importantes */}
+        <div className={`${darkMode ? 'bg-gray-800' : 'bg-white'} rounded-lg p-6`}>
+          <h2 className={`text-xl font-semibold mb-4 ${darkMode ? 'text-white' : 'text-gray-800'}`}>
+            📝 Notas Importantes
+          </h2>
+          <div className={`space-y-3 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+            <div className={`p-4 rounded-lg ${darkMode ? 'bg-green-900/30 border-green-700' : 'bg-green-50 border-green-200'} border`}>
+              <p><strong>Matemáticas/Ciencias:</strong> Las preguntas calculadas son ideales para evitar copia entre estudiantes</p>
             </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Notas Importantes */}
-      <div className={`${darkMode ? 'bg-gray-800' : 'bg-white'} rounded-lg p-6`}>
-        <h2 className={`text-xl font-semibold mb-4 ${darkMode ? 'text-white' : 'text-gray-800'}`}>
-          📝 Notas Importantes
-        </h2>
-        <div className={`space-y-3 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-          <div className={`p-4 rounded-lg border-l-4 ${darkMode ? 'border-blue-500 bg-blue-900/20' : 'border-blue-500 bg-blue-50'}`}>
-            <p><strong>Clave del éxito:</strong> La sección "FORMATO REQUERIDO" del prompt es crítica. Sin ella, tendrás que hacer conversión manual.</p>
-          </div>
-          <div className={`p-4 rounded-lg border-l-4 ${darkMode ? 'border-yellow-500 bg-yellow-900/20' : 'border-yellow-500 bg-yellow-50'}`}>
-            <p><strong>Personalización por materia:</strong> Cada asignatura puede necesitar ajustes específicos en el prompt para obtener mejores resultados.</p>
-          </div>
-          <div className={`p-4 rounded-lg border-l-4 ${darkMode ? 'border-green-500 bg-green-900/20' : 'border-green-500 bg-green-50'}`}>
-            <p><strong>Escalabilidad:</strong> Una vez perfeccionado tu prompt, puedes generar cientos de preguntas en minutos en lugar de horas.</p>
-          </div>
-          <div className={`p-4 rounded-lg border-l-4 ${darkMode ? 'border-purple-500 bg-purple-900/20' : 'border-purple-500 bg-purple-50'}`}>
-            <p><strong>Próximos pasos:</strong> En las siguientes actividades usarás este prompt optimizado para crear bancos masivos de preguntas.</p>
+            <div className={`p-4 rounded-lg ${darkMode ? 'bg-blue-900/30 border-blue-700' : 'bg-blue-50 border-blue-200'} border`}>
+              <p><strong>Otras materias:</strong> Pueden usar variables simples en fechas, cantidades o datos</p>
+            </div>
+            <div className={`p-4 rounded-lg ${darkMode ? 'bg-yellow-900/30 border-yellow-700' : 'bg-yellow-50 border-yellow-200'} border`}>
+              <p><strong>Limitación IA:</strong> La IA puede sugerir estructura, pero la configuración técnica en Moodle es manual</p>
+            </div>
           </div>
         </div>
       </div>
