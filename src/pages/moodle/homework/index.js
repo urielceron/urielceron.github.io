@@ -14,3 +14,7 @@ export { default as Homework1Day4 } from './Homework1Day4';
 export { default as Homework2Day4 } from './Homework2Day4';
 export { default as Homework3Day4 } from './Homework3Day4';
 export { default as Homework4Day4 } from './Homework4Day4';
+export { default as Homework1Day5 } from './Homework1Day5';
+export { default as Homework2Day5 } from './Homework2Day5';
+export { default as Homework3Day5 } from './Homework3Day5';
+export { default as Homework4Day5 } from './Homework4Day5';
