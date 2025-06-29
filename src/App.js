@@ -74,6 +74,14 @@ import {
   Activity29,
   Activity30,
   Activity31,
+  Activity32,
+  Activity33,
+  Activity34,
+  Activity35,
+  Activity36,
+  Activity37,
+  Activity38,
+  Activity39,
 } from './pages/moodle/activities';
 import {
   Homework1Day1,
@@ -87,7 +95,11 @@ import {
   Homework1Day3,
   Homework2Day3,
   Homework3Day3,
-  Homework4Day3
+  Homework4Day3,
+  Homework1Day4,
+  Homework2Day4,
+  Homework3Day4,
+  Homework4Day4,
 } from './pages/moodle/homework';
 
 // Componente que redirige a la ruta correcta basado en los parámetros
@@ -259,7 +271,15 @@ const ActividadRouter = () => {
     'moodle-activity-28': Activity28,
     'moodle-activity-29': Activity29,
     'moodle-activity-30': Activity30,
-    'moodle-activity-31': Activity31
+    'moodle-activity-31': Activity31,
+    'moodle-activity-32': Activity32,
+    'moodle-activity-33': Activity33,
+    'moodle-activity-34': Activity34,
+    'moodle-activity-35': Activity35,
+    'moodle-activity-36': Activity36,
+    'moodle-activity-37': Activity37,
+    'moodle-activity-38': Activity38,
+    'moodle-activity-39': Activity39
   };
 
   const Actividad = actividadesMap[rutaActividad];
@@ -339,6 +359,14 @@ function App() {
         <Route path="/moodle-activity-29" element={<Activity29 darkMode={false} />} />
         <Route path="/moodle-activity-30" element={<Activity30 darkMode={false} />} />
         <Route path="/moodle-activity-31" element={<Activity31 darkMode={false} />} />
+        <Route path="/moodle-activity-32" element={<Activity32 darkMode={false} />} />
+        <Route path="/moodle-activity-33" element={<Activity33 darkMode={false} />} />
+        <Route path="/moodle-activity-34" element={<Activity34 darkMode={false} />} />
+        <Route path="/moodle-activity-35" element={<Activity35 darkMode={false} />} />
+        <Route path="/moodle-activity-36" element={<Activity36 darkMode={false} />} />
+        <Route path="/moodle-activity-37" element={<Activity37 darkMode={false} />} />
+        <Route path="/moodle-activity-38" element={<Activity38 darkMode={false} />} />
+        <Route path="/moodle-activity-39" element={<Activity39 darkMode={false} />} />
 
         <Route path="/moodle-homework-1-day1" element={<Homework1Day1 darkMode={false} />} />
         <Route path="/moodle-homework-2-day1" element={<Homework2Day1 darkMode={false} />} />
@@ -352,6 +380,10 @@ function App() {
         <Route path="/moodle-homework-2-day3" element={<Homework2Day3 darkMode={false} />} />
         <Route path="/moodle-homework-3-day3" element={<Homework3Day3 darkMode={false} />} />
         <Route path="/moodle-homework-4-day3" element={<Homework4Day3 darkMode={false} />} />
+        <Route path="/moodle-homework-1-day4" element={<Homework1Day4 darkMode={false} />} />
+        <Route path="/moodle-homework-2-day4" element={<Homework2Day4 darkMode={false} />} />
+        <Route path="/moodle-homework-3-day4" element={<Homework3Day4 darkMode={false} />} />
+        <Route path="/moodle-homework-4-day4" element={<Homework4Day4 darkMode={false} />} />
 
         {/* Ruta de respaldo para URLs desconocidas */}
         <Route path="*" element={<Navigate to="/" replace />} />

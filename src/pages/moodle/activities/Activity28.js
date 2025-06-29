@@ -28,7 +28,7 @@ const Activity28 = ({ darkMode }) => {
       <div className={`${darkMode ? 'bg-gray-800' : 'bg-white'} rounded-lg shadow-md p-6 mb-6`}>
         <div className="flex items-center justify-between mb-4">
           <button
-            onClick={() => navigate('/moodle')}
+            onClick={() => navigate('/moodle-course')}
             className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-colors ${
               darkMode
                 ? 'bg-gray-700 hover:bg-gray-600 text-gray-300'
