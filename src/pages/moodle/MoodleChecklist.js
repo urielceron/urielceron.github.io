@@ -228,15 +228,15 @@ const MoodleChecklist = () => {
       <nav className={`${darkMode ? 'bg-gray-800' : 'bg-white'} shadow-lg`}>
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex justify-between items-center h-16">
-             <button
-                onClick={handleVolver}
-                className="bg-blue-700 hover:bg-blue-800 text-white font-bold py-3 px-6 rounded-lg transition-colors duration-300 flex items-center gap-2"
-              >
-                <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-                </svg>
-                📚 Volver al Curso Completo
-              </button>
+            <button
+              onClick={handleVolver}
+              className="bg-blue-700 hover:bg-blue-800 text-white font-bold py-3 px-6 rounded-lg transition-colors duration-300 flex items-center gap-2"
+            >
+              <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+              </svg>
+              📚 Volver al Curso Completo
+            </button>
             <div className="flex items-center space-x-4">
               <h1 className={`text-xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>
                 Lista de Cotejo - Curso Moodle
@@ -284,9 +284,8 @@ const MoodleChecklist = () => {
                 value={teamData.mentor}
                 onChange={(e) => handleTeamChange('mentor', e.target.value)}
                 placeholder="Ingresa el nombre del mentor"
-                className={`w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${
-                  darkMode ? 'bg-gray-700 text-white border-gray-600' : ''
-                }`}
+                className={`w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${darkMode ? 'bg-gray-700 text-white border-gray-600' : ''
+                  }`}
               />
             </div>
             <div>
@@ -298,9 +297,8 @@ const MoodleChecklist = () => {
                 value={teamData.aprendiz}
                 onChange={(e) => handleTeamChange('aprendiz', e.target.value)}
                 placeholder="Ingresa el nombre del aprendiz"
-                className={`w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${
-                  darkMode ? 'bg-gray-700 text-white border-gray-600' : ''
-                }`}
+                className={`w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${darkMode ? 'bg-gray-700 text-white border-gray-600' : ''
+                  }`}
               />
             </div>
           </div>
@@ -373,38 +371,34 @@ const MoodleChecklist = () => {
                     {dayData.activities.map((activity) => (
                       <div
                         key={activity.id}
-                        className={`p-3 rounded-lg border-2 transition-all cursor-pointer ${
-                          activity.essential
+                        className={`p-3 rounded-lg border-2 transition-all cursor-pointer ${activity.essential
                             ? 'border-green-200 bg-green-50 dark:bg-green-900 dark:border-green-700'
                             : 'border-yellow-200 bg-yellow-50 dark:bg-yellow-900 dark:border-yellow-700'
-                        } ${checkedItems[activity.id] ? 'opacity-75' : ''}`}
+                          } ${checkedItems[activity.id] ? 'opacity-75' : ''}`}
                         onClick={() => handleCheckChange(activity.id)}
                       >
                         <div className="flex items-start gap-2">
                           <CheckCircle2
-                            className={`w-5 h-5 mt-0.5 ${
-                              checkedItems[activity.id]
+                            className={`w-5 h-5 mt-0.5 ${checkedItems[activity.id]
                                 ? 'text-green-600 dark:text-green-400'
                                 : 'text-gray-400'
-                            }`}
+                              }`}
                           />
                           <div className="flex-1">
                             <div className="flex items-center gap-1 mb-1">
                               <span>{getEssentialIcon(activity.essential)}</span>
                               <span>{getActivityIcon(activity.type)}</span>
-                              <span className={`text-xs px-2 py-1 rounded ${
-                                activity.type === 'presencial' ? 'bg-blue-100 text-blue-800 dark:bg-blue-800 dark:text-blue-200' :
-                                activity.type === 'casa' ? 'bg-purple-100 text-purple-800 dark:bg-purple-800 dark:text-purple-200' :
-                                'bg-orange-100 text-orange-800 dark:bg-orange-800 dark:text-orange-200'
-                              }`}>
+                              <span className={`text-xs px-2 py-1 rounded ${activity.type === 'presencial' ? 'bg-blue-100 text-blue-800 dark:bg-blue-800 dark:text-blue-200' :
+                                  activity.type === 'casa' ? 'bg-purple-100 text-purple-800 dark:bg-purple-800 dark:text-purple-200' :
+                                    'bg-orange-100 text-orange-800 dark:bg-orange-800 dark:text-orange-200'
+                                }`}>
                                 {activity.type}
                               </span>
                             </div>
-                            <div className={`text-sm font-medium ${
-                              checkedItems[activity.id]
+                            <div className={`text-sm font-medium ${checkedItems[activity.id]
                                 ? 'line-through text-gray-500 dark:text-gray-400'
                                 : darkMode ? 'text-gray-200' : 'text-gray-800'
-                            }`}>
+                              }`}>
                               {activity.name}
                             </div>
                           </div>
@@ -429,11 +423,11 @@ const MoodleChecklist = () => {
               <div className="space-y-1 text-sm">
                 <div className="flex items-center gap-2">
                   <span>✅</span>
-                  <span>Actividad esencial (debe completarse)</span>
+                  <span className={`${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>Actividad esencial (debe completarse)</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <span>❌</span>
-                  <span>Actividad no esencial (puede saltarse)</span>
+                  <span className={`${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>Actividad no esencial (puede saltarse)</span>
                 </div>
               </div>
             </div>
@@ -442,15 +436,15 @@ const MoodleChecklist = () => {
               <div className="space-y-1 text-sm">
                 <div className="flex items-center gap-2">
                   <span>🏫</span>
-                  <span>Actividad presencial (en taller)</span>
+                  <span className={`${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>Actividad presencial (en taller)</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <span>🏠</span>
-                  <span>Trabajo en casa</span>
+                  <span className={`${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>Trabajo en casa</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <span>📝</span>
-                  <span>Examen o evaluación</span>
+                  <span className={`${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>Examen o evaluación</span>
                 </div>
               </div>
             </div>
