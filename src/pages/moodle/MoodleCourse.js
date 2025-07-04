@@ -470,6 +470,20 @@ const MoodleCourse = () => {
             </div>
 
             <p className="text-blue-50 leading-relaxed">{courseInfo.description}</p>
+             <div className="mt-6 flex gap-4">
+              <button
+                onClick={() => navigate('/moodle-checklist')}
+                className="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-lg transition-colors duration-300 flex items-center gap-2"
+              >
+                📋 Lista de Cotejo
+              </button>
+              <button
+                onClick={() => navigate('/moodle-course')}
+                className="bg-blue-700 hover:bg-blue-800 text-white font-bold py-3 px-6 rounded-lg transition-colors duration-300 flex items-center gap-2"
+              >
+                📚 Ver Curso Completo
+              </button>
+            </div>
           </div>
 
           {/* Contenido del Curso por Días */}
