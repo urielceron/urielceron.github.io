@@ -92,6 +92,7 @@ const Activity13 = ({ darkMode }) => {
                 <p className="ml-4">- <strong>ChatGPT:</strong> https://chat.openai.com/ (gratuito con límites)</p>
                 <p className="ml-4">- <strong>Claude:</strong> https://claude.ai (gratuito con límites)</p>
                 <p className="ml-4">- <strong>Gemini:</strong> https://gemini.google.com (vinculado a cuenta Google)</p>
+                <p className="ml-4">- <strong>Deep Seek:</strong> https://chat.deepseek.com </p>
                 <p>• Inicia sesión o crea cuenta si no la tienes</p>
               </div>
             </div>

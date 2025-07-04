@@ -115,6 +115,7 @@ import {
   Homework3Day5,
   Homework4Day5,
 } from './pages/moodle/homework';
+import MoodleChecklist from './pages/moodle/MoodleChecklist';
 
 // Componente que redirige a la ruta correcta basado en los parámetros
 const AsignaturaRouter = () => {
@@ -413,6 +414,8 @@ function App() {
         <Route path="/moodle-homework-3-day5" element={<Homework3Day5 darkMode={false} />} />
         <Route path="/moodle-homework-4-day5" element={<Homework4Day5 darkMode={false} />} />
 
+        <Route path="/moodle-checklist" element={<MoodleChecklist />} />
+        
         {/* Ruta de respaldo para URLs desconocidas */}
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>

@@ -102,7 +102,7 @@ ANSWER: A`}
               <li>• ANSWER en MAYÚSCULAS</li>
               <li>• Punto después de letra: A. B. C. D.</li>
               <li>• Sin espacios extra al inicio/final</li>
-              <li>• Codificación UTF-8 sin BOM</li>
+              <li>• Codificación UTF-8</li>
             </ul>
           </div>
 
@@ -141,7 +141,7 @@ ANSWER: A`}
                 <p className="ml-4">- La pregunta va sin numeración</p>
                 <p className="ml-4">- Cada opción en línea separada</p>
                 <p className="ml-4">- Formato exacto: "A. " (letra, punto, espacio)</p>
-                <p className="ml-4">- "ANSWER: " seguido de la letra correcta</p>
+                <p className="ml-4">- "ANSWER: " seguido de la letra correcta (EJEMPLO: ANSWER: B) </p>
                 <p className="ml-4">- Línea en blanco antes de la siguiente pregunta</p>
               </div>
             </div>
@@ -181,7 +181,7 @@ ANSWER: A`}
                 <p>• Ve a http://moodle.cbtis253.edu.mx/</p>
                 <p>• Inicia sesión con tu cuenta docente</p>
                 <p>• Entra a tu curso creado en el DÍA 1</p>
-                <p>• En el menú lateral izquierdo, busca "Banco de preguntas"</p>
+                <p>• En el menú lateral derecho, busca "Banco de preguntas"</p>
                 <p>• Haz clic en "Banco de preguntas"</p>
                 <p>• <strong>Familiarízate con la interfaz</strong> pero no importes aún</p>
               </div>
