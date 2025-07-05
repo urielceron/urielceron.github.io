@@ -532,7 +532,7 @@ const MoodleCourse = () => {
 
             <div>
               <h4 className={`font-semibold mb-2 ${darkMode ? 'text-yellow-200' : 'text-yellow-700'}`}>
-                📋 Formato de Documentación (máximo 1 cuartilla por actividad)
+                📋 Formato de Documentación (mínimo 1 cuartilla y máximo 2 cuartillas por actividad)
               </h4>
               <div className={`${darkMode ? 'bg-gray-800' : 'bg-white'} p-4 rounded-lg border space-y-2`}>
                 <p className={`text-sm ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
