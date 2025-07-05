@@ -199,7 +199,8 @@ const MoodleChecklist = () => {
   };
 
   const exportToCSV = () => {
-    let csvContent = "data:text/csv;charset=utf-8,";
+    // Crear contenido CSV como array de bytes UTF-8
+    let csvContent = "";
 
     // Encabezados
     csvContent += "Día,Actividad,Tipo,Esencial,Estado,Mentor,Aprendiz\n";
@@ -213,13 +214,23 @@ const MoodleChecklist = () => {
       });
     });
 
-    const encodedUri = encodeURI(csvContent);
+    // Crear Blob con UTF-8 BOM
+    const BOM = '\uFEFF'; // Byte Order Mark para UTF-8
+    const blob = new Blob([BOM + csvContent], {
+      type: 'text/csv;charset=utf-8;'
+    });
+
+    // Crear enlace y descargar
     const link = document.createElement("a");
-    link.setAttribute("href", encodedUri);
+    const url = URL.createObjectURL(blob);
+    link.setAttribute("href", url);
     link.setAttribute("download", "lista_cotejo_moodle.csv");
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
+
+    // Limpiar objeto URL
+    URL.revokeObjectURL(url);
   };
 
   return (
@@ -372,16 +383,16 @@ const MoodleChecklist = () => {
                       <div
                         key={activity.id}
                         className={`p-3 rounded-lg border-2 transition-all cursor-pointer ${activity.essential
-                            ? 'border-green-200 bg-green-50 dark:bg-green-900 dark:border-green-700'
-                            : 'border-yellow-200 bg-yellow-50 dark:bg-yellow-900 dark:border-yellow-700'
+                          ? 'border-green-200 bg-green-50 dark:bg-green-900 dark:border-green-700'
+                          : 'border-yellow-200 bg-yellow-50 dark:bg-yellow-900 dark:border-yellow-700'
                           } ${checkedItems[activity.id] ? 'opacity-75' : ''}`}
                         onClick={() => handleCheckChange(activity.id)}
                       >
                         <div className="flex items-start gap-2">
                           <CheckCircle2
                             className={`w-5 h-5 mt-0.5 ${checkedItems[activity.id]
-                                ? 'text-green-600 dark:text-green-400'
-                                : 'text-gray-400'
+                              ? 'text-green-600 dark:text-green-400'
+                              : 'text-gray-400'
                               }`}
                           />
                           <div className="flex-1">
@@ -389,15 +400,15 @@ const MoodleChecklist = () => {
                               <span>{getEssentialIcon(activity.essential)}</span>
                               <span>{getActivityIcon(activity.type)}</span>
                               <span className={`text-xs px-2 py-1 rounded ${activity.type === 'presencial' ? 'bg-blue-100 text-blue-800 dark:bg-blue-800 dark:text-blue-200' :
-                                  activity.type === 'casa' ? 'bg-purple-100 text-purple-800 dark:bg-purple-800 dark:text-purple-200' :
-                                    'bg-orange-100 text-orange-800 dark:bg-orange-800 dark:text-orange-200'
+                                activity.type === 'casa' ? 'bg-purple-100 text-purple-800 dark:bg-purple-800 dark:text-purple-200' :
+                                  'bg-orange-100 text-orange-800 dark:bg-orange-800 dark:text-orange-200'
                                 }`}>
                                 {activity.type}
                               </span>
                             </div>
                             <div className={`text-sm font-medium ${checkedItems[activity.id]
-                                ? 'line-through text-gray-500 dark:text-gray-400'
-                                : darkMode ? 'text-gray-200' : 'text-gray-800'
+                              ? 'line-through text-gray-500 dark:text-gray-400'
+                              : darkMode ? 'text-gray-200' : 'text-gray-800'
                               }`}>
                               {activity.name}
                             </div>
