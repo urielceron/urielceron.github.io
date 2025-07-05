@@ -421,6 +421,161 @@ const MoodleCourse = () => {
     </div>
   );
 
+  const ResponsibilitiesSection = () => (
+    <SectionAccordion id="responsibilities" title="RESPONSABILIDADES Y DOCUMENTACIÓN" icon={BookOpen}>
+      <div className="space-y-6">
+
+        {/* Roles Mentor-Aprendiz */}
+        <div className={`${darkMode ? 'bg-blue-900/30 border-blue-700' : 'bg-blue-50 border-blue-200'} border rounded-lg p-6`}>
+          <h3 className={`text-lg font-semibold mb-4 ${darkMode ? 'text-blue-300' : 'text-blue-800'}`}>
+            📋 Roles Mentor-Aprendiz (Asignación Flexible por Turnos)
+          </h3>
+
+          {/* Nota sobre asignación flexible */}
+          <div className={`${darkMode ? 'bg-orange-900/30 border-orange-700' : 'bg-orange-50 border-orange-200'} border rounded-lg p-4 mb-6`}>
+            <h4 className={`font-semibold mb-2 ${darkMode ? 'text-orange-300' : 'text-orange-800'}`}>
+              🔄 Asignación Inicial y Rotación de Roles
+            </h4>
+            <div className={`text-sm ${darkMode ? 'text-orange-200' : 'text-orange-700'} space-y-2`}>
+              <p><strong>Decisión del equipo:</strong> Cada pareja decide quién asume inicialmente el rol de mentor/aprendiz basándose en:</p>
+              <ul className="ml-4 space-y-1">
+                <li>• <strong>Habilidades computacionales:</strong> Manejo general de la computadora</li>
+                <li>• <strong>Experiencia previa con Moodle:</strong> Conocimiento del sistema</li>
+                <li>• <strong>Confianza tecnológica:</strong> Comodidad con herramientas digitales</li>
+              </ul>
+              <p className="mt-3"><strong>Rotación recomendada:</strong> Para maximizar el aprendizaje, se sugiere intercambiar roles cada día o cada bloque de actividades, según lo decida la pareja.</p>
+            </div>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className={`${darkMode ? 'bg-gray-800' : 'bg-white'} p-4 rounded-lg border`}>
+              <h4 className={`font-semibold mb-3 ${darkMode ? 'text-green-400' : 'text-green-700'}`}>
+                👨‍🏫 Responsabilidades del MENTOR (Rol Temporal)
+              </h4>
+              <ul className={`space-y-2 text-sm ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+                <li>• <strong>Liderar configuraciones:</strong> Tomar la iniciativa en tareas complejas</li>
+                <li>• <strong>Explicar procesos:</strong> Verbalizar los pasos mientras ejecuta</li>
+                <li>• <strong>Resolver problemas:</strong> Tomar decisiones cuando surjan dificultades</li>
+                <li>• <strong>Supervisar calidad:</strong> Verificar que las configuraciones funcionen</li>
+                <li>• <strong>Compartir experiencia:</strong> Aportar conocimiento previo y mejores prácticas</li>
+                <li>• <strong>Preparar rotación:</strong> Asegurar que el compañero esté listo para liderar</li>
+              </ul>
+            </div>
+
+            <div className={`${darkMode ? 'bg-gray-800' : 'bg-white'} p-4 rounded-lg border`}>
+              <h4 className={`font-semibold mb-3 ${darkMode ? 'text-blue-400' : 'text-blue-700'}`}>
+                👨‍🎓 Responsabilidades del APRENDIZ (Rol Temporal)
+              </h4>
+              <ul className={`space-y-2 text-sm ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+                <li>• <strong>Documentar activamente:</strong> Capturar pantallas y registrar pasos detallados</li>
+                <li>• <strong>Hacer preguntas:</strong> Aclarar dudas sin temor durante el proceso</li>
+                <li>• <strong>Replicar configuraciones:</strong> Practicar en su propio curso inmediatamente</li>
+                <li>• <strong>Proponer mejoras:</strong> Sugerir optimizaciones desde su perspectiva</li>
+                <li>• <strong>Prepararse para liderar:</strong> Observar atentamente para el próximo turno</li>
+                <li>• <strong>Validar comprensión:</strong> Confirmar que puede repetir el proceso solo</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        {/* Trabajo en Equipo */}
+        <div className={`${darkMode ? 'bg-purple-900/30 border-purple-700' : 'bg-purple-50 border-purple-200'} border rounded-lg p-6`}>
+          <h3 className={`text-lg font-semibold mb-4 ${darkMode ? 'text-purple-300' : 'text-purple-800'}`}>
+            🤝 Trabajo Colaborativo con Rotación de Roles
+          </h3>
+          <div className={`${darkMode ? 'text-gray-300' : 'text-gray-700'} space-y-3`}>
+            <p>
+              <strong>Flexibilidad inicial:</strong> Cada pareja determina la asignación inicial de roles basándose
+              en las habilidades computacionales y experiencia previa con Moodle de cada integrante.
+            </p>
+            <p>
+              <strong>Rotación estratégica:</strong> Se recomienda intercambiar roles periódicamente (por día, bloque
+              o actividad) para que ambos docentes experimenten tanto el liderazgo como el apoyo, maximizando el
+              aprendizaje bilateral.
+            </p>
+            <p>
+              <strong>Decisión autónoma:</strong> Cada equipo de dos docentes tiene total libertad para decidir
+              cuándo y cómo rotar los roles, adaptándose a su ritmo de aprendizaje y nivel de comodidad.
+            </p>
+            <p>
+              <strong>Validación cruzada continua:</strong> Independientemente del rol asumido, ambos participantes
+              verifican el trabajo del otro, creando una red de calidad que asegura dominio completo antes de la
+              implementación real.
+            </p>
+          </div>
+        </div>
+
+        {/* Importancia de Documentar */}
+        <div className={`${darkMode ? 'bg-yellow-900/30 border-yellow-700' : 'bg-yellow-50 border-yellow-200'} border rounded-lg p-6`}>
+          <h3 className={`text-lg font-semibold mb-4 ${darkMode ? 'text-yellow-300' : 'text-yellow-800'}`}>
+            📝 Importancia Crítica de la Documentación
+          </h3>
+
+          <div className={`${darkMode ? 'bg-red-900/30 border-red-700' : 'bg-red-50 border-red-200'} border rounded-lg p-4 mb-4`}>
+            <p className={`font-semibold ${darkMode ? 'text-red-300' : 'text-red-800'}`}>
+              ⚠️ RECORDATORIO FUNDAMENTAL: Lo aprendido sin documentar se olvida fácilmente con el tiempo
+            </p>
+          </div>
+
+          <div className="space-y-4">
+            <div>
+              <h4 className={`font-semibold mb-2 ${darkMode ? 'text-yellow-200' : 'text-yellow-700'}`}>
+                🧠 ¿Por qué documentar cada actividad?
+              </h4>
+              <ul className={`space-y-1 text-sm ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+                <li>• <strong>Memoria de largo plazo:</strong> Refuerza el conocimiento adquirido</li>
+                <li>• <strong>Referencia futura:</strong> Manual personal para consulta posterior</li>
+                <li>• <strong>Resolución de problemas:</strong> Registro de errores y soluciones encontradas</li>
+                <li>• <strong>Mejora continua:</strong> Identificación de optimizaciones en el proceso</li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 className={`font-semibold mb-2 ${darkMode ? 'text-yellow-200' : 'text-yellow-700'}`}>
+                📋 Formato de Documentación (máximo 1 cuartilla por actividad)
+              </h4>
+              <div className={`${darkMode ? 'bg-gray-800' : 'bg-white'} p-4 rounded-lg border space-y-2`}>
+                <p className={`text-sm ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+                  <strong>1. Captura de pantalla:</strong> Evidencia visual del resultado obtenido
+                </p>
+                <p className={`text-sm ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+                  <strong>2. Pasos clave:</strong> Secuencia simplificada de lo realizado
+                </p>
+                <p className={`text-sm ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+                  <strong>3. Reflexión:</strong> ¿Qué funcionó bien? ¿Qué fue difícil?
+                </p>
+                <p className={`text-sm ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+                  <strong>4. Conclusiones:</strong> Aprendizaje principal de la actividad
+                </p>
+                <p className={`text-sm ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+                  <strong>5. Mejoras sugeridas:</strong> Para las instrucciones del curso o notas personales
+                </p>
+              </div>
+            </div>
+
+            <div className={`${darkMode ? 'bg-green-900/30 border-green-700' : 'bg-green-50 border-green-200'} border rounded-lg p-4`}>
+              <h4 className={`font-semibold mb-2 ${darkMode ? 'text-green-300' : 'text-green-700'}`}>
+                🎯 Objetivo de la Documentación
+              </h4>
+              <p className={`text-sm ${darkMode ? 'text-green-200' : 'text-green-800'}`}>
+                Crear una <strong>"memoria de cálculo"</strong> de todo lo realizado para asentar el conocimiento.
+                Aunque pueda parecer tedioso, esta práctica es fundamental para retener y aplicar efectivamente
+                lo aprendido en el contexto real del aula.
+              </p>
+            </div>
+
+            <div className={`${darkMode ? 'bg-blue-900/30 border-blue-700' : 'bg-blue-50 border-blue-200'} border rounded-lg p-4`}>
+              <p className={`text-sm font-semibold ${darkMode ? 'text-blue-300' : 'text-blue-800'}`}>
+                💡 RECUERDA: La práctica constante + documentación sistemática = dominio real de la herramienta
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </SectionAccordion>
+  );
+
   return (
     <div className={`min-h-screen ${darkMode ? 'dark bg-gray-900' : 'bg-gray-50'}`}>
       <nav className={`${darkMode ? 'bg-gray-800' : 'bg-white'} shadow-lg`}>
@@ -470,7 +625,7 @@ const MoodleCourse = () => {
             </div>
 
             <p className="text-blue-50 leading-relaxed">{courseInfo.description}</p>
-             <div className="mt-6 flex gap-4">
+            <div className="mt-6 flex gap-4">
               <button
                 onClick={() => navigate('/moodle-checklist')}
                 className="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-lg transition-colors duration-300 flex items-center gap-2"
@@ -559,105 +714,7 @@ const MoodleCourse = () => {
             ))}
           </div>
 
-          {/* Lista de Cotejo Principal - Organizada por Días */}
-          <div className="mt-8">
-            <h2 className={`text-2xl font-bold ${darkMode ? 'text-white' : 'text-gray-800'} mb-6 flex items-center gap-2`}>
-              <CheckCircle2 className="h-6 w-6 text-green-600" />
-              Lista de Cotejo - Progreso del Curso
-            </h2>
-
-            <div className={`${darkMode ? 'bg-gray-700' : 'bg-gray-50'} p-6 rounded-lg`}>
-              <div className={`mb-6 text-center p-4 ${darkMode ? 'bg-gray-600' : 'bg-white'} rounded-lg`}>
-                <div className={`text-lg font-semibold ${darkMode ? 'text-white' : 'text-gray-800'} mb-2`}>
-                  Progreso General del Curso
-                </div>
-                <div className={`text-sm ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
-                  {Object.values(checkedPractices).filter(Boolean).length} de {allPractices.length} prácticas completadas
-                </div>
-                <div className="mt-3 w-full bg-gray-300 rounded-full h-3">
-                  <div
-                    className="bg-green-500 h-3 rounded-full transition-all duration-300"
-                    style={{
-                      width: `${(Object.values(checkedPractices).filter(Boolean).length / allPractices.length) * 100}%`
-                    }}
-                  ></div>
-                </div>
-                <div className={`text-xs mt-1 ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>
-                  {Math.round((Object.values(checkedPractices).filter(Boolean).length / allPractices.length) * 100)}% completado
-                </div>
-              </div>
-
-              {/* Acordeones por Día */}
-              <div className="space-y-3">
-                {sortedDays.map(day => {
-                  const dayPractices = practicesByDay[day];
-                  const completedInDay = dayPractices.filter(practice => checkedPractices[practice.id]).length;
-                  const totalInDay = dayPractices.length;
-                  const dayProgress = Math.round((completedInDay / totalInDay) * 100);
-
-                  return (
-                    <SectionAccordion
-                      key={`checklist_${day}`}
-                      id={`checklist_${day}`}
-                      title={
-                        <div className="flex items-center justify-between w-full">
-                          <span>{day}</span>
-                          <div className="flex items-center gap-3">
-                            <span className={`text-sm ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
-                              {completedInDay}/{totalInDay}
-                            </span>
-                            <div className="w-20 bg-gray-300 rounded-full h-2">
-                              <div
-                                className="bg-green-500 h-2 rounded-full transition-all duration-300"
-                                style={{ width: `${dayProgress}%` }}
-                              ></div>
-                            </div>
-                            <span className={`text-xs ${darkMode ? 'text-gray-400' : 'text-gray-500'} min-w-12`}>
-                              {dayProgress}%
-                            </span>
-                          </div>
-                        </div>
-                      }
-                      icon={CheckCircle2}
-                    >
-                      <div className="grid gap-3">
-                        {dayPractices.map(practice => (
-                          <div
-                            key={practice.id}
-                            className={`flex items-center gap-3 p-3 ${darkMode ? 'bg-gray-600' : 'bg-white'} rounded-lg border ${darkMode ? 'border-gray-500 hover:border-gray-400' : 'border-gray-200 hover:border-gray-300'} transition-colors`}
-                          >
-                            <button
-                              onClick={() => togglePractice(practice.id)}
-                              className="flex-shrink-0"
-                            >
-                              {checkedPractices[practice.id] ?
-                                <CheckCircle2 className="h-5 w-5 text-green-600" /> :
-                                <Circle className={`h-5 w-5 ${darkMode ? 'text-gray-400' : 'text-gray-400'}`} />
-                              }
-                            </button>
-
-                            <div className="flex-1">
-                              <div className="flex items-center gap-2 mb-1">
-                                <span className={`font-medium ${darkMode ? 'text-white' : 'text-gray-800'}`}>
-                                  {practice.name}
-                                </span>
-                                <span className={`text-xs ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>
-                                  ({practice.duration})
-                                </span>
-                              </div>
-                              <div className={`text-sm ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
-                                {practice.type}
-                              </div>
-                            </div>
-                          </div>
-                        ))}
-                      </div>
-                    </SectionAccordion>
-                  );
-                })}
-              </div>
-            </div>
-          </div>
+          <ResponsibilitiesSection />
 
           {/* Información Adicional */}
           <div className="mt-8 p-6 bg-yellow-50 border border-yellow-200 rounded-lg">
