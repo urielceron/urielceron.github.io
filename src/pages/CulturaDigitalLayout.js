@@ -1,5 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { Link, useSearchParams, useLocation } from 'react-router-dom';
+import IntroduccionHardwareSoftware from './culturadigital1/contenidos/proposito1/IntroduccionHardwareSoftware';
+import HistoriaCriticaTecnologia from './culturadigital1/contenidos/proposito1/HistoriaCriticaTecnologia';
+import HistoriaSoftwareLibre from './culturadigital1/contenidos/proposito1/HistoriaSoftwareLibre';
 
 const CulturaDigitalLayout = ({ asignatura = 'culturadigital1' }) => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -10,6 +13,7 @@ const CulturaDigitalLayout = ({ asignatura = 'culturadigital1' }) => {
   const [currentParcial, setCurrentParcial] = useState(parseInt(searchParams.get('parcial')) || 1);
   const [openSection, setOpenSection] = useState(searchParams.get('section') || 'contenidos');
   const [currentFase, setCurrentFase] = useState(searchParams.get('fase') || '0');
+  const [selectedContent, setSelectedContent] = useState(null);
 
   // Datos de la asignatura
   const metaEducativa = "Conozca y utilice de manera crítica y responsable el ciberespacio y los distintos recursos digitales, apegándose a su marco normativo para ejercer una ciudadanía digital, acceder al conocimiento y resolver situaciones, fenómenos o problemas de su contexto.";
@@ -194,7 +198,7 @@ const CulturaDigitalLayout = ({ asignatura = 'culturadigital1' }) => {
   ];
 
   // Guardar estado en sessionStorage
-  const saveStateToStorage = () => {
+  const saveStateToStorage = useCallback(() => {
     const stateToSave = {
       proposito: selectedProposito,
       parcial: currentParcial,
@@ -205,10 +209,10 @@ const CulturaDigitalLayout = ({ asignatura = 'culturadigital1' }) => {
     };
     sessionStorage.setItem(`${asignatura}State`, JSON.stringify(stateToSave));
     sessionStorage.setItem('lastValidPath', location.pathname + location.search);
-  };
+  }, [selectedProposito, currentParcial, openSection, currentFase, asignatura, location.pathname, location.search]);
 
   // Restaurar estado desde sessionStorage
-  const restoreStateFromStorage = () => {
+  const restoreStateFromStorage = useCallback(() => {
     if (location.pathname === '/' && !location.hash && !location.search) {
       return;
     }
@@ -225,7 +229,7 @@ const CulturaDigitalLayout = ({ asignatura = 'culturadigital1' }) => {
         console.error('Error parsing saved state:', e);
       }
     }
-  };
+  }, [asignatura, location.pathname, location.hash, location.search]);
 
   // Actualizar URL con parámetros
   useEffect(() => {
@@ -271,12 +275,12 @@ const CulturaDigitalLayout = ({ asignatura = 'culturadigital1' }) => {
   // Guardar estado cuando cambie
   useEffect(() => {
     saveStateToStorage();
-  }, [selectedProposito, currentParcial, currentFase, openSection]);
+  }, [selectedProposito, currentParcial, currentFase, openSection, saveStateToStorage]);
 
   // Restaurar estado al montar componente
   useEffect(() => {
     restoreStateFromStorage();
-  }, []);
+  }, [restoreStateFromStorage]);
 
   const currentProposito = propositosFormativos.find(p => p.id === parseInt(selectedProposito));
   const currentProyecto = proyectos[currentParcial];
@@ -424,14 +428,39 @@ const CulturaDigitalLayout = ({ asignatura = 'culturadigital1' }) => {
                     </div>
                     <div>
                       <h4 className="font-medium text-gray-900 dark:text-white mb-3">Contenidos Formativos</h4>
-                      <ul className="space-y-2">
-                        {currentProposito.contenidos.map((contenido, index) => (
-                          <li key={index} className="flex items-start space-x-2">
-                            <span className="text-blue-500 mt-1">•</span>
-                            <span className="text-gray-700 dark:text-gray-300 text-sm">{contenido}</span>
-                          </li>
-                        ))}
-                      </ul>
+                      {currentProposito.id === 1 ? (
+                        <ul className="space-y-2">
+                          {currentProposito.contenidos.map((contenido, index) => {
+                            const contentComponents = {
+                              'Introducción al hardware y software': 'hardware-software',
+                              'Historia crítica del desarrollo de tecnología digital': 'historia-critica',
+                              'Historia del software libre': 'software-libre'
+                            };
+                            const contentKey = contentComponents[contenido];
+                            
+                            return (
+                              <li key={index} className="flex items-start space-x-2">
+                                <span className="text-blue-500 mt-1">•</span>
+                                <button
+                                  onClick={() => setSelectedContent(contentKey)}
+                                  className="text-blue-600 hover:text-blue-800 underline text-sm text-left transition-colors"
+                                >
+                                  {contenido}
+                                </button>
+                              </li>
+                            );
+                          })}
+                        </ul>
+                      ) : (
+                        <ul className="space-y-2">
+                          {currentProposito.contenidos.map((contenido, index) => (
+                            <li key={index} className="flex items-start space-x-2">
+                              <span className="text-blue-500 mt-1">•</span>
+                              <span className="text-gray-700 dark:text-gray-300 text-sm">{contenido}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
                     </div>
                   </div>
                 )}
@@ -738,6 +767,17 @@ const CulturaDigitalLayout = ({ asignatura = 'culturadigital1' }) => {
           </div>
         </div>
       </div>
+
+      {/* Contenidos específicos */}
+      {selectedContent === 'hardware-software' && (
+        <IntroduccionHardwareSoftware onBack={() => setSelectedContent(null)} />
+      )}
+      {selectedContent === 'historia-critica' && (
+        <HistoriaCriticaTecnologia onBack={() => setSelectedContent(null)} />
+      )}
+      {selectedContent === 'software-libre' && (
+        <HistoriaSoftwareLibre onBack={() => setSelectedContent(null)} />
+      )}
     </div>
   );
 };
