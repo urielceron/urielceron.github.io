@@ -38,9 +38,10 @@ const CV = () => {
       id: 'classroom',
       hasSubmenu: true,
       submenu: [
+        { title: 'Cultura Digital I', path: '/cultura-digital-1' },
         { title: 'Cultura Digital II', path: '/cultura-digital-2' },
         { title: 'Temas Selectos de Matemáticas I', path: '/matematicas' },
-        { title: 'Interactive Motion Design with River', path: '/gamedesigner' },
+        { title: 'Pensamiento Matemático III', path: '/pensamiento-matematico-iii' },
       ]
     },
     {
@@ -78,6 +79,8 @@ const CV = () => {
       asignatura = 'matematicas';
     } else if (path.includes('gamedesigner')) {
       asignatura = 'gamedesigner';
+    } else if (path.includes('pensamiento-matematico-iii')) {
+      asignatura = 'pensamiento-matematico-iii';
     } else if (path.includes('moodle-course')) {
       navigate(path);
       setIsMenuOpen(false);

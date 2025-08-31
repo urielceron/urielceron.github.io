@@ -1,7 +1,6 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react';
 import * as THREE from 'three';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
-import { FontLoader } from 'three/examples/jsm/loaders/FontLoader.js';
 import useDarkMode from '../../../../hooks/useDarkMode';
 import DarkModeToggle from '../../../../components/DarkModeToggle';
 import BackButton from '../../../../components/BackButton';
@@ -184,101 +183,40 @@ const GeometriaEsferica = () => {
     }
   }, [puntos, latLonToVector3, sceneInitialized]);
 
-  // Función para agregar etiquetas de texto
+  // Función para agregar marcadores visuales (sin texto)
   const agregarEtiquetas = useCallback(() => {
     if (!globeGroupRef.current || !sceneInitialized) return;
 
-    const loader = new FontLoader();
-    const textMaterial = new THREE.MeshBasicMaterial({
-      color: darkMode ? 0xffffff : 0x333333
-    });
-
-    loader.load(
-      'https://cdn.jsdelivr.net/npm/three@0.132.2/examples/fonts/helvetiker_regular.typeface.json',
-      (font) => {
-        // Eliminar etiquetas anteriores
-        const etiquetasAEliminar = [];
-        globeGroupRef.current.traverse((child) => {
-          if (child.userData && child.userData.tipo === 'etiqueta') {
-            etiquetasAEliminar.push(child);
-          }
-        });
-        etiquetasAEliminar.forEach(etiqueta => globeGroupRef.current.remove(etiqueta));
-
-        // Puntos cardinales mejorados
-        const cardinales = [
-          { text: 'N', lat: 90, lon: 0, offset: [0, 0.5, 0] },
-          { text: 'S', lat: -90, lon: 0, offset: [0, -0.5, 0] },
-          { text: 'E', lat: 0, lon: 90, offset: [0.5, 0, 0] },
-          { text: 'O', lat: 0, lon: -90, offset: [-0.5, 0, 0] }
-        ];
-
-        // Etiquetas de latitud mejoradas
-        const latitudes = [
-          { text: '60°N', lat: 60, lon: 0 },
-          { text: '30°N', lat: 30, lon: 0 },
-          { text: '0°', lat: 0, lon: 0 },
-          { text: '30°S', lat: -30, lon: 0 },
-          { text: '60°S', lat: -60, lon: 0 }
-        ];
-
-        // Crear textos cardinales
-        cardinales.forEach(({ text, lat, lon, offset }) => {
-          const pos = latLonToVector3(lat, lon, 5.5);
-          pos.add(new THREE.Vector3(...offset));
-
-          const textGeometry = new THREE.TextGeometry(text, {
-            font: font,
-            size: 0.3,
-            height: 0.02,
-            curveSegments: 12,
-            bevelEnabled: false
-          });
-
-          // Centrar el texto
-          textGeometry.computeBoundingBox();
-          const centerX = -0.5 * (textGeometry.boundingBox.max.x - textGeometry.boundingBox.min.x);
-          const centerY = -0.5 * (textGeometry.boundingBox.max.y - textGeometry.boundingBox.min.y);
-          textGeometry.translate(centerX, centerY, 0);
-
-          const textMesh = new THREE.Mesh(textGeometry, textMaterial);
-          textMesh.position.copy(pos);
-          textMesh.lookAt(cameraRef.current.position);
-          textMesh.userData = { tipo: 'etiqueta' };
-          globeGroupRef.current.add(textMesh);
-        });
-
-        // Crear etiquetas de latitud
-        latitudes.forEach(({ text, lat, lon }) => {
-          const pos = latLonToVector3(lat, lon, 5.4);
-
-          const textGeometry = new THREE.TextGeometry(text, {
-            font: font,
-            size: 0.2,
-            height: 0.02,
-            curveSegments: 8,
-            bevelEnabled: false
-          });
-
-          // Centrar el texto
-          textGeometry.computeBoundingBox();
-          const centerX = -0.5 * (textGeometry.boundingBox.max.x - textGeometry.boundingBox.min.x);
-          const centerY = -0.5 * (textGeometry.boundingBox.max.y - textGeometry.boundingBox.min.y);
-          textGeometry.translate(centerX, centerY, 0);
-
-          const textMesh = new THREE.Mesh(textGeometry, textMaterial);
-          textMesh.position.copy(pos);
-          textMesh.lookAt(cameraRef.current.position);
-          textMesh.userData = { tipo: 'etiqueta' };
-          globeGroupRef.current.add(textMesh);
-        });
-      },
-      undefined,
-      (error) => {
-        console.warn('No se pudo cargar la fuente, continuando sin etiquetas de texto');
+    // Eliminar etiquetas anteriores
+    const etiquetasAEliminar = [];
+    globeGroupRef.current.traverse((child) => {
+      if (child.userData && child.userData.tipo === 'etiqueta') {
+        etiquetasAEliminar.push(child);
       }
-    );
-  }, [darkMode, latLonToVector3, sceneInitialized]);
+    });
+    etiquetasAEliminar.forEach(etiqueta => globeGroupRef.current.remove(etiqueta));
+
+    // Agregar marcadores visuales para puntos cardinales
+    const cardinales = [
+      { lat: 90, lon: 0, color: 0x00ff00 },   // Polo Norte
+      { lat: -90, lon: 0, color: 0x00ff00 },  // Polo Sur
+      { lat: 0, lon: 0, color: 0xffff00 },    // Ecuador/Greenwich
+      { lat: 0, lon: 90, color: 0xffff00 },   // Ecuador/90°E
+      { lat: 0, lon: -90, color: 0xffff00 },  // Ecuador/90°O
+      { lat: 0, lon: 180, color: 0xffff00 },  // Ecuador/180°
+    ];
+
+    // Crear marcadores visuales
+    cardinales.forEach(({ lat, lon, color }) => {
+      const pos = latLonToVector3(lat, lon, 5.2);
+      const markerGeometry = new THREE.SphereGeometry(0.05, 8, 8);
+      const markerMaterial = new THREE.MeshBasicMaterial({ color });
+      const marker = new THREE.Mesh(markerGeometry, markerMaterial);
+      marker.position.copy(pos);
+      marker.userData = { tipo: 'etiqueta' };
+      globeGroupRef.current.add(marker);
+    });
+  }, [latLonToVector3, sceneInitialized]);
 
   // Efecto para mantener el ref sincronizado
   useEffect(() => {
@@ -624,12 +562,7 @@ const GeometriaEsferica = () => {
     if (!sceneRef.current || !sceneInitialized) return;
 
     sceneRef.current.background = new THREE.Color(darkMode ? 0x1a1a1a : 0xf0f0f0);
-
-    // Re-agregar etiquetas con nuevos colores
-    setTimeout(() => {
-      agregarEtiquetas();
-    }, 100);
-  }, [darkMode, sceneInitialized, agregarEtiquetas]);
+  }, [darkMode, sceneInitialized]);
 
   // Efecto para actualizar puntos y geodésicas
   useEffect(() => {

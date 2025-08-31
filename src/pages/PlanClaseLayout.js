@@ -146,7 +146,7 @@ const TemasSelectos = ({ asignatura = 'culturadigital2', tabs = 2 }) => {
         // Intentamos cargar los planes de clase
         const planes = [];
         let i = 1;
-        while (i <= 10) { // Límite razonable para evitar bucles infinitos
+        while (i <= 15) { // Límite razonable para evitar bucles infinitos
           try {
             const planModule = await import(`./${asignatura}/planes/PlanClase${i}`);
             planes.push(planModule.default);
@@ -362,7 +362,9 @@ const TemasSelectos = ({ asignatura = 'culturadigital2', tabs = 2 }) => {
                   </h5>
                   <ul className="list-disc pl-6">
                     {currentPlanClase.cierre.presentacion.actividades_docente.map((act, idx) => (
-                      <li key={idx}>{act}</li>
+                      <li key={idx}>
+                        {typeof act === 'string' ? act : renderActividadLink(act)}
+                      </li>
                     ))}
                   </ul>
                 </div>
@@ -399,9 +401,45 @@ const TemasSelectos = ({ asignatura = 'culturadigital2', tabs = 2 }) => {
               <h4 className="text-xl font-bold mb-4 text-gray-900 dark:text-white border-b-2 border-red-500 dark:border-red-400 pb-2">
                 {currentPlanClase.cierre.examen.titulo}
               </h4>
-              <p>{currentPlanClase.cierre.examen.descripcion}</p>
-              <p><strong>Porcentaje:</strong> {currentPlanClase.cierre.examen.porcentaje}</p>
-              <p><strong>Tiempo:</strong> {currentPlanClase.cierre.examen.tiempo}</p>
+              <div className="space-y-4">
+                <div>
+                  <h5 className="font-medium text-gray-900 dark:text-white">
+                    Objetos de Aprendizaje:
+                  </h5>
+                  <ul className="list-disc pl-6">
+                    {currentPlanClase.cierre.examen.actividades_docente?.map((act, idx) => (
+                      <li key={idx}>
+                        {typeof act === 'string' ? act : renderActividadLink(act)}
+                      </li>
+                    )) || []}
+                  </ul>
+                </div>
+                <div>
+                  <h5 className="font-medium text-gray-900 dark:text-white">
+                    Actividades del Alumno:
+                  </h5>
+                  <ul className="list-disc pl-6">
+                    {currentPlanClase.cierre.examen.actividades_alumno?.map((act, idx) => (
+                      <li key={idx}>{act}</li>
+                    )) || []}
+                  </ul>
+                </div>
+                {currentPlanClase.cierre.examen.evidencias && (
+                  <div>
+                    <h5 className="font-medium text-gray-900 dark:text-white">
+                      Evidencias/Productos:
+                    </h5>
+                    <ul className="list-disc pl-6">
+                      {currentPlanClase.cierre.examen.evidencias.map((ev, idx) => (
+                        <li key={idx}>{ev}</li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+                {currentPlanClase.cierre.examen.tiempo && (
+                  <p><strong>Tiempo:</strong> {currentPlanClase.cierre.examen.tiempo}</p>
+                )}
+              </div>
             </div>
           )}
         </div>
@@ -574,18 +612,23 @@ const TemasSelectos = ({ asignatura = 'culturadigital2', tabs = 2 }) => {
               Aprendizaje basado en Proyectos, Aprendizaje basado en Problemas, Aprendizaje Invertido, y Gamificación.
             </p>
           </div>
-          <div>
-            <strong className="text-gray-900 dark:text-white mb-2 block text-lg">Nombre del Proyecto:</strong>
-            <p className="mt-2 p-4 bg-blue-50 dark:bg-blue-900 rounded-lg border border-blue-200 dark:border-blue-700 font-medium">
-              {progresiones[parseInt(selectedTab) - 1].nombre_proyecto}
-            </p>
-          </div>
-          <div>
-            <strong className="text-gray-900 dark:text-white mb-2 block text-lg">Descripción del Proyecto:</strong>
-            <p className="mt-2 p-4 bg-blue-50 dark:bg-blue-900 rounded-lg border border-blue-200 dark:border-blue-700">
-              {progresiones[parseInt(selectedTab) - 1].descripcion}
-            </p>
-          </div>
+          {/* Mostrar información del proyecto solo si la asignatura evalúa por proyectos */}
+          {asignatura !== 'pensamiento-matematico-iii' && progresiones[parseInt(selectedTab) - 1].nombre_proyecto && (
+            <div>
+              <strong className="text-gray-900 dark:text-white mb-2 block text-lg">Nombre del Proyecto:</strong>
+              <p className="mt-2 p-4 bg-blue-50 dark:bg-blue-900 rounded-lg border border-blue-200 dark:border-blue-700 font-medium">
+                {progresiones[parseInt(selectedTab) - 1].nombre_proyecto}
+              </p>
+            </div>
+          )}
+          {asignatura !== 'pensamiento-matematico-iii' && progresiones[parseInt(selectedTab) - 1].descripcion && (
+            <div>
+              <strong className="text-gray-900 dark:text-white mb-2 block text-lg">Descripción del Proyecto:</strong>
+              <p className="mt-2 p-4 bg-blue-50 dark:bg-blue-900 rounded-lg border border-blue-200 dark:border-blue-700">
+                {progresiones[parseInt(selectedTab) - 1].descripcion}
+              </p>
+            </div>
+          )}
         </div>
       </div>
 
@@ -737,37 +780,129 @@ const TemasSelectos = ({ asignatura = 'culturadigital2', tabs = 2 }) => {
           {openSection === 'evaluacion' && (
             <div className="p-4 text-gray-700 dark:text-gray-300">
               <div className="space-y-4">
-                <div>
-                  <h4 className="font-semibold text-gray-900 dark:text-white">
-                    Proyecto (70%):
-                  </h4>
-                  <ul className="list-disc pl-6">
-                    {currentPlanClase.evaluacion_final.proyecto.map((item, idx) => (
-                      <li key={idx}>{item.item}: {item.porcentaje}%</li>
-                    ))}
-                  </ul>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-gray-900 dark:text-white">
-                    Examen:
-                  </h4>
-                  <p>Porcentaje: {currentPlanClase.evaluacion_final.examen.porcentaje}%</p>
+                {/* Mostrar proyectos si existen */}
+                {currentPlanClase.evaluacion_final.proyecto && currentPlanClase.evaluacion_final.proyecto.length > 0 && (
+                  <div>
+                    <h4 className="font-semibold text-gray-900 dark:text-white">
+                      Proyecto (70%):
+                    </h4>
+                    <ul className="list-disc pl-6">
+                      {currentPlanClase.evaluacion_final.proyecto.map((item, idx) => (
+                        <li key={idx}>{item.item}: {item.porcentaje}%</li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
 
-                  {/* Botón para descargar pre-examen */}
-                  {selectedTab === '1' && (
-                    <button
-                      onClick={() => window.open('/pre-examen-prog1.pdf', '_blank')}
-                      className="mt-2 flex items-center gap-2 px-3 py-1.5 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors"
-                    >
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                        <polyline points="7 10 12 15 17 10"></polyline>
-                        <line x1="12" y1="15" x2="12" y2="3"></line>
-                      </svg>
-                      Descargar Pre-Examen
-                    </button>
-                  )}
-                </div>
+                {/* Mostrar exámenes si existen */}
+                {currentPlanClase.evaluacion_final.examenes && currentPlanClase.evaluacion_final.examenes.length > 0 && (
+                  <div>
+                    <h4 className="font-semibold text-gray-900 dark:text-white">
+                      Exámenes:
+                    </h4>
+                    <ul className="list-disc pl-6">
+                      {currentPlanClase.evaluacion_final.examenes.map((exam, idx) => (
+                        <li key={idx}>{exam.item}: {exam.porcentaje}% - {exam.descripcion}</li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+
+                {/* Mostrar parciales si existen */}
+                {currentPlanClase.evaluacion_final.parciales && currentPlanClase.evaluacion_final.parciales.length > 0 && (
+                  <div>
+                    <h4 className="font-semibold text-gray-900 dark:text-white">
+                      Parciales:
+                    </h4>
+                    <ul className="list-disc pl-6">
+                      {currentPlanClase.evaluacion_final.parciales.map((parcial, idx) => (
+                        <li key={idx}>{parcial.nombre}: Progresiones {parcial.progresiones} - {parcial.porcentaje}%</li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+
+                {/* Mostrar sección de examen único si existe */}
+                {currentPlanClase.evaluacion_final.examen && (
+                  <div>
+                    <h4 className="font-semibold text-gray-900 dark:text-white">
+                      Examen:
+                    </h4>
+                    <p>Porcentaje: {currentPlanClase.evaluacion_final.examen.porcentaje}%</p>
+                  </div>
+                )}
+
+                {/* Botones para descargar pre-exámenes - solo para asignatura con exámenes */}
+                {(asignatura === 'matematicas') && (
+                  <div className="mt-4">
+                    <h5 className="font-medium text-gray-900 dark:text-white mb-2">Pre-exámenes disponibles:</h5>
+                    {selectedTab === '1' && (
+                      <button
+                        onClick={() => window.open('/pre-examen-prog1.pdf', '_blank')}
+                        className="mt-2 flex items-center gap-2 px-3 py-1.5 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors"
+                      >
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                          <polyline points="7 10 12 15 17 10"></polyline>
+                          <line x1="12" y1="15" x2="12" y2="3"></line>
+                        </svg>
+                        Descargar Pre-Examen Progresión 1
+                      </button>
+                    )}
+                    {selectedTab === '2' && (
+                      <button
+                        onClick={() => window.open('/pre-examen-prog2.pdf', '_blank')}
+                        className="mt-2 flex items-center gap-2 px-3 py-1.5 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors"
+                      >
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                          <polyline points="7 10 12 15 17 10"></polyline>
+                          <line x1="12" y1="15" x2="12" y2="3"></line>
+                        </svg>
+                        Descargar Pre-Examen Progresión 2
+                      </button>
+                    )}
+                    {selectedTab === '3' && (
+                      <button
+                        onClick={() => window.open('/pre-examen-prog3.pdf', '_blank')}
+                        className="mt-2 flex items-center gap-2 px-3 py-1.5 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors"
+                      >
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                          <polyline points="7 10 12 15 17 10"></polyline>
+                          <line x1="12" y1="15" x2="12" y2="3"></line>
+                        </svg>
+                        Descargar Pre-Examen Progresión 3
+                      </button>
+                    )}
+                    {selectedTab === '4' && (
+                      <button
+                        onClick={() => window.open('/pre-examen-prog4.pdf', '_blank')}
+                        className="mt-2 flex items-center gap-2 px-3 py-1.5 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors"
+                      >
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                          <polyline points="7 10 12 15 17 10"></polyline>
+                          <line x1="12" y1="15" x2="12" y2="3"></line>
+                        </svg>
+                        Descargar Pre-Examen Progresión 4
+                      </button>
+                    )}
+                    {selectedTab === '5' && (
+                      <button
+                        onClick={() => window.open('/pre-examen-prog5.pdf', '_blank')}
+                        className="mt-2 flex items-center gap-2 px-3 py-1.5 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors"
+                      >
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                          <polyline points="7 10 12 15 17 10"></polyline>
+                          <line x1="12" y1="15" x2="12" y2="3"></line>
+                        </svg>
+                        Descargar Pre-Examen Progresión 5
+                      </button>
+                    )}
+                  </div>
+                )}
               </div>
             </div>
           )}

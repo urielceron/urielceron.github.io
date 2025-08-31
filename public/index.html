@@ -32,6 +32,8 @@
           asignatura = 'desarrolloweb';
         } else if (path.includes('gamedesigner')) {
           asignatura = 'gamedesigner';
+        } else if (path.includes('pensamiento-matematico-iii')) {
+          asignatura = 'pensamiento-matematico-iii';
         }
 
         params.set('asignatura', asignatura);
@@ -77,7 +79,8 @@
           if ((path.includes('/cultura-digital-2') ||
             path.includes('/matematicas') ||
             path.includes('/desarrolloweb') ||
-            path.includes('/gamedesigner')) &&
+            path.includes('/gamedesigner') ||
+            path.includes('/pensamiento-matematico-iii')) &&
             !path.includes('?')) {
             // Es una ruta de asignatura sin parámetros, añadir los predeterminados
             window.location.replace(window.location.origin + '/#' + addDefaultParamsToPath(path));

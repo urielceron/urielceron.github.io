@@ -5,6 +5,57 @@ import CulturaDigital from './pages/CulturaDigital';
 import Matematicas from './pages/MatematicasSelectos';
 import DesarrolloWeb from './pages/DesarrolloWeb';
 import GameDesigner from './pages/GameDesigner';
+import PensamientoMatematico from './pages/PensamientoMatematico';
+import HistoriaCalculoMovimiento from './pages/pensamiento-matematico-iii/actividades/progresion1/HistoriaCalculoMovimiento';
+import PracticaLimitesVelocidad from './pages/pensamiento-matematico-iii/actividades/progresion1/PracticaLimitesVelocidad';
+import PreexamenProgresion1 from './pages/pensamiento-matematico-iii/actividades/progresion1/PreexamenProgresion1';
+import ConceptoTangentePendiente from './pages/pensamiento-matematico-iii/actividades/progresion2/ConceptoTangentePendiente';
+import EjerciciosPendientesSecantes from './pages/pensamiento-matematico-iii/actividades/progresion2/EjerciciosPendientesSecantes';
+import PreexamenProgresion2 from './pages/pensamiento-matematico-iii/actividades/progresion2/PreexamenProgresion2';
+import ModelacionFuncionesReales from './pages/pensamiento-matematico-iii/actividades/progresion3/ModelacionFuncionesReales';
+import EjerciciosModelacion from './pages/pensamiento-matematico-iii/actividades/progresion3/EjerciciosModelacion';
+import PreexamenProgresion3 from './pages/pensamiento-matematico-iii/actividades/progresion3/PreexamenProgresion3';
+import AnalisisGraficoFunciones from './pages/pensamiento-matematico-iii/actividades/progresion4/AnalisisGraficoFunciones';
+import EjerciciosAnalisisGrafico from './pages/pensamiento-matematico-iii/actividades/progresion4/EjerciciosAnalisisGrafico';
+import PreexamenProgresion4 from './pages/pensamiento-matematico-iii/actividades/progresion4/PreexamenProgresion4';
+import AnalisisAvanzadoFunciones from './pages/pensamiento-matematico-iii/actividades/progresion5/AnalisisAvanzadoFunciones';
+import EjerciciosTransformaciones from './pages/pensamiento-matematico-iii/actividades/progresion5/EjerciciosTransformaciones';
+import PreexamenProgresion5 from './pages/pensamiento-matematico-iii/actividades/progresion5/PreexamenProgresion5';
+import PreexamenProgresion6 from './pages/pensamiento-matematico-iii/actividades/progresion6/PreexamenProgresion6';
+import PreexamenProgresion7 from './pages/pensamiento-matematico-iii/actividades/progresion7/PreexamenProgresion7';
+import PreexamenProgresion8 from './pages/pensamiento-matematico-iii/actividades/progresion8/PreexamenProgresion8';
+import ReglasDerivacionTecnicas from './pages/pensamiento-matematico-iii/actividades/progresion8/ReglasDerivacionTecnicas';
+import EjerciciosReglasBasicas from './pages/pensamiento-matematico-iii/actividades/progresion8/EjerciciosReglasBasicas';
+import EjerciciosProductoCociente from './pages/pensamiento-matematico-iii/actividades/progresion8/EjerciciosProductoCociente';
+import EjerciciosReglaCadena from './pages/pensamiento-matematico-iii/actividades/progresion8/EjerciciosReglaCadena';
+import AplicacionesDerivadaCambio from './pages/pensamiento-matematico-iii/actividades/progresion9/AplicacionesDerivadaCambio';
+import EjerciciosRazonCambio from './pages/pensamiento-matematico-iii/actividades/progresion9/EjerciciosRazonCambio';
+import AnalisisFuncionesDerivadas from './pages/pensamiento-matematico-iii/actividades/progresion10/AnalisisFuncionesDerivadas';
+import EjerciciosAnalisisCompleto from './pages/pensamiento-matematico-iii/actividades/progresion10/EjerciciosAnalisisCompleto';
+import ProblemasOptimizacionMaximosMinimos from './pages/pensamiento-matematico-iii/actividades/progresion11/ProblemasOptimizacionMaximosMinimos';
+import EjerciciosProblemasClasicos from './pages/pensamiento-matematico-iii/actividades/progresion11/EjerciciosProblemasClasicos';
+import PreexamenProgresion9 from './pages/pensamiento-matematico-iii/actividades/progresion9/PreexamenProgresion9';
+import PreexamenProgresion10 from './pages/pensamiento-matematico-iii/actividades/progresion10/PreexamenProgresion10';
+import PreexamenProgresion11 from './pages/pensamiento-matematico-iii/actividades/progresion11/PreexamenProgresion11';
+import FuncionesExponencialesLogaritmicas from './pages/pensamiento-matematico-iii/actividades/progresion12/FuncionesExponencialesLogaritmicas';
+import EjerciciosDerivudasExpLog from './pages/pensamiento-matematico-iii/actividades/progresion12/EjerciciosDerivudasExpLog';
+import PreexamenProgresion12 from './pages/pensamiento-matematico-iii/actividades/progresion12/PreexamenProgresion12';
+import FuncionesTrigonometricasPeriodicidad from './pages/pensamiento-matematico-iii/actividades/progresion13/FuncionesTrigonometricasPeriodicidad';
+import EjerciciosModeladoTrigonometricas from './pages/pensamiento-matematico-iii/actividades/progresion13/EjerciciosModeladoTrigonometricas';
+import PreexamenProgresion13 from './pages/pensamiento-matematico-iii/actividades/progresion13/PreexamenProgresion13';
+import PreexamenProgresion14 from './pages/pensamiento-matematico-iii/actividades/progresion14/PreexamenProgresion14';
+import ProyectoIntegradorModelacion from './pages/pensamiento-matematico-iii/actividades/progresion14/ProyectoIntegradorModelacion';
+import AsesoriaProyectoFinal from './pages/pensamiento-matematico-iii/actividades/progresion14/AsesoriaProyectoFinal';
+import PreexamenProgresion15 from './pages/pensamiento-matematico-iii/actividades/progresion15/PreexamenProgresion15';
+import IntroduccionTeoremaCálculo from './pages/pensamiento-matematico-iii/actividades/progresion15/IntroduccionTeoremaCálculo';
+import AplicacionesTeoremaCálculo from './pages/pensamiento-matematico-iii/actividades/progresion15/AplicacionesTeoremaCálculo';
+import ConceptoContinuidadLimites from './pages/pensamiento-matematico-iii/actividades/progresion6/ConceptoContinuidadLimites';
+import EjerciciosCalculoLimites from './pages/pensamiento-matematico-iii/actividades/progresion6/EjerciciosCalculoLimites';
+import ValidacionModelos from './pages/pensamiento-matematico-iii/actividades/progresion3/ValidacionModelos';
+import ExtremosyConcavidad from './pages/pensamiento-matematico-iii/actividades/progresion4/ExtremosyConcavidad';
+import ConceptoDefinicionDerivada from './pages/pensamiento-matematico-iii/actividades/progresion7/ConceptoDefinicionDerivada';
+import EjerciciosDerivadaDefinicion from './pages/pensamiento-matematico-iii/actividades/progresion7/EjerciciosDerivadaDefinicion';
+import DerivadasPolinomialesReglaPotencia from './pages/pensamiento-matematico-iii/actividades/progresion7/DerivadasPolinomialesReglaPotencia';
 import MedicionPulso from './pages/matematicas/actividades/progresion1/MedicionPulso';
 import PatronesNaturales from './pages/matematicas/actividades/progresion1/PatronesNaturales';
 import FormacionEquipos from './pages/matematicas/actividades/progresion1/FormacionEquipos';
@@ -36,6 +87,7 @@ import DemostracionRive from './pages/gamedesigner/actividades/progresion1/Demos
 import DisenoGuiado from './pages/gamedesigner/actividades/progresion1/DisenoGuiado';
 import IdentificacionPatronesCollatz from './pages/matematicas/actividades/progresion3/IdentificacionPatronesCollatz';
 import IntegracionHallazgosCollatz from './pages/matematicas/actividades/progresion3/IntegracionHallazgosCollatz';
+import CulturaDigital1PlanClase from './pages/culturadigital1/PlanClase';
 import DemostracionGeometrias from './pages/matematicas/actividades/progresion4/DemostracionGeometrias';
 import GeometriaTaxista from './pages/matematicas/actividades/progresion4/GeometriaTaxista';
 import GeometriaEsferica from './pages/matematicas/actividades/progresion4/GeometriaEsferica';
@@ -137,6 +189,8 @@ const AsignaturaRouter = () => {
         newParams.set('asignatura', 'desarrolloweb');
       } else if (location.pathname.includes('gamedesigner')) {
         newParams.set('asignatura', 'gamedesigner');
+      } else if (location.pathname.includes('pensamiento-matematico-iii')) {
+        newParams.set('asignatura', 'pensamiento-matematico-iii');
       }
 
       // Establecer valores predeterminados si no existen
@@ -167,6 +221,8 @@ const AsignaturaRouter = () => {
         return <DesarrolloWeb tab={tab} page={page} fase={fase} />;
       case 'gamedesigner':
         return <GameDesigner tab={tab} page={page} fase={fase} />;
+      case 'pensamiento-matematico-iii':
+        return <PensamientoMatematico tab={tab} page={page} fase={fase} />;
       default:
         // Si llegamos aquí, redireccionar a la página principal
         setTimeout(() => {
@@ -207,7 +263,8 @@ const ActividadRouter = () => {
         if (referrerPath && (referrerPath.includes('/matematicas') ||
                              referrerPath.includes('/culturadigital') ||
                              referrerPath.includes('/desarrolloweb') ||
-                             referrerPath.includes('/gamedesigner'))) {
+                             referrerPath.includes('/gamedesigner') ||
+                             referrerPath.includes('/pensamiento-matematico-iii'))) {
           sessionStorage.setItem('lastAsignaturaPath', referrerPath);
         }
       }
@@ -256,6 +313,56 @@ const ActividadRouter = () => {
     'mediciones-esfericas': GeometriaEsferica,
     'comparacion-geometrias': ComparacionGeometrias,
     'aplicaciones-practicas': AplicacionesPracticas,
+    'historia-calculo-movimiento': HistoriaCalculoMovimiento,
+    'practica-limites-velocidad': PracticaLimitesVelocidad,
+    'preexamen-progresion1': PreexamenProgresion1,
+    'concepto-tangente-pendiente': ConceptoTangentePendiente,
+    'ejercicios-pendientes-secantes': EjerciciosPendientesSecantes,
+    'preexamen-progresion2': PreexamenProgresion2,
+    'modelacion-funciones-reales': ModelacionFuncionesReales,
+    'ejercicios-modelacion': EjerciciosModelacion,
+    'preexamen-progresion3': PreexamenProgresion3,
+    'analisis-grafico-funciones': AnalisisGraficoFunciones,
+    'ejercicios-analisis-grafico': EjerciciosAnalisisGrafico,
+    'preexamen-progresion4': PreexamenProgresion4,
+    'analisis-avanzado-funciones': AnalisisAvanzadoFunciones,
+    'ejercicios-transformaciones': EjerciciosTransformaciones,
+    'preexamen-progresion5': PreexamenProgresion5,
+    'preexamen-progresion6': PreexamenProgresion6,
+    'preexamen-progresion7': PreexamenProgresion7,
+    'preexamen-progresion8': PreexamenProgresion8,
+    'preexamen-progresion9': PreexamenProgresion9,
+    'preexamen-progresion10': PreexamenProgresion10,
+    'preexamen-progresion11': PreexamenProgresion11,
+    'preexamen-progresion12': PreexamenProgresion12,
+    'preexamen-progresion13': PreexamenProgresion13,
+    'preexamen-progresion14': PreexamenProgresion14,
+    'proyecto-integrador-modelacion': ProyectoIntegradorModelacion,
+    'asesoria-proyecto-final': AsesoriaProyectoFinal,
+    'preexamen-progresion15': PreexamenProgresion15,
+    'ideas-teorema-fundamental': IntroduccionTeoremaCálculo,
+    'ejercicios-teorema-fundamental': AplicacionesTeoremaCálculo,
+    'concepto-continuidad-limites': ConceptoContinuidadLimites,
+    'ejercicios-calculo-limites': EjerciciosCalculoLimites,
+    'validacion-modelos': ValidacionModelos,
+    'extremos-concavidad': ExtremosyConcavidad,
+    'concepto-definicion-derivada': ConceptoDefinicionDerivada,
+    'ejercicios-derivadas-definicion': EjerciciosDerivadaDefinicion,
+    'derivadas-polinomiales-regla-potencia': DerivadasPolinomialesReglaPotencia,
+    'reglas-derivacion-tecnicas': ReglasDerivacionTecnicas,
+    'ejercicios-reglas-basicas': EjerciciosReglasBasicas,
+    'ejercicios-producto-cociente': EjerciciosProductoCociente,
+    'ejercicios-regla-cadena': EjerciciosReglaCadena,
+    'aplicaciones-derivada-cambio': AplicacionesDerivadaCambio,
+    'ejercicios-razon-cambio': EjerciciosRazonCambio,
+    'analisis-funciones-derivadas': AnalisisFuncionesDerivadas,
+    'ejercicios-analisis-completo': EjerciciosAnalisisCompleto,
+    'problemas-optimizacion-maximos-minimos': ProblemasOptimizacionMaximosMinimos,
+    'ejercicios-problemas-clasicos': EjerciciosProblemasClasicos,
+    'funciones-exponenciales-logaritmicas': FuncionesExponencialesLogaritmicas,
+    'ejercicios-derivadas-exp-log': EjerciciosDerivudasExpLog,
+    'funciones-trigonometricas-periodicidad': FuncionesTrigonometricasPeriodicidad,
+    'ejercicios-modelado-trigonometricas': EjerciciosModeladoTrigonometricas,
     'moodle-activity-1': Activity1,
     'moodle-activity-2': Activity2,
     'moodle-activity-3': Activity3,
@@ -333,10 +440,12 @@ function App() {
         <Route path="/" element={<CV />} />
 
         {/* Rutas principales que usan parámetros de consulta */}
+        <Route path="/cultura-digital-1" element={<CulturaDigital1PlanClase />} />
         <Route path="/cultura-digital-2" element={<AsignaturaRouter />} />
         <Route path="/matematicas" element={<AsignaturaRouter />} />
         <Route path="/desarrolloweb" element={<AsignaturaRouter />} />
         <Route path="/gamedesigner" element={<AsignaturaRouter />} />
+        <Route path="/pensamiento-matematico-iii" element={<AsignaturaRouter />} />
 
         {/* Rutas para actividades específicas */}
         <Route path="/actividades/*" element={<ActividadRouter />} />
@@ -415,7 +524,7 @@ function App() {
         <Route path="/moodle-homework-4-day5" element={<Homework4Day5 darkMode={false} />} />
 
         <Route path="/moodle-checklist" element={<MoodleChecklist />} />
-        
+
         {/* Ruta de respaldo para URLs desconocidas */}
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
