@@ -3,6 +3,13 @@ import { Link, useSearchParams, useLocation } from 'react-router-dom';
 import IntroduccionHardwareSoftware from './culturadigital1/contenidos/proposito1/IntroduccionHardwareSoftware';
 import HistoriaCriticaTecnologia from './culturadigital1/contenidos/proposito1/HistoriaCriticaTecnologia';
 import HistoriaSoftwareLibre from './culturadigital1/contenidos/proposito1/HistoriaSoftwareLibre';
+import LicenciaGPL from './culturadigital1/contenidos/proposito2/LicenciaGPL';
+import CreativeCommons from './culturadigital1/contenidos/proposito2/CreativeCommons';
+import Conectividad from './culturadigital1/contenidos/proposito2/Conectividad';
+import Navegadores from './culturadigital1/contenidos/proposito2/Navegadores';
+import SistemasOperativos from './culturadigital1/contenidos/proposito2/SistemasOperativos';
+import NivelesAcceso from './culturadigital1/contenidos/proposito2/NivelesAcceso';
+import UnidadesMedida from './culturadigital1/contenidos/proposito2/UnidadesMedida';
 
 const CulturaDigitalLayout = ({ asignatura = 'culturadigital1' }) => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -451,6 +458,33 @@ const CulturaDigitalLayout = ({ asignatura = 'culturadigital1' }) => {
                             );
                           })}
                         </ul>
+                      ) : currentProposito.id === 2 ? (
+                        <ul className="space-y-2">
+                          {currentProposito.contenidos.map((contenido, index) => {
+                            const contentComponents = {
+                              'Licencia GPL (General Public License)': 'licencia-gpl',
+                              'Creative Commons y otras licencias libres': 'creative-commons',
+                              'Conectividad': 'conectividad',
+                              'Navegadores': 'navegadores',
+                              'Sistemas operativos': 'sistemas-operativos',
+                              'Niveles de acceso': 'niveles-acceso',
+                              'Unidades de medida (velocidad, procesamiento y almacenamiento)': 'unidades-medida'
+                            };
+                            const contentKey = contentComponents[contenido];
+                            
+                            return (
+                              <li key={index} className="flex items-start space-x-2">
+                                <span className="text-blue-500 mt-1">•</span>
+                                <button
+                                  onClick={() => setSelectedContent(contentKey)}
+                                  className="text-blue-600 hover:text-blue-800 underline text-sm text-left transition-colors"
+                                >
+                                  {contenido}
+                                </button>
+                              </li>
+                            );
+                          })}
+                        </ul>
                       ) : (
                         <ul className="space-y-2">
                           {currentProposito.contenidos.map((contenido, index) => (
@@ -777,6 +811,27 @@ const CulturaDigitalLayout = ({ asignatura = 'culturadigital1' }) => {
       )}
       {selectedContent === 'software-libre' && (
         <HistoriaSoftwareLibre onBack={() => setSelectedContent(null)} />
+      )}
+      {selectedContent === 'licencia-gpl' && (
+        <LicenciaGPL onBack={() => setSelectedContent(null)} />
+      )}
+      {selectedContent === 'creative-commons' && (
+        <CreativeCommons onBack={() => setSelectedContent(null)} />
+      )}
+      {selectedContent === 'conectividad' && (
+        <Conectividad onBack={() => setSelectedContent(null)} />
+      )}
+      {selectedContent === 'navegadores' && (
+        <Navegadores onBack={() => setSelectedContent(null)} />
+      )}
+      {selectedContent === 'sistemas-operativos' && (
+        <SistemasOperativos onBack={() => setSelectedContent(null)} />
+      )}
+      {selectedContent === 'niveles-acceso' && (
+        <NivelesAcceso onBack={() => setSelectedContent(null)} />
+      )}
+      {selectedContent === 'unidades-medida' && (
+        <UnidadesMedida onBack={() => setSelectedContent(null)} />
       )}
     </div>
   );

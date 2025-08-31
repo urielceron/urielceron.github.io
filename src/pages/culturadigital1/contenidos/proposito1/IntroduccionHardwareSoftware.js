@@ -133,14 +133,7 @@ const IntroduccionHardwareSoftware = () => {
                         🎥 Video: "El Increíble Mundo Interior de tu Smartphone"
                       </h3>
                       <div className="aspect-w-16 aspect-h-9 mb-4">
-                        <iframe
-                          src="https://www.youtube.com/embed/Qw7Ka3JGqWI"
-                          title="Cómo funciona tu smartphone por dentro"
-                          frameBorder="0"
-                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                          allowFullScreen
-                          className="w-full h-64 rounded-lg"
-                        ></iframe>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/fCS8jGc3log?si=qslpoX1OSEw_jyNF" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                       </div>
                       <p className="text-blue-800 dark:text-blue-200 text-sm">
                         <strong>Actividad:</strong> Mientras ves el video, anota 3 cosas que te sorprendan
@@ -386,14 +379,7 @@ const IntroduccionHardwareSoftware = () => {
                         🎥 Video: "¿Cómo se Crea una App?"
                       </h3>
                       <div className="aspect-w-16 aspect-h-9 mb-4">
-                        <iframe
-                          src="https://www.youtube.com/embed/Yt8mlQyg2yU"
-                          title="Cómo se programa una aplicación móvil"
-                          frameBorder="0"
-                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                          allowFullScreen
-                          className="w-full h-64 rounded-lg"
-                        ></iframe>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/RRD0Vz1a0_w?si=ct8kLHT8kNuv28qU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                       </div>
                       <p className="text-pink-800 dark:text-pink-200 text-sm">
                         <strong>Reflexión:</strong> Después de ver el video, ¿te imaginas creando tu propia app?
