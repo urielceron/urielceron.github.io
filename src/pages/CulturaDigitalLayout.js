@@ -6,10 +6,17 @@ import HistoriaSoftwareLibre from './culturadigital1/contenidos/proposito1/Histo
 import LicenciaGPL from './culturadigital1/contenidos/proposito2/LicenciaGPL';
 import CreativeCommons from './culturadigital1/contenidos/proposito2/CreativeCommons';
 import Conectividad from './culturadigital1/contenidos/proposito2/Conectividad';
+import BrechaDigital from './culturadigital1/contenidos/proposito2/BrechaDigital';
+import TecnologiasEmergentes from './culturadigital1/contenidos/proposito2/TecnologiasEmergentes';
+import PruebaConexion from './culturadigital1/contenidos/proposito2/PruebaConexion';
 import Navegadores from './culturadigital1/contenidos/proposito2/Navegadores';
+import NavegadoresPrincipales from './culturadigital1/contenidos/proposito2/NavegadoresPrincipales';
+import FuncionesEsenciales from './culturadigital1/contenidos/proposito2/FuncionesEsenciales';
+import ConfiguraTuNavegador from './culturadigital1/contenidos/proposito2/ConfiguraTuNavegador';
 import SistemasOperativos from './culturadigital1/contenidos/proposito2/SistemasOperativos';
 import NivelesAcceso from './culturadigital1/contenidos/proposito2/NivelesAcceso';
 import UnidadesMedida from './culturadigital1/contenidos/proposito2/UnidadesMedida';
+import ImpactoCriticoTecnologias from './culturadigital1/contenidos/proposito3/ImpactoCriticoTecnologias';
 
 const CulturaDigitalLayout = ({ asignatura = 'culturadigital1' }) => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -45,8 +52,12 @@ const CulturaDigitalLayout = ({ asignatura = 'culturadigital1' }) => {
       contenidos: [
         "Licencia GPL (General Public License)",
         "Creative Commons y otras licencias libres",
-        "Conectividad",
-        "Navegadores",
+        "Conectividad: Brecha Digital",
+        "Conectividad: Tecnologías Emergentes",
+        "Conectividad: Prueba tu Conexión",
+        "Navegadores: Navegadores Principales",
+        "Navegadores: Funciones Esenciales",
+        "Navegadores: Configura tu Navegador",
         "Sistemas operativos",
         "Niveles de acceso",
         "Unidades de medida (velocidad, procesamiento y almacenamiento)"
@@ -464,8 +475,12 @@ const CulturaDigitalLayout = ({ asignatura = 'culturadigital1' }) => {
                             const contentComponents = {
                               'Licencia GPL (General Public License)': 'licencia-gpl',
                               'Creative Commons y otras licencias libres': 'creative-commons',
-                              'Conectividad': 'conectividad',
-                              'Navegadores': 'navegadores',
+                              'Conectividad: Brecha Digital': 'brecha-digital',
+                              'Conectividad: Tecnologías Emergentes': 'tecnologias-emergentes',
+                              'Conectividad: Prueba tu Conexión': 'prueba-conexion',
+                              'Navegadores: Navegadores Principales': 'navegadores-principales',
+                              'Navegadores: Funciones Esenciales': 'funciones-esenciales',
+                              'Navegadores: Configura tu Navegador': 'configura-navegador',
                               'Sistemas operativos': 'sistemas-operativos',
                               'Niveles de acceso': 'niveles-acceso',
                               'Unidades de medida (velocidad, procesamiento y almacenamiento)': 'unidades-medida'
@@ -818,11 +833,23 @@ const CulturaDigitalLayout = ({ asignatura = 'culturadigital1' }) => {
       {selectedContent === 'creative-commons' && (
         <CreativeCommons onBack={() => setSelectedContent(null)} />
       )}
-      {selectedContent === 'conectividad' && (
-        <Conectividad onBack={() => setSelectedContent(null)} />
+      {selectedContent === 'brecha-digital' && (
+        <BrechaDigital onBack={() => setSelectedContent(null)} />
       )}
-      {selectedContent === 'navegadores' && (
-        <Navegadores onBack={() => setSelectedContent(null)} />
+      {selectedContent === 'tecnologias-emergentes' && (
+        <TecnologiasEmergentes onBack={() => setSelectedContent(null)} />
+      )}
+      {selectedContent === 'prueba-conexion' && (
+        <PruebaConexion onBack={() => setSelectedContent(null)} />
+      )}
+      {selectedContent === 'navegadores-principales' && (
+        <NavegadoresPrincipales onBack={() => setSelectedContent(null)} />
+      )}
+      {selectedContent === 'funciones-esenciales' && (
+        <FuncionesEsenciales onBack={() => setSelectedContent(null)} />
+      )}
+      {selectedContent === 'configura-navegador' && (
+        <ConfiguraTuNavegador onBack={() => setSelectedContent(null)} />
       )}
       {selectedContent === 'sistemas-operativos' && (
         <SistemasOperativos onBack={() => setSelectedContent(null)} />
