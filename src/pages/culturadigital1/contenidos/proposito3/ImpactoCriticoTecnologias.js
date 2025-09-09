@@ -252,30 +252,42 @@ const ImpactoCriticoTecnologias = ({ onBack }) => {
                       sin precedentes. Su influencia trasciende fronteras y afecta la vida cotidiana 
                       de millones de mexicanos.
                     </p>
-                    <div className="bg-white dark:bg-gray-700 p-4 rounded-lg">
-                      <button onClick={() => window.open('/culturadigital1/contenidos/proposito3/corporaciones-innovacion', '_blank')} className="w-full bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white px-6 py-3 rounded-lg flex items-center justify-center space-x-2 transition-all">
-                        <Crown size={20} />
-                        <span>Analizar el Poder de las Big Tech</span>
-                        <ExternalLink size={16} />
-                      </button>
+                    <div className="bg-white dark:bg-gray-700 p-4 rounded-lg space-y-4">
+                      <div className="aspect-video w-full">
+                        <iframe 
+                          className="w-full h-full rounded-lg" 
+                          src="https://www.youtube.com/embed/4f4UI18jNvY" 
+                          title="El poder de las Big Tech - Explicado"
+                          frameBorder="0" 
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                          allowFullScreen>
+                        </iframe>
+                      </div>
+                      <p className="text-sm text-gray-600 dark:text-gray-400 text-center">
+                        📺 <strong>Video educativo:</strong> "El Poder de las Grandes Tecnológicas" - Análisis del dominio de Apple, Google, Meta, Amazon y Microsoft
+                      </p>
                     </div>
                   </div>
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
                     <div className="bg-blue-50 dark:bg-blue-900/30 p-4 rounded-lg">
-                      <h4 className="font-semibold text-blue-900 dark:text-blue-300 mb-2">📈 Concentración de Poder</h4>
+                      <h4 className="font-semibold text-blue-900 dark:text-blue-300 mb-2">📈 Concentración de Poder (2024)</h4>
                       <ul className="text-sm text-blue-800 dark:text-blue-200 space-y-1">
-                        <li>• 5 empresas valen $12+ billones USD</li>
-                        <li>• Más que el PIB de muchos países</li>
-                        <li>• Controlan infraestructura digital crítica</li>
+                        <li>• Apple: $3.5 billones USD (Mayor que PIB de Reino Unido)</li>
+                        <li>• Microsoft: $3.2 billones USD (88% de PCs mundiales)</li>
+                        <li>• Google: 92% búsquedas globales, 8.5 mil millones diarias</li>
+                        <li>• Meta: 3.96 mil millones de usuarios (50% de humanidad)</li>
+                        <li>• Amazon: 40% e-commerce EUA, 1.5 millones empleados</li>
                       </ul>
                     </div>
                     <div className="bg-red-50 dark:bg-red-900/30 p-4 rounded-lg">
-                      <h4 className="font-semibold text-red-900 dark:text-red-300 mb-2">🇲🇽 Impacto en México</h4>
+                      <h4 className="font-semibold text-red-900 dark:text-red-300 mb-2">🇲🇽 Impacto Económico en México</h4>
                       <ul className="text-sm text-red-800 dark:text-red-200 space-y-1">
-                        <li>• Dependencia tecnológica crítica</li>
-                        <li>• Extracción de valor económico</li>
-                        <li>• Control de información y comunicación</li>
+                        <li>• $8.2 mil millones USD extraídos anualmente</li>
+                        <li>• Solo $400 millones pagados en impuestos</li>
+                        <li>• 95% software/hardware importado</li>
+                        <li>• 85% mexicanos con datos en Big Tech</li>
+                        <li>• 15% del PIB digital controlado por extranjeros</li>
                       </ul>
                     </div>
                   </div>
@@ -304,31 +316,42 @@ const ImpactoCriticoTecnologias = ({ onBack }) => {
                       extraían oro en el siglo XVI. Los datos se procesan en el extranjero y se venden 
                       como productos de alto valor, mientras México queda como productor de materias primas digitales.
                     </p>
-                    <div className="bg-white dark:bg-gray-700 p-4 rounded-lg">
-                      <button onClick={() => window.open('/culturadigital1/contenidos/proposito3/colonialismo-datos', '_blank')} className="w-full bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-700 hover:to-orange-700 text-white px-6 py-3 rounded-lg flex items-center justify-center space-x-2 transition-all">
-                        <Database size={20} />
-                        <span>Analizar la Extracción de Datos</span>
-                        <ExternalLink size={16} />
-                      </button>
+                    <div className="bg-white dark:bg-gray-700 p-4 rounded-lg space-y-4">
+                      <div className="aspect-video w-full">
+                        <iframe 
+                          className="w-full h-full rounded-lg" 
+                          src="https://www.youtube.com/embed/hIXhnWUmMvw" 
+                          title="Capitalismo de vigilancia y extracción de datos"
+                          frameBorder="0" 
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                          allowFullScreen>
+                        </iframe>
+                      </div>
+                      <p className="text-sm text-gray-600 dark:text-gray-400 text-center">
+                        📺 <strong>Video educativo:</strong> "Capitalismo de Vigilancia" - Cómo las empresas extraen y monetizan tus datos personales
+                      </p>
                     </div>
                   </div>
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
                     <div className="bg-orange-50 dark:bg-orange-900/30 p-4 rounded-lg">
-                      <h4 className="font-semibold text-orange-900 dark:text-orange-300 mb-2">🔄 El Ciclo Colonial</h4>
+                      <h4 className="font-semibold text-orange-900 dark:text-orange-300 mb-2">🔄 El Ciclo Colonial Digital</h4>
                       <ul className="text-sm text-orange-800 dark:text-orange-200 space-y-1">
-                        <li>• Extracción masiva de datos personales</li>
-                        <li>• Procesamiento en servidores extranjeros</li>
-                        <li>• Venta de productos derivados</li>
-                        <li>• Dependencia tecnológica</li>
+                        <li>• 1. Extracción: 2.5 quintillones bytes diarios</li>
+                        <li>• 2. Procesamiento: IA en servidores extranjeros</li>
+                        <li>• 3. Comercialización: Productos de $500+ per cápita</li>
+                        <li>• 4. Dependencia: México paga por sus propios datos</li>
+                        <li>• 5. Control: Algoritmos diseñados en Silicon Valley</li>
                       </ul>
                     </div>
                     <div className="bg-purple-50 dark:bg-purple-900/30 p-4 rounded-lg">
-                      <h4 className="font-semibold text-purple-900 dark:text-purple-300 mb-2">💰 Valor Extraído</h4>
+                      <h4 className="font-semibold text-purple-900 dark:text-purple-300 mb-2">💰 Valor Económico Extraído (2024)</h4>
                       <ul className="text-sm text-purple-800 dark:text-purple-200 space-y-1">
-                        <li>• $260-650 millones USD diarios</li>
-                        <li>• De los datos de mexicanos</li>
-                        <li>• Prácticamente sin compensación</li>
+                        <li>• $260-650 millones USD diarios de México</li>
+                        <li>• $800 USD valor anual por mexicano</li>
+                        <li>• 0% compensación directa a usuarios</li>
+                        <li>• 97% ganancias van a matrices extranjeras</li>
+                        <li>• Más rentable que el petróleo mexicano</li>
                       </ul>
                     </div>
                   </div>
@@ -357,31 +380,44 @@ const ImpactoCriticoTecnologias = ({ onBack }) => {
                       Equipos de neurocientíficos y psicólogos diseñan algoritmos para maximizar tu tiempo 
                       en pantalla, usando técnicas similares a las de las casinos y drogas.
                     </p>
-                    <div className="bg-white dark:bg-gray-700 p-4 rounded-lg">
-                      <button onClick={() => window.open('/culturadigital1/contenidos/proposito3/mercantilizacion-atencion', '_blank')} className="w-full bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 text-white px-6 py-3 rounded-lg flex items-center justify-center space-x-2 transition-all">
-                        <Magnet size={20} />
-                        <span>Descubrir la Economía de la Atención</span>
-                        <ExternalLink size={16} />
-                      </button>
+                    <div className="bg-white dark:bg-gray-700 p-4 rounded-lg space-y-4">
+                      <div className="aspect-video w-full">
+                        <iframe 
+                          className="w-full h-full rounded-lg" 
+                          src="https://www.youtube.com/embed/NUMa0QkPzns" 
+                          title="El dilema de las redes sociales - Netflix"
+                          frameBorder="0" 
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                          allowFullScreen>
+                        </iframe>
+                      </div>
+                      <p className="text-sm text-gray-600 dark:text-gray-400 text-center">
+                        📺 <strong>Video educativo:</strong> "El Dilema de las Redes Sociales" - Cómo las plataformas capturan tu atención para generar ganancias
+                      </p>
                     </div>
                   </div>
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
                     <div className="bg-red-50 dark:bg-red-900/30 p-4 rounded-lg">
-                      <h4 className="font-semibold text-red-900 dark:text-red-300 mb-2">🧠 Técnicas de Captura</h4>
+                      <h4 className="font-semibold text-red-900 dark:text-red-300 mb-2">🧠 Técnicas Neuropsicológicas</h4>
                       <ul className="text-sm text-red-800 dark:text-red-200 space-y-1">
-                        <li>• Recompensas variables (como tragamonedas)</li>
-                        <li>• FOMO y urgencia artificial</li>
-                        <li>• Scroll infinito sin puntos de parada</li>
-                        <li>• Validación social mediante métricas</li>
+                        <li>• <strong>Dopamina variable:</strong> Recompensas impredecibles (como casinos)</li>
+                        <li>• <strong>FOMO artificial:</strong> Miedo a perderse algo importante</li>
+                        <li>• <strong>Scroll infinito:</strong> Sin puntos naturales de parada</li>
+                        <li>• <strong>Validación social:</strong> Likes/hearts activan circuitos de recompensa</li>
+                        <li>• <strong>Notificaciones push:</strong> Interrupciones constantes programadas</li>
+                        <li>• <strong>Autoplay:</strong> Contenido que se reproduce automáticamente</li>
                       </ul>
                     </div>
                     <div className="bg-green-50 dark:bg-green-900/30 p-4 rounded-lg">
-                      <h4 className="font-semibold text-green-900 dark:text-green-300 mb-2">💵 Valor de tu Atención</h4>
+                      <h4 className="font-semibold text-green-900 dark:text-green-300 mb-2">💵 Economía de la Atención (2024)</h4>
                       <ul className="text-sm text-green-800 dark:text-green-200 space-y-1">
-                        <li>• $2.50 USD por hora aproximadamente</li>
-                        <li>• $500-800 USD por persona/año</li>
-                        <li>• $8.2 mil millones extraídos de México</li>
+                        <li>• <strong>Por hora:</strong> $2.50-4.00 USD tu atención</li>
+                        <li>• <strong>Por persona/año:</strong> $500-800 USD extraídos</li>
+                        <li>• <strong>Tiempo promedio:</strong> 9.3 horas pantalla/día en México</li>
+                        <li>• <strong>Total nacional:</strong> $8.2 mil millones USD anuales</li>
+                        <li>• <strong>Cheking celular:</strong> 344 veces/día promedio jóvenes</li>
+                        <li>• <strong>Tiempo recuperar foco:</strong> 23 minutos post-interrupción</li>
                       </ul>
                     </div>
                   </div>
@@ -410,31 +446,44 @@ const ImpactoCriticoTecnologias = ({ onBack }) => {
                       digitales alteran la química cerebral de forma similar a las drogas, creando 
                       tolerancia, abstinencia y comportamientos compulsivos.
                     </p>
-                    <div className="bg-white dark:bg-gray-700 p-4 rounded-lg">
-                      <button onClick={() => window.open('/culturadigital1/contenidos/proposito3/dependencia-tecnologica', '_blank')} className="w-full bg-gradient-to-r from-red-600 to-pink-600 hover:from-red-700 hover:to-pink-700 text-white px-6 py-3 rounded-lg flex items-center justify-center space-x-2 transition-all">
-                        <Brain size={20} />
-                        <span>Evaluar la Dependencia Digital</span>
-                        <ExternalLink size={16} />
-                      </button>
+                    <div className="bg-white dark:bg-gray-700 p-4 rounded-lg space-y-4">
+                      <div className="aspect-video w-full">
+                        <iframe 
+                          className="w-full h-full rounded-lg" 
+                          src="https://www.youtube.com/embed/wf2VxeIm1no" 
+                          title="Adicción a la tecnología - Efectos en el cerebro"
+                          frameBorder="0" 
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                          allowFullScreen>
+                        </iframe>
+                      </div>
+                      <p className="text-sm text-gray-600 dark:text-gray-400 text-center">
+                        📺 <strong>Video educativo:</strong> "Adicción Digital" - Impacto neurológico del uso excesivo de dispositivos móviles
+                      </p>
                     </div>
                   </div>
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
                     <div className="bg-pink-50 dark:bg-pink-900/30 p-4 rounded-lg">
-                      <h4 className="font-semibold text-pink-900 dark:text-pink-300 mb-2">🔬 Base Científica</h4>
+                      <h4 className="font-semibold text-pink-900 dark:text-pink-300 mb-2">🔬 Evidencia Neurocientífica</h4>
                       <ul className="text-sm text-pink-800 dark:text-pink-200 space-y-1">
-                        <li>• Alteración de circuitos de dopamina</li>
-                        <li>• Atrofia de corteza cerebral</li>
-                        <li>• Pérdida de materia blanca</li>
-                        <li>• Cambios similares a adicciones químicas</li>
+                        <li>• <strong>Dopamina:</strong> Alteración de receptores D2 (-18%)</li>
+                        <li>• <strong>Corteza prefrontal:</strong> Atrofia en área de control</li>
+                        <li>• <strong>Materia blanca:</strong> Reducción 20% conectividad</li>
+                        <li>• <strong>Tolerancia:</strong> Necesidad creciente de estímulos</li>
+                        <li>• <strong>Abstinencia:</strong> Ansiedad, irritabilidad física</li>
+                        <li>• <strong>Resonancias magnéticas:</strong> Similares a cocaína/alcohol</li>
                       </ul>
                     </div>
                     <div className="bg-yellow-50 dark:bg-yellow-900/30 p-4 rounded-lg">
-                      <h4 className="font-semibold text-yellow-900 dark:text-yellow-300 mb-2">📊 En México</h4>
+                      <h4 className="font-semibold text-yellow-900 dark:text-yellow-300 mb-2">📊 Estadísticas México (2024)</h4>
                       <ul className="text-sm text-yellow-800 dark:text-yellow-200 space-y-1">
-                        <li>• 73% de jóvenes con nomofobia</li>
-                        <li>• 9.3 horas promedio de pantalla diaria</li>
-                        <li>• 340% aumento en ansiedad adolescente</li>
+                        <li>• <strong>Nomofobia:</strong> 73% jóvenes 14-18 años</li>
+                        <li>• <strong>Tiempo pantalla:</strong> 9.3 horas promedio/día</li>
+                        <li>• <strong>Ansiedad adolescente:</strong> +340% desde 2010</li>
+                        <li>• <strong>Depresión jóvenes:</strong> +275% últimos 10 años</li>
+                        <li>• <strong>Problemas sueño:</strong> 68% adolescentes afectados</li>
+                        <li>• <strong>Bajo rendimiento:</strong> -15% calificaciones escolares</li>
                       </ul>
                     </div>
                   </div>
@@ -463,30 +512,44 @@ const ImpactoCriticoTecnologias = ({ onBack }) => {
                       de clase mundial, 21 millones de mexicanos están completamente desconectados. 
                       Esta brecha determina oportunidades educativas, laborales y de desarrollo.
                     </p>
-                    <div className="bg-white dark:bg-gray-700 p-4 rounded-lg">
-                      <button onClick={() => window.open('/culturadigital1/contenidos/proposito3/desigualdad-acceso', '_blank')} className="w-full bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white px-6 py-3 rounded-lg flex items-center justify-center space-x-2 transition-all">
-                        <BarChart3 size={20} />
-                        <span>Analizar la Brecha Digital</span>
-                        <ExternalLink size={16} />
-                      </button>
+                    <div className="bg-white dark:bg-gray-700 p-4 rounded-lg space-y-4">
+                      <div className="aspect-video w-full">
+                        <iframe 
+                          className="w-full h-full rounded-lg" 
+                          src="https://www.youtube.com/embed/3_luBXMcJlA" 
+                          title="Brecha digital en México"
+                          frameBorder="0" 
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                          allowFullScreen>
+                        </iframe>
+                      </div>
+                      <p className="text-sm text-gray-600 dark:text-gray-400 text-center">
+                        📺 <strong>Video educativo:</strong> "Brecha Digital en México" - Desigualdades en el acceso a internet y tecnología
+                      </p>
                     </div>
                   </div>
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
                     <div className="bg-red-50 dark:bg-red-900/30 p-4 rounded-lg">
-                      <h4 className="font-semibold text-red-900 dark:text-red-300 mb-2">📊 Las Cifras</h4>
+                      <h4 className="font-semibold text-red-900 dark:text-red-300 mb-2">📊 Brecha Digital México (2024)</h4>
                       <ul className="text-sm text-red-800 dark:text-red-200 space-y-1">
-                        <li>• 21 millones sin acceso a internet</li>
-                        <li>• 47% de diferencia urbano vs rural</li>
-                        <li>• 2.3 millones de estudiantes desconectados</li>
+                        <li>• <strong>Sin internet:</strong> 21.1 millones de mexicanos</li>
+                        <li>• <strong>Urbano vs Rural:</strong> 47 puntos de diferencia</li>
+                        <li>• <strong>Estudiantes:</strong> 2.3 millones desconectados</li>
+                        <li>• <strong>Quintana Roo:</strong> 73% cobertura estatal</li>
+                        <li>• <strong>Velocidad promedio:</strong> 23.5 Mbps vs 45 Mbps OCDE</li>
+                        <li>• <strong>Costo internet:</strong> 3.2% ingreso familiar vs 1.5% mundial</li>
                       </ul>
                     </div>
                     <div className="bg-orange-50 dark:bg-orange-900/30 p-4 rounded-lg">
-                      <h4 className="font-semibold text-orange-900 dark:text-orange-300 mb-2">💔 Consecuencias</h4>
+                      <h4 className="font-semibold text-orange-900 dark:text-orange-300 mb-2">💔 Impacto Socioeconómico</h4>
                       <ul className="text-sm text-orange-800 dark:text-orange-200 space-y-1">
-                        <li>• Exclusión educativa y laboral</li>
-                        <li>• Perpetuación de desigualdades</li>
-                        <li>• Fragmentación social</li>
+                        <li>• <strong>Pérdida GDP:</strong> $28 mil millones anuales por exclusión</li>
+                        <li>• <strong>Empleo:</strong> 40% empleos requieren habilidades digitales</li>
+                        <li>• <strong>Educación:</strong> -25% rendimiento académico sin internet</li>
+                        <li>• <strong>Salud:</strong> 67% sin acceso a telemedicina rural</li>
+                        <li>• <strong>Servicios:</strong> 45% trámites solo digitales</li>
+                        <li>• <strong>Género:</strong> 13% brecha mujer-hombre en acceso</li>
                       </ul>
                     </div>
                   </div>

@@ -17,6 +17,11 @@ import SistemasOperativos from './culturadigital1/contenidos/proposito2/Sistemas
 import NivelesAcceso from './culturadigital1/contenidos/proposito2/NivelesAcceso';
 import UnidadesMedida from './culturadigital1/contenidos/proposito2/UnidadesMedida';
 import ImpactoCriticoTecnologias from './culturadigital1/contenidos/proposito3/ImpactoCriticoTecnologias';
+import CorporacionesInnovacion from './culturadigital1/contenidos/proposito3/CorporacionesInnovacion';
+import ColonialismosDatos from './culturadigital1/contenidos/proposito3/ColonialismosDatos';
+import MercantilizacionAtencion from './culturadigital1/contenidos/proposito3/MercantilizacionAtencion';
+import DependenciaTecnologica from './culturadigital1/contenidos/proposito3/DependenciaTecnologica';
+import DesigualdadAcceso from './culturadigital1/contenidos/proposito3/DesigualdadAcceso';
 
 const CulturaDigitalLayout = ({ asignatura = 'culturadigital1' }) => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -500,6 +505,31 @@ const CulturaDigitalLayout = ({ asignatura = 'culturadigital1' }) => {
                             );
                           })}
                         </ul>
+                      ) : currentProposito.id === 3 ? (
+                        <ul className="space-y-2">
+                          {currentProposito.contenidos.map((contenido, index) => {
+                            const contentComponents = {
+                              'Corporaciones de innovación tecnológica': 'corporaciones-innovacion',
+                              'Colonialismo de datos': 'colonialismos-datos',
+                              'Mercantilización de la atención de las personas usuarias': 'mercantilizacion-atencion',
+                              'Dependencia tecnológica': 'dependencia-tecnologica',
+                              'Desigualdad en el acceso a las tecnologías digitales (socioeconómica, regional o de género)': 'desigualdad-acceso'
+                            };
+                            const contentKey = contentComponents[contenido];
+                            
+                            return (
+                              <li key={index} className="flex items-start space-x-2">
+                                <span className="text-blue-500 mt-1">•</span>
+                                <button
+                                  onClick={() => setSelectedContent(contentKey)}
+                                  className="text-blue-600 hover:text-blue-800 underline text-sm text-left transition-colors"
+                                >
+                                  {contenido}
+                                </button>
+                              </li>
+                            );
+                          })}
+                        </ul>
                       ) : (
                         <ul className="space-y-2">
                           {currentProposito.contenidos.map((contenido, index) => (
@@ -859,6 +889,24 @@ const CulturaDigitalLayout = ({ asignatura = 'culturadigital1' }) => {
       )}
       {selectedContent === 'unidades-medida' && (
         <UnidadesMedida onBack={() => setSelectedContent(null)} />
+      )}
+      {selectedContent === 'impacto-critico-tecnologias' && (
+        <ImpactoCriticoTecnologias onBack={() => setSelectedContent(null)} />
+      )}
+      {selectedContent === 'corporaciones-innovacion' && (
+        <CorporacionesInnovacion onBack={() => setSelectedContent(null)} />
+      )}
+      {selectedContent === 'colonialismos-datos' && (
+        <ColonialismosDatos onBack={() => setSelectedContent(null)} />
+      )}
+      {selectedContent === 'mercantilizacion-atencion' && (
+        <MercantilizacionAtencion onBack={() => setSelectedContent(null)} />
+      )}
+      {selectedContent === 'dependencia-tecnologica' && (
+        <DependenciaTecnologica onBack={() => setSelectedContent(null)} />
+      )}
+      {selectedContent === 'desigualdad-acceso' && (
+        <DesigualdadAcceso onBack={() => setSelectedContent(null)} />
       )}
     </div>
   );
