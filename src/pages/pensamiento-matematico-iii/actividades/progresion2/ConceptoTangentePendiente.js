@@ -409,6 +409,7 @@ const ConceptoTangentePendiente = () => {
                           <th className="p-2">Punto 2</th>
                           <th className="p-2">h</th>
                           <th className="p-2">Pendiente</th>
+                          <th className="p-2">Cálculo</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -416,29 +417,97 @@ const ConceptoTangentePendiente = () => {
                           <td className="p-2">(3, 9)</td>
                           <td className="p-2">1</td>
                           <td className="p-2 font-mono">5</td>
+                          <td className="p-2 text-xs">(9-4)/(3-2) = 5/1 = 5</td>
                         </tr>
                         <tr className="border-b">
                           <td className="p-2">(2.5, 6.25)</td>
                           <td className="p-2">0.5</td>
                           <td className="p-2 font-mono">4.5</td>
+                          <td className="p-2 text-xs">(6.25-4)/(2.5-2) = 2.25/0.5 = 4.5</td>
                         </tr>
                         <tr className="border-b">
                           <td className="p-2">(2.1, 4.41)</td>
                           <td className="p-2">0.1</td>
                           <td className="p-2 font-mono">4.1</td>
+                          <td className="p-2 text-xs">(4.41-4)/(2.1-2) = 0.41/0.1 = 4.1</td>
                         </tr>
                         <tr className="border-b">
                           <td className="p-2">(2.01, 4.0401)</td>
                           <td className="p-2">0.01</td>
                           <td className="p-2 font-mono">4.01</td>
+                          <td className="p-2 text-xs">(4.0401-4)/(2.01-2) = 0.0401/0.01 = 4.01</td>
                         </tr>
                         <tr>
                           <td className="p-2">(2.001, 4.004001)</td>
                           <td className="p-2">0.001</td>
                           <td className="p-2 font-mono">4.001</td>
+                          <td className="p-2 text-xs">(4.004001-4)/(2.001-2) = 0.004001/0.001 = 4.001</td>
                         </tr>
                       </tbody>
                     </table>
+                  </div>
+
+                  {/* Agregar explicación detallada de las operaciones */}
+                  <div className="mt-4 bg-yellow-50 dark:bg-yellow-800 p-4 rounded-lg">
+                    <h6 className="font-semibold mb-3 text-yellow-800 dark:text-yellow-200">
+                      🧮 ¿Cómo calculamos cada pendiente?
+                    </h6>
+                    <div className="space-y-3 text-sm">
+                      <div className="bg-white dark:bg-gray-700 p-3 rounded">
+                        <p className="font-semibold mb-2">📝 Fórmula de la pendiente entre dos puntos:</p>
+                        <p className="text-center font-mono bg-blue-100 dark:bg-blue-900 p-2 rounded">
+                          m = (y₂ - y₁) / (x₂ - x₁)
+                        </p>
+                        <p className="mt-2 text-xs">Donde (x₁, y₁) = (2, 4) es nuestro punto fijo</p>
+                      </div>
+
+                      <div className="bg-white dark:bg-gray-700 p-3 rounded">
+                        <p className="font-semibold mb-2">🎯 Ejemplo paso a paso (primera fila):</p>
+                        <ol className="list-decimal pl-5 space-y-1">
+                          <li>Punto fijo: (2, 4)</li>
+                          <li>Segundo punto: (3, 9)</li>
+                          <li>Diferencia en y: 9 - 4 = 5</li>
+                          <li>Diferencia en x: 3 - 2 = 1</li>
+                          <li>Pendiente: 5 ÷ 1 = <strong>5</strong></li>
+                        </ol>
+                      </div>
+
+                      <div className="bg-white dark:bg-gray-700 p-3 rounded">
+                        <p className="font-semibold mb-2">💡 ¿Por qué usamos y = x²?</p>
+                        <p>Para encontrar los valores de y:</p>
+                        <ul className="list-disc pl-5 space-y-1 mt-2">
+                          <li>Si x = 3, entonces y = 3² = 9</li>
+                          <li>Si x = 2.5, entonces y = 2.5² = 6.25</li>
+                          <li>Si x = 2.1, entonces y = 2.1² = 4.41</li>
+                          <li>Y así sucesivamente...</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Notas importantes para estudiantes */}
+                  <div className="mt-4 bg-green-50 dark:bg-green-800 p-4 rounded-lg">
+                    <h6 className="font-semibold mb-3 text-green-800 dark:text-green-200">
+                      📚 Notas importantes para ti
+                    </h6>
+                    <div className="space-y-2 text-sm">
+                      <div className="flex items-start">
+                        <span className="mr-2">🔑</span>
+                        <p><strong>Observa el patrón:</strong> Conforme h se hace más pequeño (1 → 0.5 → 0.1 → 0.01 → 0.001), la pendiente se acerca más y más a 4.</p>
+                      </div>
+                      <div className="flex items-start">
+                        <span className="mr-2">🎮</span>
+                        <p><strong>Analogía gamer:</strong> Es como hacer zoom en un juego. Mientras más zoom haces, más precisa es tu puntería. Aquí, mientras más pequeño es h, más precisa es nuestra pendiente.</p>
+                      </div>
+                      <div className="flex items-start">
+                        <span className="mr-2">💭</span>
+                        <p><strong>¿Por qué no usar h = 0 directamente?</strong> ¡Porque obtendríamos 0/0, que no tiene sentido! Por eso nos acercamos cada vez más sin llegar a 0.</p>
+                      </div>
+                      <div className="flex items-start">
+                        <span className="mr-2">🚀</span>
+                        <p><strong>El truco matemático:</strong> Este proceso de "acercarse sin llegar" es lo que llamaremos <em>límite</em> más adelante. ¡Es la base del cálculo!</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
                 
