@@ -22,6 +22,11 @@ import ColonialismosDatos from './culturadigital1/contenidos/proposito3/Colonial
 import MercantilizacionAtencion from './culturadigital1/contenidos/proposito3/MercantilizacionAtencion';
 import DependenciaTecnologica from './culturadigital1/contenidos/proposito3/DependenciaTecnologica';
 import DesigualdadAcceso from './culturadigital1/contenidos/proposito3/DesigualdadAcceso';
+import CuatroLibertades from './culturadigital1/contenidos/proposito4/CuatroLibertades';
+import GNULinux from './culturadigital1/contenidos/proposito4/GNULinux';
+import CulturaHacker from './culturadigital1/contenidos/proposito4/CulturaHacker';
+import LibreVsOpen from './culturadigital1/contenidos/proposito4/LibreVsOpen';
+import SuiteOfimatica from './culturadigital1/contenidos/proposito4/SuiteOfimatica';
 
 const CulturaDigitalLayout = ({ asignatura = 'culturadigital1' }) => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -530,6 +535,31 @@ const CulturaDigitalLayout = ({ asignatura = 'culturadigital1' }) => {
                             );
                           })}
                         </ul>
+                      ) : currentProposito.id === 4 ? (
+                        <ul className="space-y-2">
+                          {currentProposito.contenidos.map((contenido, index) => {
+                            const contentComponents = {
+                              'Las 4 libertades del software libre': 'cuatro-libertades',
+                              'GNU/Linux': 'gnu-linux',
+                              'Cultura hacker y el "Hazlo tú mismo" en la tecnología': 'cultura-hacker',
+                              'Software libre vs. open source': 'libre-vs-open',
+                              'Procesadores de texto, hojas de cálculo y presentaciones electrónicas': 'suite-ofimatica'
+                            };
+                            const contentKey = contentComponents[contenido];
+
+                            return (
+                              <li key={index} className="flex items-start space-x-2">
+                                <span className="text-blue-500 mt-1">•</span>
+                                <button
+                                  onClick={() => setSelectedContent(contentKey)}
+                                  className="text-blue-600 hover:text-blue-800 underline text-sm text-left transition-colors"
+                                >
+                                  {contenido}
+                                </button>
+                              </li>
+                            );
+                          })}
+                        </ul>
                       ) : (
                         <ul className="space-y-2">
                           {currentProposito.contenidos.map((contenido, index) => (
@@ -907,6 +937,21 @@ const CulturaDigitalLayout = ({ asignatura = 'culturadigital1' }) => {
       )}
       {selectedContent === 'desigualdad-acceso' && (
         <DesigualdadAcceso onBack={() => setSelectedContent(null)} />
+      )}
+      {selectedContent === 'cuatro-libertades' && (
+        <CuatroLibertades onBack={() => setSelectedContent(null)} />
+      )}
+      {selectedContent === 'gnu-linux' && (
+        <GNULinux onBack={() => setSelectedContent(null)} />
+      )}
+      {selectedContent === 'cultura-hacker' && (
+        <CulturaHacker onBack={() => setSelectedContent(null)} />
+      )}
+      {selectedContent === 'libre-vs-open' && (
+        <LibreVsOpen onBack={() => setSelectedContent(null)} />
+      )}
+      {selectedContent === 'suite-ofimatica' && (
+        <SuiteOfimatica onBack={() => setSelectedContent(null)} />
       )}
     </div>
   );

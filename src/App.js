@@ -94,6 +94,11 @@ import GeometriaEsferica from './pages/matematicas/actividades/progresion4/Geome
 import ComparacionGeometrias from './pages/matematicas/actividades/progresion4/ComparacionGeometrias';
 import AplicacionesPracticas from './pages/matematicas/actividades/progresion4/AplicacionesPracticas';
 import MoodleCourse from './pages/moodle/MoodleCourse';
+import CuatroLibertades from './pages/culturadigital1/contenidos/proposito4/CuatroLibertades';
+import GNULinux from './pages/culturadigital1/contenidos/proposito4/GNULinux';
+import CulturaHacker from './pages/culturadigital1/contenidos/proposito4/CulturaHacker';
+import LibreVsOpen from './pages/culturadigital1/contenidos/proposito4/LibreVsOpen';
+import SuiteOfimatica from './pages/culturadigital1/contenidos/proposito4/SuiteOfimatica';
 import {
   Activity1,
   Activity2,
@@ -313,6 +318,11 @@ const ActividadRouter = () => {
     'mediciones-esfericas': GeometriaEsferica,
     'comparacion-geometrias': ComparacionGeometrias,
     'aplicaciones-practicas': AplicacionesPracticas,
+    'cuatro-libertades': CuatroLibertades,
+    'gnu-linux': GNULinux,
+    'cultura-hacker': CulturaHacker,
+    'libre-vs-open': LibreVsOpen,
+    'suite-ofimatica': SuiteOfimatica,
     'historia-calculo-movimiento': HistoriaCalculoMovimiento,
     'practica-limites-velocidad': PracticaLimitesVelocidad,
     'preexamen-progresion1': PreexamenProgresion1,
