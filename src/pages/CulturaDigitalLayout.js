@@ -27,6 +27,12 @@ import GNULinux from './culturadigital1/contenidos/proposito4/GNULinux';
 import CulturaHacker from './culturadigital1/contenidos/proposito4/CulturaHacker';
 import LibreVsOpen from './culturadigital1/contenidos/proposito4/LibreVsOpen';
 import SuiteOfimatica from './culturadigital1/contenidos/proposito4/SuiteOfimatica';
+import NormatividadCiberespacio from './culturadigital1/contenidos/proposito5/NormatividadCiberespacio';
+import PrivacidadInformacion from './culturadigital1/contenidos/proposito5/PrivacidadInformacion';
+import SeguridadDigital from './culturadigital1/contenidos/proposito5/SeguridadDigital';
+import ProteccionDatos from './culturadigital1/contenidos/proposito5/ProteccionDatos';
+import UsoEticoIA from './culturadigital1/contenidos/proposito5/UsoEticoIA';
+import LicenciasCopyLeft from './culturadigital1/contenidos/proposito5/LicenciasCopyleft';
 
 const CulturaDigitalLayout = ({ asignatura = 'culturadigital1' }) => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -560,6 +566,32 @@ const CulturaDigitalLayout = ({ asignatura = 'culturadigital1' }) => {
                             );
                           })}
                         </ul>
+                      ) : currentProposito.id === 5 ? (
+                        <ul className="space-y-2">
+                          {currentProposito.contenidos.map((contenido, index) => {
+                            const contentComponents = {
+                              'Normatividad en el uso del ciberespacio y servicios digitales': 'normatividad-ciberespacio',
+                              'Privacidad de la información': 'privacidad-informacion',
+                              'Seguridad digital': 'seguridad-digital',
+                              'Protección de datos': 'proteccion-datos',
+                              'Uso responsable y ético de la Inteligencia Artificial (IA)': 'uso-etico-ia',
+                              'Licenciamientos copyleft': 'licencias-copyleft'
+                            };
+                            const contentKey = contentComponents[contenido];
+
+                            return (
+                              <li key={index} className="flex items-start space-x-2">
+                                <span className="text-blue-500 mt-1">•</span>
+                                <button
+                                  onClick={() => setSelectedContent(contentKey)}
+                                  className="text-blue-600 hover:text-blue-800 underline text-sm text-left transition-colors"
+                                >
+                                  {contenido}
+                                </button>
+                              </li>
+                            );
+                          })}
+                        </ul>
                       ) : (
                         <ul className="space-y-2">
                           {currentProposito.contenidos.map((contenido, index) => (
@@ -952,6 +984,24 @@ const CulturaDigitalLayout = ({ asignatura = 'culturadigital1' }) => {
       )}
       {selectedContent === 'suite-ofimatica' && (
         <SuiteOfimatica onBack={() => setSelectedContent(null)} />
+      )}
+      {selectedContent === 'normatividad-ciberespacio' && (
+        <NormatividadCiberespacio onBack={() => setSelectedContent(null)} />
+      )}
+      {selectedContent === 'privacidad-informacion' && (
+        <PrivacidadInformacion onBack={() => setSelectedContent(null)} />
+      )}
+      {selectedContent === 'seguridad-digital' && (
+        <SeguridadDigital onBack={() => setSelectedContent(null)} />
+      )}
+      {selectedContent === 'proteccion-datos' && (
+        <ProteccionDatos onBack={() => setSelectedContent(null)} />
+      )}
+      {selectedContent === 'uso-etico-ia' && (
+        <UsoEticoIA onBack={() => setSelectedContent(null)} />
+      )}
+      {selectedContent === 'licencias-copyleft' && (
+        <LicenciasCopyLeft onBack={() => setSelectedContent(null)} />
       )}
     </div>
   );
