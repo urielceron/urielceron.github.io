@@ -33,6 +33,10 @@ import SeguridadDigital from './culturadigital1/contenidos/proposito5/SeguridadD
 import ProteccionDatos from './culturadigital1/contenidos/proposito5/ProteccionDatos';
 import UsoEticoIA from './culturadigital1/contenidos/proposito5/UsoEticoIA';
 import LicenciasCopyLeft from './culturadigital1/contenidos/proposito5/LicenciasCopyleft';
+import CiudadaniaDigital from './culturadigital1/contenidos/proposito6/CiudadaniaDigital';
+import CredencialesAcceso from './culturadigital1/contenidos/proposito6/CredencialesAcceso';
+import PlataformasCotidianas from './culturadigital1/contenidos/proposito6/PlataformasCotidianas';
+import ContaminacionDigital from './culturadigital1/contenidos/proposito6/ContaminacionDigital';
 
 const CulturaDigitalLayout = ({ asignatura = 'culturadigital1' }) => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -592,6 +596,30 @@ const CulturaDigitalLayout = ({ asignatura = 'culturadigital1' }) => {
                             );
                           })}
                         </ul>
+                      ) : currentProposito.id === 6 ? (
+                        <ul className="space-y-2">
+                          {currentProposito.contenidos.map((contenido, index) => {
+                            const contentComponents = {
+                              'Ciudadanía e identidad digital': 'ciudadania-digital',
+                              'Credenciales de acceso': 'credenciales-acceso',
+                              'Plataformas de uso cotidiano': 'plataformas-cotidianas',
+                              'Contaminación digital y tecnológica': 'contaminacion-digital'
+                            };
+                            const contentKey = contentComponents[contenido];
+
+                            return (
+                              <li key={index} className="flex items-start space-x-2">
+                                <span className="text-blue-500 mt-1">•</span>
+                                <button
+                                  onClick={() => setSelectedContent(contentKey)}
+                                  className="text-blue-600 hover:text-blue-800 underline text-sm text-left transition-colors"
+                                >
+                                  {contenido}
+                                </button>
+                              </li>
+                            );
+                          })}
+                        </ul>
                       ) : (
                         <ul className="space-y-2">
                           {currentProposito.contenidos.map((contenido, index) => (
@@ -1002,6 +1030,18 @@ const CulturaDigitalLayout = ({ asignatura = 'culturadigital1' }) => {
       )}
       {selectedContent === 'licencias-copyleft' && (
         <LicenciasCopyLeft onBack={() => setSelectedContent(null)} />
+      )}
+      {selectedContent === 'ciudadania-digital' && (
+        <CiudadaniaDigital onBack={() => setSelectedContent(null)} />
+      )}
+      {selectedContent === 'credenciales-acceso' && (
+        <CredencialesAcceso onBack={() => setSelectedContent(null)} />
+      )}
+      {selectedContent === 'plataformas-cotidianas' && (
+        <PlataformasCotidianas onBack={() => setSelectedContent(null)} />
+      )}
+      {selectedContent === 'contaminacion-digital' && (
+        <ContaminacionDigital onBack={() => setSelectedContent(null)} />
       )}
     </div>
   );
