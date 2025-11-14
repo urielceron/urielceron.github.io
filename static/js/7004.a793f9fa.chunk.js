@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkurielceron_github_io=self.webpackChunkurielceron_github_io||[]).push([[7004],{17004:(e,i,u)=>{e.exports=u.p+"static/media/README.9df50860b7fe360316a3.md"}}]);
