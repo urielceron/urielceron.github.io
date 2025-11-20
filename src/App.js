@@ -94,11 +94,42 @@ import GeometriaEsferica from './pages/matematicas/actividades/progresion4/Geome
 import ComparacionGeometrias from './pages/matematicas/actividades/progresion4/ComparacionGeometrias';
 import AplicacionesPracticas from './pages/matematicas/actividades/progresion4/AplicacionesPracticas';
 import MoodleCourse from './pages/moodle/MoodleCourse';
+import ResearchCourse from './pages/research-course/ResearchCourse';
+import ResearchGlossary from './pages/research-course/ResearchGlossary';
+import ResearchResources from './pages/research-course/ResearchResources';
+import Module1 from './pages/research-course/modules/Module1';
+import Module2 from './pages/research-course/modules/Module2';
+import Module3 from './pages/research-course/modules/Module3';
+import Module4 from './pages/research-course/modules/Module4';
+import Module5 from './pages/research-course/modules/Module5';
+import Module6 from './pages/research-course/modules/Module6';
+import Module7 from './pages/research-course/modules/Module7';
+import Module8 from './pages/research-course/modules/Module8';
+import Module9 from './pages/research-course/modules/Module9';
+import Module10 from './pages/research-course/modules/Module10';
+import Module11 from './pages/research-course/modules/Module11';
+import Module12 from './pages/research-course/modules/Module12';
+import Module13 from './pages/research-course/modules/Module13';
+import Module14 from './pages/research-course/modules/Module14';
 import CuatroLibertades from './pages/culturadigital1/contenidos/proposito4/CuatroLibertades';
 import GNULinux from './pages/culturadigital1/contenidos/proposito4/GNULinux';
 import CulturaHacker from './pages/culturadigital1/contenidos/proposito4/CulturaHacker';
 import LibreVsOpen from './pages/culturadigital1/contenidos/proposito4/LibreVsOpen';
 import SuiteOfimatica from './pages/culturadigital1/contenidos/proposito4/SuiteOfimatica';
+import IdentificarProblema from './pages/culturadigital1/contenidos/proposito7/IdentificarProblema';
+import ComprenderProblema from './pages/culturadigital1/contenidos/proposito7/ComprenderProblema';
+import AnalizarAlternativas from './pages/culturadigital1/contenidos/proposito7/AnalizarAlternativas';
+import SeleccionarSolucion from './pages/culturadigital1/contenidos/proposito7/SeleccionarSolucion';
+import MetodosTecnicas from './pages/culturadigital1/contenidos/proposito7/MetodosTecnicas';
+import Dato from './pages/culturadigital1/contenidos/proposito8/Dato';
+import Informacion from './pages/culturadigital1/contenidos/proposito8/Informacion';
+import Variables from './pages/culturadigital1/contenidos/proposito8/Variables';
+import Constantes from './pages/culturadigital1/contenidos/proposito8/Constantes';
+import Expresiones from './pages/culturadigital1/contenidos/proposito8/Expresiones';
+import OperadoresLogicos from './pages/culturadigital1/contenidos/proposito8/OperadoresLogicos';
+import OperacionesRelacionales from './pages/culturadigital1/contenidos/proposito8/OperacionesRelacionales';
+import OperadoresAritmeticos from './pages/culturadigital1/contenidos/proposito8/OperadoresAritmeticos';
+import EstructurasControl from './pages/culturadigital1/contenidos/proposito8/EstructurasControl';
 import {
   Activity1,
   Activity2,
@@ -323,6 +354,20 @@ const ActividadRouter = () => {
     'cultura-hacker': CulturaHacker,
     'libre-vs-open': LibreVsOpen,
     'suite-ofimatica': SuiteOfimatica,
+    'identificar-problema': IdentificarProblema,
+    'comprender-problema': ComprenderProblema,
+    'analizar-alternativas': AnalizarAlternativas,
+    'seleccionar-solucion': SeleccionarSolucion,
+    'metodos-tecnicas': MetodosTecnicas,
+    'dato': Dato,
+    'informacion': Informacion,
+    'variables': Variables,
+    'constantes': Constantes,
+    'expresiones': Expresiones,
+    'operadores-logicos': OperadoresLogicos,
+    'operaciones-relacionales': OperacionesRelacionales,
+    'operadores-aritmeticos': OperadoresAritmeticos,
+    'estructuras-control': EstructurasControl,
     'historia-calculo-movimiento': HistoriaCalculoMovimiento,
     'practica-limites-velocidad': PracticaLimitesVelocidad,
     'preexamen-progresion1': PreexamenProgresion1,
@@ -534,6 +579,25 @@ function App() {
         <Route path="/moodle-homework-4-day5" element={<Homework4Day5 darkMode={false} />} />
 
         <Route path="/moodle-checklist" element={<MoodleChecklist />} />
+
+        {/* Rutas del curso de Investigación y CANVAS */}
+        <Route path="/research-course" element={<ResearchCourse />} />
+        <Route path="/research-glossary" element={<ResearchGlossary />} />
+        <Route path="/research-resources" element={<ResearchResources />} />
+        <Route path="/research-module-1" element={<Module1 />} />
+        <Route path="/research-module-2" element={<Module2 />} />
+        <Route path="/research-module-3" element={<Module3 />} />
+        <Route path="/research-module-4" element={<Module4 />} />
+        <Route path="/research-module-5" element={<Module5 />} />
+        <Route path="/research-module-6" element={<Module6 />} />
+        <Route path="/research-module-7" element={<Module7 />} />
+        <Route path="/research-module-8" element={<Module8 />} />
+        <Route path="/research-module-9" element={<Module9 />} />
+        <Route path="/research-module-10" element={<Module10 />} />
+        <Route path="/research-module-11" element={<Module11 />} />
+        <Route path="/research-module-12" element={<Module12 />} />
+        <Route path="/research-module-13" element={<Module13 />} />
+        <Route path="/research-module-14" element={<Module14 />} />
 
         {/* Ruta de respaldo para URLs desconocidas */}
         <Route path="*" element={<Navigate to="/" replace />} />

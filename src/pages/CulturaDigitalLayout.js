@@ -37,6 +37,20 @@ import CiudadaniaDigital from './culturadigital1/contenidos/proposito6/Ciudadani
 import CredencialesAcceso from './culturadigital1/contenidos/proposito6/CredencialesAcceso';
 import PlataformasCotidianas from './culturadigital1/contenidos/proposito6/PlataformasCotidianas';
 import ContaminacionDigital from './culturadigital1/contenidos/proposito6/ContaminacionDigital';
+import IdentificarProblema from './culturadigital1/contenidos/proposito7/IdentificarProblema';
+import ComprenderProblema from './culturadigital1/contenidos/proposito7/ComprenderProblema';
+import AnalizarAlternativas from './culturadigital1/contenidos/proposito7/AnalizarAlternativas';
+import SeleccionarSolucion from './culturadigital1/contenidos/proposito7/SeleccionarSolucion';
+import MetodosTecnicas from './culturadigital1/contenidos/proposito7/MetodosTecnicas';
+import Dato from './culturadigital1/contenidos/proposito8/Dato';
+import Informacion from './culturadigital1/contenidos/proposito8/Informacion';
+import Variables from './culturadigital1/contenidos/proposito8/Variables';
+import Constantes from './culturadigital1/contenidos/proposito8/Constantes';
+import Expresiones from './culturadigital1/contenidos/proposito8/Expresiones';
+import OperadoresLogicos from './culturadigital1/contenidos/proposito8/OperadoresLogicos';
+import OperacionesRelacionales from './culturadigital1/contenidos/proposito8/OperacionesRelacionales';
+import OperadoresAritmeticos from './culturadigital1/contenidos/proposito8/OperadoresAritmeticos';
+import EstructurasControl from './culturadigital1/contenidos/proposito8/EstructurasControl';
 
 const CulturaDigitalLayout = ({ asignatura = 'culturadigital1' }) => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -141,12 +155,11 @@ const CulturaDigitalLayout = ({ asignatura = 'culturadigital1' }) => {
       titulo: "Comprensión y resolución de problemas",
       descripcion: "Reconoce las posibles formas de comprensión y resolución de problemas algorítmicos para desarrollar una estrategia frente a una situación, fenómeno o problemática, utilizando medios tecnológicos y digitales.",
       contenidos: [
-        "Pasos para solucionar un problema:",
-        "• Identificar el problema por resolver",
-        "• Comprender el problema",
-        "• Analizar alternativas de solución",
-        "• Seleccionar la mejor alternativa de solución",
-        "• Utilizar métodos, técnicas o diagramas de flujo para resolver problemas"
+        "Identificar el problema por resolver",
+        "Comprender el problema",
+        "Analizar alternativas de solución",
+        "Seleccionar la mejor alternativa de solución",
+        "Utilizar métodos, técnicas o diagramas de flujo para resolver problemas"
       ],
       parcial: 3
     },
@@ -620,6 +633,60 @@ const CulturaDigitalLayout = ({ asignatura = 'culturadigital1' }) => {
                             );
                           })}
                         </ul>
+                      ) : currentProposito.id === 7 ? (
+                        <ul className="space-y-2">
+                          {currentProposito.contenidos.map((contenido, index) => {
+                            const contentComponents = {
+                              'Identificar el problema por resolver': 'identificar-problema',
+                              'Comprender el problema': 'comprender-problema',
+                              'Analizar alternativas de solución': 'analizar-alternativas',
+                              'Seleccionar la mejor alternativa de solución': 'seleccionar-solucion',
+                              'Utilizar métodos, técnicas o diagramas de flujo para resolver problemas': 'metodos-tecnicas'
+                            };
+                            const contentKey = contentComponents[contenido];
+
+                            return (
+                              <li key={index} className="flex items-start space-x-2">
+                                <span className="text-blue-500 mt-1">•</span>
+                                <button
+                                  onClick={() => setSelectedContent(contentKey)}
+                                  className="text-blue-600 hover:text-blue-800 underline text-sm text-left transition-colors"
+                                >
+                                  {contenido}
+                                </button>
+                              </li>
+                            );
+                          })}
+                        </ul>
+                      ) : currentProposito.id === 8 ? (
+                        <ul className="space-y-2">
+                          {currentProposito.contenidos.map((contenido, index) => {
+                            const contentComponents = {
+                              'Dato': 'dato',
+                              'Información': 'informacion',
+                              'Variables': 'variables',
+                              'Constantes': 'constantes',
+                              'Expresiones': 'expresiones',
+                              'Operadores lógicos': 'operadores-logicos',
+                              'Operaciones relacionales': 'operaciones-relacionales',
+                              'Operadores aritméticos': 'operadores-aritmeticos',
+                              'Estructuras condicionales, selectivas y repetitivas': 'estructuras-control'
+                            };
+                            const contentKey = contentComponents[contenido];
+
+                            return (
+                              <li key={index} className="flex items-start space-x-2">
+                                <span className="text-blue-500 mt-1">•</span>
+                                <button
+                                  onClick={() => setSelectedContent(contentKey)}
+                                  className="text-blue-600 hover:text-blue-800 underline text-sm text-left transition-colors"
+                                >
+                                  {contenido}
+                                </button>
+                              </li>
+                            );
+                          })}
+                        </ul>
                       ) : (
                         <ul className="space-y-2">
                           {currentProposito.contenidos.map((contenido, index) => (
@@ -1042,6 +1109,48 @@ const CulturaDigitalLayout = ({ asignatura = 'culturadigital1' }) => {
       )}
       {selectedContent === 'contaminacion-digital' && (
         <ContaminacionDigital onBack={() => setSelectedContent(null)} />
+      )}
+      {selectedContent === 'identificar-problema' && (
+        <IdentificarProblema onBack={() => setSelectedContent(null)} />
+      )}
+      {selectedContent === 'comprender-problema' && (
+        <ComprenderProblema onBack={() => setSelectedContent(null)} />
+      )}
+      {selectedContent === 'analizar-alternativas' && (
+        <AnalizarAlternativas onBack={() => setSelectedContent(null)} />
+      )}
+      {selectedContent === 'seleccionar-solucion' && (
+        <SeleccionarSolucion onBack={() => setSelectedContent(null)} />
+      )}
+      {selectedContent === 'metodos-tecnicas' && (
+        <MetodosTecnicas onBack={() => setSelectedContent(null)} />
+      )}
+      {selectedContent === 'dato' && (
+        <Dato onBack={() => setSelectedContent(null)} />
+      )}
+      {selectedContent === 'informacion' && (
+        <Informacion onBack={() => setSelectedContent(null)} />
+      )}
+      {selectedContent === 'variables' && (
+        <Variables onBack={() => setSelectedContent(null)} />
+      )}
+      {selectedContent === 'constantes' && (
+        <Constantes onBack={() => setSelectedContent(null)} />
+      )}
+      {selectedContent === 'expresiones' && (
+        <Expresiones onBack={() => setSelectedContent(null)} />
+      )}
+      {selectedContent === 'operadores-logicos' && (
+        <OperadoresLogicos onBack={() => setSelectedContent(null)} />
+      )}
+      {selectedContent === 'operaciones-relacionales' && (
+        <OperacionesRelacionales onBack={() => setSelectedContent(null)} />
+      )}
+      {selectedContent === 'operadores-aritmeticos' && (
+        <OperadoresAritmeticos onBack={() => setSelectedContent(null)} />
+      )}
+      {selectedContent === 'estructuras-control' && (
+        <EstructurasControl onBack={() => setSelectedContent(null)} />
       )}
     </div>
   );

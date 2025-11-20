@@ -50,6 +50,7 @@ const CV = () => {
       hasSubmenu: true,
       submenu: [
         { title: 'Moodle + Safe Exam Browser + IA', path: '/moodle-course' },
+        { title: 'Métodos y Técnicas de Investigación + CANVAS', path: '/research-course' },
       ]
     }
   ];
@@ -81,7 +82,7 @@ const CV = () => {
       asignatura = 'gamedesigner';
     } else if (path.includes('pensamiento-matematico-iii')) {
       asignatura = 'pensamiento-matematico-iii';
-    } else if (path.includes('moodle-course')) {
+    } else if (path.includes('moodle-course') || path.includes('research-course')) {
       navigate(path);
       setIsMenuOpen(false);
       setOpenSubmenu(null);
