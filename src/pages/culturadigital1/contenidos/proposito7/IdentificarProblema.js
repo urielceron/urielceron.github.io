@@ -445,18 +445,11 @@ const IdentificarProblema = ({ onBack }) => {
                 🎥 Video: Cómo Identificar Problemas como un Experto
               </h3>
               <div className="aspect-w-16 aspect-h-9 mb-4">
-                <iframe
-                  className="w-full h-96 rounded-lg"
-                  src="https://www.youtube.com/embed/eUszFWb6W-A"
-                  title="Identificación de problemas"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                ></iframe>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/wmNxoQdrsqE?si=yDCmONbKwsJvCj_k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
               </div>
               <p className="text-gray-600 text-sm">
-                Este video explica las técnicas profesionales para identificar problemas
-                en el mundo real y en programación.
+                Este video explica las técnicas profesionales para identificar dos clases de problemas
+                en el mundo real
               </p>
             </div>
 

@@ -632,18 +632,11 @@ const ComprenderProblema = ({ onBack }) => {
                 🎥 Video: El Arte de Comprender Problemas Complejos
               </h3>
               <div className="aspect-w-16 aspect-h-9 mb-4">
-                <iframe
-                  className="w-full h-96 rounded-lg"
-                  src="https://www.youtube.com/embed/eYEjOXv-dYg"
-                  title="Comprensión de problemas"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                ></iframe>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/eO7sNmZ9Ut8?si=YnPekFqaQwZp4tUR" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
               </div>
               <p className="text-gray-600 text-sm">
-                Este video del MIT explica técnicas avanzadas de comprensión de problemas
-                utilizadas en ingeniería y ciencias de la computación.
+                Este video explica una técnica avanzada de comprensión de problemas
+                llamada "Árbol de Problemas"
               </p>
             </div>
 

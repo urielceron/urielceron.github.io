@@ -1366,7 +1366,7 @@ const Variables = ({ onBack }) => {
                       Explicación completa de qué son las variables y cómo usarlas.
                     </p>
                     <a
-                      href="https://www.youtube.com/watch?v=A81IwlScRl4"
+                      href="https://www.youtube.com/watch?v=kXMpu07zjN4"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-block bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition-all text-sm"
@@ -1380,7 +1380,7 @@ const Variables = ({ onBack }) => {
                       Aprende a declarar y usar variables en PSeInt con ejemplos prácticos.
                     </p>
                     <a
-                      href="https://www.youtube.com/watch?v=VRFr5CgYkIA"
+                      href="https://www.youtube.com/watch?v=MfOkq2S-RAo"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-all text-sm"

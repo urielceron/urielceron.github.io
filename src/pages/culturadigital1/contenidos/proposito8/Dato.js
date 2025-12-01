@@ -1070,14 +1070,7 @@ const Dato = ({ onBack }) => {
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
                   <div className="aspect-video bg-gray-200 rounded-lg mb-3">
-                    <iframe
-                      className="w-full h-full rounded-lg"
-                      src="https://www.youtube.com/embed/3VMT6XMyXjw"
-                      title="Introducción a Datos en Programación"
-                      frameBorder="0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                    ></iframe>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/_lNtSsEcnwc?si=IZNGQD7YlpcXJKNA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                   </div>
                   <h4 className="font-bold text-gray-800">Tipos de Datos en Programación</h4>
                   <p className="text-sm text-gray-600">Explicación visual de los diferentes tipos de datos</p>
@@ -1085,14 +1078,7 @@ const Dato = ({ onBack }) => {
 
                 <div>
                   <div className="aspect-video bg-gray-200 rounded-lg mb-3">
-                    <iframe
-                      className="w-full h-full rounded-lg"
-                      src="https://www.youtube.com/embed/v2jxZKzBaUE"
-                      title="Datos en la Vida Real"
-                      frameBorder="0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                    ></iframe>
+                   <iframe width="560" height="315" src="https://www.youtube.com/embed/vA8dhGMW7mQ?si=VT7MPshdsFNjTH_R" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                   </div>
                   <h4 className="font-bold text-gray-800">¿Qué son los Datos?</h4>
                   <p className="text-sm text-gray-600">Concepto de datos explicado de forma sencilla</p>

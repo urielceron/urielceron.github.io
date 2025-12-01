@@ -224,7 +224,7 @@ const OperadoresLogicos = ({ onBack }) => {
             <p className="text-gray-800 font-semibold mb-2">Dato interesante de México 2024:</p>
             <p className="text-gray-700">
               El INE (Instituto Nacional Electoral) utiliza operadores lógicos para validar votantes:
-              <strong className="text-red-600"> (edad >= 18) AND (tiene_credencial) AND (NO_ha_votado)</strong>.
+              <strong className="text-red-600"> (edad {'>='} 18) AND (tiene_credencial) AND (NO_ha_votado)</strong>.
               En las elecciones de 2024, más de 98 millones de mexicanos cumplieron estas condiciones para ejercer su derecho al voto.
             </p>
           </div>
@@ -297,7 +297,7 @@ const OperadoresLogicos = ({ onBack }) => {
                   <div className="bg-green-50 border-l-4 border-green-500 p-4">
                     <p className="font-bold text-gray-800 mb-2">Ejemplo real - Sistema de votación:</p>
                     <code className="block bg-white p-3 rounded text-sm">
-                      edad >= 18 <span className="text-red-600">AND</span> tieneINE == true<br/>
+                      edad {'>='} 18 <span className="text-red-600">AND</span> tieneINE == true<br/>
                       <span className="text-gray-500">// Solo puede votar si cumple AMBAS condiciones</span>
                     </code>
                     <div className="mt-3 text-sm text-gray-700">
@@ -314,7 +314,7 @@ const OperadoresLogicos = ({ onBack }) => {
                   <div className="bg-blue-50 border-l-4 border-blue-500 p-4">
                     <p className="font-bold text-gray-800 mb-2">Ejemplo - Descuento en tienda:</p>
                     <code className="block bg-white p-3 rounded text-sm">
-                      esCliente <span className="text-red-600">AND</span> compra >= 500<br/>
+                      esCliente <span className="text-red-600">AND</span> compra {'>='} 500<br/>
                       <span className="text-gray-500">// Descuento solo si es cliente Y compra mínimo $500</span>
                     </code>
                   </div>
@@ -555,7 +555,7 @@ const OperadoresLogicos = ({ onBack }) => {
               <div className="bg-gray-50 p-4 rounded-lg">
                 <p className="font-bold text-gray-800 mb-2">Ejemplo 1: Sistema de acceso a zona VIP</p>
                 <code className="block bg-white p-3 rounded text-sm mb-2">
-                  (edad >= 18 <span className="text-red-600">AND</span> tieneBoleto) <span className="text-pink-600">OR</span> esVIP
+                  (edad {'>='} 18 <span className="text-red-600">AND</span> tieneBoleto) <span className="text-pink-600">OR</span> esVIP
                 </code>
                 <p className="text-sm text-gray-600">
                   Puede entrar si: (es mayor de edad Y tiene boleto) O es VIP
@@ -575,7 +575,7 @@ const OperadoresLogicos = ({ onBack }) => {
               <div className="bg-gray-50 p-4 rounded-lg">
                 <p className="font-bold text-gray-800 mb-2">Ejemplo 3: Aprobar materia</p>
                 <code className="block bg-white p-3 rounded text-sm mb-2">
-                  (asistencia >= 80 <span className="text-red-600">AND</span> calificacion >= 7) <span className="text-red-600">AND</span> <span className="text-purple-600">NOT</span>(tieneTrampa)
+                  (asistencia {'>='} 80 <span className="text-red-600">AND</span> calificacion {'>='} 7) <span className="text-red-600">AND</span> <span className="text-purple-600">NOT</span>(tieneTrampa)
                 </code>
                 <p className="text-sm text-gray-600">
                   Aprueba si: (asistencia suficiente Y calificación aprobatoria) Y NO hizo trampa
@@ -638,7 +638,7 @@ const OperadoresLogicos = ({ onBack }) => {
                 <code className="block bg-gray-100 p-2 rounded text-xs">
                   (precio &lt; 500 OR<br/>
                   envioGratis) AND<br/>
-                  calificacion >= 4
+                  calificacion {'>='} 4
                 </code>
               </div>
 
@@ -664,7 +664,7 @@ const OperadoresLogicos = ({ onBack }) => {
                 <code className="block bg-gray-100 p-2 rounded text-xs">
                   (esAmigo OR trending)<br/>
                   AND NOT(reportado) AND<br/>
-                  relevancia > 0.5
+                  relevancia {'>'} 0.5
                 </code>
               </div>
             </div>
@@ -890,7 +890,7 @@ const OperadoresLogicos = ({ onBack }) => {
                 <div className="p-4 bg-red-50 rounded-lg">
                   <h4 className="font-bold text-gray-800 mb-2">Puede votar:</h4>
                   <code className="block text-sm bg-white p-2 rounded mb-2">
-                    (edad >= 18) AND (tieneINE)
+                    (edad {'>='} 18) AND (tieneINE)
                   </code>
                   <p className={`font-bold text-lg ${
                     (evaluador.edad >= 18 && evaluador.tieneINE) ? 'text-green-600' : 'text-red-600'
@@ -926,7 +926,7 @@ const OperadoresLogicos = ({ onBack }) => {
                 <div className="p-4 bg-blue-50 rounded-lg">
                   <h4 className="font-bold text-gray-800 mb-2">Condición compleja:</h4>
                   <code className="block text-sm bg-white p-2 rounded mb-2">
-                    (edad >= 18 AND tieneINE) OR esMaestro
+                    (edad {'>='} 18 AND tieneINE) OR esMaestro
                   </code>
                   <p className={`font-bold text-lg ${
                     ((evaluador.edad >= 18 && evaluador.tieneINE) || evaluador.esMaestro) ? 'text-green-600' : 'text-red-600'
@@ -953,7 +953,7 @@ const OperadoresLogicos = ({ onBack }) => {
             Actividad 3: Sistema de Permisos para Evento
           </h3>
           <p className="text-gray-700 mb-4">
-            Crea un sistema de control de acceso: <code className="bg-white px-2 py-1 rounded">(tieneBoleto AND edad >= 18) OR esVIP</code>
+            Crea un sistema de control de acceso: <code className="bg-white px-2 py-1 rounded">(tieneBoleto AND edad {'>='} 18) OR esVIP</code>
           </p>
 
           <div className="bg-white p-6 rounded-lg shadow-lg">
@@ -1019,7 +1019,7 @@ const OperadoresLogicos = ({ onBack }) => {
                   <h4 className="font-bold text-gray-800 mb-3">Fórmula de Acceso:</h4>
                   <code className="block text-sm bg-white p-3 rounded border-2 border-red-200">
                     puede_entrar = <br/>
-                    (tieneBoleto <span className="text-red-600">AND</span> edad >= 18) <br/>
+                    (tieneBoleto <span className="text-red-600">AND</span> edad {'>='} 18) <br/>
                     <span className="text-pink-600">OR</span> esVIP
                   </code>
                 </div>
@@ -1121,7 +1121,7 @@ const OperadoresLogicos = ({ onBack }) => {
                   <h5 className="font-bold text-gray-800 mb-2">Fórmula del Filtro:</h5>
                   <code className="block text-xs bg-white p-2 rounded">
                     ((esEstudiante <span className="text-pink-600">OR</span> esMaestro)<br/>
-                    <span className="text-red-600">AND</span> edad >= 18)
+                    <span className="text-red-600">AND</span> edad {'>='} 18)
                   </code>
                 </div>
 
@@ -1202,7 +1202,7 @@ const OperadoresLogicos = ({ onBack }) => {
                 &nbsp;&nbsp;<br/>
                 &nbsp;&nbsp;tieneINE &lt;- (respuestaINE = "Si")<br/>
                 &nbsp;&nbsp;<br/>
-                &nbsp;&nbsp;Si (edad >= 18) <span className="text-red-600">Y</span> tieneINE Entonces<br/>
+                &nbsp;&nbsp;Si (edad {'>='} 18) <span className="text-red-600">Y</span> tieneINE Entonces<br/>
                 &nbsp;&nbsp;&nbsp;&nbsp;Escribir "Puede votar"<br/>
                 &nbsp;&nbsp;Sino<br/>
                 &nbsp;&nbsp;&nbsp;&nbsp;Escribir "No puede votar"<br/>
@@ -1269,7 +1269,7 @@ const OperadoresLogicos = ({ onBack }) => {
                 &nbsp;&nbsp;esVIP &lt;- (resp2 = "Si")<br/>
                 &nbsp;&nbsp;<br/>
                 &nbsp;&nbsp;// Evaluar acceso<br/>
-                &nbsp;&nbsp;puedeEntrar &lt;- (tieneBoleto <span className="text-red-600">Y</span> edad >= 18) <span className="text-pink-600">O</span> esVIP<br/>
+                &nbsp;&nbsp;puedeEntrar &lt;- (tieneBoleto <span className="text-red-600">Y</span> edad {'>='} 18) <span className="text-pink-600">O</span> esVIP<br/>
                 &nbsp;&nbsp;<br/>
                 &nbsp;&nbsp;Si puedeEntrar Entonces<br/>
                 &nbsp;&nbsp;&nbsp;&nbsp;Escribir "ACCESO PERMITIDO"<br/>
@@ -1307,7 +1307,7 @@ const OperadoresLogicos = ({ onBack }) => {
                 Ejemplo 1: Aprobar una materia
               </h4>
               <code className="block bg-gray-100 p-3 rounded mb-3 text-sm">
-                aprobar = (asistencia >= 80%) <span className="text-red-600">AND</span> (calificacion >= 7)
+                aprobar = (asistencia {'>='} 80%) <span className="text-red-600">AND</span> (calificacion {'>='} 7)
               </code>
               <p className="text-gray-700 mb-2">
                 Para aprobar, necesitas CUMPLIR AMBAS condiciones. Si fallas en una, repruebas.
@@ -1378,8 +1378,8 @@ const OperadoresLogicos = ({ onBack }) => {
               &nbsp;&nbsp;(es_amigo <span className="text-pink-600">OR</span> es_seguido <span className="text-pink-600">OR</span> es_trending) <br/>
               &nbsp;&nbsp;<span className="text-red-600">AND</span> <span className="text-purple-600">NOT</span>(esta_bloqueado) <br/>
               &nbsp;&nbsp;<span className="text-red-600">AND</span> <span className="text-purple-600">NOT</span>(esta_reportado) <br/>
-              &nbsp;&nbsp;<span className="text-red-600">AND</span> (relevancia > 0.5) <br/>
-              &nbsp;&nbsp;<span className="text-red-600">AND</span> (edad_usuario >= edad_minima_contenido)
+              &nbsp;&nbsp;<span className="text-red-600">AND</span> (relevancia {'>'} 0.5) <br/>
+              &nbsp;&nbsp;<span className="text-red-600">AND</span> (edad_usuario {'>='} edad_minima_contenido)
             </code>
 
             <div className="space-y-3">
@@ -1430,8 +1430,8 @@ const OperadoresLogicos = ({ onBack }) => {
 
             <code className="block bg-gray-100 p-4 rounded text-sm mb-4">
               alto_riesgo = <br/>
-              &nbsp;&nbsp;(edad &lt; 25) <span className="text-red-600">AND</span> (delitos_previos > 2) <br/>
-              &nbsp;&nbsp;<span className="text-pink-600">OR</span> (delitos_violentos > 0) <br/>
+              &nbsp;&nbsp;(edad &lt; 25) <span className="text-red-600">AND</span> (delitos_previos {'>'} 2) <br/>
+              &nbsp;&nbsp;<span className="text-pink-600">OR</span> (delitos_violentos {'>'} 0) <br/>
               &nbsp;&nbsp;<span className="text-pink-600">OR</span> (historial_familiar_criminal)
             </code>
 
@@ -1503,7 +1503,7 @@ const OperadoresLogicos = ({ onBack }) => {
               <code className="block bg-white p-3 rounded text-xs mb-2">
                 voto_valido = <br/>
                 &nbsp;&nbsp;(tiene_credencial <span className="text-red-600">AND</span> credencial_vigente) <br/>
-                &nbsp;&nbsp;<span className="text-red-600">AND</span> (edad >= 18) <br/>
+                &nbsp;&nbsp;<span className="text-red-600">AND</span> (edad {'>='} 18) <br/>
                 &nbsp;&nbsp;<span className="text-red-600">AND</span> <span className="text-purple-600">NOT</span>(ya_voto) <br/>
                 &nbsp;&nbsp;<span className="text-red-600">AND</span> (casilla_correcta <span className="text-pink-600">OR</span> voto_especial)
               </code>
@@ -1519,7 +1519,7 @@ const OperadoresLogicos = ({ onBack }) => {
               </p>
               <code className="block bg-white p-3 rounded text-xs mb-2">
                 elegible = <br/>
-                &nbsp;&nbsp;(edad >= 18 <span className="text-red-600">AND</span> edad &lt;= 29) <br/>
+                &nbsp;&nbsp;(edad {'>='} 18 <span className="text-red-600">AND</span> edad &lt;= 29) <br/>
                 &nbsp;&nbsp;<span className="text-red-600">AND</span> <span className="text-purple-600">NOT</span>(esta_estudiando) <br/>
                 &nbsp;&nbsp;<span className="text-red-600">AND</span> <span className="text-purple-600">NOT</span>(esta_trabajando)
               </code>
@@ -1532,7 +1532,7 @@ const OperadoresLogicos = ({ onBack }) => {
               </p>
               <code className="block bg-white p-3 rounded text-xs mb-2">
                 recibe_beca = <br/>
-                &nbsp;&nbsp;(es_estudiante <span className="text-red-600">AND</span> asistencia >= 85%) <br/>
+                &nbsp;&nbsp;(es_estudiante <span className="text-red-600">AND</span> asistencia {'>='} 85%) <br/>
                 &nbsp;&nbsp;<span className="text-red-600">AND</span> (escuela_publica <span className="text-pink-600">OR</span> indigena) <br/>
                 &nbsp;&nbsp;<span className="text-red-600">AND</span> condicion_economica_baja
               </code>
@@ -1595,7 +1595,7 @@ const OperadoresLogicos = ({ onBack }) => {
           {/* Pregunta 2 */}
           <div className="bg-gradient-to-r from-pink-50 to-red-50 p-6 rounded-xl">
             <h3 className="font-bold text-gray-800 mb-3">
-              2. Si tengo 17 años pero tengo INE, ¿puedo votar según: (edad >= 18) AND (tieneINE)?
+              2. Si tengo 17 años pero tengo INE, ¿puedo votar según: (edad {'>='} 18) AND (tieneINE)?
             </h3>
             <div className="space-y-2">
               {[
@@ -1774,16 +1774,7 @@ const OperadoresLogicos = ({ onBack }) => {
           <div className="grid md:grid-cols-2 gap-6">
             <div className="bg-white rounded-xl shadow-lg overflow-hidden">
               <div className="aspect-video">
-                <iframe
-                  width="100%"
-                  height="100%"
-                  src="https://www.youtube.com/embed/qV1L3a8LFGE"
-                  title="Operadores Lógicos"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  className="w-full h-full"
-                ></iframe>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/g628cWFPdH0?si=Dbe2ncvgBbeepVZJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
               </div>
               <div className="p-4">
                 <h4 className="font-bold text-gray-800">Operadores Lógicos Explicados</h4>
@@ -1793,16 +1784,7 @@ const OperadoresLogicos = ({ onBack }) => {
 
             <div className="bg-white rounded-xl shadow-lg overflow-hidden">
               <div className="aspect-video">
-                <iframe
-                  width="100%"
-                  height="100%"
-                  src="https://www.youtube.com/embed/gI-qXk7XojA"
-                  title="Tablas de Verdad"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  className="w-full h-full"
-                ></iframe>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/Pfyuv5ZnNNw?si=VTCHhT-ePgUqwtxP" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
               </div>
               <div className="p-4">
                 <h4 className="font-bold text-gray-800">Tablas de Verdad</h4>

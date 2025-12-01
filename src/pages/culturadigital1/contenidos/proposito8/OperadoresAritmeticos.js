@@ -1184,16 +1184,7 @@ const OperadoresAritmeticos = ({ onBack }) => {
             <div className="bg-gradient-to-br from-green-50 to-emerald-50 p-6 rounded-xl shadow-lg border-2 border-green-200">
               <h4 className="font-bold text-lg mb-3 text-gray-800">Operadores Aritméticos en Programación</h4>
               <div className="aspect-video bg-gray-200 rounded-lg mb-3 overflow-hidden">
-                <iframe
-                  width="100%"
-                  height="100%"
-                  src="https://www.youtube.com/embed/GJdVJ5lGm0w"
-                  title="Operadores Aritméticos"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  className="rounded-lg"
-                ></iframe>
+               <iframe width="560" height="315" src="https://www.youtube.com/embed/8g5h8lwfuWc?si=mTvnHYOE85PzG5m2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
               </div>
               <p className="text-sm text-gray-600">
                 Aprende los 6 operadores aritméticos fundamentales y su uso en programación.
@@ -1203,16 +1194,7 @@ const OperadoresAritmeticos = ({ onBack }) => {
             <div className="bg-gradient-to-br from-blue-50 to-cyan-50 p-6 rounded-xl shadow-lg border-2 border-blue-200">
               <h4 className="font-bold text-lg mb-3 text-gray-800">Precedencia de Operadores</h4>
               <div className="aspect-video bg-gray-200 rounded-lg mb-3 overflow-hidden">
-                <iframe
-                  width="100%"
-                  height="100%"
-                  src="https://www.youtube.com/embed/YDqbIA8WaPk"
-                  title="Precedencia de Operadores"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  className="rounded-lg"
-                ></iframe>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/sJSSZnA0YAw?si=yhGSpvUh-pD8vfdz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
               </div>
               <p className="text-sm text-gray-600">
                 Comprende el orden en que se ejecutan las operaciones matemáticas.

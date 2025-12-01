@@ -1496,16 +1496,7 @@ const EstructurasControl = ({ onBack }) => {
             <div className="bg-gradient-to-br from-blue-50 to-cyan-50 p-6 rounded-xl shadow-lg border-2 border-blue-200">
               <h4 className="font-bold text-lg mb-3 text-gray-800">Estructuras Condicionales (IF-ELSE)</h4>
               <div className="aspect-video bg-gray-200 rounded-lg mb-3 overflow-hidden">
-                <iframe
-                  width="100%"
-                  height="100%"
-                  src="https://www.youtube.com/embed/4xgx4k83zzc"
-                  title="Estructuras Condicionales"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  className="rounded-lg"
-                ></iframe>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/eA5rgS686xk?si=r06_3HEIvYXG6Jwo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
               </div>
               <p className="text-sm text-gray-600">
                 Aprende cómo funcionan las estructuras IF, ELSE y IF anidado con ejemplos prácticos.
@@ -1515,16 +1506,7 @@ const EstructurasControl = ({ onBack }) => {
             <div className="bg-gradient-to-br from-green-50 to-emerald-50 p-6 rounded-xl shadow-lg border-2 border-green-200">
               <h4 className="font-bold text-lg mb-3 text-gray-800">Ciclos y Bucles (WHILE, FOR)</h4>
               <div className="aspect-video bg-gray-200 rounded-lg mb-3 overflow-hidden">
-                <iframe
-                  width="100%"
-                  height="100%"
-                  src="https://www.youtube.com/embed/wxds6MAtUQ0"
-                  title="Ciclos y Bucles"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  className="rounded-lg"
-                ></iframe>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/8A5UUgyAmUs?si=yp6KQvNjDpW-NvJ9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
               </div>
               <p className="text-sm text-gray-600">
                 Domina las estructuras repetitivas: WHILE, FOR y REPEAT-UNTIL con casos reales.
@@ -1534,16 +1516,7 @@ const EstructurasControl = ({ onBack }) => {
             <div className="bg-gradient-to-br from-purple-50 to-pink-50 p-6 rounded-xl shadow-lg border-2 border-purple-200">
               <h4 className="font-bold text-lg mb-3 text-gray-800">Diagramas de Flujo</h4>
               <div className="aspect-video bg-gray-200 rounded-lg mb-3 overflow-hidden">
-                <iframe
-                  width="100%"
-                  height="100%"
-                  src="https://www.youtube.com/embed/oqCM_wOJEkQ"
-                  title="Diagramas de Flujo"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  className="rounded-lg"
-                ></iframe>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/VVh6fRw8UZ0?si=RESrRGbPkvg5L5sR" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
               </div>
               <p className="text-sm text-gray-600">
                 Aprende a crear diagramas de flujo para representar estructuras de control visualmente.
@@ -1553,16 +1526,7 @@ const EstructurasControl = ({ onBack }) => {
             <div className="bg-gradient-to-br from-orange-50 to-red-50 p-6 rounded-xl shadow-lg border-2 border-orange-200">
               <h4 className="font-bold text-lg mb-3 text-gray-800">SWITCH y Estructuras Selectivas</h4>
               <div className="aspect-video bg-gray-200 rounded-lg mb-3 overflow-hidden">
-                <iframe
-                  width="100%"
-                  height="100%"
-                  src="https://www.youtube.com/embed/qNAF9N37bho"
-                  title="SWITCH"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  className="rounded-lg"
-                ></iframe>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/0VrmCKFyDTI?si=GfVrox1aF51cICYg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
               </div>
               <p className="text-sm text-gray-600">
                 Comprende cuándo usar SWITCH en lugar de múltiples IF-ELSE.

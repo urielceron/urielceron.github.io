@@ -670,14 +670,7 @@ const SeleccionarSolucion = ({ onBack }) => {
                 <div>
                   <h4 className="font-bold text-lg text-gray-800 mb-3">Video 1: Análisis de Decisiones</h4>
                   <div className="aspect-w-16 aspect-h-9 mb-4">
-                    <iframe
-                      className="w-full h-96 rounded-lg"
-                      src="https://www.youtube.com/embed/ZiReARNKLxM"
-                      title="Análisis de decisiones"
-                      frameBorder="0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                    ></iframe>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/ESJh-miB5j8?si=AvrVLvEpXlY3NsTb" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                   </div>
                   <p className="text-gray-600 text-sm">
                     Este video explica cómo usar matrices de decisión y análisis cuantitativo
@@ -688,14 +681,7 @@ const SeleccionarSolucion = ({ onBack }) => {
                 <div>
                   <h4 className="font-bold text-lg text-gray-800 mb-3">Video 2: Toma de Decisiones Efectiva</h4>
                   <div className="aspect-w-16 aspect-h-9 mb-4">
-                    <iframe
-                      className="w-full h-96 rounded-lg"
-                      src="https://www.youtube.com/embed/tBMYG24xmT8"
-                      title="Toma de decisiones"
-                      frameBorder="0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                    ></iframe>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/dbtyoNPFfp0?si=xUNvTPxxSkcllHfB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                   </div>
                   <p className="text-gray-600 text-sm">
                     Técnicas psicológicas para superar sesgos cognitivos y tomar decisiones

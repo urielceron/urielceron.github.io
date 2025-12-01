@@ -648,18 +648,10 @@ const AnalizarAlternativas = ({ onBack }) => {
                 🎥 Video: Cómo Tomar Mejores Decisiones
               </h3>
               <div className="aspect-w-16 aspect-h-9 mb-4">
-                <iframe
-                  className="w-full h-96 rounded-lg"
-                  src="https://www.youtube.com/embed/ZOcDJWfbLYg"
-                  title="Toma de decisiones"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                ></iframe>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/t4MVDbLXe5A?si=vaV4wzSg8bZPyA4t" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
               </div>
               <p className="text-gray-600 text-sm">
-                Este video explica técnicas profesionales de análisis de alternativas usadas
-                en empresas y proyectos de alto impacto.
+                Este video explica una técnicas profesional llamada "Arbol de objetivos".
               </p>
             </div>
 
@@ -1053,18 +1045,10 @@ const AnalizarAlternativas = ({ onBack }) => {
                 🎥 Video: Herramientas de Toma de Decisiones
               </h3>
               <div className="aspect-w-16 aspect-h-9 mb-4">
-                <iframe
-                  className="w-full h-96 rounded-lg"
-                  src="https://www.youtube.com/embed/7hMMzW7PbGM"
-                  title="Herramientas de decisión"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                ></iframe>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/LgupvMGyRFw?si=hIj0q9Pp7511NY9R" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
               </div>
               <p className="text-gray-600 text-sm">
-                Este video muestra herramientas prácticas para analizar alternativas que usan
-                empresas y profesionales de tecnología.
+                Este video muestra una herramienta práctica para analizar alternativas de solución llamada "Arbol de decisiones"
               </p>
             </div>
           </div>

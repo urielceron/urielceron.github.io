@@ -1190,7 +1190,7 @@ float precio_final = total - descuento;`;
                       Explicación completa de qué son las constantes y cuándo usarlas.
                     </p>
                     <a
-                      href="https://www.youtube.com/watch?v=XgSjoHgy3Rk"
+                      href="https://www.youtube.com/watch?v=3eYKptZ_f20"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-block bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition-all text-sm"
@@ -1204,7 +1204,7 @@ float precio_final = total - descuento;`;
                       Aprende cuándo usar variables y cuándo usar constantes con ejemplos.
                     </p>
                     <a
-                      href="https://www.youtube.com/watch?v=kP3wnYrx-Hk"
+                      href="https://www.youtube.com/watch?v=nbX0MIV7-Ek"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-all text-sm"

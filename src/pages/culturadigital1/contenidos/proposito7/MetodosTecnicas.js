@@ -267,7 +267,7 @@ const MetodosTecnicas = ({ onBack }) => {
                     <p className="text-gray-600 text-sm">
                       <strong>Algoritmo del enemigo en un juego:</strong><br/>
                       1. <em>¿Jugador está cerca?</em> NO → patrullar, SÍ → continuar<br/>
-                      2. <em>¿Tengo vida > 50%?</em> SÍ → atacar, NO → huir<br/>
+                      2. <em>¿Tengo vida {'>'} 50%?</em> SÍ → atacar, NO → huir<br/>
                       3. <em>REPETIR</em> cada 0.5 segundos<br/>
                       <strong className="text-green-700">→ El comportamiento "inteligente" de NPCs son
                       algoritmos con decisiones</strong>
@@ -706,14 +706,11 @@ const MetodosTecnicas = ({ onBack }) => {
                 <div>
                   <h4 className="font-bold text-lg text-gray-800 mb-3">Video 1: ¿Qué es un Algoritmo?</h4>
                   <div className="aspect-w-16 aspect-h-9 mb-4">
-                    <iframe
-                      className="w-full h-96 rounded-lg"
-                      src="https://www.youtube.com/embed/6hfOvs8pY1k"
-                      title="Algoritmos explicados"
-                      frameBorder="0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                    ></iframe>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/6N2KFB2_OQM?si=2I_t1V96vW3HxYfZ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/U3CGMyjzlvM?si=Vssdaxsbirgn1WbV" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/fAG3-1NNs2s?si=fBhJp0Rfjor7faB3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/SDv2vOIFIj8?si=svBmy7fu-AvSUeHw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/5m9xSRVfEYM?si=fGut5DwLXywc9PFr" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                   </div>
                   <p className="text-gray-600 text-sm">
                     Explicación clara y con ejemplos cotidianos de qué son los algoritmos,
@@ -724,14 +721,7 @@ const MetodosTecnicas = ({ onBack }) => {
                 <div>
                   <h4 className="font-bold text-lg text-gray-800 mb-3">Video 2: Diagramas de Flujo</h4>
                   <div className="aspect-w-16 aspect-h-9 mb-4">
-                    <iframe
-                      className="w-full h-96 rounded-lg"
-                      src="https://www.youtube.com/embed/AeUpxgLJqfk"
-                      title="Diagramas de flujo"
-                      frameBorder="0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                    ></iframe>
+                  <iframe width="560" height="315" src="https://www.youtube.com/embed/Kucgc6NpGwc?si=ISkKsJ4fsgiL8jFP" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                   </div>
                   <p className="text-gray-600 text-sm">
                     Tutorial paso a paso para crear diagramas de flujo desde cero, con símbolos
@@ -1174,7 +1164,7 @@ const MetodosTecnicas = ({ onBack }) => {
                     <p>
                       <strong className="text-gray-800">Los algoritmos NO son neutrales, son ÉTICOS:</strong>
                       Cada decisión de diseño (qué pesar más, qué priorizar) refleja valores.
-                      TikTok valora "tiempo en app" > "salud mental". Eso es una decisión ÉTICA, no técnica.
+                      TikTok valora "tiempo en app" {'>'} "salud mental". Eso es una decisión ÉTICA, no técnica.
                     </p>
                     <p>
                       Estudios muestran que el algoritmo de TikTok/Instagram contribuye a:

@@ -489,7 +489,7 @@ const Expresiones = ({ onBack }) => {
           <div className="p-4 bg-gray-50 rounded-lg border-l-4 border-blue-500">
             <h4 className="font-semibold text-blue-600 mb-2">Verificación de edad para votar</h4>
             <code className="text-sm bg-white p-2 block rounded">
-              puedeVotar = edad >= 18
+              puedeVotar = edad {'>='} 18
             </code>
           </div>
         </div>
@@ -522,7 +522,7 @@ const Expresiones = ({ onBack }) => {
                   <span className="text-gray-500 text-xs">(expresión aritmética)</span>
                 </li>
                 <li className="flex items-center gap-2">
-                  <span className="text-indigo-600">edad >= 18</span>
+                  <span className="text-indigo-600">edad {'>='} 18</span>
                   <span className="text-gray-500">→</span>
                   <span className="text-green-600">true/false</span>
                   <span className="text-gray-500 text-xs">(expresión relacional)</span>
@@ -586,11 +586,11 @@ const Expresiones = ({ onBack }) => {
                 </p>
                 <div className="bg-white p-3 rounded font-mono text-sm space-y-1">
                   <div className="flex justify-between">
-                    <span className="text-purple-600">edad > 18</span>
+                    <span className="text-purple-600">edad {'>'} 18</span>
                     <span className="text-green-600">→ true/false</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-purple-600">precio >= 100</span>
+                    <span className="text-purple-600">precio {'>='} 100</span>
                     <span className="text-green-600">→ true/false</span>
                   </div>
                   <div className="flex justify-between">
@@ -614,7 +614,7 @@ const Expresiones = ({ onBack }) => {
                 </p>
                 <div className="bg-white p-3 rounded font-mono text-sm space-y-1">
                   <div className="flex justify-between">
-                    <span className="text-pink-600">(edad >= 18) && (tieneINE)</span>
+                    <span className="text-pink-600">(edad {'>='} 18) && (tieneINE)</span>
                     <span className="text-green-600">→ true/false</span>
                   </div>
                   <div className="flex justify-between">
@@ -1263,7 +1263,7 @@ const Expresiones = ({ onBack }) => {
                 <iframe
                   width="100%"
                   height="100%"
-                  src="https://www.youtube.com/embed/YDqbIA8WaPk"
+                  src="https://www.youtube.com/watch?v=sJSSZnA0YAw"
                   title="Expresiones Matemáticas"
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -1282,7 +1282,7 @@ const Expresiones = ({ onBack }) => {
                 <iframe
                   width="100%"
                   height="100%"
-                  src="https://www.youtube.com/embed/i7vOBMquDYI"
+                  src="https://www.youtube.com/watch?v=A9TBH7tKwVk"
                   title="Evaluación de Expresiones"
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -1463,7 +1463,7 @@ const Expresiones = ({ onBack }) => {
             {/* Pregunta 2 */}
             <div className="bg-white p-6 rounded-lg shadow">
               <p className="font-semibold text-gray-800 mb-3">
-                2. ¿Qué tipo de expresión es: edad >= 18 && tieneINE?
+                2. ¿Qué tipo de expresión es: edad {'>='} 18 && tieneINE?
               </p>
               <div className="space-y-2">
                 {[

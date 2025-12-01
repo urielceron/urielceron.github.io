@@ -1207,14 +1207,7 @@ const Informacion = ({ onBack }) => {
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
                   <div className="aspect-video bg-gray-200 rounded-lg mb-3">
-                    <iframe
-                      className="w-full h-full rounded-lg"
-                      src="https://www.youtube.com/embed/5u4aJjjvnk0"
-                      title="Data vs Information"
-                      frameBorder="0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                    ></iframe>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/TmzpqSRyZYo?si=Ua1RQF5TUPCncSQQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                   </div>
                   <h4 className="font-bold text-gray-800">Diferencia entre Datos e Información</h4>
                   <p className="text-sm text-gray-600">Explicación clara de conceptos fundamentales</p>
@@ -1222,14 +1215,7 @@ const Informacion = ({ onBack }) => {
 
                 <div>
                   <div className="aspect-video bg-gray-200 rounded-lg mb-3">
-                    <iframe
-                      className="w-full h-full rounded-lg"
-                      src="https://www.youtube.com/embed/AWPrTKgJPlg"
-                      title="Procesamiento de Datos"
-                      frameBorder="0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                    ></iframe>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/pjTI4UOgkM8?si=FcRtqYUmFGbcYyQD" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                   </div>
                   <h4 className="font-bold text-gray-800">Cómo Procesar Datos</h4>
                   <p className="text-sm text-gray-600">Técnicas y herramientas para análisis de datos</p>

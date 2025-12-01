@@ -1640,16 +1640,7 @@ const OperacionesRelacionales = ({ onBack }) => {
           <div className="grid md:grid-cols-2 gap-6">
             <div className="bg-white rounded-xl shadow-lg overflow-hidden">
               <div className="aspect-video">
-                <iframe
-                  width="100%"
-                  height="100%"
-                  src="https://www.youtube.com/embed/ce7kXC4P-fM"
-                  title="Operadores Relacionales"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  className="w-full h-full"
-                ></iframe>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/WoVc1cxlKEg?si=oApm_XEe20p50qYv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
               </div>
               <div className="p-4">
                 <h4 className="font-bold text-gray-800">Operadores Relacionales Explicados</h4>
@@ -1659,16 +1650,7 @@ const OperacionesRelacionales = ({ onBack }) => {
 
             <div className="bg-white rounded-xl shadow-lg overflow-hidden">
               <div className="aspect-video">
-                <iframe
-                  width="100%"
-                  height="100%"
-                  src="https://www.youtube.com/embed/pKO9UjSeLew"
-                  title="Comparaciones en Programación"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  className="w-full h-full"
-                ></iframe>
+               <iframe width="560" height="315" src="https://www.youtube.com/embed/Gma_0YZsgDc?si=rS8AaTR_9-pUhF9t" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
               </div>
               <div className="p-4">
                 <h4 className="font-bold text-gray-800">Comparaciones en Programación</h4>
