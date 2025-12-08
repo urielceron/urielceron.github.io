@@ -1330,8 +1330,8 @@ const IdentificarProblema = ({ onBack }) => {
                   <strong>Videos educativos:</strong>
                 </p>
                 <ul className="list-disc list-inside ml-4 space-y-1">
-                  <li>The Art of Problem Solving: https://www.youtube.com/watch?v=eUszFWb6W-A</li>
-                  <li>Root Cause Analysis (5 Whys): https://www.youtube.com/watch?v=38RlXdr52Ys</li>
+                  <li>The Art of Problem Solving: https://youtu.be/wmNxoQdrsqE</li>
+                  <li>Root Cause Analysis (5 Whys): https://youtu.be/MDK0AGFB3Co</li>
                 </ul>
               </div>
             </div>

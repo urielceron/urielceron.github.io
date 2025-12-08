@@ -1593,8 +1593,8 @@ const MetodosTecnicas = ({ onBack }) => {
                   <strong>Videos educativos:</strong>
                 </p>
                 <ul className="list-disc list-inside ml-4 space-y-1">
-                  <li>Algoritmos Explicados: https://www.youtube.com/watch?v=6hfOvs8pY1k</li>
-                  <li>Diagramas de Flujo Tutorial: https://www.youtube.com/watch?v=AeUpxgLJqfk</li>
+                  <li>Algoritmos Explicados: https://www.youtube.com/watch?v=6N2KFB2_OQM</li>
+                  <li>Diagramas de Flujo Tutorial: https://www.youtube.com/watch?v=Kucgc6NpGwc</li>
                 </ul>
 
                 <p className="mt-4">

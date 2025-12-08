@@ -1537,8 +1537,8 @@ const AnalizarAlternativas = ({ onBack }) => {
 
                 <p className="mt-4"><strong>Videos educativos:</strong></p>
                 <ul className="list-disc list-inside ml-4 space-y-1">
-                  <li>How to Make Better Decisions: https://www.youtube.com/watch?v=ZOcDJWfbLYg</li>
-                  <li>Decision Making Tools: https://www.youtube.com/watch?v=7hMMzW7PbGM</li>
+                  <li>How to Make Better Decisions: https://youtu.be/t4MVDbLXe5A</li>
+                  <li>Decision Making Tools: https://youtu.be/LgupvMGyRFw</li>
                 </ul>
               </div>
             </div>

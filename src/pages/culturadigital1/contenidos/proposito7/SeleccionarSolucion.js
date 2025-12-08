@@ -1684,8 +1684,8 @@ const SeleccionarSolucion = ({ onBack }) => {
                   <strong>Videos educativos:</strong>
                 </p>
                 <ul className="list-disc list-inside ml-4 space-y-1">
-                  <li>Análisis de Decisiones: https://www.youtube.com/watch?v=ZiReARNKLxM</li>
-                  <li>Toma de Decisiones Efectiva: https://www.youtube.com/watch?v=tBMYG24xmT8</li>
+                  <li>Análisis de Decisiones: https://youtu.be/LgupvMGyRFw</li>
+                  <li>Toma de decisiones efectiva: https://youtu.be/dbtyoNPFfp0</li>
                 </ul>
 
                 <p className="mt-4">
