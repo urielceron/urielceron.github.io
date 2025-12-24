@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, BookOpen } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import DarkModeToggle from '../components/DarkModeToggle';
 import useDarkMode from '../hooks/useDarkMode';
@@ -32,7 +32,7 @@ const CV = () => {
       title: (
         <div className="flex items-center gap-2">
           <Star className="w-4 h-4 text-yellow-400" />
-          <span className="text-blue-500 font-semibold">Asignaturas 2025</span>
+          <span className="text-blue-500 font-semibold">Asignaturas</span>
         </div>
       ),
       id: 'classroom',
@@ -45,10 +45,16 @@ const CV = () => {
       ]
     },
     {
-      title: 'Cursos',
+      title: (
+        <div className="flex items-center gap-2">
+          <BookOpen className="w-4 h-4 text-green-500" />
+          <span className="text-green-600 font-semibold">Cursos</span>
+        </div>
+      ),
       id: 'courses',
       hasSubmenu: true,
       submenu: [
+        { title: 'Ciberseguridad', path: '/ciberseguridad' },
         { title: 'Moodle + Safe Exam Browser + IA', path: '/moodle-course' },
         { title: 'Métodos y Técnicas de Investigación + CANVAS', path: '/research-course' },
       ]
@@ -82,7 +88,7 @@ const CV = () => {
       asignatura = 'gamedesigner';
     } else if (path.includes('pensamiento-matematico-iii')) {
       asignatura = 'pensamiento-matematico-iii';
-    } else if (path.includes('moodle-course') || path.includes('research-course')) {
+    } else if (path.includes('ciberseguridad') || path.includes('moodle-course') || path.includes('research-course')) {
       navigate(path);
       setIsMenuOpen(false);
       setOpenSubmenu(null);
