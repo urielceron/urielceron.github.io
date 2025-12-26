@@ -1367,7 +1367,7 @@ Método 3 - CyberChef:
                               badgeStyle={styles.badgeCyan}
                               contentKey={`${sesion.id}-conceptual-${idx}`}
                             >
-                              <ContentRenderer content={concepto.contenido} darkMode={darkMode} />
+                              <ContentRenderer content={concepto.contenido} darkMode={darkMode} styles={styles} />
                             </ExpandableContent>
                           ))}
 
@@ -1380,7 +1380,7 @@ Método 3 - CyberChef:
                               badgeStyle={styles.badgePurple}
                               contentKey={`${sesion.id}-procedimental`}
                             >
-                              <ContentRenderer content={sesion.procedimental.contenido} darkMode={darkMode} />
+                              <ContentRenderer content={sesion.procedimental.contenido} darkMode={darkMode} styles={styles} />
                             </ExpandableContent>
                           )}
 
@@ -1393,7 +1393,7 @@ Método 3 - CyberChef:
                               badgeStyle={styles.badgeGreen}
                               contentKey={`${sesion.id}-actitudinal`}
                             >
-                              <ContentRenderer content={sesion.actitudinal.contenido} darkMode={darkMode} />
+                              <ContentRenderer content={sesion.actitudinal.contenido} darkMode={darkMode} styles={styles} />
                             </ExpandableContent>
                           )}
 
@@ -1406,7 +1406,7 @@ Método 3 - CyberChef:
                               badgeStyle={styles.badgeAmber}
                               contentKey={`${sesion.id}-actividad`}
                             >
-                              <ActivityRenderer actividad={sesion.actividad} darkMode={darkMode} />
+                              <ActivityRenderer actividad={sesion.actividad} darkMode={darkMode} styles={styles} />
                             </ExpandableContent>
                           )}
 
