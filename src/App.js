@@ -96,7 +96,9 @@ import AplicacionesPracticas from './pages/matematicas/actividades/progresion4/A
 import MoodleCourse from './pages/moodle/MoodleCourse';
 import CiberseguridadCourse from './pages/ciberseguridad/CiberseguridadCourse';
 import S1Parcial1 from './pages/ciberseguridad/modulo1/submodulo1/Parcial1';
+import S1Parcial2 from './pages/ciberseguridad/modulo1/submodulo1/Parcial2';
 import S2Parcial1 from './pages/ciberseguridad/modulo1/submodulo2/Parcial1';
+import S2Parcial2 from './pages/ciberseguridad/modulo1/submodulo2/Parcial2';
 import ResearchCourse from './pages/research-course/ResearchCourse';
 import ResearchGlossary from './pages/research-course/ResearchGlossary';
 import ResearchResources from './pages/research-course/ResearchResources';
@@ -511,7 +513,9 @@ function App() {
         {/* Rutas del curso de Ciberseguridad */}
         <Route path="/ciberseguridad" element={<CiberseguridadCourse />} />
         <Route path="/ciberseguridad/modulo1/submodulo1/parcial1" element={<S1Parcial1 />} />
+        <Route path="/ciberseguridad/modulo1/submodulo1/parcial2" element={<S1Parcial2 />} />
         <Route path="/ciberseguridad/modulo1/submodulo2/parcial1" element={<S2Parcial1 />} />
+        <Route path="/ciberseguridad/modulo1/submodulo2/parcial2" element={<S2Parcial2 />} />
 
         <Route path="/moodle-course" element={<MoodleCourse />} />
 

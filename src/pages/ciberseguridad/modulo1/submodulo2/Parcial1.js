@@ -3140,13 +3140,14 @@ print(f"Cifrado: {cifrado}")
 
 **Problemas de seguridad identificados:**
 
-| Problema | Riesgo | Solución |
-|----------|--------|----------|
-| Algoritmo XOR | Extremadamente débil | Usar AES |
-| Clave hardcodeada | Cualquiera puede verla | Pedir al usuario |
-| Clave débil ("abc") | 3 caracteres es trivial | Mínimo 8 caracteres |
-| Solo texto | No funciona con archivos | Usar bytes |
-| Sin salt | Mismo texto = mismo resultado | Agregar salt aleatorio |`
+| Problema | Nivel de riesgo | Por qué es peligroso | Solución correcta |
+|----------|-----------------|---------------------|-------------------|
+| Algoritmo XOR | Crítico | Patrón repetitivo rompible | Usar AES-256 o Fernet |
+| Clave hardcodeada | Crítico | Visible en código fuente | Input del usuario o env vars |
+| Clave débil ("abc") | Crítico | 3 caracteres = segundos para romper | Mínimo 16 caracteres aleatorios |
+| Solo texto | Medio | No procesa archivos binarios | Trabajar con bytes |
+| Sin salt | Alto | Cifrados idénticos para mismo texto | Salt aleatorio de 16+ bytes |
+| Sin IV | Alto | Patrones detectables | IV único por cifrado |`
               },
               {
                 titulo: "Estándar actual: Fernet (AES-128-CBC)",
@@ -3233,13 +3234,15 @@ def cifrar_archivo(ruta_entrada, ruta_salida, password):
               duracion: "45 minutos",
               instrucciones: `**Comparación antes/después:**
 
-| Aspecto | Script Original (XOR) | Script Mejorado (AES) |
-|---------|----------------------|----------------------|
-| Algoritmo | XOR (rompible) | AES-128 (estándar) |
-| Clave | Hardcodeada | Derivada con PBKDF2 |
-| Salt | No tiene | 16 bytes aleatorios |
-| Tipo de datos | Solo texto | Cualquier archivo |
-| Seguridad | Ninguna | Profesional |
+| Aspecto | Script XOR (inseguro) | Script AES (profesional) | Mejora |
+|---------|----------------------|--------------------------|--------|
+| Algoritmo | XOR simple | AES-128-CBC (Fernet) | Estándar criptográfico |
+| Derivación de clave | Ninguna | PBKDF2 con 100k iteraciones | Resistente a fuerza bruta |
+| Salt | No tiene | 16 bytes aleatorios | Previene rainbow tables |
+| IV/Nonce | No tiene | Generado automáticamente | Cada cifrado es único |
+| Tipo de datos | Solo strings | Cualquier archivo binario | Uso universal |
+| Manejo de errores | Ninguno | Try/except completo | Producción-ready |
+| Seguridad | Rompible en segundos | Irrompible actualmente | Nivel bancario |
 
 **Tareas:**
 1. Instalar biblioteca cryptography

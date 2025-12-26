@@ -5,8 +5,16 @@ import {
 } from 'lucide-react';
 
 // Componente para renderizar contenido con formato mejorado
-export const ContentRenderer = ({ content, darkMode, styles }) => {
+export const ContentRenderer = ({ content, darkMode, styles: propStyles }) => {
   if (!content) return null;
+
+  // Estilos por defecto si no se proporcionan
+  const styles = propStyles || {
+    text: darkMode ? 'text-gray-100' : 'text-gray-900',
+    textSecondary: darkMode ? 'text-gray-400' : 'text-gray-600',
+    accent: darkMode ? 'text-cyan-400' : 'text-blue-600',
+    border: darkMode ? 'border-gray-700' : 'border-gray-200',
+  };
 
   // Clases CSS para highlighting
   const keywordClass = darkMode ? 'text-cyan-400 font-semibold' : 'text-blue-600 font-semibold';
@@ -199,7 +207,16 @@ export const ContentRenderer = ({ content, darkMode, styles }) => {
 };
 
 // Componente para renderizar actividades con mejor formato
-export const ActivityRenderer = ({ actividad, darkMode, styles }) => {
+export const ActivityRenderer = ({ actividad, darkMode, styles: propStyles }) => {
+  // Estilos por defecto si no se proporcionan
+  const styles = propStyles || {
+    text: darkMode ? 'text-gray-100' : 'text-gray-900',
+    textSecondary: darkMode ? 'text-gray-400' : 'text-gray-600',
+    textMuted: darkMode ? 'text-gray-500' : 'text-gray-400',
+    accent: darkMode ? 'text-cyan-400' : 'text-blue-600',
+    border: darkMode ? 'border-gray-700' : 'border-gray-200',
+  };
+
   const parseActivityInstructions = (text) => {
     const sections = [];
     const lines = text.split('\n');
@@ -363,7 +380,16 @@ export const ActivityRenderer = ({ actividad, darkMode, styles }) => {
 };
 
 // Componente para VARK cards mejoradas
-export const VarkCards = ({ vark, darkMode, styles }) => (
+export const VarkCards = ({ vark, darkMode, styles: propStyles }) => {
+  // Estilos por defecto si no se proporcionan
+  const styles = propStyles || {
+    varkV: darkMode ? 'bg-purple-500/20 border-purple-500/30 text-purple-300' : 'bg-purple-50 border-purple-200 text-purple-700',
+    varkA: darkMode ? 'bg-blue-500/20 border-blue-500/30 text-blue-300' : 'bg-blue-50 border-blue-200 text-blue-700',
+    varkR: darkMode ? 'bg-green-500/20 border-green-500/30 text-green-300' : 'bg-green-50 border-green-200 text-green-700',
+    varkK: darkMode ? 'bg-orange-500/20 border-orange-500/30 text-orange-300' : 'bg-orange-50 border-orange-200 text-orange-700',
+  };
+
+  return (
   <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
     <div className={`
       p-3 rounded-xl text-xs border-2 transition-all duration-300 hover:scale-105
@@ -414,10 +440,21 @@ export const VarkCards = ({ vark, darkMode, styles }) => (
       <p className="opacity-80">{vark.kinestesico}</p>
     </div>
   </div>
-);
+  );
+};
 
 // Componente ExpandableContent mejorado
-export const ExpandableContent = ({ id, title, children, icon: Icon, darkMode, styles, expandedContent, toggleContent, useRenderer = true }) => {
+export const ExpandableContent = ({ id, title, children, icon: Icon, darkMode, styles: propStyles, expandedContent, toggleContent, useRenderer = true }) => {
+  // Estilos por defecto si no se proporcionan
+  const styles = propStyles || {
+    text: darkMode ? 'text-gray-100' : 'text-gray-900',
+    textSecondary: darkMode ? 'text-gray-400' : 'text-gray-600',
+    accent: darkMode ? 'text-cyan-400' : 'text-blue-600',
+    border: darkMode ? 'border-gray-700' : 'border-gray-200',
+    bgCard: darkMode ? 'bg-gray-800' : 'bg-white',
+    bgCardHover: darkMode ? 'hover:bg-gray-750' : 'hover:bg-gray-50',
+  };
+
   const isExpanded = expandedContent[id];
   return (
     <div className={`border ${styles.border} rounded-xl overflow-hidden mb-3 transition-all duration-300 ${isExpanded ? 'shadow-lg' : ''}`}>

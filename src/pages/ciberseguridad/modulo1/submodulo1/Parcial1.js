@@ -293,13 +293,14 @@ ESCENARIOS PARA LAS TARJETAS:
 
 ACTIVOS DE INFORMACIÓN EN NUESTRA ESCUELA:
 
-| Activo | ¿Qué contiene? | ¿Por qué es valioso? |
-|--------|---------------|---------------------|
-| Sistema SIIA | Notas, asistencias, datos personales | Afecta tu historial académico |
-| Correo institucional | Comunicaciones oficiales | Identidad y privacidad |
-| Google Classroom | Tareas, materiales, entregas | Tu trabajo escolar |
-| Red WiFi del plantel | Acceso a internet | Recurso compartido |
-| Computadoras del lab | Trabajos de alumnos, software | Herramientas de aprendizaje |`
+| Activo | Contenido | Valor | Riesgo principal | Pilar CIA crítico |
+|--------|-----------|-------|------------------|-------------------|
+| Sistema SIIA | Notas, asistencias, datos personales | Tu historial académico | Alteración de calificaciones | Integridad |
+| Correo institucional | Comunicaciones oficiales | Identidad digital | Suplantación de identidad | Confidencialidad |
+| Google Classroom | Tareas, materiales, entregas | Tu trabajo escolar | Pérdida de trabajos | Disponibilidad |
+| Red WiFi del plantel | Conexión a internet | Recurso compartido | Interceptación de datos | Confidencialidad |
+| Computadoras del lab | Trabajos de alumnos, software | Herramientas de trabajo | Malware, robo de archivos | Integridad |
+| Datos biométricos | Huella digital para asistencia | Control de acceso | Robo de identidad | Confidencialidad |`
               },
               {
                 titulo: "Aplicando CIA a cada activo escolar",
@@ -411,11 +412,11 @@ INSTRUCCIONES:
 
 RESUMEN DE LOS TRES PILARES:
 
-| Pilar | Pregunta clave | Ejemplo de violación |
-|-------|---------------|---------------------|
-| Confidencialidad | ¿Quién puede ver esto? | Filtración de datos personales |
-| Integridad | ¿Ha sido modificado? | Alteración de registros |
-| Disponibilidad | ¿Está accesible? | Sistema caído por ataque |
+| Pilar | Pregunta clave | Protege contra | Ejemplo de violación | Control típico |
+|-------|---------------|----------------|---------------------|----------------|
+| Confidencialidad | ¿Quién puede ver esto? | Acceso no autorizado | Filtración de datos personales | Cifrado, control de acceso |
+| Integridad | ¿Ha sido modificado? | Alteración de datos | Cambio de calificaciones | Hash, firmas digitales |
+| Disponibilidad | ¿Está accesible cuando se necesita? | Denegación de servicio | Sistema caído por ataque | Backups, redundancia |
 
 RELACIÓN ENTRE LOS PILARES:
 Los tres pilares trabajan juntos. Imagina una caja fuerte de un banco:
