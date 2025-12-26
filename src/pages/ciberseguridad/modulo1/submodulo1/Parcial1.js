@@ -6,7 +6,7 @@ import {
   Lock, AlertTriangle, Cpu, Target, Eye, Wrench, Heart,
   Zap, Users, FileText, Package, Layers, CheckSquare, Terminal
 } from 'lucide-react';
-import { ContentRenderer, ActivityRenderer, VarkCards } from '../../components/ContentComponents';
+import { ContentRenderer as SharedContentRenderer, ActivityRenderer as SharedActivityRenderer, VarkCards } from '../../components/ContentComponents';
 
 const Parcial1 = () => {
   const navigate = useNavigate();
@@ -3230,14 +3230,20 @@ ENTREGABLE: Documento de análisis (PDF) + Diagrama de flujo (PNG)`,
   const totalSessions = parcialData.progresiones.reduce((acc, p) => acc + p.sesiones.length, 0);
   const progressPercent = Math.round((completedCount / totalSessions) * 100);
 
-  // Componente para renderizar contenido con formato mejorado
-  const ContentRenderer = ({ content, type = 'default' }) => {
-    if (!content) return null;
+  // Componente para renderizar contenido - usa el componente compartido con mejoras
+  // (tablas múltiples, bloques de código con syntax highlighting, pseudocódigo)
+  const ContentRenderer = ({ content }) => {
+    return <SharedContentRenderer content={content} darkMode={darkMode} styles={styles} />;
+  };
 
-    // Clases CSS para highlighting
-    const keywordClass = darkMode ? 'text-cyan-400 font-semibold' : 'text-blue-600 font-semibold';
-    const quoteClass = darkMode ? 'text-yellow-400 italic' : 'text-amber-600 italic';
-    const citationClass = darkMode ? 'text-gray-500 text-xs' : 'text-gray-400 text-xs';
+  // Mantener definiciones legacy por compatibilidad (no se usan con el nuevo ContentRenderer)
+  const keywordClass = darkMode ? 'text-cyan-400 font-semibold' : 'text-blue-600 font-semibold';
+  const quoteClass = darkMode ? 'text-yellow-400 italic' : 'text-amber-600 italic';
+  const citationClass = darkMode ? 'text-gray-500 text-xs' : 'text-gray-400 text-xs';
+
+  // CÓDIGO LEGACY DESHABILITADO - El nuevo ContentRenderer usa SharedContentRenderer
+  const ContentRendererLegacy = ({ content, type = 'default' }) => {
+    if (!content) return null;
 
     // Detectar y parsear tablas markdown
     const parseTable = (text) => {
@@ -3437,8 +3443,13 @@ ENTREGABLE: Documento de análisis (PDF) + Diagrama de flujo (PNG)`,
     return <div className="content-renderer">{renderFormattedContent(content)}</div>;
   };
 
-  // Componente para renderizar actividades con mejor formato
+  // Componente para renderizar actividades - usa el componente compartido mejorado
   const ActivityRenderer = ({ actividad }) => {
+    return <SharedActivityRenderer actividad={actividad} darkMode={darkMode} styles={styles} />;
+  };
+
+  // CÓDIGO LEGACY - ActivityRendererLegacy (no se usa con el nuevo ActivityRenderer)
+  const ActivityRendererLegacy = ({ actividad }) => {
     const parseActivityInstructions = (text) => {
       const sections = [];
       const lines = text.split('\n');
