@@ -264,29 +264,37 @@ const CV = () => {
                   </div>
                 </div>
 
-                {/* Información */}
-                <div className="flex-grow">
-                  <h1 className={`text-4xl font-bold mb-6 bg-gradient-to-r ${darkMode ? 'from-blue-400 to-blue-200' : 'from-blue-600 to-blue-800'
-                    } bg-clip-text text-transparent text-center md:text-left`}>
-                    URIEL ANTONIO CERÓN INTERIAN
-                  </h1>
-                  <div className={`space-y-3 ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
-                    <p>Teléfono: +52 55 2674 8865</p>
-                    <p>Correo: urielantonioceron@gmail.com</p>
-                    <p>LinkedIn:
-                      <a href="https://www.linkedin.com/in/urielceron/"
-                        className={`ml-2 ${darkMode ? 'text-blue-400 hover:text-blue-300' : 'text-blue-600 hover:text-blue-800'}`}>
-                        linkedin.com/in/urielceron
-                      </a>
-                    </p>
-                    <p>Website:
-                      <a href="https://urielceron.github.io"
-                        className={`ml-2 ${darkMode ? 'text-blue-400 hover:text-blue-300' : 'text-blue-600 hover:text-blue-800'}`}>
-                        urielceron.github.io
-                      </a>
-                    </p>
-                  </div>
-                </div>
+                 {/* Información */}
+                 <div className="flex-grow">
+                   <h1 className={`text-4xl font-bold mb-2 bg-gradient-to-r ${darkMode ? 'from-blue-400 to-blue-200' : 'from-blue-600 to-blue-800'
+                     } bg-clip-text text-transparent text-center md:text-left`}>
+                     URIEL ANTONIO CERÓN INTERIAN
+                   </h1>
+                   <p className={`text-lg font-semibold mb-4 ${darkMode ? 'text-gray-300' : 'text-gray-700'} text-center md:text-left`}>
+                     Senior Full Stack Developer | Analista de Sistemas | PHP & React
+                   </p>
+                   <div className={`space-y-3 ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
+                     <p>Teléfono: +52 55 2674 8865</p>
+                     <p>Correo:
+                       <a href="mailto:urielantonioceron@gmail.com"
+                         className={`ml-1 ${darkMode ? 'text-blue-400 hover:text-blue-300' : 'text-blue-600 hover:text-blue-800'}`}>
+                         urielantonioceron@gmail.com
+                       </a>
+                     </p>
+                     <p>LinkedIn:
+                       <a href="https://www.linkedin.com/in/urielceron/"
+                         className={`ml-2 ${darkMode ? 'text-blue-400 hover:text-blue-300' : 'text-blue-600 hover:text-blue-800'}`}>
+                         linkedin.com/in/urielceron
+                       </a>
+                     </p>
+                     <p>Portfolio:
+                       <a href="https://urielceron.github.io"
+                         className={`ml-2 ${darkMode ? 'text-blue-400 hover:text-blue-300' : 'text-blue-600 hover:text-blue-800'}`}>
+                         urielceron.github.io
+                       </a>
+                     </p>
+                   </div>
+                 </div>
               </div>
             )}
 
@@ -294,21 +302,22 @@ const CV = () => {
               <>
                 <h2 className="text-2xl font-bold mb-4">Perfil Profesional</h2>
                 <p className={`mb-6 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-                  Programador Full Stack, habilidades en el análisis, y desarrollo de sistemas de información,
-                  mejoramiento del rendimiento del software y mantenimiento de sistemas Legacy.
+                  Programador Full Stack con más de 15 años en el sector público. Especialista en <strong>modernización de sistemas legacy</strong>, optimización de bases de datos y desarrollo web. Profesional proactivo con sólida capacidad de autoaprendizaje, actualizado en arquitecturas en la nube (<strong>AWS</strong>) y frameworks modernos (<strong>React, Vue.js</strong>).
                 </p>
-                <div className="flex flex-wrap gap-2">
-                  {['Full Stack', 'React', 'Vue.js', 'Laravel', 'PostgreSQL'].map((skill) => (
-                    <span
-                      key={skill}
-                      className={`px-3 py-1 rounded-full text-sm font-medium ${darkMode
-                        ? 'bg-gray-700 text-blue-300 hover:bg-gray-600'
-                        : 'bg-blue-100 text-blue-800 hover:bg-blue-200'
-                        } transition-colors duration-300`}
-                    >
-                      {skill}
-                    </span>
-                  ))}
+                <h3 className="text-xl font-semibold mb-3">Habilidades Técnicas</h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-4">
+                  <div className={`p-3 rounded-lg ${darkMode ? 'bg-gray-700' : 'bg-gray-100'}`}>
+                    <strong className="text-blue-600">Backend & Legacy:</strong>
+                    <p className={`text-sm ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>PHP (Laravel, Slim), VB6 (Migración), SQL (PostgreSQL, MySQL)</p>
+                  </div>
+                  <div className={`p-3 rounded-lg ${darkMode ? 'bg-gray-700' : 'bg-gray-100'}`}>
+                    <strong className="text-blue-600">Frontend Moderno:</strong>
+                    <p className={`text-sm ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>JavaScript (Vue.js, React), HTML5, CSS3, Bootstrap</p>
+                  </div>
+                  <div className={`p-3 rounded-lg ${darkMode ? 'bg-gray-700' : 'bg-gray-100'}`}>
+                    <strong className="text-blue-600">Nube & Herramientas:</strong>
+                    <p className={`text-sm ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>AWS (Amplify, DynamoDB, Lambda), Git, APIs REST, Stripe</p>
+                  </div>
                 </div>
               </>
             )}
@@ -318,20 +327,10 @@ const CV = () => {
                 <h2 className="text-2xl font-bold mb-6">Formación Académica</h2>
                 <div className={`space-y-6 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
                   <div className={`border-l-4 ${darkMode ? 'border-blue-400' : 'border-blue-600'} pl-4`}>
-                    <h3 className="text-xl font-semibold">Maestría en Informática Administrativa</h3>
-                    <p className="text-sm mb-2">UNAM (2015 - 2016)</p>
-                    <ul className="list-disc list-inside space-y-1">
-                      <li>Promedio: 97.7 con Mención Honorífica</li>
-                      <li>Cédula Profesional: 10660140</li>
-                    </ul>
-                    <br />
-                    <h3 className="text-xl font-semibold">Licenciatura en Informática</h3>
-                    <p className="text-sm mb-2">Instituto Tecnológico de Chetumal (TecNM) (Ago 2005 - Jun 2010)</p>
-                    <ul className="list-disc list-inside space-y-1">
-                      <li>Sistemas empresariales</li>
-                      <li>Promedio: 84</li>
-                      <li>Cédula Profesional: 7857414</li>
-                    </ul>
+                    <h3 className="text-xl font-semibold">Maestría en Informática Administrativa (Mención Honorífica)</h3>
+                    <p className="text-sm mb-2">UNAM | 2016</p>
+                    <h3 className="text-xl font-semibold mt-4">Licenciatura en Informática</h3>
+                    <p className="text-sm mb-2">Instituto Tecnológico de Chetumal | 2010</p>
                   </div>
                 </div>
               </>
@@ -342,31 +341,31 @@ const CV = () => {
                 <h2 className="text-2xl font-bold mb-6">Experiencia Profesional</h2>
                 <div className={`space-y-6 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
                   <div className={`border-l-4 ${darkMode ? 'border-blue-400' : 'border-blue-600'} pl-4`}>
-                    <h3 className="text-xl font-semibold">Dirección General de Administración Escolar, UNAM</h3>
-                    <p className="text-sm mb-2">Desarrollador Web (2017 - Presente)</p>
+                    <h3 className="text-xl font-semibold">DGAE - UNAM</h3>
+                    <p className="text-sm mb-2">Desarrollador Web | Ene 2017 – Presente</p>
                     <ul className="list-disc list-inside space-y-1">
-                      <li>Migración y desarrollo de sistemas con Laravel, Vue.js, React</li>
-                      <li>Diseño e implementación de APIs REST</li>
-                      <li>Optimización y mantenimiento de sistemas legacy</li>
+                      <li>Migré sistemas legacy (VB6) a tecnologías web modernas</li>
+                      <li>Desarrollé 3 sistemas de gestión escolar (Laravel, Vue.js, PostgreSQL)</li>
+                      <li>Gestioné mantenimiento de sistemas internos heredados</li>
+                      <li>Diseñé APIs REST (PHP/Slim) para oficios electrónicos</li>
+                      <li>Implementé reportes PDF y optimicé consultas SQL</li>
+                      <li>Proporcioné soporte técnico y capacitación a usuarios</li>
                     </ul>
 
                     <div className="mt-6">
                       <h3 className="text-xl font-semibold">Sistema Nacional DIF</h3>
-                      <p className="text-sm mb-2">Jefe del Departamento de Epidemiología (2013 - 2015)</p>
+                      <p className="text-sm mb-2">Jefe Dpto. Epidemiología | Ene 2013 – Ene 2015</p>
                       <ul className="list-disc list-inside space-y-1">
-                        <li>Gestión de sistemas de información en 21 estados</li>
-                        <li>Análisis y desarrollo del Sistema de Expediente Electrónico</li>
-                        <li>Implementación de estándares de interoperabilidad</li>
+                        <li>Gestioné operación de 3 Sistemas de Salud en 21 estados</li>
+                        <li>Realicé análisis de requisitos para Expediente Electrónico</li>
                       </ul>
                     </div>
 
                     <div className="mt-6">
-                      <h3 className="text-xl font-semibold">Centro de Rehabilitación Integral de Quintana Roo</h3>
-                      <p className="text-sm mb-2">Jefe de Informática y Estadística (2004 - 2012)</p>
+                      <h3 className="text-xl font-semibold">CRIQ Quintana Roo</h3>
+                      <p className="text-sm mb-2">Jefe de Informática | Jun 2004 – Oct 2012</p>
                       <ul className="list-disc list-inside space-y-1">
-                        <li>Desarrollo e implementación del Sistema SIRI (Presea I+T Gob)</li>
-                        <li>Gestión de infraestructura tecnológica para 150+ dispositivos</li>
-                        <li>Administración de seguridad informática y sistemas</li>
+                        <li>Desarrollé Sistema de Expediente Clínico Electrónico (PHP, MySQL)</li>
                       </ul>
                     </div>
                   </div>
@@ -379,22 +378,11 @@ const CV = () => {
                 <h2 className="text-2xl font-bold mb-6">Experiencia Docente</h2>
                 <div className={`space-y-6 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
                   <div className={`border-l-4 ${darkMode ? 'border-blue-400' : 'border-blue-600'} pl-4`}>
-                    <h3 className="text-xl font-semibold">Universidad Internacional de la Rioja (UNIR)</h3>
-                    <p className="text-sm mb-2">Profesor (2019 - 2023)</p>
+                    <h3 className="text-xl font-semibold">CBTis No. 253</h3>
+                    <p className="text-sm mb-2">Profesor | Feb 2018 – Presente</p>
                     <ul className="list-disc list-inside space-y-1">
-                      <li>Sistemas de Información para la Administración en Salud</li>
-                      <li>Dirección de Trabajos Finales de Maestría</li>
+                      <li>Programación Web, Bases de Datos, Frameworks (Vue.js, React, C++)</li>
                     </ul>
-
-                    <div className="mt-6">
-                      <h3 className="text-xl font-semibold">CBTis 253</h3>
-                      <p className="text-sm mb-2">Profesor (2018 - Presente)</p>
-                      <ul className="list-disc list-inside space-y-1">
-                        <li>Desarrollo Web y Aplicaciones Móviles</li>
-                        <li>Bases de Datos y Programación</li>
-                        <li>Tecnologías de la Información</li>
-                      </ul>
-                    </div>
                   </div>
                 </div>
               </>
@@ -402,23 +390,17 @@ const CV = () => {
 
             {sectionId === 'academic' && (
               <>
-                <h2 className="text-2xl font-bold mb-6">Producción Académica</h2>
-                <div className={`space-y-6 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-                  <div className="space-y-4">
-                    <div>
-                      <h3 className="text-lg font-semibold">Prototipo didáctico para cálculos estequiométricos "DICALMET"</h3>
-                      <p className="text-sm">Marzo 2021 | <a href="https://bit.ly/3dEKCX7" target="_blank" rel="noopener noreferrer" className={`${darkMode ? 'text-blue-400' : 'text-blue-600'} hover:underline`}>Ver documento</a></p>
-                    </div>
-
-                    <div>
-                      <h3 className="text-lg font-semibold">Cuadro de Mando y Balanced Scorecard: Caso práctico</h3>
-                      <p className="text-sm">Enero 2020 | <a href="https://bit.ly/3EddpPJ" target="_blank" rel="noopener noreferrer" className={`${darkMode ? 'text-blue-400' : 'text-blue-600'} hover:underline`}>Ver documento</a></p>
-                    </div>
-
-                    <div>
-                      <h3 className="text-lg font-semibold">Tesis: Estándares para la interoperabilidad</h3>
-                      <p className="text-sm">Marzo 2017 | <a href="http://132.248.9.195/ptd2017/enero/0755099/Index.html" target="_blank" rel="noopener noreferrer" className={`${darkMode ? 'text-blue-400' : 'text-blue-600'} hover:underline`}>Ver documento</a></p>
-                    </div>
+                <h2 className="text-2xl font-bold mb-6">Proyectos de Actualización</h2>
+                <div className={`space-y-4 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+                  <div className={`p-4 rounded-lg ${darkMode ? 'bg-gray-700' : 'bg-blue-50'}`}>
+                    <a href="https://kc-rissima.chetumalmx.com" target="_blank" rel="noopener noreferrer" className="text-lg font-semibold text-blue-600 hover:underline">
+                      KC-Rissima (SaaS Serverless)
+                    </a>
+                    <p className="text-sm mt-2">Proyecto de Autoformación & Emprendimiento</p>
+                    <p className="text-sm mt-2">
+                      Plataforma de gestión en <strong>AWS Amplify Gen 2</strong>, <strong>React, TypeScript, DynamoDB</strong>.
+                      Integración de autenticación (Cognito) y pagos (Stripe).
+                    </p>
                   </div>
                 </div>
               </>
